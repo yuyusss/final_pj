@@ -27,7 +27,7 @@ public class IndexController {
    
     @RequestMapping(value="/", method=RequestMethod.GET)
     public String index() {
-        return "index";
+        return "index2";
     }
     
     @RequestMapping(value="/board", method=RequestMethod.GET)
@@ -84,10 +84,10 @@ public class IndexController {
         s.addReply(new Reply(0, idx,replyIdx, contents));
         return "redirect:view?idx=" + idx;
     }
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
 }

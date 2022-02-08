@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+.bannerMenu{
+    background: antiquewhite;
+}
+
+.bannerPoster img{
+    width: 123px;
+    height: 150px;
+}
+
+#bannerViewItem{
+    display: inline-flex;
+}
+
+.bannerContent{
+    padding: 18px;
+}
+
+#bannerName{
+    text-align: right;
+    padding-right: 100px;
+    height: 20px;
+}
+
+.secondSection{
+    border: 1px solid darkviolet;
+    display: block;
+    position: relative;
+}
+
+.RecogNumberItem{
+    position: relative;
+    display: block;
+}
+
+.RecogMain{
+    position: relative;
+    display: inline-block;
+}
+
+.RecogSub{
+    position: relative;
+    display: inline-block;
+}
+
+.RecogSubMenu{
+    position: relative;
+    display: block;
+}
+
+#RecoNumber{
+    width: 650px;
+    height: 350px;
+    border: 1px solid purple;
+    position: relative;
+    display: inline-block;
+}
+
+.calender{
+    border: 1px solid indianred;
+    width: 400px;
+    height: 350px;
+    position: relative;
+    display: inline-block;
+}
+
+.lastSection{
+    border: 1px solid tomato;
+    display: inline-flex;
+    position: relative;
+    display: block;
+}
+
+.showMap{
+    width: 400px;
+    height: 300px;
+    border: 1px solid aquamarine;
+    display: inline-block;
+}
+
+.localHotChoice{
+    width: 650px;
+    height: 300px;
+    border: 1px solid seagreen;
+    display: inline-block;
+}

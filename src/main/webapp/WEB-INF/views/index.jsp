@@ -8,5 +8,6 @@
 	</head>
 	<body>
 		<a href="/board">고</a>
+
 	</body>
 </html>
