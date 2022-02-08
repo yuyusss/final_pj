@@ -8,5 +8,8 @@
 	</head>
 	<body>
 		<a href="/board">고</a>
+		<br><br>
+		<a href="/testDetail">상세정보 페이지</a>
+		
 	</body>
 </html>
