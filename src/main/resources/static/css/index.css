@@ -24,45 +24,55 @@
 }
 
 .secondSection{
-    border: 1px solid darkviolet;
-    display: block;
     position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 .RecogNumberItem{
     position: relative;
-    display: block;
+    display: flex;
 }
 
 .RecogMain{
     position: relative;
     display: inline-block;
+    width: 450px;
+}
+
+.RecogMainMenu{
+    position: relative;
+    height: 350px;
 }
 
 .RecogSub{
     position: relative;
     display: inline-block;
+    width: 200px;
 }
 
 .RecogSubMenu{
     position: relative;
     display: block;
+    height: calc(97% /3);
+    padding: 2.5px;
 }
 
-#RecoNumber{
+.RecoNumber{
     width: 650px;
     height: 350px;
-    border: 1px solid purple;
     position: relative;
     display: inline-block;
 }
 
 .calender{
-    border: 1px solid indianred;
-    width: 400px;
+    width: 410px;
     height: 350px;
     position: relative;
     display: inline-block;
+    margin-left: 5px;
+    padding-top: 10px;
 }
 
 .lastSection{
@@ -70,6 +80,7 @@
     display: inline-flex;
     position: relative;
     display: block;
+    margin-top: 10px;
 }
 
 .showMap{
@@ -85,3 +96,4 @@
     border: 1px solid seagreen;
     display: inline-block;
 }
+

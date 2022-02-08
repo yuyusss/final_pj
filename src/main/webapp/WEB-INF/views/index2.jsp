@@ -8,6 +8,7 @@
     <link href="<c:url value='/css/menu.css'/>" rel="stylesheet" type="text/css">
     <link href="<c:url value='/css/common.css'/>" rel="stylesheet" type="text/css">
     <link href="<c:url value='/css/index.css'/>" rel="stylesheet" type="text/css">
+    <link href="<c:url value='/css/calender.css'/>" rel="stylesheet" type="text/css">
     <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
     <script src="js/menu.js"></script>
 </head>
@@ -28,7 +29,7 @@
 
         <!-- header -->
         <div id="logoBox">
-            <a href="/"><img src="images/logo.jpg" id="logoImage"></a>
+            <a href="/"><img src="images/logo.jpeg" id="logoImage"></a>
         </div>
         <div id="topMenuBox">
             <div class="topMenu">
@@ -51,6 +52,7 @@
                             <li><a href="/">아동/가족</a></li>
                         </ul>
                     </li>
+                    <li><a href="/">미디어</a></li>
                     <li><a href="/">베스트</a></li>
                     <li><a href="/">커뮤니티</a>
                         <ul class="sub">
@@ -117,29 +119,51 @@
         </section>
 
         <div class="secondSection">
-            <div id="RecoNumber">
+            <div class="RecoNumber">
                 <div class="RecogNumberItem">
                     <div class="RecogMain">
                         <div class="RecogMainMenu">
-                            추천 main 넘버
+                            <iframe width="440" height="350" src="https://www.youtube.com/embed/4rqI5F5Gra8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                     <div class="RecogSub">
                         <div class="RecogSubMenu">
-                            추천 넘버 sub
+                            <iframe width="200px" height="110px" src="https://www.youtube.com/embed/Zx4IwAVNKOw?showinfo=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                         <div class="RecogSubMenu">
-                            추천 넘버 sub
+                            <iframe width="200px" height="110px" src="https://www.youtube.com/embed/Zx4IwAVNKOw?showinfo=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                         <div class="RecogSubMenu">
-                            추천 넘버 sub
+                            <iframe width="200px" height="110px" src="https://www.youtube.com/embed/Zx4IwAVNKOw?showinfo=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="calender">
-                캘린더 들어올 곳
+                <div class="calenderBox">
+                    <div class="calHeader">
+                        <div class="year_month"></div>
+                        <div class="nav">
+                            <button class="nav-btn go-prev">&lt;</button>
+                            <button class="nav-btn go=today">Today</button>
+                            <button class="nav-btn go-next">&gt;</button>
+                        </div>
+                    </div>
+                    <div class="calMain">
+                        <div class="days">
+                            <div class="day">일</div>
+                            <div class="day">월</div>
+                            <div class="day">화</div>
+                            <div class="day">수</div>
+                            <div class="day">목</div>
+                            <div class="day">금</div>
+                            <div class="day">토</div>
+                        </div>
+                        <div class="dates"></div>
+                    </div>
+                </div>
             </div>
+            <script src="js/calender.js"></script>
         </div>
         <div class="lastSection">
             <div class="showMap">

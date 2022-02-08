@@ -4,17 +4,15 @@
     font-weight: bold;
     text-align: right;
     background: #aaaaaa;
-    border: 1px solid green;
     padding: 8px;
 }
 
 #logoBox{
     text-align: center;
-    border: 1px solid red;
 }
 
 #logoImage{
-    height: 100px;
+    width: 1080px;
 }
 
 #headerMenuBox li{
@@ -45,8 +43,8 @@ a{
 #topMenuItem li {
     position: relative;
     display: inline-block;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
     width: 100px;
     height: 50px;
 
@@ -56,7 +54,7 @@ a{
     display: block;
     transition: all 0.3s;
     color: black;
-    width: 180px;
+    width: 130px;
     height: 50px;
     text-align: center;
     line-height: 50px;
@@ -80,7 +78,7 @@ a{
 
 .footerBox{
     text-align: center;
-    border: 1px solid blueviolet;
+    background-color: lightgray;
 }
 
 .footerInner {
