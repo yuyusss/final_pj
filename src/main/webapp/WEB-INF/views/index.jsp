@@ -7,6 +7,6 @@
 		<title>Insert title here</title>
 	</head>
 	<body>
-		<a href="/board">고</a>
+		<a href="/board">고고</a>
 	</body>
 </html>
