@@ -1,12 +1,41 @@
 package com.project.board.dao;
 
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+
+
 public class Board {
     private int idx;
     private String title;
     private String contents;
     private String image;
+    private String hits;
     
-    public Board() {
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
+    private Date writedate;
+    
+    public Date getWritedate() {
+		return writedate;
+	}
+
+	public void setWritedate(Date writedate) {
+		this.writedate = writedate;
+	}
+
+	public String getHits() {
+		return hits;
+	}
+
+	public void setHits(String hits) {
+		this.hits = hits;
+	}
+
+	public Board() {
     // TODO Auto-generated constructor stub
     }
     
@@ -34,11 +63,14 @@ public class Board {
     public void setImage(String image) {
         this.image = image;
     }
-    public Board(int idx, String title, String contents, String image) {
+    
+    public Board(int idx, String title, String contents, String image, String hits, Date writedate) {
         super();
         this.idx = idx;
         this.title = title;
         this.contents = contents;
         this.image = image;
+        this.hits= hits;
+        this.writedate= writedate;
     }
 }
