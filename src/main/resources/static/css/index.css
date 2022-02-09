@@ -66,13 +66,12 @@
     display: inline-block;
 }
 
-.calender{
+.calendar{
     width: 410px;
     height: 350px;
     position: relative;
     display: inline-block;
-    margin-left: 5px;
-    padding-top: 10px;
+    padding-left: 10px;
 }
 
 .lastSection{

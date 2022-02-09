@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class mainController {
-
+    @RequestMapping("/index2")
+    public String index2(){
+        return "index2";
+    }
 
 }
