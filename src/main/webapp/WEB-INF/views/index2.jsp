@@ -5,24 +5,74 @@
 <html>
 <head>
     <title>MUTRODUCE</title>
-    <link href="/fullcalendar-5.10.1/lib/main.css" rel="stylesheet" />
-    <link href="<c:url value='/css/menu.css'/>" rel="stylesheet" type="text/css">
-    <link href="<c:url value='/css/common.css'/>" rel="stylesheet" type="text/css">
-    <link href="<c:url value='/css/index.css'/>" rel="stylesheet" type="text/css">
-    <link href="<c:url value='/css/calendar.css'/>" rel="stylesheet" type="text/css">
-    <script src="/fullcalendar-5.10.1/lib/main.js"></script>
-    <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
-    <script src="<c:url value="/js/calendar.js" />"></script>
-    <script src="<c:url value="/js/menu.js" />"></script>
+
     <script>
 
         document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth'
-            });
-            calendar.render();
+            // var calendarEl = document.getElementById('calendar');
+            var calendarEl = $('#calendar')[0];
 
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                expandRows: true,
+                /* Day 캘린더에서 시작 시간과 종료 시간 설정 */
+                slotMinTime: '09:00',
+                slotMaxTime: '20:00',
+                headerToolbar: {
+                    right: 'listWeek, dayGridMonth'
+                },
+                initialView: 'dayGridMonth',
+                timeZone: 'UTC',
+                navLinks: true, // 날짜 누르면 해당 날짜의 일정 보여주게
+                navLinkDayClick: function(date, jsEvent){
+                    console.log("day",date.toISOString());
+                    console.log('coords',jsEvent.pageX, jsEvent.pageY)
+                },
+                dayMaxEvents: true, // 일정이 많을 경우 + more로 표기됨
+                locale: 'ko',
+                eventClick: function (info) {
+                    var eventObj = info.event;
+
+                    if(eventObj.url){
+                        alert(
+                            eventObj.title + '\n' +
+                            '해당 일정의 에매 페이지로 이동합니다. '
+                        );
+
+                        window.open(eventObj.url);
+
+                        info.jsEvent.preventDefault();
+                }
+                    else{
+                        alert(eventObj.title);
+                    }
+            },
+                events: [
+                    $.ajax({
+                        type: "GET",
+                        url: "/monthPlan", // mapper 이름
+                        dataType: 'json',
+                        events: [
+                            {
+                                title: '지킬앤하이드',
+                                start: '2022-02-09T14:00',
+                                URL: 'http://ticket.interpark.com/'
+                            },
+                            {
+                                title: '지킬앤하이드',
+                                start: '2022-02-09T14:00',
+                                URL: 'http://ticket.interpark.com/'
+                            },
+                            {
+                                title: '지킬앤하이드',
+                                start: '2022-02-24T14:00',
+                                URL: 'http://ticket.interpark.com/'
+                            }
+                        ]
+                    }),
+                ]
+            });
+
+            calendar.render();
         });
 
     </script>
@@ -38,55 +88,9 @@
 
 <!-- 전체 컨텐츠 -->
 <div id="wrap">
-    <!-- login/join -->
-    <div id="headerMenuBox">
-        <div class="headerMenu">
-            <ul>
-                <li><a href="/">회원가입</a> </li>
-                <li><a href="/">로그인</a> </li>
-                <li><a href="/">마이페이지</a> </li>
-            </ul>
-        </div>
-    </div>
 
-    <!-- header -->
-    <div id="logoBox">
-        <a href="/"><img src="images/logo.jpeg" id="logoImage"></a>
-    </div>
-    <div id="topMenuBox">
-        <div class="topMenu">
-            <ul id="topMenuItem">
-                <li class="menu1">
-                    <a href="/">ΞΞ 전체 카테고리</a>
-                    <ul class="sub">
-                        <li><a href="/">오리지널/내한공연</a></li>
-                        <li><a href="/">라이센스</a></li>
-                        <li><a href="/">창작뮤지컬</a></li>
-                        <li><a href="/">아동/가족</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="/">뮤지컬</a>
-                    <ul class="sub">
-                        <li><a href="/">오리지널/내한공연</a></li>
-                        <li><a href="/">라이센스</a></li>
-                        <li><a href="/">창작뮤지컬</a></li>
-                        <li><a href="/">아동/가족</a></li>
-                    </ul>
-                </li>
-                <li><a href="/">미디어</a></li>
-                <li><a href="/">베스트</a></li>
-                <li><a href="/">커뮤니티</a>
-                    <ul class="sub">
-                        <li><a href="/borad">배우별</a> </li>
-                        <li><a href="/borad">뮤지컬별</a> </li>
-                        <li><a href="/borad">정보게시판</a> </li>
-                    </ul>
-                </li>
-                <li><a href="/">문의사항</a></li>
-            </ul>
-        </div>
-    </div>
+    <!-- TOP -->
+    <jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 
     <!-- 배너 -->
     <section>
@@ -175,43 +179,8 @@
         </div>
     </div>
 
-
-    <!-- footerBox -->
-    <footer class="footerBox">
-        <div class="footerMenuWrap">
-            <div class="footerInner">
-                <div class="footerMutroduce">
-                    <div class="footerInfoTitle">
-                        <h3>MUTRODUCE</h3>
-                    </div>
-                    <address>서욱특별시 강남구 삼성로 512 </address>
-                    <div class="footerContact">
-                        <h4>DEV</h4>
-                        <h4>정현지, 김용휘, 유승희, 손지원, 박재훈</h4>
-                    </div>
-                </div>
-                <div class="footerMutroduce">
-                    <div class="footerInfoTitle">
-                        <h3>고객센터</h3>
-                    </div>
-                    <address>서울 금천구 벚꽃로 278 SJ테크노빌 빌딩 15층 인터파크 고객센터</address>
-                    <div class="footerContact">
-                        <h4>고객센터</h4>
-                        <h4>02-1111-1111</h4>
-                    </div>
-                </div>
-                <div class="footerMutroduce">
-                    <div class="footerInfoTitle">
-                        <h3>전자금융거래 분쟁처리 담당</h3>
-                    </div>
-                    <div class="footerContact">
-                        <h4>쇼핑 1588-1555 도서 1577-2555</h4>
-                        <h4>티켓 1544-1555 팩스 02-6924-9001</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- BOTTOM -->
+    <jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
 
 </div>
 </body>
