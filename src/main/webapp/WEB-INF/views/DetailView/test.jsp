@@ -26,7 +26,7 @@
 	    
 	    <script type="text/javascript">
 			// 새로운 창을 만들어서 열기
-			// 새로운 창에 문자열과 버튼 출력 / 버튼 클릭 시 창 닫는 기능 포함
+			// 새로운 창에 문자열과 버튼 출력 /버튼 클릭 시 창 닫는 기능 포함
 			function openWindow(){
 				window.open("https://youtu.be/EH8gPlK6Tss", "youtube-link", 
 									  "width=520, height=570, left=400, top=50, status=no, scrollbars=no, resizable=no");
