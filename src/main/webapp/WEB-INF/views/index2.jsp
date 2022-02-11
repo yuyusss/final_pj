@@ -35,7 +35,7 @@
                     if(eventObj.url){
                         alert(
                             eventObj.title + '\n' +
-                            '해당 일정의 에매 페이지로 이동합니다. '
+                            '해당 일정의 에매 페이지로 이동합니다.'
                         );
 
                         window.open(eventObj.url);
