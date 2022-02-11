@@ -8,5 +8,6 @@
 	</head>
 	<body>
 		<a href="/board">고</a>
+		<a href="/hall">공연장</a>
 	</body>
 </html>

@@ -76,8 +76,9 @@
 				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 				<ul id="menuGroup">
 					<li class="menu link"><a href="/board">공연 요청</a></li>
+					<li class="menu link"><a href="/hall">공연장</a></li>
 					<li class="menu link"><a href="#">장르별 추천</a>
-						<ul class="hide">
+					<ul class="hide">
 							<li class="subMenu"><a href="<c:url value='/'/>">배우 별</a></li>
 							<li class="subMenu"><a href="<c:url value='/'/>">장르 별</a></li>
 							<li class="subMenu"><a href="<c:url value='/'/>">넘버 별</a></li>

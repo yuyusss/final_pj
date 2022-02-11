@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+body {
+	width : 1080px;
+	height : 1080px;
+	margin-left : auto;
+	margin-right : auto;
+	
+}
+#공연장 { 
+	margin-bottom : 50px;
+	color : black;
+}
+.wrap {
+	margin-bottom : 50px;
+}
+#지역 { 
+	text-align : left;
+	margin-left : 110px;
+	color : black;
+	font-size : 25px;
+	font-weight: bold;
+	
+}
+.hall {
+	text-align : center;
+	margin-top : 100px;
+	height : 200px;
+}
+.hall::before {
+    width: 98%;
+    height: 50%;
+    content: "";
+    background-image: url(/images/무대1.jpg);
+    background-repeat: round;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    opacity: 0.7;
+    margin: 1%;
+}
+.hall::after {
+    width: 98%;
+    height: 50%;
+    content: "";
+    background-image: url(/images/무대2.jpg);
+    background-repeat: round;
+    position: fixed;
+    left: 0;
+    top: 50%;
+    z-index: -1;
+    opacity: 0.7;
+    margin: 1%;
+    
+}
+
+.list {
+	width : 80%;
+	margin-left : auto;
+	margin-right : auto;
+	margin-bottom : auto;
+	color : black;
+	background-color : white;
+}
+.list tr th {
+	width : 20%;
+}
+.list tr th img {
+    width: 100%;
+    height: 50px;
+}
