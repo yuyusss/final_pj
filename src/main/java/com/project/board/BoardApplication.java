@@ -11,6 +11,7 @@ import com.project.board.dao.Reply;
 
 
 @SpringBootApplication
+@ComponentScan(basePackages = "com.project.board")
 @MapperScan(basePackageClasses = Board.class)
 @MapperScan(basePackageClasses = Reply.class)
 @MapperScan(basePackages = "com.project.board")

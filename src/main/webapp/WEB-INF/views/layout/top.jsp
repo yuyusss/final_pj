@@ -42,10 +42,12 @@
                 <li class="menu1">
                     <a href="/">ΞΞ 전체 카테고리</a>
                     <ul class="sub">
-                        <li><a href="/">오리지널/내한공연</a></li>
-                        <li><a href="/">라이센스</a></li>
-                        <li><a href="/">창작뮤지컬</a></li>
-                        <li><a href="/">아동/가족</a></li>
+                        <li><a href="/">뮤지컬</a></li>
+                        <li><a href="/">미디어</a></li>
+                        <li><a href="/">베스트</a></li>
+                        <li><a href="/">커뮤니티</a></li>
+                        <li><a href="/">공연장</a></li>
+                        <li><a href="/">문의사항</a></li>
                     </ul>
                 </li>
                 <li>
@@ -66,6 +68,7 @@
                         <li><a href="/borad">정보게시판</a> </li>
                     </ul>
                 </li>
+                <li><a href="/">공연장</a></li>
                 <li><a href="/">문의사항</a></li>
             </ul>
         </div>
