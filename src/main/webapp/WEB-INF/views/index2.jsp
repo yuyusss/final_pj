@@ -175,7 +175,7 @@
             지도 들어올 부분
         </div>
         <div class="localHotChoice">
-            지역별 뮤지컬 HOT Choice
+            지역별 뮤지컬 HOT Choice 들어올 곳
         </div>
     </div>
 
