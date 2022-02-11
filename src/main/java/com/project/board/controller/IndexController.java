@@ -51,6 +51,17 @@ public class IndexController {
         return "write";
     }
 	
+    @RequestMapping(value="/login", method=RequestMethod.GET)
+    public String login() {
+        return "login";
+    }
+    
+    @RequestMapping(value="/signUp", method=RequestMethod.GET)
+    public String signUp() {
+        return "signUp";
+    }
+	
+    
     @RequestMapping(value="/writeAction", method=RequestMethod.POST)
     public String writeAction(
             HttpServletRequest req,@RequestParam("file") MultipartFile file,

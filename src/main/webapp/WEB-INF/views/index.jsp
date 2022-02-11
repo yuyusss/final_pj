@@ -8,8 +8,15 @@
 	</head>
 	<body>
 		<a href="/board">고</a>
+
+	
+		<a href="/login">로그인</a>
+		
+		<a href="/signUp">회원가입</a>
+
 		<br><br>
 		<a href="/testDetail">상세정보 페이지</a>
 		
+
 	</body>
 </html>
