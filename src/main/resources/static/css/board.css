@@ -1,11 +1,23 @@
 @charset "UTF-8";
 
 .boardcontainer{
-	width: 1050px;
+	width: 1080px;
 	margin-top:60px;
-	margin-left:400px;
+	margin-left:-5px;
+	height: 980px;
 	
 }
+
+.board{
+	width: 1090px;
+}
+.viewcontainer{
+	width: 1080px;
+	margin-top:60px;
+	margin-left:18px;
+	height: 810px;
+}
+
 a{
 	text-decoration:none;
 }
@@ -82,3 +94,10 @@ table {
     padding: 10px;
   }
 
+.board h2{
+	text-align:left;
+}
+
+#boardmenu{
+	text-align:left; 
+}

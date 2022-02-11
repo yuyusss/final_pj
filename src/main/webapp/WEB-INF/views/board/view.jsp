@@ -8,14 +8,77 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="<c:url value='/css/board.css'/>" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
+<nav>
+		<span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;
+			</span>
+		<div class="menu-btn">
+			<div class="line line--1"></div>
+			<div class="line line--2"></div>
+			<div class="line line--3"></div>
+		</div>
+		<div class="nav-links">
+			<div id="mySidenav" class="sidenav">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<ul id="menuGroup">
+					<li class="menu link"><a href="/board">공연 요청</a></li>
+					<li class="menu link"><a href="#">장르별 추천</a>
+						<ul class="hide">
+							<li class="subMenu"><a href="<c:url value='/'/>">배우 별</a></li>
+							<li class="subMenu"><a href="<c:url value='/'/>">장르 별</a></li>
+							<li class="subMenu"><a href="<c:url value='/'/>">넘버 별</a></li>
+						</ul></li>
+					<li class="menu link"><a href="#">정보 게시판</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+<body>
+<div class="viewcontainer">
+	<div class="row">
+		<div class="col-sm-12">
+	     <h2 id = "title" ></h2><a href="javascript:deleteCheck();">게시글 삭제</a>
+	      <hr>
+		</div>
+	</div> 
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="row">
+				<hr>
+				<div class="col-sm-12">
+			      <h4 id = "contents"></h4>
+				</div>
+				<br>
+				<br>
+			</div>
+		</div>
+		<div class="col-sm-6">
+	      <div><img id="image" onerror="this.parentNode.style.display='none'"></div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="row">
+		<div class="col-sm-12">
+	      <h2 id = "cnt"></h2>
+	      <hr>
+	      <br>
+	      <div id = "replyArea"></div>
+		</div>
+	</div>
+</div>
+<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
+</body>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="<c:url value='/js/board.js'/>"></script>
-<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
 <style>
@@ -27,17 +90,9 @@
     padding-left: 50px;
 }
 </style>
-<script type="text/javascript">
-function deleteCheck(){
-	var answer = confirm("선택한 게시글을 삭제하시겠습니까?");
-	if(answer == true){
-		location.href="/board/deleteboard/${idx}";
-	}
-}
-</script>
+
 
 <script>
-
 function drawReply(replys) {
 	$("#cnt").text("등록된 댓글 - " + replys.length)
 	var html = '';
@@ -99,52 +154,11 @@ function drawReply(replys) {
 	  drawReply(replys)
    }});
   
+  function deleteCheck(){
+		var answer = confirm("선택한 게시글을 삭제하시겠습니까?");
+		if(answer == true){
+			location.href="/board/deleteboard/" + IDX;
+		}
+	}
   </script>
-</head>
-<body>
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; 메뉴</span>
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="/board">공연 요청</a>
-  <a href="/write">Services</a>
-
-</div>
-
-<div class="boardcontainer">
-	<div class="row">
-		<div class="col-sm-12">
-	     <h2 id = "title" ></h2><a href="javascript:deleteCheck();">게시글 삭제</a>
-	      <hr>
-		</div>
-	</div> 
-	<div class="row">
-		<div class="col-sm-6">
-			<div class="row">
-				<hr>
-				<div class="col-sm-12">
-			      <h4 id = "contents"></h4>
-				</div>
-				<br>
-				<br>
-			</div>
-		</div>
-		<div class="col-sm-6">
-	      <div><img id="image" onerror="this.parentNode.style.display='none'"></div>
-		</div>
-	</div>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<div class="row">
-		<div class="col-sm-12">
-	      <h2 id = "cnt"></h2>
-	      <hr>
-	      <br>
-	      <div id = "replyArea"></div>
-		</div>
-	</div>
-</div>
-</body>
 </html>

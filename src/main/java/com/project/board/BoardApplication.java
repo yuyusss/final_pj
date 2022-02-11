@@ -7,15 +7,16 @@ import org.springframework.context.annotation.ComponentScan;
 
 import com.project.board.controller.BoardController;
 import com.project.board.controller.IndexController;
-import com.project.board.dao.Board;
-import com.project.board.dao.Reply;
+import com.project.board.dao.IBoardDAO;
+
 
 @ComponentScan(basePackageClasses = BoardController.class)
 @ComponentScan(basePackageClasses = IndexController.class)
-@MapperScan(basePackageClasses = Board.class)
-@MapperScan(basePackageClasses = Reply.class)
-@MapperScan(basePackages = "com.project.board")
+
+
 @SpringBootApplication
+@MapperScan(basePackageClasses = IBoardDAO.class)
+@MapperScan(basePackages = "com.project.board")
 public class BoardApplication {
 
 	public static void main(String[] args) {

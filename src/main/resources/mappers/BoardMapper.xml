@@ -3,8 +3,8 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
- <mapper namespace="com.project.board.mapper.BoardMapper">
-    <select id="getBoard" resultType="com.project.board.dao.Board">
+ <mapper namespace="com.project.board.dao.IBoardDAO">
+    <select id="getBoard" resultType="com.project.board.model.BoardVO">
         SELECT
         idx, title, image, contents,hits,writedate
         FROM
@@ -29,7 +29,7 @@
         )
     </insert>
     
-    <select id="getBoardOne" resultType="com.project.board.dao.Board">
+    <select id="getBoardOne" resultType="com.project.board.model.BoardVO">
         SELECT
         idx, title, image, contents
         FROM
@@ -54,7 +54,7 @@
         )
     </insert>
     
-    <select id="getReply" resultType="com.project.board.dao.Reply">
+    <select id="getReply" resultType="com.project.board.model.ReplyVO">
         SELECT
         idx, board_idx as boardIdx, reply_idx as replyIdx, contents
         FROM
@@ -70,7 +70,7 @@
 	</update>
 	
 	<!-- 상품 정보 삭제  -->
-  		<delete id="deleteBoard"  parameterType="int">
+  		<delete id="deleteBoard"  parameterType="String">
   			DELETE FROM tb_board WHERE idx = #{idx}
   		</delete>
 	

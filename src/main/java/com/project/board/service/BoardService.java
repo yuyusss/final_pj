@@ -6,48 +6,52 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.project.board.dao.Board;
-import com.project.board.dao.Reply;
-import com.project.board.mapper.BoardMapper;
+import com.project.board.dao.IBoardDAO;
+import com.project.board.model.BoardVO;
+import com.project.board.model.ReplyVO;
 
 @Service
-public class BoardService {
+public class BoardService implements IBoardService{
 	
     @Autowired
-    @Qualifier("BoardMapper")
-    private BoardMapper m;
+    @Qualifier("IBoardDAO")
+    IBoardDAO dao;
 	
-    public List<Board> getBoard(){
-        return m.getBoard();
-    }
     
-    public boolean addBoard(Board b) {
-        return m.addBoard(b);
+    @Override
+    public List<BoardVO> getBoard(){
+        return dao.getBoard();
     }
-    
-    public Board getBoardOne(int idx) {
-        return m.getBoardOne(idx);
+    @Override
+    public boolean addBoard(BoardVO b) {
+        return dao.addBoard(b);
     }
-    
-    public boolean addReply(Reply r) {
-        return m.addReply(r);
+    @Override
+    public BoardVO getBoardOne(int idx) {
+        return dao.getBoardOne(idx);
     }
-    public List<Reply> getReply(int boardIdx) {
-        return m.getReply(boardIdx);
+    @Override
+    public boolean addReply(ReplyVO r) {
+        return dao.addReply(r);
     }
-    
-    public int updatereviewcnt(int idx) throws Exception {
-		return m.updatereviewcnt(idx);
+    @Override
+    public List<ReplyVO> getReply(int boardIdx) {
+        return dao.getReply(boardIdx);
+    }
+    @Override
+    public int updatereviewcnt(int idx) {
+		return dao.updatereviewcnt(idx);
 	}
     
-
+    @Override
     public int count() throws Exception {
-     return m.count();
+     return dao.count();
     }
     
-	public void deleteBoard(int idx) {
+    @Override
+	public void deleteBoard(String boardVo) {
 		// TODO Auto-generated method stub
-		m.deleteBoard(idx);
+		dao.deleteBoard(boardVo);
 	}
     
 }

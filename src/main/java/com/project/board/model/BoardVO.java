@@ -1,4 +1,4 @@
-package com.project.board.dao;
+package com.project.board.model;
 
 import java.util.Date;
 
@@ -6,9 +6,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-
-
-public class Board {
+public class BoardVO {
     private int idx;
     private String title;
     private String contents;
@@ -35,7 +33,7 @@ public class Board {
 		this.hits = hits;
 	}
 
-	public Board() {
+	public BoardVO() {
     // TODO Auto-generated constructor stub
     }
     
@@ -64,7 +62,7 @@ public class Board {
         this.image = image;
     }
     
-    public Board(int idx, String title, String contents, String image, String hits, Date writedate) {
+    public BoardVO(int idx, String title, String contents, String image, String hits, Date writedate) {
         super();
         this.idx = idx;
         this.title = title;
@@ -73,4 +71,5 @@ public class Board {
         this.hits= hits;
         this.writedate= writedate;
     }
+
 }

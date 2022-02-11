@@ -29,12 +29,8 @@
 </style>
 
 <script type="text/javascript">
-function deleteCheck(){
-	var answer = confirm("선택한 게시글을 삭제하시겠습니까?");
-	if(answer == true){
-		location.href="/board/deleteboard/${board.idx}";
-	}
-}
+
+
 	$(document).ready(
 			function() {
 				$("#writeBtn").click(function() {
@@ -46,7 +42,7 @@ function deleteCheck(){
 						var html = "";
 						result.forEach(function(item) {
 							html += "<tr> <td>"+item.idx+"</td><td></td><td><a style='text-decoration:none;' href = 'view?idx=" + item.idx
-									+ "'>" + item.title + "</a></td><td>"+item.contents+"</td><td>"+item.hits+"</td><td>"+item.writedate+"</td><td><a href='javascript:deleteCheck();' style='text-decoration:none;'>&#10060;</a></td>"
+									+ "'>" + item.title + "</a></td><td>"+item.contents+"</td><td>"+item.hits+"</td><td>"+item.writedate+"</td><td><a href='/board/deleteboard/"+item.idx+"' style='text-decoration:none;'>&#10060;</a></td>"
 						})
 						$("#listArea").append(html)
 						$('#example').DataTable();
@@ -59,11 +55,10 @@ function deleteCheck(){
 	
 </script>
 </head>
-<body link="blue" vlink="blue" alink="blue">
-
-	<nav>
+<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
+<nav id="boardmenu">
 		<span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;
-			메뉴</span>
+			</span>
 		<div class="menu-btn">
 			<div class="line line--1"></div>
 			<div class="line line--2"></div>
@@ -85,8 +80,7 @@ function deleteCheck(){
 			</div>
 		</div>
 	</nav>
-
-
+<body link="blue" vlink="blue" alink="blue">
 	<div class="boardcontainer">
 		<div class="row">
 			<div class="board">
@@ -107,5 +101,6 @@ function deleteCheck(){
 			</div>
 		</div>
 	</div>
+	<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
 </body>
 </html>

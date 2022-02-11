@@ -16,13 +16,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.project.board.dao.Board;
-import com.project.board.dao.Reply;
+import com.project.board.model.BoardVO;
+import com.project.board.model.ReplyVO;
 import com.project.board.service.BoardService;
 
 @Controller
 public class BoardController {
-	 @Autowired
+	 	@Autowired
 	    private BoardService s;
 	    
 	    @RequestMapping(value="/board", method=RequestMethod.GET)
@@ -33,7 +33,7 @@ public class BoardController {
 		
 	    @RequestMapping(value="/boardList", method=RequestMethod.GET)
 	    @ResponseBody
-	    public List<Board> boardList(){
+	    public List<BoardVO> boardList(){
 	    	return s.getBoard();
 	    }
 	    
@@ -52,7 +52,7 @@ public class BoardController {
 	        if (!file.getOriginalFilename().isEmpty()) {
 	            file.transferTo(new File(PATH + file.getOriginalFilename()));
 	        }
-	        s.addBoard(new Board(0, title, contents, file.getOriginalFilename(), hits,writedate));
+	        s.addBoard(new BoardVO(0, title, contents, file.getOriginalFilename(), hits,writedate));
 	        return "board/board";
 	    }
 
@@ -63,8 +63,8 @@ public class BoardController {
 		
 	    @RequestMapping(value="/boardView", method=RequestMethod.GET)
 	    @ResponseBody
-	    public Board boardList(@RequestParam("idx")int idx) throws Exception{
-	       
+	    public BoardVO boardList(@RequestParam("idx")int idx) throws Exception{
+	        System.out.println("boardView, idx = " + idx);
 	    	s.updatereviewcnt(idx);
 	    	
 	    	return s.getBoardOne(idx);
@@ -72,7 +72,7 @@ public class BoardController {
 	    
 	    @RequestMapping(value="/replyList", method=RequestMethod.GET)
 	    @ResponseBody
-	    public List<Reply> replyList(@RequestParam("idx")int boardIdx){
+	    public List<ReplyVO> replyList(@RequestParam("idx")int boardIdx){
 	        return s.getReply(boardIdx);
 	    }
 	    
@@ -81,7 +81,7 @@ public class BoardController {
 	            @RequestParam("idx")int idx,
 	            @RequestParam("replyIdx")int replyIdx,
 	            @RequestParam("contents")String contents) {
-	        s.addReply(new Reply(0, idx,replyIdx, contents));
+	        s.addReply(new ReplyVO(0, idx,replyIdx, contents));
 	        return "redirect:view?idx=" + idx;
 	    }
 	   
@@ -90,10 +90,11 @@ public class BoardController {
 	        return "board/boardListView";
 	    }
 	    
-	    @RequestMapping("/board/deleteBoard/{idx}")
-		public String deleteBoard(@PathVariable int idx) {
-			s.deleteBoard(idx);
-			return "redirect:../board";
+	    @RequestMapping("/board/deleteboard/{idx}")
+		public String deleteBoard(@PathVariable String idx) {
+
+	    	s.deleteBoard(idx);
+			return "redirect:/board";
 		}
 	    
 }
