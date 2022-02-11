@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#wrap{
+    background: #fff;
+    text-align: center;
+    position: relative;
+    width: 1080px;
+    margin: 0 auto;
+}
