@@ -10,6 +10,7 @@
         FROM
         tb_board
         ORDER BY idx asc
+
     </select>
     
     <insert id="addBoard">
@@ -62,9 +63,17 @@
         board_idx = #{boardIdx}
         order by reply_idx asc
     </select>
+    
+    
     <update id="updatereviewcnt">
 		update tb_board set hits = hits + 1 where idx = #{idx}
 	</update>
+	
+	<!-- 상품 정보 삭제  -->
+  		<delete id="deleteBoard"  parameterType="int">
+  			DELETE FROM tb_board WHERE idx = #{idx}
+  		</delete>
+	
 </mapper>
   
   

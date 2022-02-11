@@ -22,13 +22,11 @@
     height: 200px;
     background: #aaa;
   }
+  
   </style>
 </head>
 <body>
 
-<div class="jumbotron text-center" style="margin-bottom:0">
-  <h1>top</h1>
-</div>
 
 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; 메뉴</span>
 <div id="mySidenav" class="sidenav">
@@ -38,7 +36,7 @@
 
 </div>
 
-<div class="container" style="margin-top:30px">
+<div class="boardcontainer">
 	<div class="row">
 		<div class="col-sm-12">
 	      <h2>글쓰기</h2>
@@ -55,7 +53,7 @@
 				  <label for="comment">내용:</label>
 				  <textarea class="form-control" rows="5" id="contents" name = "contents"></textarea>
 				</div>
-			    <button type="submit" class="btn btn-primary">글쓰기</button>
+			    <button type="submit">글쓰기</button>
 			  </form>
 		</div>
 	</div>

@@ -40,7 +40,14 @@ public class BoardService {
 		return m.updatereviewcnt(idx);
 	}
     
+
+    public int count() throws Exception {
+     return m.count();
+    }
     
-    
+	public void deleteBoard(int idx) {
+		// TODO Auto-generated method stub
+		m.deleteBoard(idx);
+	}
     
 }

@@ -16,5 +16,7 @@ public interface BoardMapper {
     public boolean addReply(Reply r);
     public List<Reply> getReply(int boardIdx);
     public int updatereviewcnt(int idx);
-
+    public int count() throws Exception;
+    public void deleteBoard(int idx);
 }
+	

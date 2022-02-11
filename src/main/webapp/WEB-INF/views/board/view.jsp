@@ -7,8 +7,10 @@
 <title>과제</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link href="<c:url value='/css/board.css'/>" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="<c:url value='/js/board.js'/>"></script>
 <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -25,6 +27,15 @@
     padding-left: 50px;
 }
 </style>
+<script type="text/javascript">
+function deleteCheck(){
+	var answer = confirm("선택한 게시글을 삭제하시겠습니까?");
+	if(answer == true){
+		location.href="/board/deleteboard/${idx}";
+	}
+}
+</script>
+
 <script>
 
 function drawReply(replys) {
@@ -53,7 +64,7 @@ function drawReply(replys) {
 			})
 			var subHtml = '';
 			subHtml = '<div class="row"><div class="col-sm-12 subReply">';
-			subHtml += '<form class="form-inline" action="writeReply" method="post"><label for="pwd" class="mr-sm-2"><h1>↳</h1>' + reply.contents + '(' + rc + ')'  +'</label>'
+			subHtml += '<form class="form-inline" action="writeReply" method="post"><label for="pwd" class="mr-sm-2">↳' + reply.contents + '(' + rc + ')'  +'</label>'
 			subHtml += '<input type="hidden" name="idx" value = "' + IDX + '"><input type="hidden" name="replyIdx" value = "' + reply.idx + '"><input type="text"class="form-control mb-2 mr-sm-2" id="contents" id="contents" placeholder="답글" name="contents"><button type="submit" >등록</button></form>';
 			subHtml += '<div class="row"><div class="col-sm-12 sub' + reply.idx + '"></div></div></div></div>';
 			$(".sub" + reply.replyIdx).append(subHtml);
@@ -80,6 +91,7 @@ function drawReply(replys) {
   $.ajax({url: "boardView?idx="+IDX, success: function(result){
 	  $("#image").append('<img src="/resources/static/images/'+ result.image + '" style="width: 100%;"  >');
 	  $("#title").text(result.title);
+	  $("#memID").text(result.memID)
 	  $("#contents").text(result.contents);
    }});
 
@@ -98,12 +110,11 @@ function drawReply(replys) {
 
 </div>
 
-<div class="container" style="margin-top:30px">
+<div class="boardcontainer">
 	<div class="row">
 		<div class="col-sm-12">
-	      <h2 id = "title"></h2>
+	     <h2 id = "title" ></h2><a href="javascript:deleteCheck();">게시글 삭제</a>
 	      <hr>
-	      <br>
 		</div>
 	</div> 
 	<div class="row">

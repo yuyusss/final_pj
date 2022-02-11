@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,14 +27,16 @@ public class BoardController {
 	    
 	    @RequestMapping(value="/board", method=RequestMethod.GET)
 	    public String board() {
+	    	
 	        return "board/board";
 	    }
 		
 	    @RequestMapping(value="/boardList", method=RequestMethod.GET)
 	    @ResponseBody
 	    public List<Board> boardList(){
-	        return s.getBoard();
+	    	return s.getBoard();
 	    }
+	    
 	    
 	    @RequestMapping(value="/write", method=RequestMethod.GET)
 	    public String write() {
@@ -67,13 +70,12 @@ public class BoardController {
 	    	return s.getBoardOne(idx);
 	    }
 	    
-	    
-	    
 	    @RequestMapping(value="/replyList", method=RequestMethod.GET)
 	    @ResponseBody
 	    public List<Reply> replyList(@RequestParam("idx")int boardIdx){
 	        return s.getReply(boardIdx);
 	    }
+	    
 	    @RequestMapping(value="/writeReply", method=RequestMethod.POST)
 	    public String writeReply(
 	            @RequestParam("idx")int idx,
@@ -87,4 +89,11 @@ public class BoardController {
 	    public String boardListView() {
 	        return "board/boardListView";
 	    }
+	    
+	    @RequestMapping("/board/deleteBoard/{idx}")
+		public String deleteBoard(@PathVariable int idx) {
+			s.deleteBoard(idx);
+			return "redirect:../board";
+		}
+	    
 }
