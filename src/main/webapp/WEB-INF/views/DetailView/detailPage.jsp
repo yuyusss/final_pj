@@ -9,6 +9,7 @@
 		.headBox {
 			border-style: hidden;
 			margin: auto;
+			/* */
 		}
 		
 		</style>
