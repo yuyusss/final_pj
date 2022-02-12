@@ -203,7 +203,7 @@
             </div>
         </div>
         <div class="localHotChoice">
-            지역별 뮤지컬 HOT Choice 들어올 곳
+            지역별 뮤지컬 HOT CHOICE
         </div>
     </div>
 </div>
