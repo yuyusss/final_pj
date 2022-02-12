@@ -203,7 +203,7 @@
             </div>
         </div>
         <div class="localHotChoice">
-            지역별 뮤지컬 HOT CHOICE
+            지역별 뮤지컬 HOT CHOICE 띄우기
         </div>
     </div>
 </div>
