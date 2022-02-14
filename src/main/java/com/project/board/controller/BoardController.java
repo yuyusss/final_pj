@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -70,6 +71,16 @@ public class BoardController {
 	    	return s.getBoardOne(idx);
 	    }
 	    
+		/*
+		 * @RequestMapping(value="/boardView", method=RequestMethod.GET)
+		 * 
+		 * @ResponseBody public BoardVO boardList(@RequestParam("idx")int idx) throws
+		 * Exception{ System.out.println("boardView, idx = " + idx);
+		 * s.updatereviewcnt(idx); BoardVO board = s.detailViewBoard(idx);
+		 * 
+		 * return board; }
+		 */
+	    
 	    @RequestMapping(value="/replyList", method=RequestMethod.GET)
 	    @ResponseBody
 	    public List<ReplyVO> replyList(@RequestParam("idx")int boardIdx){
@@ -92,9 +103,30 @@ public class BoardController {
 	    
 	    @RequestMapping("/board/deleteboard/{idx}")
 		public String deleteBoard(@PathVariable String idx) {
-
 	    	s.deleteBoard(idx);
 			return "redirect:/board";
 		}
+	    
+	    @RequestMapping("/board/deletereply/{idx}")
+		public String deleteReply(@PathVariable String idx) {
+	    	s.deleteReply(idx);
+			return "redirect:/view?idx=" + idx;
+		}
+	    
+	    @RequestMapping("/board/update/{idx}")
+		public String updateBookForm(@PathVariable int idx, Model model) {
+			BoardVO board = s.detailViewBoard(idx);
+			model.addAttribute("board", board);
+			return "board/update";
+		}
+	    
+	    @RequestMapping("/board/updateBoard")
+		public String detailViewBook(BoardVO board) {
+	    	System.out.println(board);
+			s.updateBoard(board);
+			return "redirect:/board";
+		}
+	    
+	    
 	    
 }

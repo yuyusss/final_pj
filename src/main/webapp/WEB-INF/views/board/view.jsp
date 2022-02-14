@@ -8,10 +8,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="<c:url value='/css/board.css'/>" rel="stylesheet" type="text/css">
-
+<script src="<c:url value='/js/replycheck.js'/>"></script>
 </head>
 <jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
-<nav>
+<nav id="boardmenu">
 		<span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;
 			</span>
 		<div class="menu-btn">
@@ -37,19 +37,21 @@
 	</nav>
 
 <body>
-<div class="viewcontainer">
+<div class="viewcontainer" style="text-align:left;">
 	<div class="row">
-		<div class="col-sm-12">
-	     <h2 id = "title" ></h2><a href="javascript:deleteCheck();">게시글 삭제</a>
-	      <hr>
+		<div class="col-sm-12" style="text-align:right;">
+	     <h2 style="text-align:left;" id = "title" ></h2>
+	     <hr><hr>
+	     <button type="button" class="btn" onclick="location.href='javascript:deleteCheck();' ">게시글 삭제</button>
+	     <button type="button" class="btn" onclick="location.href='javascript:update();' ">게시글 수정</button> <br>
+
 		</div>
 	</div> 
 	<div class="row">
 		<div class="col-sm-6">
 			<div class="row">
-				<hr>
 				<div class="col-sm-12">
-			      <h4 id = "contents"></h4>
+			      <h3 id = "contents"></h3>
 				</div>
 				<br>
 				<br>
@@ -96,22 +98,24 @@
 function drawReply(replys) {
 	$("#cnt").text("등록된 댓글 - " + replys.length)
 	var html = '';
-	html += '<h4>댓글 작성</h4><form class="form-inline" action="writeReply" method="post"><input type="hidden" name="idx" value = "' + IDX + '"><input type="hidden" name="replyIdx" value = "0"><input type="text" class="form-control mb-2 mr-sm-2" id="contents" placeholder="답글" name="contents"><button type="submit" >등록</button></form>';
+	html += '<h4>댓글 작성</h4><form class="form-inline replyform" id="replyform" name="replyform" action="writeReply" method="post" onSubmit="return Checkreplyform()" ><input type="hidden" name="idx" value = "' + IDX + '"><input type="hidden" name="replyIdx" value = "0"><input type="text" class="contents replymaininput form-control mb-2 mr-sm-2" id="contents" placeholder="댓글" name="contents"><button class="replybtn" type="submit" >등록</button></form>';
 	html += '<hr>'
-	replys.forEach(function(reply){ 
+	replys.forEach(function(reply, tempIndex){ 
 		if (reply.replyIdx == 0) {
 			var rc = 0;
 			replys.forEach(function(i){
 				if (reply.idx == i.replyIdx) rc++;
 			})
 			html += '<div class="row"><div class="col-sm-12">';
-			html += '<form class="form-inline" action="writeReply" method="post"><label for="pwd" class="mr-sm-2">' + reply.contents + '(' + rc + ')' + '</label>';
-			html += '<input type="hidden" name="idx" value = "' + IDX + '"><input type="hidden" name="replyIdx" value = "' + reply.idx + '"><input type="text" class="form-control mb-2 mr-sm-2" id="contents" placeholder="답글" name="contents"><button type="submit">등록</button></form>';
+			html += '<form class="form-inline" id="replyform1" name="replyform1" action="writeReply" method="post" onSubmit="return CheckRereplyform(' + tempIndex + ')"><label for="pwd" class="mr-sm-2">댓글 내용 :  <font size="5">' + reply.contents + '</font>  (대댓글 수 : ' + rc + ')'  +'<a href="/board/deletereply/'+reply.idx+ '" style="text-decoration:none;">&#10060;</a></label>';
+			html += '<input type="hidden" name="idx" value = "' + IDX + '"><input type="hidden" name="replyIdx" value = "' + reply.idx + '"><input type="text" class="contents replyinput form-control mb-2 mr-sm-2" id="contents' + tempIndex + '" placeholder="댓글" name="contents"><input type="submit" class="replybtn" value="등록" /></form>';
 			html += '<div class="row"><div class="col-sm-12 sub' + reply.idx + '"></div></div></div></div>';
 		}
 	})
+	
 	$("#replyArea").append(html);
-	replys.forEach(function(reply){ 
+
+	replys.forEach(function(reply, tempIndexx){ 
 		if (reply.replyIdx != 0) {
 			var rc = 0;
 			replys.forEach(function(i){
@@ -119,8 +123,8 @@ function drawReply(replys) {
 			})
 			var subHtml = '';
 			subHtml = '<div class="row"><div class="col-sm-12 subReply">';
-			subHtml += '<form class="form-inline" action="writeReply" method="post"><label for="pwd" class="mr-sm-2">↳' + reply.contents + '(' + rc + ')'  +'</label>'
-			subHtml += '<input type="hidden" name="idx" value = "' + IDX + '"><input type="hidden" name="replyIdx" value = "' + reply.idx + '"><input type="text"class="form-control mb-2 mr-sm-2" id="contents" id="contents" placeholder="답글" name="contents"><button type="submit" >등록</button></form>';
+			subHtml += '<form class="form-inline" action="writeReply" method="post" onSubmit="return CheckRereplyform(' + tempIndexx + ')"><label for="pwd" class="mr-sm-2">↳댓글 내용 :  <font size="5">' + reply.contents + '</font>  (대댓글 수:' + rc + ')'  +'<a href="/board/deletereply/'+reply.idx+ '" style="text-decoration:none;">&#10060;</a></label>'
+			subHtml += '<input type="hidden" name="idx" value = "' + IDX + '"><input type="hidden" name="replyIdx" value = "' + reply.idx + '"><input type="text"class="replyinput form-control mb-2 mr-sm-2" id="contents" id="contents' + tempIndexx + '" placeholder="댓글" name="contents"><button class="replybtn" type="submit" >등록</button></form>';
 			subHtml += '<div class="row"><div class="col-sm-12 sub' + reply.idx + '"></div></div></div></div>';
 			$(".sub" + reply.replyIdx).append(subHtml);
 		}
@@ -143,7 +147,10 @@ function drawReply(replys) {
     return b;
 }
 
-  $.ajax({url: "boardView?idx="+IDX, success: function(result){
+ var idx;
+  $.ajax({url: "boardView?idx="+IDX, 
+	success: function(result){
+		idx=result.idx;
 	  $("#image").append('<img src="/resources/static/images/'+ result.image + '" style="width: 100%;"  >');
 	  $("#title").text(result.title);
 	  $("#memID").text(result.memID)
@@ -154,11 +161,26 @@ function drawReply(replys) {
 	  drawReply(replys)
    }});
   
+  
+  
   function deleteCheck(){
 		var answer = confirm("선택한 게시글을 삭제하시겠습니까?");
 		if(answer == true){
 			location.href="/board/deleteboard/" + IDX;
 		}
+	}
+  
+  function deleteReplyCheck(){
+		var answer = confirm("선택한 댓글을 삭제하시겠습니까?");
+		if(answer == true){
+			location.href="/board/deletereply/" + IDX;
+		}
+	}
+  
+  function update(){
+
+			location.href="/board/update/" + IDX;
+
 	}
   </script>
 </html>

@@ -69,10 +69,27 @@
 		update tb_board set hits = hits + 1 where idx = #{idx}
 	</update>
 	
+	<select id="detailViewBoard" parameterType="int" resultType="com.project.board.model.BoardVO">
+		SELECT * FROM tb_board WHERE idx=#{idx}
+	</select>
+	
 	<!-- 상품 정보 삭제  -->
-  		<delete id="deleteBoard"  parameterType="String">
-  			DELETE FROM tb_board WHERE idx = #{idx}
-  		</delete>
+  	<delete id="deleteBoard"  parameterType="String">
+  		DELETE FROM tb_board WHERE idx = #{idx}
+  	</delete>
+  	
+  	<!-- 댓글삭제 -->	
+  	<delete id="deleteReply"  parameterType="String"  >
+  		DELETE FROM tb_reply WHERE idx = #{board_idx}
+  	</delete>	
+	
+	<!-- 상품 정보 수정 : 수정된 정보 DB에 저장(상품 번호는 수정하지 않음) -->
+	<update id="updateBoard" parameterType="com.project.board.model.BoardVO">
+		UPDATE tb_board SET contents = #{contents}, 
+						image = #{image}, title = #{title}
+		WHERE idx = #{idx}
+	</update>
+	
 	
 </mapper>
   

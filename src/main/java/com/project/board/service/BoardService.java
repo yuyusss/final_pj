@@ -54,4 +54,21 @@ public class BoardService implements IBoardService{
 		dao.deleteBoard(boardVo);
 	}
     
+    @Override
+	public void deleteReply(String replyVo) {
+		// TODO Auto-generated method stub
+		dao.deleteReply(replyVo);
+	}
+    
+    @Override
+	public void updateBoard(BoardVO b) {
+		dao.updateBoard(b);
+		
+	}
+	
+    @Override
+	public BoardVO detailViewBoard(int idx) {
+		return dao.detailViewBoard(idx);
+	}
+    
 }

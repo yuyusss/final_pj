@@ -13,6 +13,9 @@ public interface IBoardDAO {
     public List<ReplyVO> getReply(int boardIdx);
     public int updatereviewcnt(int idx);
     public int count() throws Exception;
-    void deleteBoard(String boardVO);
+    void deleteBoard(String boardVo);
+    void deleteReply(String replyVo);
+    void updateBoard(BoardVO b);
+    BoardVO detailViewBoard(int idx);
 }
 	

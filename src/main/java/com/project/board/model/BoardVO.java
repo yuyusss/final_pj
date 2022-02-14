@@ -72,4 +72,12 @@ public class BoardVO {
         this.writedate= writedate;
     }
 
+	@Override
+	public String toString() {
+		return "BoardVO [idx=" + idx + ", title=" + title + ", contents=" + contents + ", image=" + image + ", hits="
+				+ hits + ", writedate=" + writedate + "]";
+	}
+    
+    
+
 }

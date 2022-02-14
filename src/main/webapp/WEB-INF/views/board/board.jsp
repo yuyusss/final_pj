@@ -85,7 +85,7 @@
 		<div class="row">
 			<div class="board">
 				<h2>공연 요청</h2>
-				<hr>
+				<hr><hr>
 				<br>
 				<table id="example" class="display" style="width: 100%">
 					<thead>
@@ -97,9 +97,10 @@
 					</tbody>
 				</table>
 				<br>
-				<button type="button"  id="writeBtn">글쓰기</button>
+				
 			</div>
 		</div>
+		<button type="button" class="writeBtn" id="writeBtn">글쓰기</button>
 	</div>
 	<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
 </body>

@@ -1,4 +1,105 @@
 @charset "UTF-8";
+.writeinput {
+  width: 500px;
+  height: 40px;
+  font-size: 15px;
+  border: 0;
+  border-radius: 15px;
+  outline: none;
+  padding-left: 10px;
+  background-color: rgb(233, 233, 233);
+}
+
+.writeinputbody {
+  width: 500px;
+  height: 570px;
+  font-size: 15px;
+  border: 0;
+  border-radius: 15px;
+  outline: none;
+  padding-left: 10px;
+  background-color: rgb(233, 233, 233);
+}
+
+.replybtn {
+    background-color: #5fb7d1; 
+    border: none;
+    color: white;
+    padding: 1px 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 1px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.replybtn {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #5fb7d1;
+}
+
+.btn {
+    background-color: #5fb7d1; 
+    border: none;
+    color: white;
+    padding: 4px 9px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.btn {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #5fb7d1;
+}
+
+.btn:hover {
+    background-color: #5fb7d1;
+    color: white;
+}
+
+.replybtn:hover {
+    background-color: #5fb7d1;
+    color: white;
+}
+
+
+
+.writeBtn {
+    background-color: #5fb7d1; 
+    border: none;
+    color: white;
+    padding: 9px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.writeBtn {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #5fb7d1;
+}
+
+.writeBtn:hover {
+    background-color: #5fb7d1;
+    color: white;
+}
+
+
 
 .boardcontainer{
 	width: 1080px;
@@ -16,6 +117,20 @@
 	margin-top:60px;
 	margin-left:18px;
 	height: 810px;
+	margin-bottom:120px
+}
+
+.writecontainer{
+	width: 1080px;
+	margin-top:60px;
+	margin-left:-5px;
+	height: 980px;
+	
+}
+
+
+#writeBtn{
+	text-align:right;
 }
 
 a{
@@ -26,7 +141,8 @@ thead{
 }
 
 tbody>tr:hover { 
-	background-color: rgb(255, 232, 232)
+	
+	background-color:#5fb7d1;
 }
 
 #deletebtn{
@@ -92,12 +208,43 @@ table {
   th, td {
     border-bottom: 1px solid #444444;
     padding: 10px;
+    
   }
 
 .board h2{
 	text-align:left;
 }
 
+
 #boardmenu{
 	text-align:left; 
 }
+
+.replyinput{
+	width: 200px;
+    height: 25px;
+    padding: 0 19px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    outline: none;
+    margin:5px;
+    margin-left:45px;
+}
+
+.replymaininput{
+	width: 200px;
+    height: 25px;
+    padding: 0 19px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    outline: none;
+    margin:5px;
+    margin-bottom:40px;
+}
+
