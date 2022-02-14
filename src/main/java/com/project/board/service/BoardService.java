@@ -37,4 +37,11 @@ public class BoardService {
         return m.getReply(boardIdx);
     }
     
+    public int updatereviewcnt(int idx) throws Exception {
+		return m.updatereviewcnt(idx);
+	}
+    
+    
+    
+    
 }

@@ -6,7 +6,7 @@
  <mapper namespace="com.project.board.mapper.BoardMapper">
     <select id="getBoard" resultType="com.project.board.dao.Board">
         SELECT
-        idx, title, image, contents
+        idx, title, image, contents,hits,writedate
         FROM
         tb_board
         ORDER BY idx asc
@@ -62,7 +62,9 @@
         board_idx = #{boardIdx}
         order by reply_idx asc
     </select>
-    
+    <update id="updatereviewcnt">
+		update tb_board set hits = hits + 1 where idx = #{idx}
+	</update>
 </mapper>
   
   
