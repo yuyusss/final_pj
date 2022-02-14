@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link href="<c:url value='/css/board.css'/>" rel="stylesheet" type="text/css">
 <script src="<c:url value='/js/board.js'/>"></script>
+<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -29,7 +30,7 @@
 function drawReply(replys) {
 	$("#cnt").text("등록된 댓글 - " + replys.length)
 	var html = '';
-	html += '<h4>댓글 작성</h4><form class="form-inline" action="writeReply" method="post"><input type="hidden" name="idx" value = "' + IDX + '"><input type="hidden" name="replyIdx" value = "0"><input type="text" class="form-control mb-2 mr-sm-2" id="contents" placeholder="답글" name="contents"><button type="submit" class="btn btn-primary mb-2" >등록</button></form>';
+	html += '<h4>댓글 작성</h4><form class="form-inline" action="writeReply" method="post"><input type="hidden" name="idx" value = "' + IDX + '"><input type="hidden" name="replyIdx" value = "0"><input type="text" class="form-control mb-2 mr-sm-2" id="contents" placeholder="답글" name="contents"><button type="submit" >등록</button></form>';
 	html += '<hr>'
 	replys.forEach(function(reply){ 
 		if (reply.replyIdx == 0) {
@@ -39,7 +40,7 @@ function drawReply(replys) {
 			})
 			html += '<div class="row"><div class="col-sm-12">';
 			html += '<form class="form-inline" action="writeReply" method="post"><label for="pwd" class="mr-sm-2">' + reply.contents + '(' + rc + ')' + '</label>';
-			html += '<input type="hidden" name="idx" value = "' + IDX + '"><input type="hidden" name="replyIdx" value = "' + reply.idx + '"><input type="text" class="form-control mb-2 mr-sm-2" id="contents" placeholder="답글" name="contents"><button type="submit" class="btn btn-primary mb-2">등록</button></form>';
+			html += '<input type="hidden" name="idx" value = "' + IDX + '"><input type="hidden" name="replyIdx" value = "' + reply.idx + '"><input type="text" class="form-control mb-2 mr-sm-2" id="contents" placeholder="답글" name="contents"><button type="submit">등록</button></form>';
 			html += '<div class="row"><div class="col-sm-12 sub' + reply.idx + '"></div></div></div></div>';
 		}
 	})
@@ -53,7 +54,7 @@ function drawReply(replys) {
 			var subHtml = '';
 			subHtml = '<div class="row"><div class="col-sm-12 subReply">';
 			subHtml += '<form class="form-inline" action="writeReply" method="post"><label for="pwd" class="mr-sm-2"><h1>↳</h1>' + reply.contents + '(' + rc + ')'  +'</label>'
-			subHtml += '<input type="hidden" name="idx" value = "' + IDX + '"><input type="hidden" name="replyIdx" value = "' + reply.idx + '"><input type="text" class="form-control mb-2 mr-sm-2" id="contents" placeholder="답글" name="contents"><button type="submit" class="btn btn-primary mb-2">등록</button></form>';
+			subHtml += '<input type="hidden" name="idx" value = "' + IDX + '"><input type="hidden" name="replyIdx" value = "' + reply.idx + '"><input type="text"class="form-control mb-2 mr-sm-2" id="contents" id="contents" placeholder="답글" name="contents"><button type="submit" >등록</button></form>';
 			subHtml += '<div class="row"><div class="col-sm-12 sub' + reply.idx + '"></div></div></div></div>';
 			$(".sub" + reply.replyIdx).append(subHtml);
 		}
@@ -89,11 +90,6 @@ function drawReply(replys) {
   </script>
 </head>
 <body>
-
-<div class="jumbotron text-center" style="margin-bottom:0">
-  <h1>top</h1>
-</div>
-
 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; 메뉴</span>
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -106,7 +102,7 @@ function drawReply(replys) {
 	<div class="row">
 		<div class="col-sm-12">
 	      <h2 id = "title"></h2>
-	      <hr style="border: solid 3px black;">
+	      <hr>
 	      <br>
 		</div>
 	</div> 
@@ -128,10 +124,12 @@ function drawReply(replys) {
 	<br>
 	<br>
 	<br>
+	<br>
+	<br>
 	<div class="row">
 		<div class="col-sm-12">
 	      <h2 id = "cnt"></h2>
-	      <hr style="border: solid 3px black;">
+	      <hr>
 	      <br>
 	      <div id = "replyArea"></div>
 		</div>

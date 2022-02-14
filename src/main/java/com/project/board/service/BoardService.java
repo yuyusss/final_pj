@@ -32,8 +32,16 @@ public class BoardService {
     public boolean addReply(Reply r) {
         return m.addReply(r);
     }
+
     public List<Reply> getReply(int boardIdx) {
         return m.getReply(boardIdx);
     }
+    
+    public int updatereviewcnt(int idx) throws Exception {
+		return m.updatereviewcnt(idx);
+	}
+    
+    
+    
     
 }
