@@ -21,8 +21,8 @@
 }
 
 #necessaryTxt_box{
-	width: 580px;
-	height: 18px;
+	width: 640px;
+	height: 25px;
 	margin: 0 auto;
 	text-align:right;
 	display: block;
@@ -83,28 +83,15 @@
     outline: none;
     vertical-align: top;
     margin: 3px;
-    margin-left: 20px;
+    margin-left: 60px;
+    margin-bottom: 10px;
 }
+
 
 .necessary{
 	color : red;	
 }
 
-#birth input[type=text]{
-	width: 66px;
-    height: 44px;
-    padding: 0 15px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-    color: #333;
-    line-height: 20px;
-    border-radius: 3px;
-    background: #fff;
-    outline: none;
-    vertical-align: top;
-    margin: 3px;
-    margin-left: 20px;
-}
 
 .submitBox{
 	width: 240px;
@@ -121,8 +108,20 @@
     border-radius: 3px;
     border: 1px solid #ccc;
     background: #fff;
+    margin-bottom: 50px;
+}
+
+#submitBox:hover{
+	color : red;
+	background : rgb(192, 192, 192); 
+	transition : 0.5s;	 
 }
 
 #checkboxBox{
-	margin-left: 16px;
+	margin-left: 60px;
+	
 }
+
+
+
+
