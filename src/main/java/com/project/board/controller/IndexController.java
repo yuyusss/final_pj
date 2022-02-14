@@ -8,7 +8,9 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import com.project.board.model.CalendarVO;
+import com.project.board.model.MediaVO;
 import com.project.board.service.CalendarService;
+import com.project.board.service.MediaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,10 +30,13 @@ public class IndexController {
     @Autowired
     private BoardService s;
     @Autowired
-    CalendarService service;
-   
+    MediaService service;
+
     @RequestMapping(value="/", method=RequestMethod.GET)
-    public String index() {
+    public String index(Model model) {
+        ArrayList<MediaVO> mediaList = service.listAllMedia();
+        model.addAttribute("mediaList", mediaList);
+
         return "index2";
     }
     

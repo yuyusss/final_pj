@@ -121,7 +121,15 @@
 .localHotChoice{
     width: 700px;
     border: 1px solid seagreen;
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.svg{
+    height: 450px;
 }
 
 

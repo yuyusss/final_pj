@@ -34,7 +34,7 @@
 
     <!-- header -->
     <div id="logoBox">
-        <a href="/"><img src="images/logo.jpeg" id="logoImage"></a>
+        <a href="/"><img src="<c:url value="images/logo.jpeg" />" id="logoImage"></a>
     </div>
     <div id="topMenuBox">
         <div class="topMenu">
@@ -43,7 +43,7 @@
                     <a href="/">ΞΞ 전체 카테고리</a>
                     <ul class="sub">
                         <li><a href="/">뮤지컬</a></li>
-                        <li><a href="/">미디어</a></li>
+                        <li><a href="/media">미디어</a></li>
                         <li><a href="/">베스트</a></li>
                         <li><a href="/">커뮤니티</a></li>
                         <li><a href="/">공연장</a></li>
