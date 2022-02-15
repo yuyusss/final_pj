@@ -15,7 +15,7 @@ import java.util.ArrayList;
 @Controller
 public class CalendarController {
     @Autowired
-    CalendarService service;
+    private CalendarService service;
 
     @GetMapping(params = "method=list")
     public String list(){

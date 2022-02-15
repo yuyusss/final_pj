@@ -25,16 +25,20 @@ public class IndexController {
     @Autowired
     MediaService service;
 
-    @Autowired
-    CalendarService service;
+    @RequestMapping("/")
+	public String index() {
+		return "/index2";
+	}
 
-
-    @RequestMapping(value="/", method=RequestMethod.GET)
-    public String index(Model model) {
-        ArrayList<MediaVO> mediaList = service.listAllMedia();
-        model.addAttribute("mediaList", mediaList);
-
-        return "index2";
-    }
+	/*
+	 * @RequestMapping(value="/", method=RequestMethod.GET) public String
+	 * index(Model model) { ArrayList<MediaVO> mediaList = service.listAllMedia();
+	 * model.addAttribute("mediaList", mediaList);
+	 * 
+	 * return "index2"; }
+	 * 
+	 * 
+	 * 
+	 */
     
 }

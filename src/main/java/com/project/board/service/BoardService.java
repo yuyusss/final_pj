@@ -34,12 +34,9 @@ public class BoardService implements IBoardService{
     @Override
     public boolean addReply(ReplyVO r) {
         return dao.addReply(r);
-
-
-    public List<Reply> getReply(int boardIdx) {
-        return m.getReply(boardIdx);
-
     }
+
+
     @Override
     public List<ReplyVO> getReply(int boardIdx) {
         return dao.getReply(boardIdx);
