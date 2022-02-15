@@ -54,24 +54,25 @@
 <div class="writecontainer">
 	<div class="row">
 		<div class="board">
-	      <h2>글쓰기</h2>
+	      <h2>수정</h2>
 	      <hr><hr><br>
-	        <form id="boardform" name="boardform" class="boardform" action="writeAction" method = "POST" enctype="multipart/form-data" onSubmit="return Checkform()">
+	        <form id="boardform" name="boardform" class="boardform" action="<c:url value='/board/updateBoard'/>" method = "POST" enctype="multipart/form-data" onSubmit="return Checkform()">
 				<div class="form-group">
 				  <label for="usr">제목:</label>
-				  <input type="text" class="writeinput form-control" id="title" name ="title">
+				  <input type="text" class="writeinput form-control" id="title" name ="title" value="${board.title}">
 				</div>
-			    <br>
+				<br>
 			    <div class="form-group">
 				  <label for="comment">내용:</label>
-				  <input class="writeinputbody form-control" rows="5" id="contents" name = "contents"></input>
+				  <input class="writeinputbody form-control"  id="contents" name = "contents" value="${board.contents}">
 				</div>
-				<br>
-				<div class="form-group"style="margin-left: -216px;">
+				<input type="hidden" name="idx" id="idx" value="${board.idx}" />
+			    <br>
+			    <div class="form-group" style="margin-left: -216px;">
 			      <input type="file" class="form-control-file border" name="file">
 			    </div>
-				<br>
-			    <button class="writeBtn" type="submit">글쓰기</button>
+			    
+			    <button type="submit" class="writeBtn">수정</button>
 			  </form>
 		</div>
 	</div>
