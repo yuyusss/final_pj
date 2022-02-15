@@ -16,6 +16,14 @@
     text-align: center;
 }
 
+#logintitle_text {
+	width: 400px;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+
 .loginSection{
     width: 360px;
     margin: 0 auto;
@@ -43,6 +51,8 @@
     border-radius: 3px;
     font-size: 10;
     text-align: center;
+    margin-top: 20px;
+    color: black;
 }
 
 .loginButton .text_type {

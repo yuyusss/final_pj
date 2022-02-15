@@ -8,13 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ICalendarDAO {
-    @Autowired
-    private SqlSession sqlSession;
+public interface ICalendarDAO {
+    ArrayList<CalendarVO> calenList(); // 전체 일정 조회
 
-    private static final String namespace = "com.project.board.dao.ICalendarDAO";
-
-    public List<CalendarVO> showSchedule() throws Exception{
-       return sqlSession.selectList(namespace + ".showSchedule");
-    }
 }
