@@ -64,7 +64,7 @@
 				<br>
 			    <div class="form-group">
 				  <label for="comment">내용:</label>
-				  <input class="writeinputbody"  id="contents" name = "contents" value="${board.contents}">
+				  <input class="writeinputbody form-control"  id="contents" name = "contents" value="${board.contents}">
 				</div>
 				<input type="hidden" name="idx" id="idx" value="${board.idx}" />
 			    <br>

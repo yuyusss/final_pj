@@ -71,4 +71,12 @@ public class BoardService implements IBoardService{
 		return dao.detailViewBoard(idx);
 	}
     
+	/*
+	 * @Override public int getBoardListCnt() throws Exception {
+	 * 
+	 * return dao.getBoardListCnt();
+	 * 
+	 * }
+	 */
+
 }

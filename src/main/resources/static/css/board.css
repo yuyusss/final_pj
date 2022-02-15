@@ -1,4 +1,11 @@
 @charset "UTF-8";
+.searchcontainer{
+	width:360px;
+	margin-left:730px;
+	margin-bottom:-36px;
+}
+
+
 .writeinput {
   width: 500px;
   height: 40px;
@@ -72,7 +79,9 @@
     color: white;
 }
 
-
+#searchbtn{
+	width:50px;
+}
 
 .writeBtn {
     background-color: #5fb7d1; 
@@ -93,6 +102,7 @@
     color: black; 
     border: 2px solid #5fb7d1;
 }
+
 
 .writeBtn:hover {
     background-color: #5fb7d1;
@@ -116,7 +126,6 @@
 	width: 1080px;
 	margin-top:60px;
 	margin-left:18px;
-	height: 810px;
 	margin-bottom:120px
 }
 
@@ -140,9 +149,21 @@ thead{
 	border:3px solid black;
 }
 
+.searchtable > tr:hover{
+	background-color:white;
+}
+
+.form-control{
+	height:27px;
+}
+
 tbody>tr:hover { 
 	
 	background-color:#5fb7d1;
+}
+
+.pull-right{
+	border:none;
 }
 
 #deletebtn{
@@ -205,11 +226,12 @@ table {
     border-top: 1px solid #444444;
     border-collapse: collapse;
   }
-  th, td {
+  
+th, td {
     border-bottom: 1px solid #444444;
     padding: 10px;
     
-  }
+}
 
 .board h2{
 	text-align:left;

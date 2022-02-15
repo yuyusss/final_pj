@@ -72,7 +72,7 @@
 			    </div>
 				<br>
 			    <button class="writeBtn" type="submit">글쓰기</button>
-			  </form>
+			 </form>
 		</div>
 	</div>
 </div>
