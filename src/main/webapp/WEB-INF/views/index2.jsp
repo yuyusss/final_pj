@@ -5,136 +5,10 @@
 <html>
 <head>
     <title>MUTRODUCE</title>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // var calendarEl = document.getElementById('calendar');
-            var calendarEl = $('#calendar')[0];
+    <script src="<c:url value="/js/weather_location.js" />"></script>
+    <script src="<c:url value="/js/calendar.js" />"></script>
+    <link href="<c:url value='/css/location_map.css'/>" rel="stylesheet" type="text/css">
 
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                expandRows: true,
-                /* Day 캘린더에서 시작 시간과 종료 시간 설정 */
-                slotMinTime: '09:00',
-                slotMaxTime: '20:00',
-                headerToolbar: {
-
-                    left: "prev title next",
-                    right: 'dayGridMonth, listWeek'
-                },
-                initialView: 'dayGridMonth',
-                timeZone: 'UTC',
-                fixedWeekCount: false, // 해당 월의 주 만큼만 보여주기
-                navLinks: false, // 날짜 누르면 해당 날짜의 일정 보여주게
-                navLinkDayClick: function (date, jsEvent) {
-                    console.log("day", date.toISOString());
-                    console.log('coords', jsEvent.pageX, jsEvent.pageY)
-                },
-                dayMaxEvents: true, // 일정이 많을 경우 + more로 표기됨
-                locale: 'ko',
-                selectMirror: true,
-                // 이벤트명 : function(){} : 각 날짜에 대한 이벤트를 통해 처리할 내용
-                select: function(arg){
-                    console.log(arg);
-
-                    var title = prompt("입력할 일정: ");
-                    // title 값 있을 때, 화면에 calendar.addEvent() json 형식의 일정 추가
-                    if(title) {
-                        calendar.addEvent({
-                            title: title,
-                            start: arg.start,
-                            end: arg.end,
-                            allDay: arg.allDay
-                        })
-                    }
-                    calendar.unselect()
-                },
-                eventClick: function (arg) {
-                    // 있는 일정 클릭 시,
-                    console.log("#등록된 일정 클릭#");
-                    console.log(arg.event);
-                },
-                events: function(info, successCallback, failureCallback){
-                    $.ajax({
-                        type: "get",
-                        url: "${path}/calendar.do?method=data",
-                        dataType: "json"
-                    })
-                }
-            });
-
-            calendar.render();
-        });
-
-    </script>
-    <style>
-        #calendar {
-            height: 100%;
-            width: 400px;
-        }
-
-        .OUTLINE {
-            stroke-linejoin:round;
-            stroke: #ffffff;
-            stroke-width: 2;
-        }
-        #CD11:hover {
-            fill: #f1c40f;
-        }
-        #CD26:hover {
-            fill: #16a085;
-        }
-        #CD27:hover {
-            fill: #f39c12;
-        }
-        #CD28:hover {
-            fill: #2ecc71;
-        }
-        #CD29:hover {
-            fill: #e67e22;
-        }
-        #CD30:hover {
-            fill: #27ae60;
-        }
-        #CD31:hover {
-            fill: #d35400;
-        }
-        #CD36:hover {
-            fill: #3498db;
-        }
-        #CD41:hover {
-            fill: #e74c3c;
-        }
-        #CD42:hover {
-            fill: #2980b9;
-        }
-        #CD43:hover {
-            fill: #c0392b;
-        }
-        #CD44:hover {
-            fill: #9b59b6;
-        }
-        #CD45:hover {
-            fill: #8e44ad;
-        }
-        #CD46:hover {
-            fill: #34495e;
-        }
-        #CD47:hover {
-            fill: #2c3e50;
-        }
-        #CD48:hover {
-            fill: #1abc9c;
-        }
-        #CD50:hover {
-            fill: #f1c40f;
-        }
-        .TEXT {
-            fill: #ffffff;
-            font-size: 24px;
-            font-weight: bold;
-            text-anchor: middle;
-            alignment-baseline: middle;
-        }
-    </style>
 </head>
 <body>
 
@@ -288,42 +162,16 @@
             </div>
         </div>
         <div class="localHotChoice">
-            <div class="bannerContent">
-                <div class="bannerPoster">
-                    <img src="https://image.yes24.com/themusical/fileStorage/ThemusicalAdmin/Play/Image/20180731125240467854511c5f46d8a5eaae24a239ae6e.jpg"/>
+            <c:forEach begin="0" end="7">
+                <div class="bannerContent">
+                    <div class="bannerPoster">
+                        <img src="https://image.yes24.com/themusical/fileStorage/ThemusicalAdmin/Play/Image/20180731125240467854511c5f46d8a5eaae24a239ae6e.jpg"/>
+                    </div>
+                    <div class="bannerPosterTitle">
+                        지킬앤하이드
+                    </div>
                 </div>
-                <div class="bannerPosterTitle">
-                    지킬앤하이드
-                </div>
-            </div><div class="bannerContent">
-            <div class="bannerPoster">
-                <img src="https://image.yes24.com/themusical/fileStorage/ThemusicalAdmin/Play/Image/20180731125240467854511c5f46d8a5eaae24a239ae6e.jpg"/>
-            </div>
-            <div class="bannerPosterTitle">
-                지킬앤하이드
-            </div>
-        </div><div class="bannerContent">
-            <div class="bannerPoster">
-                <img src="https://image.yes24.com/themusical/fileStorage/ThemusicalAdmin/Play/Image/20180731125240467854511c5f46d8a5eaae24a239ae6e.jpg"/>
-            </div>
-            <div class="bannerPosterTitle">
-                지킬앤하이드
-            </div>
-        </div><div class="bannerContent">
-            <div class="bannerPoster">
-                <img src="https://image.yes24.com/themusical/fileStorage/ThemusicalAdmin/Play/Image/20180731125240467854511c5f46d8a5eaae24a239ae6e.jpg"/>
-            </div>
-            <div class="bannerPosterTitle">
-                지킬앤하이드
-            </div>
-        </div><div class="bannerContent">
-            <div class="bannerPoster">
-                <img src="https://image.yes24.com/themusical/fileStorage/ThemusicalAdmin/Play/Image/20180731125240467854511c5f46d8a5eaae24a239ae6e.jpg"/>
-            </div>
-            <div class="bannerPosterTitle">
-                지킬앤하이드
-            </div>
-        </div>
+            </c:forEach>
         </div>
     </div>
 </div>
@@ -331,6 +179,5 @@
 <!-- BOTTOM -->
 <jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true'/>
 
-</div>
 </body>
 </html>

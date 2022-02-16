@@ -5,7 +5,9 @@
 <html>
 <head>
 </head>
-<body>
+
+<a href="https://www.ncloud.com/"><img id="chatBtn" src="<c:url value="/images/chatBtn.png" />" width="80" height="70"></a>
+
 <!-- footerBox -->
 <footer class="footerBox">
     <div class="footerMenuWrap">

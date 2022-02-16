@@ -25,8 +25,8 @@ import com.project.board.dao.IBoardDAO;
 @MapperScan(basePackageClasses = IBoardDAO.class)
 
 @ComponentScan(basePackages = "com.project.board")
-@MapperScan(basePackageClasses = Board.class)
-@MapperScan(basePackageClasses = Reply.class)
+// @MapperScan(basePackageClasses = Board.class)
+// @MapperScan(basePackageClasses = Reply.class)
 
 @MapperScan(basePackages = "com.project.board")
 @MapperScan(basePackageClasses = IMediaDAO.class)
