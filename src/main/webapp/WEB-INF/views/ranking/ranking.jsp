@@ -39,7 +39,7 @@
 	<tr>
 	<th>랭킹</th>
 	<th>공연명</th>
-	<th>공연일시</th>
+	<th>공연 일시</th>
 	<th>공연장소</th>
 	</tr>
 	<thead>
