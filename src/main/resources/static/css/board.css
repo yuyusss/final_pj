@@ -49,6 +49,30 @@
     border: 2px solid #5fb7d1;
 }
 
+.listbtn {
+	background-color: #5fb7d1; 
+    border: none;
+    color: white;
+    padding: 9px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-left:500px;
+    margin-top:20px;
+}
+
+.listbtn {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #5fb7d1;
+}
+
+
 .btn {
     background-color: #5fb7d1; 
     border: none;
@@ -75,6 +99,11 @@
 }
 
 .replybtn:hover {
+    background-color: #5fb7d1;
+    color: white;
+}
+
+.listbtn:hover {
     background-color: #5fb7d1;
     color: white;
 }
@@ -115,8 +144,7 @@
 	width: 1080px;
 	margin-top:60px;
 	margin-left:-5px;
-	height: 980px;
-	
+	margin-bottom: 150px
 }
 
 .board{

@@ -47,8 +47,8 @@
 					<li class="menu link"><a href="/board">공연 요청</a></li>
 					<li class="menu link"><a href="#">장르별 추천</a>
 						<ul class="hide">
-							<li class="subMenu"><a href="<c:url value='/board3'/>">배우 별</a></li>
-							<li class="subMenu"><a href="<c:url value='/board4'/>">뮤지컬 별</a></li>
+							<li class="subMenu"><a href="/board3">배우 별</a></li>
+							<li class="subMenu"><a href="/board4">뮤지컬 별</a></li>
 						</ul></li>
 					<li class="menu link"><a href="/boardinformation">정보 게시판</a></li>
 				</ul>
@@ -79,7 +79,7 @@
 	</div>
 		<div class="row">
 			<div class="board">
-				<h2>공연 요청</h2>
+				<h2>뮤지컬 별 게시판</h2>
 				<hr><hr>
 				<br>
 				<table id="example" class="display" style="width: 100%">
@@ -174,22 +174,22 @@ function fn_prev(page, range, rangeSize) {
 	$(document).ready(
 			function() {
 				$("#writeBtn").click(function() {
-					location.href = "write";
+					location.href = "write4";
 				})
 				$.ajax({
-					url : "boardList",
+					url : "boardList4",
 					success : function(result) {
 						var html = "";
 						result.forEach(function(item) {
-							html += "<tr> <td>"+item.idx+"</td><td></td><td><a style='text-decoration:none;' href = 'view?idx=" + item.idx
-									+ "'>" + item.title + "</a></td><td>"+item.contents+"</td><td>"+item.hits+"</td><td>"+item.writedate+"</td><td><a href='/board/deleteboard/"+item.idx+"' style='text-decoration:none;'>&#10060;</a></td>"
+							html += "<tr> <td>"+item.idx+"</td><td></td><td><a style='text-decoration:none;' href = 'view4?idx=" + item.idx
+									+ "'>" + item.title + "</a></td><td>"+item.contents+"</td><td>"+item.hits+"</td><td>"+item.writedate+"</td><td><a href='/board/deleteboard4/"+item.idx+"' style='text-decoration:none;'>&#10060;</a></td>"
 						})
 						$("#listArea").append(html)
 						$('#example').DataTable();
 					}
 				});
 				$("#deleteBtn").click(function() {
-					location.href = "write";
+					location.href = "write4";
 				})
 			});
 	
