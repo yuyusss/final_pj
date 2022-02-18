@@ -17,28 +17,27 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.project.board.model.BoardVO;
-import com.project.board.model.ReplyVO;
-import com.project.board.service.BoardService;
+import com.project.board.model.BoardVO3;
+import com.project.board.model.BoardVO4;
+import com.project.board.model.ReplyVO4;
+import com.project.board.service.BoardService4;
 
 @Controller
-public class BoardController {
+public class BoardController4 {
 	 	@Autowired
-	    private BoardService s;
+	    private BoardService4 s;
 		private File none;
 	    
-		
-		
-	    @RequestMapping(value="/board", method=RequestMethod.GET)
-	    public String board() {
+	    @RequestMapping(value="/board4", method=RequestMethod.GET)
+	    public String board4() {
 	    	
-	        return "board/board";
+	        return "board/board4";
 	    }
 		
-	    @RequestMapping(value="/boardList", method=RequestMethod.GET)
+	    @RequestMapping(value="/boardList4", method=RequestMethod.GET)
 	    @ResponseBody
-	    public List<BoardVO> boardList(){
-	    	return s.getBoard();
+	    public List<BoardVO4> boardList4(){
+	    	return s.getBoard4();
 	    }
 	    
 		/*
@@ -55,13 +54,13 @@ public class BoardController {
 		 * model.addAttribute("pagination", pagination); return s.getBoard(); }
 		 */
 	    
-	    @RequestMapping(value="/write", method=RequestMethod.GET)
-	    public String write() {
-	        return "board/write";
+	    @RequestMapping(value="/write4", method=RequestMethod.GET)
+	    public String write4() {
+	        return "board/write4";
 	    }
 		
-	    @RequestMapping(value="/writeAction", method=RequestMethod.POST)
-	    public String writeAction(
+	    @RequestMapping(value="/writeAction4", method=RequestMethod.POST)
+	    public String writeAction3(
 	            HttpServletRequest req,@RequestParam("file") MultipartFile file,Model model,
 	            @RequestParam("title")String title, 
 	            @RequestParam("contents")String contents, String hits,Date writedate) throws IllegalStateException, IOException {
@@ -80,8 +79,8 @@ public class BoardController {
 			//model로 저장
 			model.addAttribute("originalFileName",originalFileName);
 			
-	        s.addBoard(new BoardVO(0, title, contents, file.getOriginalFilename(), hits,writedate));
-	        return "board/board";
+	        s.addBoard4(new BoardVO4(0, title, contents, file.getOriginalFilename(), hits,writedate));
+	        return "board/board4";
 	    }
 	    
 		/*
@@ -99,69 +98,67 @@ public class BoardController {
 		 * file.getOriginalFilename(), hits,writedate)); return "board/board"; }
 		 */
 
-	    @RequestMapping(value="/view", method=RequestMethod.GET)
-	    public String view() {
-	        return "board/view";
+	    @RequestMapping(value="/view4", method=RequestMethod.GET)
+	    public String view4() {
+	        return "board/view4";
 	    }
 		
-	    @RequestMapping(value="/boardView", method=RequestMethod.GET)
+	    @RequestMapping(value="/boardView4", method=RequestMethod.GET)
 	    @ResponseBody
-	    public BoardVO boardList(@RequestParam("idx")int idx) throws Exception{
+	    public BoardVO4 boardList4(@RequestParam("idx")int idx) throws Exception{
 	        System.out.println("boardView, idx = " + idx);
-	    	s.updatereviewcnt(idx);
-	    	BoardVO vo = s.getBoardOne(idx);
+	    	s.updatereviewcnt4(idx);
+	    	BoardVO4 vo = s.getBoardOne4(idx);
 	    	System.out.println(vo.getImage());
-	    	return s.getBoardOne(idx);
+	    	return s.getBoardOne4(idx);
 	    }
 	    
 		
 	    
-	    @RequestMapping(value="/replyList", method=RequestMethod.GET)
+	    @RequestMapping(value="/replyList4", method=RequestMethod.GET)
 	    @ResponseBody
-	    public List<ReplyVO> replyList(@RequestParam("idx")int boardIdx){
-	        return s.getReply(boardIdx);
+	    public List<ReplyVO4> replyList4(@RequestParam("idx")int boardIdx){
+	        return s.getReply4(boardIdx);
 	    }
 	    
-	    @RequestMapping(value="/writeReply", method=RequestMethod.POST)
-	    public String writeReply(
+	    @RequestMapping(value="/writeReply4", method=RequestMethod.POST)
+	    public String writeReply4(
 	            @RequestParam("idx")int idx,
 	            @RequestParam("replyIdx")int replyIdx,
 	            @RequestParam("contents")String contents) {
-	        s.addReply(new ReplyVO(0, idx,replyIdx, contents));
-	        return "redirect:view?idx=" + idx;
+	        s.addReply4(new ReplyVO4(0, idx,replyIdx, contents));
+	        return "redirect:view4?idx=" + idx;
 	    }
 	   
-	    @RequestMapping(value="/boardListView", method=RequestMethod.GET)
-	    public String boardListView() {
-	        return "board/boardListView";
+	    @RequestMapping(value="/boardListView4", method=RequestMethod.GET)
+	    public String boardListView4() {
+	        return "board/boardListView4";
 	    }
 	    
-	    @RequestMapping("/board/deleteboard/{idx}")
-		public String deleteBoard(@PathVariable String idx) {
-	    	s.deleteBoard(idx);
-			return "redirect:/board";
+	    @RequestMapping("/board/deleteboard4/{idx}")
+		public String deleteBoard4(@PathVariable String idx) {
+	    	s.deleteBoard4(idx);
+			return "redirect:/board4";
 		}
 	    
-	    @RequestMapping("/board/deletereply/{pageIdx}/{idx}")
-		public String deleteReply(@PathVariable String idx, @PathVariable String pageIdx) {
-	    	System.out.println("deletereply - idx " + idx);
-	    	s.deleteReply(idx);
+	    @RequestMapping("/board/deletereply4/{pageIdx}/{idx}")
+		public String deleteReply4(@PathVariable String idx, @PathVariable String pageIdx) {
+	    	s.deleteReply4(idx);
 	    
-			return "redirect:/view?idx=" + pageIdx;
+			return "redirect:/view4?idx=" + pageIdx;
 		}
 	    
 	    
 	    
-	    @RequestMapping("/board/update/{idx}")
-		public String updateBoardForm(@PathVariable int idx, Model model) {
-			BoardVO board = s.detailViewBoard(idx);
+	    @RequestMapping("/board/update4/{idx}")
+		public String updateBoardForm4(@PathVariable int idx, Model model) {
+			BoardVO4 board = s.detailViewBoard4(idx);
 			model.addAttribute("board", board);
-			return "board/update";
+			return "board/update4";
 		}
 	    
-	    @RequestMapping("/board/updateBoard")
-		public String detailViewBoard(BoardVO board,@RequestParam("file") MultipartFile file,Model model) throws IllegalStateException, IOException {
-	    	System.out.println(board);
+	    @RequestMapping("/board/updateBoard4")
+		public String detailViewBoard3(BoardVO4 board,@RequestParam("file") MultipartFile file,Model model) throws IllegalStateException, IOException {
 	    	
 	    	//1. 파일 저장 경로 설정 : 실제 서비스 되는 위치(프로젝트 외부에 저장)
 			String uploadPath="C:/springWorkspace/upload/";
@@ -180,8 +177,8 @@ public class BoardController {
 			board.setImage(file.getOriginalFilename());
 			        
 	    	
-			s.updateBoard(board);
-			return "redirect:/board";
+			s.updateBoard4(board);
+			return "redirect:/board4";
 		}
 	    
 	    

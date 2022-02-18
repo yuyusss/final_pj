@@ -98,7 +98,7 @@
 function drawReply(replys) {
 	$("#cnt").text("등록된 댓글 - " + replys.length)
 	var html = '';
-	html += '<h4>댓글 작성</h4><form class="form-inline replyform" id="replyform" name="replyform" action="writeReply" method="post" onSubmit="return Checkreplyform()" ><input type="hidden" name="idx" value = "' + IDX + '"><input type="hidden" name="replyIdx" value = "0"><input type="text" class="contents replymaininput form-control mb-2 mr-sm-2" id="contents" placeholder="댓글" name="contents"><button class="replybtn" type="submit" >등록</button></form>';
+	html += '<h4>댓글 작성</h4><form class="form-inline replyform" id="replyform" name="replyform" action="writeReply3" method="post" onSubmit="return Checkreplyform()" ><input type="hidden" name="idx" value = "' + IDX + '"><input type="hidden" name="replyIdx" value = "0"><input type="text" class="contents replymaininput form-control mb-2 mr-sm-2" id="contents" placeholder="댓글" name="contents"><button class="replybtn" type="submit" >등록</button></form>';
 	html += '<hr>'
 	replys.forEach(function(reply, tempIndex){ 
 		if (reply.replyIdx == 0) {
@@ -107,7 +107,7 @@ function drawReply(replys) {
 				if (reply.idx == i.replyIdx) rc++;
 			})
 			html += '<div class="row"><div class="col-sm-12">';
-			html += '<form class="form-inline" id="replyform1" action="writeReply" method="post" onSubmit="return CheckRereplyform(' + tempIndex + ')"><label for="pwd" class="mr-sm-2">댓글 내용 :  <font size="5">' + reply.contents + '</font>  (대댓글 수 : ' + rc + ')'  +'<a href="/board/deletereply/'+ IDX + '/'+reply.idx+ '" style="text-decoration:none;"> &#10060;</a></label>';
+			html += '<form class="form-inline" id="replyform1" action="writeReply3" method="post" onSubmit="return CheckRereplyform(' + tempIndex + ')"><label for="pwd" class="mr-sm-2">댓글 내용 :  <font size="5">' + reply.contents + '</font>  (대댓글 수 : ' + rc + ')'  +'<a href="/board/deletereply3/'+ IDX + '/'+reply.idx+ '" style="text-decoration:none;"> &#10060;</a></label>';
 			html += '<input type="hidden" name="idx" value = "' + IDX + '"><input type="hidden" name="replyIdx" value = "' + reply.idx + '"><input type="text" class="contents replyinput form-control mb-2 mr-sm-2" id="contents' + tempIndex + '" placeholder="댓글" name="contents"><input type="submit" class="replybtn" value="등록" /></form>';
 			html += '<div class="row"><div class="col-sm-12 sub' + reply.idx + '"></div></div></div></div>';
 		}
@@ -123,7 +123,7 @@ function drawReply(replys) {
 			})
 			var subHtml = '';
 			subHtml = '<div class="row"><div class="col-sm-12 subReply">';
-			subHtml += '<form class="form-inline" action="writeReply" method="post" onSubmit="return CheckRereplyform(' + tempIndex1 + ')"><label for="pwd" class="mr-sm-2">↳댓글 내용 :  <font size="5">' + reply.contents + '</font>  (대댓글 수:' + rc + ')'  +'<a href="/board/deletereply/'+ IDX + '/'+reply.idx+ '" style="text-decoration:none;"> &#10060;</a></label>'
+			subHtml += '<form class="form-inline" action="writeReply3" method="post" onSubmit="return CheckRereplyform(' + tempIndex1 + ')"><label for="pwd" class="mr-sm-2">↳댓글 내용 :  <font size="5">' + reply.contents + '</font>  (대댓글 수:' + rc + ')'  +'<a href="/board/deletereply3/'+ IDX + '/'+reply.idx+ '" style="text-decoration:none;"> &#10060;</a></label>'
 			subHtml += '<input type="hidden" name="idx" value = "' + IDX + '"><input type="hidden" name="replyIdx" value = "' + reply.idx + '"><input type="text"class="replyinput form-control mb-2 mr-sm-2"  id="contents' + tempIndex1 + '" placeholder="댓글" name="contents"><button class="replybtn" type="submit" >등록</button></form>';
 			subHtml += '<div class="row"><div class="col-sm-12 sub' + reply.idx + '"></div></div></div></div>';
 			$(".sub" + reply.replyIdx).append(subHtml);
@@ -148,7 +148,7 @@ function drawReply(replys) {
 }
 
  var idx;
-  $.ajax({url: "boardView?idx="+IDX, 
+  $.ajax({url: "boardView3?idx="+IDX, 
 	success: function(result){
 		idx=result.idx;
 	  $("#image").append('<img src="/images/'+result.image+'"  style="width: 400px;" onerror="this.style.display=\'none\';" />');
@@ -157,7 +157,7 @@ function drawReply(replys) {
 	  $("#contents").text(result.contents);
    }});
 
-  $.ajax({url: "replyList?idx="+IDX, success: function(replys){
+  $.ajax({url: "replyList3?idx="+IDX, success: function(replys){
 	  drawReply(replys)
    }});
   
@@ -166,7 +166,7 @@ function drawReply(replys) {
   function deleteCheck(){
 		var answer = confirm("선택한 게시글을 삭제하시겠습니까?");
 		if(answer == true){
-			location.href="/board/deleteboard/" + IDX;
+			location.href="/board/deleteboard3/" + IDX;
 		}
 	}
   
@@ -174,13 +174,13 @@ function drawReply(replys) {
 		var answer = confirm("선택한 댓글을 삭제하시겠습니까?");
 		if(answer == true){
 			//location.href="/board/deletereply/" + pageIDX + "/" + IDX;
-			location.href="/board/deletereply/18/" + IDX;
+			location.href="/board/deletereply3/18/" + IDX;
 		}
 	}
   
   function update(){
 
-			location.href="/board/update/" + IDX;
+			location.href="/board/update3/" + IDX;
 
 	}
 

@@ -79,7 +79,7 @@
 	</div>
 		<div class="row">
 			<div class="board">
-				<h2>공연 요청</h2>
+				<h2>정보 게시판</h2>
 				<hr><hr>
 				<br>
 				<table id="example" class="display" style="width: 100%">
@@ -130,7 +130,7 @@
 	<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
 </body>
 <script type="text/javascript">
-//이전 버튼 이벤트
+/* //이전 버튼 이벤트
 
 function fn_prev(page, range, rangeSize) {
 
@@ -169,30 +169,30 @@ function fn_prev(page, range, rangeSize) {
 
 		location.href = url;
 
-	}
+	} */
 
 	$(document).ready(
 			function() {
 				$("#writeBtn").click(function() {
-					location.href = "write";
+					location.href = "write2";
 				})
 				$.ajax({
-					url : "boardList",
+					url : "boardList2",
 					success : function(result) {
 						var html = "";
 						result.forEach(function(item) {
-							html += "<tr> <td>"+item.idx+"</td><td></td><td><a style='text-decoration:none;' href = 'view?idx=" + item.idx
-									+ "'>" + item.title + "</a></td><td>"+item.contents+"</td><td>"+item.hits+"</td><td>"+item.writedate+"</td><td><a href='/board/deleteboard/"+item.idx+"' style='text-decoration:none;'>&#10060;</a></td>"
+							html += "<tr> <td>"+item.idx+"</td><td></td><td><a style='text-decoration:none;' href = 'view2?idx=" + item.idx
+									+ "'>" + item.title + "</a></td><td>"+item.contents+"</td><td>"+item.hits+"</td><td>"+item.writedate+"</td><td><a href='/board/deleteboard2/"+item.idx+"' style='text-decoration:none;'>&#10060;</a></td>"
 						})
 						$("#listArea").append(html)
 						$('#example').DataTable();
 					}
 				});
 				$("#deleteBtn").click(function() {
-					location.href = "write";
+					location.href = "write2";
 				})
 			});
-	
+	/* 
 	$(document).on('click', '#btnSearch', function(e){
 
 		e.preventDefault();
@@ -208,6 +208,6 @@ function fn_prev(page, range, rangeSize) {
 		console.log(url);
 
 	});	
-	
+	 */
 </script>
 </html>
