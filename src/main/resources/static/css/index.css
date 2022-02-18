@@ -1,0 +1,156 @@
+@charset "utf-8";
+
+.bannerMenu{
+    background: #F0EDCC;
+    color: #234E70;
+}
+
+.bannerMenu h2{
+    color: #234E70;
+    padding-top: 5px;
+}
+
+.bannerPoster img{
+    width: 123px;
+    height: 150px;
+}
+
+.bannerPosterTitle{
+    margin-top: 10px;
+}
+
+#bannerViewItem{
+    display: inline-flex;
+}
+
+.bannerContent{
+    padding: 18px;
+}
+
+#bannerName{
+    text-align: right;
+    padding-right: 100px;
+    height: 20px;
+}
+
+.secondSection{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    height: 400px;
+}
+
+.RecoName{
+    text-align: left;
+    padding-left: 15px;
+    margin-top: 3px;
+    color: #FBF8BE;
+}
+
+.RecogNumberItem{
+    position: relative;
+    display: flex;
+}
+
+.RecogMain{
+    position: relative;
+    display: inline-block;
+    width: 450px;
+}
+
+.RecogMainMenu{
+    position: relative;
+    height: 350px;
+}
+
+.RecogSub{
+    position: relative;
+    display: inline-block;
+    width: 200px;
+}
+
+.RecogSubMenu{
+    position: relative;
+    display: block;
+    height: calc(97% /3);
+    padding: 2.5px;
+}
+
+.RecoNumber{
+    width: 660px;
+    height: 400px;
+    position: relative;
+    display: inline-block;
+    background-color: #234E70;
+    border-radius: 10px;
+    padding-right: 7px;
+}
+
+.calendar{
+    width: 410px;
+    height: 390px;
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 10px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+.lastSection{
+    border: 1px solid tomato;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.showMap{
+    width: 330px;
+    border: 1px solid aquamarine;
+    display: inline-block;
+}
+
+.showMap img{
+    width: 300px;
+}
+
+.localHotChoice{
+    width: 700px;
+    border: 1px solid seagreen;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.svg{
+    height: 450px;
+}
+
+
+/* map 들어올 자리 */
+/*
+.dg-map-area{
+    float: left;
+    width: 100%;
+    border:1px solid #dcdcdc;
+    margin:30px 0 12px;
+}ß
+.dg-map{
+    text-align: center;
+    background: #f7f5f2;
+}
+.dg-map svg{
+    margin:65px 0 0;
+}
+.dg-map-in{
+    width: 50%;
+    float: left;
+    height: 540px;
+}
+*/
