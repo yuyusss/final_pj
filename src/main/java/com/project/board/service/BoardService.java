@@ -6,34 +6,71 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.project.board.dao.Board;
-import com.project.board.dao.Reply;
-import com.project.board.mapper.BoardMapper;
+import com.project.board.dao.IBoardDAO;
+import com.project.board.model.BoardVO;
+import com.project.board.model.ReplyVO;
 
 @Service
-public class BoardService {
+public class BoardService implements IBoardService{
 	
     @Autowired
-    @Qualifier("BoardMapper")
-    private BoardMapper m;
+    @Qualifier("IBoardDAO")
+    IBoardDAO dao;
 	
-    public List<Board> getBoard(){
-        return m.getBoard();
+    
+    @Override
+    public List<BoardVO> getBoard(){
+        return dao.getBoard();
+    }
+    @Override
+    public boolean addBoard(BoardVO b) {
+        return dao.addBoard(b);
+    }
+    @Override
+    public BoardVO getBoardOne(int idx) {
+        return dao.getBoardOne(idx);
+    }
+
+    @Override
+    public boolean addReply(ReplyVO r) {
+        return dao.addReply(r);
+    }
+
+    @Override
+    public List<ReplyVO> getReply(int boardIdx) {
+        return dao.getReply(boardIdx);
+    }
+    @Override
+    public int updatereviewcnt(int idx) {
+		return dao.updatereviewcnt(idx);
+	}
+    
+    @Override
+    public int count() throws Exception {
+     return dao.count();
     }
     
-    public boolean addBoard(Board b) {
-        return m.addBoard(b);
-    }
+    @Override
+	public void deleteBoard(String boardVo) {
+		// TODO Auto-generated method stub
+		dao.deleteBoard(boardVo);
+	}
     
-    public Board getBoardOne(int idx) {
-        return m.getBoardOne(idx);
-    }
+    @Override
+	public void deleteReply(String replyVo) {
+		// TODO Auto-generated method stub
+		dao.deleteReply(replyVo);
+	}
     
-    public boolean addReply(Reply r) {
-        return m.addReply(r);
-    }
-    public List<Reply> getReply(int boardIdx) {
-        return m.getReply(boardIdx);
-    }
+    @Override
+	public void updateBoard(BoardVO b) {
+		dao.updateBoard(b);
+		
+	}
+	
+    @Override
+	public BoardVO detailViewBoard(int idx) {
+		return dao.detailViewBoard(idx);
+	}
     
 }

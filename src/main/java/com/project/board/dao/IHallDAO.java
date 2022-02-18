@@ -12,5 +12,4 @@ public interface IHallDAO {
 	void updatehall(HallVO hallVo);
 	void deletehall(HallVO hallVo);
 
-	
 }

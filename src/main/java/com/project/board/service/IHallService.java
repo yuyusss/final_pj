@@ -2,6 +2,7 @@ package com.project.board.service;
 
 import java.util.ArrayList;
 
+
 import com.project.board.model.HallVO;
 
 public interface IHallService {
@@ -19,6 +20,8 @@ public interface IHallService {
 	String prdNoCheck(String prdNo);
 	ArrayList<HallVO> HallSearch(HashMap<String, Object> map);
 	*/
-
 	HallVO detailViewhall(String no);
 }
+
+
+

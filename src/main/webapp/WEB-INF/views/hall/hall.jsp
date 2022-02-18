@@ -11,11 +11,14 @@
 	</head>
 	
 	<body>
+	<div id = "wrap">
 		<!-- 탑 -->
+		 <jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true'/>
+		
 		<!-- 공연장안내 -->
 		<div class="hall"><h1 id = "공연장">공연장</h1>
 				
-			<div class = "wrap">
+			
 			<div id = "지역">서울</div>
            	<table border="1" class = "list">
 			 
@@ -61,9 +64,11 @@
 			
 			</table>			
 			</div>
-		</div>
+	
 
 		<!-- 바텀 -->
+		<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true'/>
 		
+		</div>
 	</body>
 </html>

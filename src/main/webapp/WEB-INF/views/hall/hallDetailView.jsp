@@ -11,8 +11,11 @@
 	</head>
 	
 	<body>
+	<div id = "wrap">
 		<!-- 탑 -->
+		 <jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true'/>
 		<!-- 공연장안내 -->
+		<section>
 		<div class = "all">
 			<div class="hall2"></div>
 			<div class="A1">공연장안내 > <strong>${hall.name }</strong></div> 
@@ -43,7 +46,9 @@
 							</table>
 					</div>
  			</div>
-			
+		</section>
 		<!-- 바텀 -->
+		<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true'/>
+		</div>
 	</body>
 </html>

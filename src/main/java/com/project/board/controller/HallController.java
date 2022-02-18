@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.project.board.model.HallVO;
@@ -15,10 +16,10 @@ import com.project.board.service.HallService;
 public class HallController {
 	@Autowired
 	HallService service;
-	// ~~주소~~
 	
 	@RequestMapping("/hall")
 	public String hall(Model model) {
+
 		ArrayList<HallVO> seoulHallList = service.listHallByArea("seoul");
 		ArrayList<HallVO> ggHallList = service.listHallByArea("gg");
 		ArrayList<HallVO> etcHallList = service.listHallByArea("etc");
@@ -27,7 +28,11 @@ public class HallController {
 		model.addAttribute("seoulHallList", seoulHallList);
 		model.addAttribute("ggHallList", ggHallList);
 		model.addAttribute("etcHallList", etcHallList);
+
+		System.out.println("hall = " + service.listAllHall());
 		
+		ArrayList<HallVO> hallList = service.listAllHall();
+		model.addAttribute("hallList", hallList);
 		return "hall/hall";
 	}
 	@RequestMapping("/hall/detailView/{no}")
@@ -110,6 +115,17 @@ public class HallController {
 	 */
 	
 	
-	
-	
+
+	/* 
+	 * 홀(/hall)로 접속했을 때,
+	 * 데이터베이스에서 전체 홀 목록 가져와서
+	 * 뷰 페이지에 출력하기
+	 * 
+	 * 0) VO - HallVO
+	 * 1) 컨트롤러
+	 * 2) 서비스 - 2개 HallService (Class) , IHallService (Interface)
+	 * 3) DAO	- 1개 HallDAO
+	 * 4) Mapper - HallMapper
+	 * 5) 뷰 페이 수정 
+	 */
 }
