@@ -1,0 +1,9 @@
+/* vote.css */
+
+.voteBanner{
+    border: 1px solid red;
+}
+
+.voteItem{
+    border: 1px solid green;
+}

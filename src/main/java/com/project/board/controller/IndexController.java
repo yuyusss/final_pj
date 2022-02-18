@@ -46,7 +46,10 @@ public class IndexController {
         return "index2";
     }
 
-
+    @RequestMapping("/vote")
+    public String vote(){
+        return "vote";
+    }
 
 
 

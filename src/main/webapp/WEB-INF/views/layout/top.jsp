@@ -14,7 +14,7 @@
     <script src="/fullcalendar-5.10.1/lib/main.js"></script>
     <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
     <script src="<c:url value="/js/calendar.js" />"></script>
-    <script src="<c:url value="/js/menu.js" />"></script>
+    <script src="<c:url value='/js/menu.js' />"></script>
 
 </head>
 <body>
@@ -25,8 +25,8 @@
     <div id="headerMenuBox">
         <div class="headerMenu">
             <ul>
-                <li><a href="/">회원가입</a> </li>
-                <li><a href="/">로그인</a> </li>
+                <li><a href="/signup">회원가입</a> </li>
+                <li><a href="/loginForm">로그인</a> </li>
                 <li><a href="/">마이페이지</a> </li>
             </ul>
         </div>
@@ -34,7 +34,7 @@
 
     <!-- header -->
     <div id="logoBox">
-        <a href="/"><img src="<c:url value="images/logo.jpeg" />" id="logoImage"></a>
+        <a href="/"><img src="<c:url value='images/logo.jpeg' />" id="logoImage"></a>
     </div>
     <div id="topMenuBox">
         <div class="topMenu">
@@ -43,8 +43,8 @@
                     <a href="/">ΞΞ 전체 카테고리</a>
                     <ul class="sub">
                         <li><a href="/">뮤지컬</a></li>
-                        <li><a href="/media">미디어</a></li>
-                        <li><a href="/">베스트</a></li>
+                        <li><a href="/vote">투표</a></li>
+                        <li><a href="/">랭킹</a></li>
                         <li><a href="/">커뮤니티</a></li>
                         <li><a href="/">공연장</a></li>
                         <li><a href="/">문의사항</a></li>
@@ -59,8 +59,8 @@
                         <li><a href="/">아동/가족</a></li>
                     </ul>
                 </li>
-                <li><a href="/">미디어</a></li>
-                <li><a href="/">베스트</a></li>
+                <li><a href="/vote">투표</a></li>
+                <li><a href="/">랭킹</a></li>
                 <li><a href="/">커뮤니티</a>
                     <ul class="sub">
                         <li><a href="/borad">배우별</a> </li>

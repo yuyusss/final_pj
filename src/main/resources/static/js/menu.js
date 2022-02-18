@@ -12,4 +12,4 @@ $(function () {
         var position = $(window).scrollTop();
         $('#chatBtn').stop().animate({"top":position+currentPosition+"px"},1000);
     });*/
-})ß
+})
