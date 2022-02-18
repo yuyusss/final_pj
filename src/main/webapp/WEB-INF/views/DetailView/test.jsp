@@ -71,10 +71,10 @@
                       <div class="product__details__date">2021.10.19 ~ 2022.05.28</div> -->
                       <br><br><br>
                       <p>${musicalData.muscQuote}</p>
-                      <a href="#" class="primary-btn">찜하기</a>
+                      <a href="#" class="primary-btn">좋아요</a>
                       <ul>
                           <li><b>출연</b> <span>류정한 홍광호 신성록 박은태 카이 전동석</span></li>
-                          <li><b>관람시간</b> <span>${musicalData.muscReqTime}분 <samp>인터미션 20분</samp></span></li>
+                          <li><b>관람시간</b> <span>${musicalData.muscReqTime}분	<samp>인터미션 20분</samp></span></li>
                           <li><b>등급</b> <span>14세 이상</span></li>
                           <li><b>작품설명</b>
                               <div class="share">

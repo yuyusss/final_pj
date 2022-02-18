@@ -42,7 +42,7 @@
                 <li class="menu1">
                     <a href="/">ΞΞ 전체 카테고리</a>
                     <ul class="sub">
-                        <li><a href="/">뮤지컬</a></li>
+                        <li><a href="/detailView">뮤지컬</a></li>
                         <li><a href="/media">미디어</a></li>
                         <li><a href="/">베스트</a></li>
                         <li><a href="/">커뮤니티</a></li>
@@ -51,7 +51,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="/">뮤지컬</a>
+                    <a href="/detailView">뮤지컬</a>
                     <ul class="sub">
                         <li><a href="/">오리지널/내한공연</a></li>
                         <li><a href="/">라이센스</a></li>

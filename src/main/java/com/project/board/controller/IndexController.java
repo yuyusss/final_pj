@@ -25,10 +25,12 @@ public class IndexController {
     @Autowired
     MediaService service;
 
-    @RequestMapping("/")
-	public String index() {
-		return "/index2";
-	}
+
+    @RequestMapping("/") 
+    public String index() { 
+    	return "/index2"; 
+    }
+
 
 	/*
 	 * @RequestMapping(value="/", method=RequestMethod.GET) public String
@@ -36,9 +38,7 @@ public class IndexController {
 	 * model.addAttribute("mediaList", mediaList);
 	 * 
 	 * return "index2"; }
-	 * 
-	 * 
-	 * 
 	 */
+	
     
 }
