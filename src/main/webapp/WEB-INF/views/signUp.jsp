@@ -11,7 +11,7 @@
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
 <body>
-
+		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 		<div class="signUpTitle">
 			<h2 class = "signUpText">회원가입</h2>
 		</div>
@@ -21,9 +21,9 @@
 					<div id="necessaryTxt_box">						
 						<span class="necessary">*</span> 필수입력사항
 					</div>
-					<hr width="600px" size="3px" color="gray">
+					<hr width="640px" size="3px" color="gray" style="margin: 0 auto"><br>
 					
-				<form id="form" name="memberForm" method="post">
+				<form id="form" name="memberForm" method="post" onsubmit="return signUpForm_check();" action="#">
 					
 					
 					<table class="memberTable">
@@ -36,8 +36,8 @@
 								</span>
 							</th>
 							<td>
-								<input type="text" name="memberID" maxlength="20" placeholder="아이디는 6자 이상 입력해주세요.">
-								<a class="IDdouble_check">중복확인</a>
+								<input type="text" name="memId" id="memberID" maxlength="20" placeholder="아이디는 6자 이상 입력해주세요.">
+								<a class="IDdouble_check" onclick="doubleCheck()">중복확인</a>
 							</td>
 							</tr>
 							
@@ -49,7 +49,7 @@
 								</span>
 							</th>
 							<td>
-								<input type="password" name="memberPW" maxlength="20" placeholder="비밀번호를 입력해주세요.">
+								<input type="password" name="memPw" id="memberPW" maxlength="20" placeholder="비밀번호를 입력해주세요.">
 							</td>
 							</tr>
 							
@@ -61,7 +61,7 @@
 								</span>
 							</th>
 							<td>
-								<input type="password" name="memberPW_check" maxlength="20" placeholder="비밀번호를 한 번 더 입력해주세요.">
+								<input type="password" name="memberPW_check" id="memberPW_check" maxlength="20" placeholder="비밀번호를 한 번 더 입력해주세요.">
 							</td>
 							</tr>
 							
@@ -73,7 +73,7 @@
 								</span>
 							</th>
 							<td>
-								<input type="text" name="memberName" maxlength="20" placeholder="성명을 입력해주세요.">
+								<input type="text" name="memName" id="memberName" maxlength="20" placeholder="성명을 입력해주세요.">
 							</td>
 							</tr>
 							
@@ -85,7 +85,7 @@
 								</span>
 							</th>
 							<td>
-								<input type="text" name="memberEmail" maxlength="25" placeholder="이메일을 입력해주세요.">
+								<input type="text" name="memEmail" id="memberEmail" maxlength="25" placeholder="이메일을 입력해주세요.">
 								<a class="Emaildouble_check">중복확인</a>
 							</td>
 							</tr>
@@ -98,7 +98,7 @@
 								</span>
 							</th>
 							<td>
-								<input type="text" name="memberPhone" maxlength="25" placeholder="휴대폰 번호를 입력해주세요.">
+								<input type="text" name="memPhone" id="memberPhone" maxlength="25" placeholder="휴대폰 번호를 입력해주세요.">
 							</td>
 							</tr>
 							
@@ -110,7 +110,7 @@
 								</span>
 							</th>
 							<td>
-								<input type="text" id="memberAddress" name="Address" placeholder="주소를 입력해주세요." readonly>
+								<input type="text" id="memAddress" name="memAddress" placeholder="주소를 입력해주세요." readonly>
 							</td>
 							</tr>
 							
@@ -122,24 +122,12 @@
 								</span>
 							</th>
 							<td>
-								<input type="text" name="memberAddress_Detail" placeholder="상세 주소를 입력해주세요.">
+								<input type="text" name="memAddressDetail" id="memberAddressDetail" placeholder="상세 주소를 입력해주세요.">
 								
 							</td>
 							</tr>
 														
-							<tr>
-							<th>
-								생년월일
-							</th>
-							<td>
-								<div id="birth">
-									<input type="text" name="birthYear" placeholder="YEAR">
-									<input type="text" name="birthMonth" placeholder="MONTH">
-									<input type="text" name="birthDay" placeholder="DAY">
-								</div>
-							</td>
-							</tr>
-							
+						
 							<tr>
 							<th>
 								좋아하는 장르
@@ -160,13 +148,15 @@
 							</tr>					
 						</tbody>
 					</table>
-				</form>
-				
-					<br><br>
+					
+										<br><br>
 					<div class="submitBox">
-					<button type="submit" id="submitBox">회원가입</button>
+					<input type="submit" id="submitBox" value="JOIN" />
 					</div>
+				</form>
+
 			</div>
 		</div>	
+		<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
 </body>
 </html>

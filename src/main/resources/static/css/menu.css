@@ -1,10 +1,16 @@
 @charset "utf-8";
 
 #headerMenuBox{
-    font-weight: bold;
     text-align: right;
-    background: #aaaaaa;
+    background: #FCF6F5;
     padding: 8px;
+    margin-top: 5px;
+}
+
+#headerMenuBox a{
+    color: black;
+    font-weight: bold;
+    margin: 3px;
 }
 
 #logoBox{
@@ -32,8 +38,8 @@ a{
 #topMenuBox {
     font-weight: bold;
     padding-right: 10px;
-    background: white;
     text-align: center;
+    background-color: #FFFFFF;
 }
 
 .topMenu, .headerMenu {
@@ -78,7 +84,7 @@ a{
 
 .footerBox{
     text-align: center;
-    background-color: lightgray;
+    background-color: #DDC6B6;
 }
 
 .footerInner {

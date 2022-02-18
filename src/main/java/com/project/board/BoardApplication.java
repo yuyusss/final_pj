@@ -1,5 +1,11 @@
 package com.project.board;
 
+
+import com.project.board.controller.CalendarController;
+import com.project.board.dao.IMediaDAO;
+import com.project.board.model.MediaVO;
+import com.project.board.service.CalendarService;
+
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -23,10 +29,17 @@ import com.project.board.dao.IBoardDAO3;
 
 
 @SpringBootApplication
+
 @MapperScan(basePackageClasses = IBoardDAO.class)
 @MapperScan(basePackageClasses = IBoardDAO2.class)
 @MapperScan(basePackageClasses = IBoardDAO3.class)
+
+@ComponentScan(basePackages = "com.project.board")
+//@MapperScan(basePackageClasses = Board.class)
+//@MapperScan(basePackageClasses = Reply.class)
+
 @MapperScan(basePackages = "com.project.board")
+@MapperScan(basePackageClasses = IMediaDAO.class)
 public class BoardApplication {
 
 	public static void main(String[] args) {
