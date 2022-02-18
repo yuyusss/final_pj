@@ -70,7 +70,7 @@
 			      <input type="file" class="form-control-file border" name="file">
 			    </div>
 				<br>
-			    <button class="writeBtn" type="submit">글쓰기</button>
+			    <button class="writeBtn" type="submit">글 쓰기</button>
 			 </form>
 		</div>
 	</div>
