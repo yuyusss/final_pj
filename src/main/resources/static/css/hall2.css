@@ -1,7 +1,6 @@
 @charset "UTF-8";
 body {
 	width : 1080px;
-	height : 1080px;
 	margin-left : auto;
 	margin-right : auto;
 	
@@ -9,14 +8,11 @@ body {
 .all {
 	margin-top : 100px;
 	margin-left : 200px;
-	width : 665px;
+	width : 700px; 
 	
 }
 .hall2 {
-    background: url(http://ticketimage.interpark.com/TicketImage/bluesquare/top_bluesquare.jpg) no-repeat;
-	height: 140px;
-	width : 100%;
-    position: relative;
+
 
 }
 .A1 {
@@ -24,16 +20,14 @@ body {
 	display: block;
    	margin-bottom : 50px;
 }
-.A2 {
-	background : url(http://ticketimage.interpark.com/TicketImage/bluesquare/txt_introduce03.gif) no-repeat;
-	height: 450px;
-	width : 700px;
-    position: relative; 
+.A2 img {
+	width : 600px;
+    position: relative;
 	
 }
 .list {
-	width : 80%;
-	margin-bottom : auto;
+	width : 95%;
+	margin-bottom : 50px;
 	color : black;
 	background-color : white;
 	font-size : 14px;
@@ -50,4 +44,11 @@ body {
 }
 .submit {
 	margin-bottom : 20px;
+}
+.map {
+	width : 700px;
+	height : 500px;
+}
+.mapbtn {
+	margin-bottom : 10px;
 }
