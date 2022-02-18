@@ -85,7 +85,7 @@
 				<table id="example" class="display" style="width: 100%">
 					<thead>
 						<tr>
-							<th>게시글 번호</th><th>작성자</th><th>제목</th><th>내 용</th><th>조회 수</th><th>작성일</th><th>삭제</th>
+							<th>게시글 번호</th><th>작성자</th><th>제 목</th><th>내 용</th><th>조회 수</th><th>작성일</th><th>삭제</th>
 						</tr>
 					</thead>
 					<tbody id="listArea">
