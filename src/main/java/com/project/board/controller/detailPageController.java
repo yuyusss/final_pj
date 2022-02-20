@@ -1,5 +1,7 @@
 package com.project.board.controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.project.board.model.ActorCastVO;
 import com.project.board.model.MusicalVO;
 import com.project.board.service.MusicalService;
 
@@ -18,11 +21,32 @@ public class detailPageController {
 	@Autowired
 	private MusicalService service;
 	
+	@RequestMapping("/favorRecommand") 
+    public String favorRecommand() { 
+    	return "/layout/recommand"; 
+    }
 	
 	// 상세정보 페이지로 이동
-	@RequestMapping("/detailView")
-	public String detailView() {
-		return "/DetailView/detailPage";
+	@RequestMapping("/detailView/{genreNo}")
+	public String detailView(@PathVariable String genreNo, HttpSession session) {
+		System.out.println(genreNo);
+		
+		String result = "";
+		
+		ArrayList<MusicalVO> vo = service.getMusicalListByGenre(genreNo);
+		
+		
+		System.out.println(vo);
+		
+		
+		
+		if(vo != null) {
+			session.setAttribute("musicalData", vo);
+			
+			result = "/DetailView/detailPage";
+		}
+		
+		return result;
 	}
 	
 	// 뮤지컬 상세정보 페이지 이동.
@@ -33,13 +57,14 @@ public class detailPageController {
 		String result = "";
 		
 		MusicalVO vo = service.getMusical(muscNo);
-//		ActorVO vo2 = service.getActors(muscNo);
+		ArrayList<ActorCastVO> vo2 = service.getActorCast(muscNo);
 		
-		System.out.println(vo.toString());
+		//System.out.println(vo2.toString());
 		
-		if(vo != null) {
+		if(vo != null && vo2 != null) {
 			session.setAttribute("musicalData", vo);
-//			session.setAttribute("actorData", vo2);
+			session.setAttribute("actorcastData", vo2);
+			
 			result = "/DetailView/test";
 		}
 		

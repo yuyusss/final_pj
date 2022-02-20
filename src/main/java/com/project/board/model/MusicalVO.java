@@ -12,12 +12,22 @@ public class MusicalVO {
 	private String muscQuote;
 	private int muscReqTime;
 	private String muscSynop;
+	private String muscGenre;
+	private String muscImg;
+	private String muscInfo_1;
+	private String muscInfo_2;
+	private String muscInfo_3;
+	
+	private String genreNo;
+	private String genreName;
 	
 	//constructor
 	public MusicalVO(){}
-	
+
 	public MusicalVO(String muscNo, String muscName, String muscHashtag, String muscPlace, String muscPlaceLink,
-			String muscStartDate, String muscEndDate, String muscQuote, int muscReqTime, String muscSynop) {
+			String muscStartDate, String muscEndDate, String muscQuote, int muscReqTime, String muscSynop,
+			String muscGenre, String muscImg, String muscInfo_1, String muscInfo_2, String muscInfo_3, String genreNo,
+			String genreName) {
 		super();
 		this.muscNo = muscNo;
 		this.muscName = muscName;
@@ -29,11 +39,15 @@ public class MusicalVO {
 		this.muscQuote = muscQuote;
 		this.muscReqTime = muscReqTime;
 		this.muscSynop = muscSynop;
+		this.muscGenre = muscGenre;
+		this.muscImg = muscImg;
+		this.muscInfo_1 = muscInfo_1;
+		this.muscInfo_2 = muscInfo_2;
+		this.muscInfo_3 = muscInfo_3;
+		this.genreNo = genreNo;
+		this.genreName = genreName;
 	}
 
-	
-	//set, get
-	
 	public String getMuscNo() {
 		return muscNo;
 	}
@@ -72,6 +86,34 @@ public class MusicalVO {
 
 	public String getMuscSynop() {
 		return muscSynop;
+	}
+
+	public String getMuscGenre() {
+		return muscGenre;
+	}
+
+	public String getMuscImg() {
+		return muscImg;
+	}
+
+	public String getMuscInfo_1() {
+		return muscInfo_1;
+	}
+
+	public String getMuscInfo_2() {
+		return muscInfo_2;
+	}
+
+	public String getMuscInfo_3() {
+		return muscInfo_3;
+	}
+
+	public String getGenreNo() {
+		return genreNo;
+	}
+
+	public String getGenreName() {
+		return genreName;
 	}
 
 	public void setMuscNo(String muscNo) {
@@ -114,20 +156,43 @@ public class MusicalVO {
 		this.muscSynop = muscSynop;
 	}
 
-	
+	public void setMuscGenre(String muscGenre) {
+		this.muscGenre = muscGenre;
+	}
+
+	public void setMuscImg(String muscImg) {
+		this.muscImg = muscImg;
+	}
+
+	public void setMuscInfo_1(String muscInfo_1) {
+		this.muscInfo_1 = muscInfo_1;
+	}
+
+	public void setMuscInfo_2(String muscInfo_2) {
+		this.muscInfo_2 = muscInfo_2;
+	}
+
+	public void setMuscInfo_3(String muscInfo_3) {
+		this.muscInfo_3 = muscInfo_3;
+	}
+
+	public void setGenreNo(String genreNo) {
+		this.genreNo = genreNo;
+	}
+
+	public void setGenreName(String genreName) {
+		this.genreName = genreName;
+	}
+
 	@Override
 	public String toString() {
 		return "MusicalVO [muscNo=" + muscNo + ", muscName=" + muscName + ", muscHashtag=" + muscHashtag
 				+ ", muscPlace=" + muscPlace + ", muscPlaceLink=" + muscPlaceLink + ", muscStartDate=" + muscStartDate
 				+ ", muscEndDate=" + muscEndDate + ", muscQuote=" + muscQuote + ", muscReqTime=" + muscReqTime
-				+ ", muscSynop=" + muscSynop + "]";
+				+ ", muscSynop=" + muscSynop + ", muscGenre=" + muscGenre + ", muscImg=" + muscImg + ", muscInfo_1="
+				+ muscInfo_1 + ", muscInfo_2=" + muscInfo_2 + ", muscInfo_3=" + muscInfo_3 + ", genreNo=" + genreNo
+				+ ", genreName=" + genreName + "]";
 	}
-	
-	
-	
-	
-	
-	
 	
 	
 	

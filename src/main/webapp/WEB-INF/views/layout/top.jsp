@@ -27,7 +27,7 @@
             <ul>
                 <li><a href="/">회원가입</a> </li>
                 <li><a href="/">로그인</a> </li>
-                <li><a href="/">마이페이지</a> </li>
+                <li><a href="/favorRecommand">마이페이지</a> </li>
             </ul>
         </div>
     </div>
@@ -42,7 +42,7 @@
                 <li class="menu1">
                     <a href="/">ΞΞ 전체 카테고리</a>
                     <ul class="sub">
-                        <li><a href="/detailView">뮤지컬</a></li>
+                        <li><a href="/detailView/1">뮤지컬</a></li>
                         <li><a href="/media">미디어</a></li>
                         <li><a href="/">베스트</a></li>
                         <li><a href="/">커뮤니티</a></li>
@@ -51,12 +51,12 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="/detailView">뮤지컬</a>
+                    <a href="/detailView/1">뮤지컬</a>
                     <ul class="sub">
-                        <li><a href="/">오리지널/내한공연</a></li>
-                        <li><a href="/">라이센스</a></li>
-                        <li><a href="/">창작뮤지컬</a></li>
-                        <li><a href="/">아동/가족</a></li>
+                        <li><a href="/detailView/1">오리지널/내한공연</a></li>
+                        <li><a href="/detailView/2">라이센스</a></li>
+                        <li><a href="/detailView/3">창작뮤지컬</a></li>
+                        <li><a href="/detailView/4">아동/가족</a></li>
                     </ul>
                 </li>
                 <li><a href="/">미디어</a></li>
