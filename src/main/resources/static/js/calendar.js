@@ -44,13 +44,46 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("#등록된 일정 클릭#");
             console.log(arg.event);
         },
-        events: function(info, successCallback, failureCallback){
+        events: [
+            {
+                title: '지킬앤하이드 12차',
+                start: '2022-02-14T14:00',
+                url: 'https://tickets.interpark.com/goods/21007693'
+            },
+            {
+                title: '하데스타운',
+                start: '2022-02-14T17:00',
+                url: 'https://tickets.interpark.com/goods/21007693'
+            },
+            {
+                title: '데스노트',
+                start: '2022-02-17T15:00',
+                url: 'https://tickets.interpark.com/goods/21007693'
+            },
+            {
+                title: '데스노트',
+                start: '2022-02-18T15:00',
+                url: 'https://tickets.interpark.com/goods/21007693'
+            },
+            {
+                title: '젠틀맨스가이드',
+                start: '2022-02-22',
+                url: 'https://tickets.interpark.com/goods/21007693'
+            },
+            {
+                title: '젠틀맨스가이드',
+                start: '2022-02-25',
+                url: 'https://tickets.interpark.com/goods/21007693'
+            },
+
+        ]
+        /*events: function(info, successCallback, failureCallback){
             $.ajax({
                 type: "get",
                 url: "/getSchedule",
                 dataType: "json"
             })
-        }
+        }*/
     });
 
     calendar.render();

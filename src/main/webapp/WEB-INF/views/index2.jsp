@@ -23,48 +23,18 @@
         <!-- section -->
         <div class="bannerMenu">
             <div class="bannerInfo">
-                <div id="bannerName"><h2>Editor's Pick</h2></div>
+                <div id="bannerName"><h2>관객 추천 공연</h2></div>
                 <div id="bannerViewItem">
-                    <div class="bannerContent">
-                        <div class="bannerPoster">
-                            <img src="https://image.yes24.com/themusical/fileStorage/ThemusicalAdmin/Play/Image/20180731125240467854511c5f46d8a5eaae24a239ae6e.jpg"/>
+                    <c:forEach begin="0" end="4">
+                        <div class="bannerContent">
+                            <div class="bannerPoster">
+                                <img src="https://image.yes24.com/themusical/fileStorage/ThemusicalAdmin/Play/Image/20180731125240467854511c5f46d8a5eaae24a239ae6e.jpg"/>
+                            </div>
+                            <div class="bannerPosterTitle">
+                                지킬앤하이드
+                            </div>
                         </div>
-                        <div class="bannerPosterTitle">
-                            지킬앤하이드
-                        </div>
-                    </div>
-                    <div class="bannerContent">
-                        <div class="bannerPoster">
-                            <img src="https://image.yes24.com/themusical/fileStorage/ThemusicalAdmin/Play/Image/20180731125240467854511c5f46d8a5eaae24a239ae6e.jpg"/>
-                        </div>
-                        <div class="bannerPosterTitle">
-                            지킬앤하이드
-                        </div>
-                    </div>
-                    <div class="bannerContent">
-                        <div class="bannerPoster">
-                            <img src="https://image.yes24.com/themusical/fileStorage/ThemusicalAdmin/Play/Image/20180731125240467854511c5f46d8a5eaae24a239ae6e.jpg"/>
-                        </div>
-                        <div class="bannerPosterTitle">
-                            지킬앤하이드
-                        </div>
-                    </div>
-                    <div class="bannerContent">
-                        <div class="bannerPoster">
-                            <img src="https://image.yes24.com/themusical/fileStorage/ThemusicalAdmin/Play/Image/20180731125240467854511c5f46d8a5eaae24a239ae6e.jpg"/>
-                        </div>
-                        <div class="bannerPosterTitle">
-                            지킬앤하이드
-                        </div>
-                    </div>
-                    <div class="bannerContent">
-                        <div class="bannerPoster">
-                            <img src="https://image.yes24.com/themusical/fileStorage/ThemusicalAdmin/Play/Image/20180731125240467854511c5f46d8a5eaae24a239ae6e.jpg"/>
-                        </div>
-                        <div class="bannerPosterTitle">
-                            지킬앤하이드
-                        </div>
-                    </div>
+                    </c:forEach>
                 </div>
             </div>
         </div>
@@ -91,7 +61,7 @@
                 </div>
 
                 <div class="RecogSub">
-                    <c:forEach items="${mediaList}" var="media" begin="0" end="2">
+                    <c:forEach items="${mediaList}" var="media" begin="1" end="3">
                         <div class="RecogSubMenu">
                             <iframe width="200px" height="110px" src="${media.numURL}"
                                     title="YouTube video player" frameborder="0"
@@ -186,10 +156,10 @@
             <c:forEach begin="0" end="7">
                 <div class="bannerContent">
                     <div class="bannerPoster">
-                        <img src="https://image.yes24.com/themusical/fileStorage/ThemusicalAdmin/Play/Image/20180731125240467854511c5f46d8a5eaae24a239ae6e.jpg"/>
+                        <img src="https://www.caci.or.kr/cmmn/file/imageSrc.do?atchFileId=4631921811a4414ba470ab04692deab5&fileSn=1&thumb=Y"/>
                     </div>
                     <div class="bannerPosterTitle">
-                        지킬앤하이드
+                        레베카
                     </div>
                 </div>
             </c:forEach>

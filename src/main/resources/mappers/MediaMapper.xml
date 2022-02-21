@@ -11,13 +11,22 @@
         <result property="weather" column="weather" />
     </resultMap>
 
+    <resultMap id="voteResult" type="com.project.board.model.VoteVO">
+        <result property="actorNo" column="actorNo" />
+        <result property="actorName" column="actorName" />
+        <result property="actorProfile" column="actorProfile" />
+        <result property="actorVote" column="actorVote" />
+    </resultMap>
+
     <!-- 전체 넘버 조회 -->
     <select id="listAllMedia" resultMap="mediaResult">
-        SELECT * FROM weathernumber ORDER BY numNo DESC
+        SELECT * FROM weathernumber ORDER BY RAND() LIMIT 50
     </select>
 
+    <select id="listAllActor" resultMap="voteResult">
+        SELECT * FROM actor ORDER BY actorVote DESC
+    </select>
 
-    
 </mapper>
   
   

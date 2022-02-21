@@ -16,10 +16,19 @@
 #tab1:checked ~ .voteContent div:nth-child(1),
 #tab2:checked ~ .voteContent div:nth-child(2){
     display: block;
+
 }
 
 .tab{
     overflow: hidden;
+}
+
+.voteResult{
+    margin-bottom: 15px;
+    border: 1px solid black;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .tab label{
@@ -34,25 +43,41 @@
     letter-spacing: 2px;
     user-select: none;
     -webkit-user-select: none;
+    background-color: #f6f2ff;
+}
+
+.tab label:hover{
+    background-color: #dbd5fd;
 }
 
 .voteContent > div{
-    padding: 30px;
+    padding: 20px;
     font-size: 17px;
+    background-color: #f6f2ff;
 }
 
-.voteItem{
-    border: 1px solid red;
-}
-
-.voteItem table{
+table{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    width: 1000px;
 }
 
 .voteResult{
-    border: 1px solid green;
     display: flex;
     justify-content: center;
 }
+
+.profileBox{
+    width: 100px;
+    height: 100px;
+    border-radius: 70%;
+    overflow: hidden;
+    margin: auto;
+}
+
+.profile{
+    width: 100%;
+    object-fit: cover;
+}
+

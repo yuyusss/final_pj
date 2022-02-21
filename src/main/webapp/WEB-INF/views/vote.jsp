@@ -27,31 +27,78 @@
         <div class="voteContent">
             <div class="content-vote">
                 <div class="voteResult">
-                    <div>2등</div>
-                    <div>1등</div>
-                    <div>3등</div>
+                    <table>
+                        <c:forEach items="${actorList}" var="act" varStatus="status" begin="0" end="2">
+                            <tr>
+                                <td>${status.count}</td>
+                                <td>${act.actorName}</td>
+<%--                                <td><img src="<c:url value='${act.actorProfile}' /> "></td>--%>
+                                <td>${act.actorVote}</td>
+                            </tr>
+                        </c:forEach>
+                    </table>
                 </div>
                 <div class="voteItem">
-                    <table border="0.5">
+                    <table border="1" class="tableItem">
                         <tr>
                             <th>순위</th>
+                            <th>프로필 사진</th>
                             <th>이름</th>
-                            <th>작품</th>
+                            <th>출연작품</th>
                             <th>득표수</th>
+                            <th></th>
                         </tr>
-                        <tr>
-                            <td>순위</td>
-                            <td>순위</td>
-                            <td>순위</td>
-                            <td>순위</td>
-                            <td><a href="/">투표</a> </td>
-                        </tr>
+                        <c:forEach items="${actorList}" var="act" varStatus="status">
+                            <tr>
+                                <td>${status.count}</td>
+                                <td style="width: 110px"><div class="profileBox"><img class="profile" src="<c:url value='${act.actorProfile}' /> "></div></td>
+                                <td>${act.actorName}</td>
+                                <td>${act.actorName}의 출연작품이름과 배역 이름</td>
+                                <td>${act.actorVote}</td>
+                                <td><a href="/">투표</a> </td>
+                            </tr>
+                        </c:forEach>
 
                     </table>
                 </div>
             </div>
             <div class="content-vote">
-                뮤지컬 랭킹
+                <div class="voteResult">
+                    <table>
+                        <c:forEach items="${actorList}" var="act" varStatus="status" begin="0" end="2">
+                            <tr>
+                                <td>${status.count}</td>
+                                <td>${act.actorName}</td>
+                                    <%--                                <td><img src="<c:url value='${act.actorProfile}' /> "></td>--%>
+                                <td>${act.actorVote}</td>
+                                <td><a href="/">투표</a> </td>
+                            </tr>
+                        </c:forEach>
+                    </table>
+                </div>
+                <div class="voteItem">
+                    <table border="1" class="tableItem">
+                        <tr>
+                            <th>순위</th>
+                            <th>뮤지컬 포스터</th>
+                            <th>감독 이름</th>
+                            <th>출연진 이름</th>
+                            <th>득표수</th>
+                            <th></th>
+                        </tr>
+                        <c:forEach items="${actorList}" var="act" varStatus="status">
+                            <tr>
+                                <td>${status.count}</td>
+                                <td style="width: 110px"><div class="profileBox"><img class="profile" src="<c:url value='${act.actorProfile}' /> "></div></td>
+                                <td>${act.actorName}</td>
+                                <td>${act.actorName}의 출연작품이름과 배역 이름</td>
+                                <td>${act.actorVote}</td>
+                                <td><a href="/">투표</a> </td>
+                            </tr>
+                        </c:forEach>
+
+                    </table>
+                </div>
             </div>
         </div>
     </div>
