@@ -2,7 +2,6 @@ package com.project.board.service;
 
 import java.util.List;
 
-import com.project.board.model.BoardVO;
 import com.project.board.model.BoardVO2;
 import com.project.board.model.ReplyVO2;
 

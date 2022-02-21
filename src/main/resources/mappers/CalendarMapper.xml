@@ -10,10 +10,10 @@
         <result property="numURL" column="numURL" />
     </resultMap>
 
-    <!-- 전체 넘버 조회 -->
-    <select id="listAllMedia" resultMap="mediaResult">
+    <!-- 전체 넘버 조회
+    <select id="listAllMedia" resultMap="calenResult">
         SELECT * FROM number ORDER BY numNo DESC
-    </select>
+    </select>  -->
     
 </mapper>
   
