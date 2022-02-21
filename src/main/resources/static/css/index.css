@@ -20,7 +20,8 @@
 }
 
 #bannerViewItem{
-    display: inline-flex;
+    display: flex;
+    justify-content: center;
 }
 
 .bannerContent{
