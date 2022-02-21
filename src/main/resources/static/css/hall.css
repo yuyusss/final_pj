@@ -7,8 +7,9 @@ body {
 	
 }
 #공연장 { 
+	margin-top : 50px;
 	margin-bottom : 50px;
-	color : black;
+	color : #FCF6F5;
 }
 .wrap {
 	margin-bottom : 50px;
@@ -16,22 +17,24 @@ body {
 #지역 { 
 	text-align : left;
 	margin-left : 110px;
-	color : black;
+	color : #FCF6F5;
 	font-size : 25px;
 	font-weight: bold;
 	
 }
 .hall {
 	text-align : center;
-	margin-top : 100px;
-	height : 200px;
+	padding-top : 30px;
+	padding-top : 10px;
+	padding-bottom : 30px;
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.2) 100%), url('/images/무대1.jpg');
 }
 
 .list {
 	width : 80%;
 	margin-left : auto;
 	margin-right : auto;
-	margin-bottom : auto;
+	margin-bottom : 50px;
 	color : black;
 	background-color : white;
 }

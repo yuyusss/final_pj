@@ -16,7 +16,7 @@
 		 <jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true'/>
 		
 		<!-- 공연장안내 -->
-		<div class="hall"><h1 id = "공연장">공연장</h1>
+		<div class="hall" id="hall"><h1 id = "공연장">공연장</h1>
 				
 			
 			<div id = "지역">서울</div>

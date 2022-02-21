@@ -7,8 +7,8 @@ body {
 }
 .all {
 	margin-top : 100px;
-	margin-left : 200px;
-	width : 700px; 
+	margin-left : 100px;
+	margin-right: 200px;
 	
 }
 .hall2 {
@@ -24,27 +24,31 @@ body {
 	width : 600px;
 }
 .A2 {
-	height: 450px;
-	width : 700px;
+
     position: relative;
 	
 }
 .list {
 	width : 95%;
+	margin-top : 50px;
 	margin-bottom : 50px;
 	color : black;
-	background-color : white;
+	
 	font-size : 14px;
 }
 .list tr th {
 	width : 20%;
-	padding: 10px 0 10px 15px;
+	padding: 10px 15px 10px 15px;
 	text-align : left;
+	background-color : white;
 	
 }
 .list tr th img {
     width: 100%;
     height: 50px;
+}
+.list td {
+	padding-left : 10px;
 }
 .submit {
 	margin-bottom : 20px;

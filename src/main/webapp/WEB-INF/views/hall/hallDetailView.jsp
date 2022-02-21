@@ -25,7 +25,7 @@
 				${hall.details}
 				 </div>
 				 <div class = "list">
-					<table border = 1 class = "list">
+					<table border = 1>
 							  <tr>
 								  <th>위치</th>
 								  <td colspan = "2">${hall.location }</td>
@@ -49,6 +49,7 @@
 		</section>
 		<!-- 바텀 -->
 		<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true'/>
+		
 		</div>
 	</body>
 </html>

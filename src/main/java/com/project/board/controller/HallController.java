@@ -24,12 +24,9 @@ public class HallController {
 		ArrayList<HallVO> ggHallList = service.listHallByArea("gg");
 		ArrayList<HallVO> etcHallList = service.listHallByArea("etc");
 		
-		
 		model.addAttribute("seoulHallList", seoulHallList);
 		model.addAttribute("ggHallList", ggHallList);
 		model.addAttribute("etcHallList", etcHallList);
-
-		System.out.println("hall = " + service.listAllHall());
 		
 		ArrayList<HallVO> hallList = service.listAllHall();
 		model.addAttribute("hallList", hallList);
@@ -40,7 +37,7 @@ public class HallController {
 		
 		HallVO hall = service.detailViewhall(no);
 		model.addAttribute("hall", hall);
-		System.out.println(service.detailViewhall(no));
+	
 		
 		return "hall/hallDetailView";
 	}
@@ -54,7 +51,6 @@ public class HallController {
 	@RequestMapping("/hall/inserthall") //추가 페이지
 	public String inserthall(HallVO hallVo ) {
 		service.inserthall(hallVo );
-		System.out.println(hallVo.getNo());
 		return "hall/hallInsertForm";
 	}
 	
@@ -62,7 +58,6 @@ public class HallController {
 	public String updateform( @PathVariable("no") String no, Model model) {
 		HallVO hall = service.detailViewhall(no);
 		model.addAttribute("hall", hall);
-		System.out.println(service.detailViewhall(no));
 		
 		return "hall/hallUpdateForm";
 	}
@@ -76,7 +71,6 @@ public class HallController {
 	public String deleteform( @PathVariable("no") String no, Model model) {
 		HallVO hall = service.detailViewhall(no);
 		model.addAttribute("hall", hall);
-		System.out.println(service.detailViewhall(no));
 		
 		return "hall/hallDeleteForm";
 	}
