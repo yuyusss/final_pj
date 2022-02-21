@@ -25,7 +25,10 @@ import com.project.board.service.BoardService;
 public class BoardController {
 	 	@Autowired
 	    private BoardService s;
+		private File none;
 	    
+		
+		
 	    @RequestMapping(value="/board", method=RequestMethod.GET)
 	    public String board() {
 	    	
@@ -38,6 +41,19 @@ public class BoardController {
 	    	return s.getBoard();
 	    }
 	    
+		/*
+		 * @RequestMapping(value="/boardList", method=RequestMethod.GET)
+		 * 
+		 * @ResponseBody public List<BoardVO> boardList(Model model
+		 * , @RequestParam(required = false, defaultValue = "1") int page
+		 * , @RequestParam(required = false, defaultValue = "1") int range) throws
+		 * Exception{ int listCnt = s.getBoardListCnt();
+		 * 
+		 * //Pagination 객체생성 Pagination pagination = new Pagination();
+		 * pagination.pageInfo(page, range, listCnt);
+		 * 
+		 * model.addAttribute("pagination", pagination); return s.getBoard(); }
+		 */
 	    
 	    @RequestMapping(value="/write", method=RequestMethod.GET)
 	    public String write() {
@@ -46,16 +62,42 @@ public class BoardController {
 		
 	    @RequestMapping(value="/writeAction", method=RequestMethod.POST)
 	    public String writeAction(
-	            HttpServletRequest req,@RequestParam("file") MultipartFile file,
+	            HttpServletRequest req,@RequestParam("file") MultipartFile file,Model model,
 	            @RequestParam("title")String title, 
 	            @RequestParam("contents")String contents, String hits,Date writedate) throws IllegalStateException, IOException {
-	        String PATH = req.getSession().getServletContext().getRealPath("/") + "resources/";
-	        if (!file.getOriginalFilename().isEmpty()) {
-	            file.transferTo(new File(PATH + file.getOriginalFilename()));
-	        }
+	        
+	    	//1. 파일 저장 경로 설정 : 실제 서비스 되는 위치(프로젝트 외부에 저장)
+			String uploadPath="C:/springWorkspace/upload/";
+			
+			//2. 원본 파일 이름 알아오기
+			String originalFileName=file.getOriginalFilename();
+			
+			
+			
+			 if (!file.getOriginalFilename().isEmpty()) {
+		            file.transferTo(new File(uploadPath + file.getOriginalFilename()));
+		        }
+			//model로 저장
+			model.addAttribute("originalFileName",originalFileName);
+			
 	        s.addBoard(new BoardVO(0, title, contents, file.getOriginalFilename(), hits,writedate));
 	        return "board/board";
 	    }
+	    
+		/*
+		 * @RequestMapping(value="/writeAction", method=RequestMethod.POST) public
+		 * String writeAction( HttpServletRequest req,@RequestParam("file")
+		 * MultipartFile file,
+		 * 
+		 * @RequestParam("title")String title,
+		 * 
+		 * @RequestParam("contents")String contents, String hits,Date writedate) throws
+		 * IllegalStateException, IOException { String PATH =
+		 * req.getSession().getServletContext().getRealPath("/") + "resources/"; if
+		 * (!file.getOriginalFilename().isEmpty()) { file.transferTo(new File(PATH +
+		 * file.getOriginalFilename())); } s.addBoard(new BoardVO(0, title, contents,
+		 * file.getOriginalFilename(), hits,writedate)); return "board/board"; }
+		 */
 
 	    @RequestMapping(value="/view", method=RequestMethod.GET)
 	    public String view() {
@@ -67,19 +109,12 @@ public class BoardController {
 	    public BoardVO boardList(@RequestParam("idx")int idx) throws Exception{
 	        System.out.println("boardView, idx = " + idx);
 	    	s.updatereviewcnt(idx);
-	    	
+	    	BoardVO vo = s.getBoardOne(idx);
+	    	System.out.println(vo.getImage());
 	    	return s.getBoardOne(idx);
 	    }
 	    
-		/*
-		 * @RequestMapping(value="/boardView", method=RequestMethod.GET)
-		 * 
-		 * @ResponseBody public BoardVO boardList(@RequestParam("idx")int idx) throws
-		 * Exception{ System.out.println("boardView, idx = " + idx);
-		 * s.updatereviewcnt(idx); BoardVO board = s.detailViewBoard(idx);
-		 * 
-		 * return board; }
-		 */
+		
 	    
 	    @RequestMapping(value="/replyList", method=RequestMethod.GET)
 	    @ResponseBody
@@ -107,26 +142,52 @@ public class BoardController {
 			return "redirect:/board";
 		}
 	    
-	    @RequestMapping("/board/deletereply/{idx}")
-		public String deleteReply(@PathVariable String idx) {
+	    @RequestMapping("/board/deletereply/{pageIdx}/{idx}")
+		public String deleteReply(@PathVariable String idx, @PathVariable String pageIdx) {
+	    	System.out.println("deletereply - idx " + idx);
 	    	s.deleteReply(idx);
-			return "redirect:/view?idx=" + idx;
+	    
+			return "redirect:/view?idx=" + pageIdx;
 		}
 	    
+	    
+	    
 	    @RequestMapping("/board/update/{idx}")
-		public String updateBookForm(@PathVariable int idx, Model model) {
+		public String updateBoardForm(@PathVariable int idx, Model model) {
 			BoardVO board = s.detailViewBoard(idx);
 			model.addAttribute("board", board);
 			return "board/update";
 		}
 	    
 	    @RequestMapping("/board/updateBoard")
-		public String detailViewBook(BoardVO board) {
+		public String detailViewBoard(BoardVO board,@RequestParam("file") MultipartFile file,Model model) throws IllegalStateException, IOException {
 	    	System.out.println(board);
+	    	
+	    	//1. 파일 저장 경로 설정 : 실제 서비스 되는 위치(프로젝트 외부에 저장)
+			String uploadPath="C:/springWorkspace/upload/";
+			
+			//2. 원본 파일 이름 알아오기
+			String originalFileName=file.getOriginalFilename();
+			
+			
+			
+			 if (!file.getOriginalFilename().isEmpty()) {
+		            file.transferTo(new File(uploadPath + file.getOriginalFilename()));
+		        }
+			 
+			//model로 저장
+			model.addAttribute("originalFileName",originalFileName);
+			board.setImage(file.getOriginalFilename());
+			        
+	    	
 			s.updateBoard(board);
 			return "redirect:/board";
 		}
 	    
 	    
+
 	    
 }
+
+
+

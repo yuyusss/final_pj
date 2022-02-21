@@ -1,12 +1,19 @@
 package com.project.board.service;
 
+
+import java.util.ArrayList;
+
+
 import com.project.board.dao.IMediaDAO;
 import com.project.board.model.MediaVO;
+import com.project.board.model.VoteVO;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import com.project.board.dao.IMediaDAO;
+import com.project.board.model.MediaVO;
 
 @Service
 public class MediaService implements IMediaService{
@@ -18,4 +25,11 @@ public class MediaService implements IMediaService{
     public ArrayList<MediaVO> listAllMedia() {
         return dao.listAllMedia();
     }
+
+    @Override
+    public ArrayList<VoteVO> listAllActor() {
+        return dao.listAllActor();
+    }
+
+
 }
