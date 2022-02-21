@@ -58,6 +58,11 @@ public class IndexController {
         return "login";
     }
     
+    @RequestMapping(value="/chatbot", method=RequestMethod.GET)
+    public String chatbot() {
+        return "chatbot";
+    }
+    
     @RequestMapping(value="/signUp", method=RequestMethod.GET)
     public String signUp() {
         return "signUp";
@@ -102,10 +107,4 @@ public class IndexController {
         s.addReply(new Reply(0, idx,replyIdx, contents));
         return "redirect:view?idx=" + idx;
     }
-
-
-
-
-
-
 }

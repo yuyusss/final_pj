@@ -13,6 +13,7 @@
 			<result property="memPhone" column="memPhone"/>
 			<result property="memAddress" column="memAddress"/>
 			<result property="memAddressDetail" column="memAddressDetail"/>
+			<result property="genre" column="genre"/>
 		</resultMap>
 		
 		<!-- 로그인 -->
@@ -27,7 +28,7 @@
 		
 		<!-- 회원가입 -->
 		<insert id="signUp" parameterType="com.project.board.model.MemberVO">
-			  INSERT INTO member (memId, memPw, memName, memEmail, memPhone, memAddress, memAddressDetail) VALUES(#{memId}, #{memPw}, #{memName}, #{memEmail}, #{memPhone}, #{memAddress}, #{memAddressDetail}) 
+			  INSERT INTO member (memId, memPw, memName, memEmail, memPhone, memAddress, memAddressDetail, genre) VALUES(#{memId}, #{memPw}, #{memName}, #{memEmail}, #{memPhone}, #{memAddress}, #{memAddressDetail}, #{genre}) 
 		</insert>
 	
 </mapper>

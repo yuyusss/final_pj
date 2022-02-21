@@ -14,7 +14,7 @@
                 <div class="footerInfoTitle">
                     <h3>MUTRODUCE</h3>
                 </div>
-                <address>서욱특별시 강남구 삼성로 512</address>
+                <address>서울특별시 강남구 삼성로 512</address>
                 <div class="footerContact">
                     <h4>DEV</h4>
                     <h4>정현지, 김용휘, 유승희, 손지원, 박재훈</h4>

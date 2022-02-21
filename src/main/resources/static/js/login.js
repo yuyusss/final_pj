@@ -30,7 +30,6 @@ window.onload = function() {
 			return false;	   // 서버로 전송되지 않게 함(다음 페이지로 이동 못하게)		
 		}		
 		
-
 	}
 }
 
@@ -55,7 +54,8 @@ $(document).ready(function(){
 			error:function(data, textStatus){
 				alert("전송 실패");
 			}
-			
+
 		});
 	});	
+
 });

@@ -77,16 +77,16 @@ public class MemberController {
 	//회원가입 중복확인
 	@ResponseBody
 	@RequestMapping(value = "/idcheck")
-	public String idCheck(@RequestBody String paramData) {
+	public String idCheck(@RequestParam String id) {
 
-		 System.out.println(paramData);
-		/* JSONObject json = new JsonObject(paramData) */
+		System.out.println(id);
+
 		String checkVar = "no_use";
 
-		String memId_result = service.memIdCheck(paramData);
+		String memId_result = service.memIdCheck(id);
 		
 		if(memId_result != null) {
-			// System.out.println("use : " + memId_result);
+
 			checkVar = "use";
 		}
 		return checkVar;
