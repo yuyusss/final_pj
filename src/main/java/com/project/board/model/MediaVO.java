@@ -4,6 +4,15 @@ public class MediaVO {
     private int numNo;
     private String numTitle;
     private String numURL;
+    private String weather;
+
+    public String getWeather() {
+        return weather;
+    }
+
+    public void setWeather(String weather) {
+        this.weather = weather;
+    }
 
     public int getNumNo() {
         return numNo;
