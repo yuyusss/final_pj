@@ -7,9 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.project.board.dao.IBoardDAO3;
-import com.project.board.model.BoardVO;
 import com.project.board.model.BoardVO3;
-import com.project.board.model.ReplyVO;
 import com.project.board.model.ReplyVO3;
 
 @Service

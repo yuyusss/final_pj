@@ -2,9 +2,7 @@ package com.project.board.service;
 
 import java.util.List;
 
-
 import com.project.board.model.BoardVO3;
-
 import com.project.board.model.ReplyVO3;
 
 public interface IBoardService3 {

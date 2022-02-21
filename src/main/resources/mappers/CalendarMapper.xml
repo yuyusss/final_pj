@@ -13,10 +13,17 @@
         <result property="calURL" column="calURL" />
     </resultMap>
 
+
+    <!-- 전체 넘버 조회
+    <select id="listAllMedia" resultMap="calenResult">
+        SELECT * FROM number ORDER BY numNo DESC
+    </select>  -->
+
     <!-- 전체 일정 출력 -->
     <select id="listAllSchedule" resultMap="calendarResult">
         SELECT JSON_OBJECT('title', #{calTitle}, 'content', #{calDetail}, 'start', #{calStart}, 'end', #{calEnd}, 'URL', #{calURL})
     </select>
+
     
 </mapper>
   

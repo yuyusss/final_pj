@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+img{
+	width:100px;
+}
+
+
+
 body {
     font-size: 12px;
     background: #FFF;
@@ -9,7 +15,7 @@ body {
 
 #content {
 	border-radius:24px;
-	width:250px;
+	width:300px;
     margin: 20px;
     padding: 10px;
     background: #393;
@@ -26,7 +32,7 @@ body {
 
 #rank-list {
     overflow: hidden;
-    width: 160px;
+    width: 300px;
     height: 20px;
     margin: 0;
 }

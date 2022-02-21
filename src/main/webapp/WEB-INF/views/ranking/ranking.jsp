@@ -16,19 +16,15 @@
 	<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 <h1 style="margin:30px;">뮤지컬 랭킹</h1>
 <div id="content">
+	<c:forEach items="${rankList}" var="rank">
             <dl id="rank-list">
                 <dd>
                     <ol>
-                        <li><a href="#">1.</a></li>
-                        <li><a href="#">2.</a></li>
-                        <li><a href="#">3.</a></li>
-                        <li><a href="#">4.</a></li>
-                        <li><a href="#">5.</a></li>
-                        <li><a href="#">6.</a></li>
-                        <li><a href="#">7.</a></li>
-                        <li><a href="#">8.</a></li>
-                        <li><a href="#">9.</a></li>
-                        <li><a href="#">10.</a></li>
+                        <li><a href="#">1. ${rank.muscName}</a></li>
+                        <li><a href="#">2. ${rank.muscName}</a></li>
+                        <li><a href="#">3. ${rank.muscName}</a></li>
+                        <li><a href="#">4. ${rank.muscName}</a></li>
+
                     </ol>
                 </dd>
             </dl>
@@ -38,77 +34,23 @@
 	<thead>
 	<tr>
 	<th>랭킹</th>
-	<th>공연명</th>
+	<th colspan=2>공연명</th>
 	<th>공연 일시</th>
 	<th>공연장소</th>
 	</tr>
-	<thead>
 	</thead>
-	<tbody>
-	<tr>
-	<td>1위</td>
-	<td><a href="#">공연명</a></td>
-	<td>공연일시</td>
-	<td>공연장소</td>
-	</tr>
-	<tr>
-	<td>2위</td>
-	<td><a href="#">공연명</a></td>
-	<td>공연일시</td>
-	<td>공연장소</td>
-	</tr>
-	<tr>
-	<td>3위</td>
-	<td><a href="#">공연명</a></td>
-	<td>공연일시</td>
-	<td>공연장소</td>
-	</tr>
-	<tr>
-	<td>4위</td>
-	<td><a href="#">공연명</a></td>
-	<td>공연일시</td>
-	<td>공연장소</td>
-	</tr>
-	<tr>
-	<td>5위</td>
-	<td><a href="#">공연명</a></td>
-	<td>공연일시</td>
-	<td>공연장소</td>
-	</tr>
-	<tr>
-	<td>6위</td>
-	<td><a href="#">공연명</a></td>
-	<td>공연일시</td>
-	<td>공연장소</td>
-	</tr>
-	<tr>
-	<td>7위</td>
-	<td><a href="#">공연명</a></td>
-	<td>공연일시</td>
-	<td>공연장소</td>
-	</tr>
-	<tr>
-	<td>8위</td>
-	<td><a href="#">공연명</a></td>
-	<td>공연일시</td>
-	<td>공연장소</td>
-	</tr>
-	<tr>
-	<td>9위</td>
-	<td><a href="#">공연명</a></td>
-	<td>공연일시</td>
-	<td>공연장소</td>
-	</tr>
-	<tr>
-	<td>10위</td>
-	<td><a href="#">공연명</a></td>
-	<td>공연일시</td>
-	<td>공연장소</td>
-	</tr>
-	</tbody>
+
+			<tr>
+				<td>1위</td>
+				<td style="text-align:right;"><img src="/images/${rank.muscNo}.jpg"></td>
+				<td style="text-align:left;">${rank.muscName}</td>
+				<td>${rank.muscStartDate} ~ ${rank.muscEndDate}</td>
+				<td><a href="${rank.muscPlaceLink}">${rank.muscPlace}</a></td>
+			</tr>
 		
 	</table>
       </div>
+      </c:forEach>
      <jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' /> 
       
 	</body>
