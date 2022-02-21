@@ -40,6 +40,7 @@ public class BoardService implements IBoardService{
     public List<ReplyVO> getReply(int boardIdx) {
         return dao.getReply(boardIdx);
     }
+
     @Override
     public int updatereviewcnt(int idx) {
 		return dao.updatereviewcnt(idx);
