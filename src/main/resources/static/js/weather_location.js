@@ -41,6 +41,9 @@ window.onload = function (){
             sessionStorage.setItem("weather", weather);
         }
 
+        `select * from weathernumber where weather =?`
+
+        // sky is clear, few clouds, scattered clouds, broken clouds, overcast clouds, shower rain, light rain, moderate rain, Thunderstorm, snow, mist
         if(weather === "Rain"){
             console.log("Rain");
         } else if(weather === "Snow"){
@@ -48,8 +51,18 @@ window.onload = function (){
         }else {
             console.log(weather);
         }
-    };
 
+        $.ajax({
+            url: 'index2.jsp', // 날씨 값 뿌려줄 페이지
+            method: 'post',
+            data: {
+                weather: 'weather' // dbGet 페이지로 js의 weather값 보냄
+            },
+            success: function(res){
+                console.log($.trim(res));
+            }
+        })
+    };
     init();
 
 }

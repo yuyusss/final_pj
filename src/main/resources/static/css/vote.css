@@ -1,9 +1,58 @@
 /* vote.css */
 
-.voteBanner{
-    border: 1px solid red;
+.voteMain input[type=radio] {
+    display: none;
+}
+
+#tab1:checked ~ .tab label:nth-child(1),
+#tab2:checked ~ .tab label:nth-child(2){
+    box-shadow: none;
+}
+
+.voteContent > div{
+    display: none;
+}
+
+#tab1:checked ~ .voteContent div:nth-child(1),
+#tab2:checked ~ .voteContent div:nth-child(2){
+    display: block;
+}
+
+.tab{
+    overflow: hidden;
+}
+
+.tab label{
+    font-size: 18px;
+    cursor: pointer;
+    float: left;
+    width: 50%;
+    text-align: center;
+    padding: 15px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.voteContent > div{
+    padding: 30px;
+    font-size: 17px;
 }
 
 .voteItem{
+    border: 1px solid red;
+}
+
+.voteItem table{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.voteResult{
     border: 1px solid green;
+    display: flex;
+    justify-content: center;
 }

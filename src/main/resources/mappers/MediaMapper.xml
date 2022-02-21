@@ -8,12 +8,15 @@
         <result property="numNo" column="numNo" />
         <result property="numTitle" column="numTitle" />
         <result property="numURL" column="numURL" />
+        <result property="weather" column="weather" />
     </resultMap>
 
     <!-- 전체 넘버 조회 -->
     <select id="listAllMedia" resultMap="mediaResult">
         SELECT * FROM weathernumber ORDER BY numNo DESC
     </select>
+
+
     
 </mapper>
   

@@ -5,7 +5,7 @@
 <html>
 <head>
     <title>MUTRODUCE</title>
-    <script src="<c:url value="/js/weather_location.js" />"></script>
+    <script src="<c:url value='/js/weather_location.js' />"</script>
     <script src="<c:url value="/js/calendar.js" />"></script>
     <link href="<c:url value='/css/location_map.css'/>" rel="stylesheet" type="text/css">
 
@@ -78,12 +78,16 @@
             <div class="RecogNumberItem">
 
                 <div class="RecogMain">
-                    <div class="RecogMainMenu">
-                        <iframe width="440" height="350" src="https://www.youtube.com/embed/4rqI5F5Gra8"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                    </div>
+                    <c:forEach items="${mediaList}" var="media" begin="0" end="0">
+                        <div class="RecogMainMenu">
+                            <iframe width="440" height="350" src="${media.numURL}"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+
+                            </iframe>
+                        </div>
+                    </c:forEach>
                 </div>
 
                 <div class="RecogSub">

@@ -15,15 +15,48 @@
     <!-- TOP -->
     <jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true'/>
 
-    <div class="voteAll">
-        <%-- 투표 페이지 - 배너(현재 순위) --%>
-        <div class="voteBanner">
-            현재 뮤지컬 / 배우 순위 알려주는 창
+    <div class="voteMain">
+        <input type="radio" id="tab1" name="show" checked/>
+        <input type="radio" id="tab2" name="show" />
+
+        <div class="tab">
+            <label for="tab1">배우</label>
+            <label for="tab2">뮤지컬</label>
         </div>
-        <div class="voteItem">
-            뮤지컬 / 배우 투표할 수 있게 함
+
+        <div class="voteContent">
+            <div class="content-vote">
+                <div class="voteResult">
+                    <div>2등</div>
+                    <div>1등</div>
+                    <div>3등</div>
+                </div>
+                <div class="voteItem">
+                    <table border="0.5">
+                        <tr>
+                            <th>순위</th>
+                            <th>이름</th>
+                            <th>작품</th>
+                            <th>득표수</th>
+                        </tr>
+                        <tr>
+                            <td>순위</td>
+                            <td>순위</td>
+                            <td>순위</td>
+                            <td>순위</td>
+                            <td><a href="/">투표</a> </td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+            <div class="content-vote">
+                뮤지컬 랭킹
+            </div>
         </div>
     </div>
+
+
 
 
 

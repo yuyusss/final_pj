@@ -6,14 +6,14 @@
 <head>
     <title>MUTRODUCE</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <link href="/fullcalendar-5.10.1/lib/main.css" rel="stylesheet" />
+    <link href="<c:url value='/fullcalendar-5.10.1/lib/main.css' />" rel="stylesheet" />
     <link href="<c:url value='/css/menu.css'/>" rel="stylesheet" type="text/css">
     <link href="<c:url value='/css/common.css'/>" rel="stylesheet" type="text/css">
     <link href="<c:url value='/css/index.css'/>" rel="stylesheet" type="text/css">
     <link href="<c:url value='/css/calendar.css'/>" rel="stylesheet" type="text/css">
-    <script src="/fullcalendar-5.10.1/lib/main.js"></script>
+    <script src="<c:url value='/fullcalendar-5.10.1/lib/main.js' />"></script>
     <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
-    <script src="<c:url value="/js/calendar.js" />"></script>
+    <script src="<c:url value='/js/calendar.js'/>"></script>
     <script src="<c:url value='/js/menu.js' />"></script>
 
 </head>
@@ -25,9 +25,17 @@
     <div id="headerMenuBox">
         <div class="headerMenu">
             <ul>
-                <li><a href="/signup">회원가입</a> </li>
-                <li><a href="/loginForm">로그인</a> </li>
-                <li><a href="/">마이페이지</a> </li>
+                <%--로그인 처리 전에 보여줄 부분--%>
+                <c:if test="${empty sessionScope.sid}">
+                    <li><a href="<c:url value='/signup' />">회원가입</a> </li>
+                    <li><a href="<c:url value='/loginForm' />">로그인</a> </li>
+                </c:if>
+                <%--로그인 처리 후에 보여줄 부분--%>
+                <c:if test="${not empty sessionScope.sid}">
+                    <li>${sessionScope.sid} 님&nbsp;</li>
+                    <li><a href="<c:url value='/logout' />">로그아웃</a> </li>
+                    <li><a href="<c:url value='/' />">마이페이지</a> </li>
+                </c:if>
             </ul>
         </div>
     </div>
