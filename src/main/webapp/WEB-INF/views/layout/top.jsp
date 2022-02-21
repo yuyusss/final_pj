@@ -42,7 +42,9 @@
 
     <!-- header -->
     <div id="logoBox">
-        <a href="/"><img src="<c:url value='images/logo.jpeg' />" id="logoImage"></a>
+
+        <a href="/"><img src="<c:url value='/images/logo.jpeg' />" id="logoImage"></a>
+
     </div>
     <div id="topMenuBox">
         <div class="topMenu">

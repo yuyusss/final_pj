@@ -36,6 +36,7 @@ import com.project.board.dao.IMediaDAO;
 
 @ComponentScan(basePackages = "com.project.board")
 
+
 @MapperScan(basePackages = "com.project.board")
 @MapperScan(basePackageClasses = IMediaDAO.class)
 public class BoardApplication {

@@ -7,6 +7,9 @@
 		<title>Insert title here</title>
 	</head>
 	<body>
+
+		<a href="/hall">공연장</a>
+
 		<a href="/board">고고</a>
 
 		<a href="/login">로그인</a>
@@ -15,6 +18,5 @@
 
 		<br><br>
 		<a href="/testDetail">상세정보 페이지</a>
-
 	</body>
 </html>

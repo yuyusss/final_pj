@@ -38,8 +38,11 @@ public class IndexController {
 
 
 
+
+
     @Autowired
     private WeatherService weatherService;
+
 
     @RequestMapping(value="/", method=RequestMethod.GET)
     public String index(Model model) {
