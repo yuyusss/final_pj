@@ -40,11 +40,10 @@
 					<li class="menu link"><a href="/board">공연 요청</a></li>
 					<li class="menu link"><a href="#">장르별 추천</a>
 						<ul class="hide">
-							<li class="subMenu"><a href="<c:url value='/'/>">배우 별</a></li>
-							<li class="subMenu"><a href="<c:url value='/'/>">장르 별</a></li>
-							<li class="subMenu"><a href="<c:url value='/'/>">넘버 별</a></li>
+							<li class="subMenu"><a href="<c:url value='/board3'/>">배우 별</a></li>
+							<li class="subMenu"><a href="<c:url value='/board4'/>">뮤지컬 별</a></li>
 						</ul></li>
-					<li class="menu link"><a href="#">정보 게시판</a></li>
+					<li class="menu link"><a href="/boardinformation">정보 게시판</a></li>
 				</ul>
 			</div>
 		</div>
@@ -56,7 +55,7 @@
 		<div class="board">
 	      <h2>글쓰기</h2>
 	      <hr><hr><br>
-	        <form id="boardform" name="boardform" class="boardform" action="writeAction" method = "POST" enctype="multipart/form-data" onSubmit="return Checkform()">
+	        <form id="boardform" name="boardform" class="boardform" action="writeAction2" method = "POST" enctype="multipart/form-data" onSubmit="return Checkform()">
 				<div class="form-group">
 				  <label for="usr">제목:</label>
 				  <input type="text" class="writeinput form-control" id="title" name ="title">
@@ -72,7 +71,7 @@
 			    </div>
 				<br>
 			    <button class="writeBtn" type="submit">글쓰기</button>
-			  </form>
+			 </form>
 		</div>
 	</div>
 </div>
