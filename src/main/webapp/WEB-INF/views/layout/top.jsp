@@ -26,9 +26,6 @@
         <div class="headerMenu">
             <ul>
 
-                <li><a href="/signUp">회원가입</a> </li>
-                <li><a href="/login">로그인</a> </li>
-                <li><a href="/">마이페이지</a> </li>
 
                 <%--로그인 처리 전에 보여줄 부분--%>
                 <c:if test="${empty sessionScope.sid}">
@@ -58,21 +55,23 @@
                 <li class="menu1">
                     <a href="/">ΞΞ 전체 카테고리</a>
                     <ul class="sub">
-                        <li><a href="/">뮤지컬</a></li>
+
+                        <li><a href="/detailView/1">뮤지컬</a></li>
                         <li><a href="/vote">투표</a></li>
                         <li><a href="/">랭킹</a></li>
+
                         <li><a href="/">커뮤니티</a></li>
                         <li><a href="/">공연장</a></li>
                         <li><a href="/">문의사항</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="/">뮤지컬</a>
+                    <a href="/detailView/1">뮤지컬</a>
                     <ul class="sub">
-                        <li><a href="/">오리지널/내한공연</a></li>
-                        <li><a href="/">라이센스</a></li>
-                        <li><a href="/">창작뮤지컬</a></li>
-                        <li><a href="/">아동/가족</a></li>
+                        <li><a href="/detailView/1">오리지널/내한공연</a></li>
+                        <li><a href="/detailView/2">라이센스</a></li>
+                        <li><a href="/detailView/3">창작뮤지컬</a></li>
+                        <li><a href="/detailView/4">아동/가족</a></li>
                     </ul>
                 </li>
                 <li><a href="/vote">투표</a></li>
