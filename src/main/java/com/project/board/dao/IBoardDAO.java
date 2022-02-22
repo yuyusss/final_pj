@@ -17,5 +17,7 @@ public interface IBoardDAO {
     void deleteReply(String replyVo);
     void updateBoard(BoardVO b);
     BoardVO detailViewBoard(int idx);
+    //public int getBoardListCnt();
+    
 }
 	
