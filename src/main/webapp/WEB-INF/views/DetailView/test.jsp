@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>test view</title>
+		<title>뮤지컬 상세조회 페이지</title>
 		
 		<!-- Google Font -->
 	    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
 			
 			
 			function openWindow(){
-				window.open("https://youtu.be/EH8gPlK6Tss", "youtube-link", 
+				window.open("${musicalData.muscYoutube}", "youtube-link", 
 									  "width=520, height=570, left=400, top=50, status=no, scrollbars=no, resizable=no");
 			}
 		</script>

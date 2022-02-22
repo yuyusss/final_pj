@@ -17,6 +17,7 @@ public class MusicalVO {
 	private String muscInfo_1;
 	private String muscInfo_2;
 	private String muscInfo_3;
+	private String muscYoutube;
 	
 	private String genreNo;
 	private String genreName;
@@ -26,8 +27,8 @@ public class MusicalVO {
 
 	public MusicalVO(String muscNo, String muscName, String muscHashtag, String muscPlace, String muscPlaceLink,
 			String muscStartDate, String muscEndDate, String muscQuote, int muscReqTime, String muscSynop,
-			String muscGenre, String muscImg, String muscInfo_1, String muscInfo_2, String muscInfo_3, String genreNo,
-			String genreName) {
+			String muscGenre, String muscImg, String muscInfo_1, String muscInfo_2, String muscInfo_3,
+			String muscYoutube, String genreNo, String genreName) {
 		super();
 		this.muscNo = muscNo;
 		this.muscName = muscName;
@@ -44,6 +45,7 @@ public class MusicalVO {
 		this.muscInfo_1 = muscInfo_1;
 		this.muscInfo_2 = muscInfo_2;
 		this.muscInfo_3 = muscInfo_3;
+		this.muscYoutube = muscYoutube;
 		this.genreNo = genreNo;
 		this.genreName = genreName;
 	}
@@ -106,6 +108,10 @@ public class MusicalVO {
 
 	public String getMuscInfo_3() {
 		return muscInfo_3;
+	}
+
+	public String getMuscYoutube() {
+		return muscYoutube;
 	}
 
 	public String getGenreNo() {
@@ -176,6 +182,10 @@ public class MusicalVO {
 		this.muscInfo_3 = muscInfo_3;
 	}
 
+	public void setMuscYoutube(String muscYoutube) {
+		this.muscYoutube = muscYoutube;
+	}
+
 	public void setGenreNo(String genreNo) {
 		this.genreNo = genreNo;
 	}
@@ -190,8 +200,8 @@ public class MusicalVO {
 				+ ", muscPlace=" + muscPlace + ", muscPlaceLink=" + muscPlaceLink + ", muscStartDate=" + muscStartDate
 				+ ", muscEndDate=" + muscEndDate + ", muscQuote=" + muscQuote + ", muscReqTime=" + muscReqTime
 				+ ", muscSynop=" + muscSynop + ", muscGenre=" + muscGenre + ", muscImg=" + muscImg + ", muscInfo_1="
-				+ muscInfo_1 + ", muscInfo_2=" + muscInfo_2 + ", muscInfo_3=" + muscInfo_3 + ", genreNo=" + genreNo
-				+ ", genreName=" + genreName + "]";
+				+ muscInfo_1 + ", muscInfo_2=" + muscInfo_2 + ", muscInfo_3=" + muscInfo_3 + ", muscYoutube="
+				+ muscYoutube + ", genreNo=" + genreNo + ", genreName=" + genreName + "]";
 	}
 	
 	

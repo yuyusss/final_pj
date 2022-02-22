@@ -26,7 +26,7 @@ public class detailPageController {
     	return "/layout/recommand"; 
     }
 	
-	// 상세정보 페이지로 이동
+	// 뮤지컬 목록 페이지로 이동
 	@RequestMapping("/detailView/{genreNo}")
 	public String detailView(@PathVariable String genreNo, HttpSession session) {
 		System.out.println(genreNo);
