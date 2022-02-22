@@ -19,12 +19,8 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css"
-	href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
-<script type="text/javascript" charset="utf8"
-	src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+
+
 <style>
 .fakeimg {
 	height: 200px;
@@ -33,7 +29,9 @@
 </style>
 
 <script type="text/javascript">
+	
 	$(document).ready(
+			
 			function() {
 				$("#writeBtn").click(function() {
 					location.href = "write";
@@ -43,8 +41,8 @@
 					success : function(result) {
 						var html = "";
 						result.forEach(function(item) {
-							html += "<tr> <td><a href = 'view?idx=" + item.idx
-									+ "'>" + item.title + "</a>"
+							html += "<tr> <td>"+item.idx+"</td><td></td><td><a href = 'view?idx=" + item.idx
+									+ "'>" + item.title + "</a></td><td>"+item.contents+"</td><td>"+item.hits+"</td><td>"+item.writedate+"</td>"
 						})
 						$("#listArea").append(html)
 						$('#example').DataTable();
@@ -54,13 +52,12 @@
 					location.href = "write";
 				})
 			});
+	
 </script>
 </head>
 <body>
 
-	<div class="jumbotron text-center" style="margin-bottom: 0">
-		<h1>top 올 자리</h1>
-	</div>
+	
 
 
 	<nav>
@@ -82,6 +79,7 @@
 							<li class="subMenu"><a href="<c:url value='/'/>">장르 별</a></li>
 							<li class="subMenu"><a href="<c:url value='/'/>">넘버 별</a></li>
 						</ul></li>
+					<li class="menu link"><a href="#">정보 게시판</a></li>
 				</ul>
 			</div>
 		</div>
@@ -97,13 +95,14 @@
 				<table id="example" class="display" style="width: 100%">
 					<thead>
 						<tr>
-							<th>제목</th>
+							<th>게시글번호</th><th>닉네임</th><th>제목</th><th>내용</th><th>조회 수</th><th>작성일</th>
 						</tr>
 					</thead>
 					<tbody id="listArea">
 					</tbody>
 				</table>
-				<button type="button" class="btn btn-primary" id="writeBtn">글쓰기</button>
+				<br>
+				<button type="button"  id="writeBtn">글쓰기</button>
 			</div>
 		</div>
 	</div>

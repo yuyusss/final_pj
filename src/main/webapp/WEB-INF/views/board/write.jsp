@@ -13,6 +13,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="<c:url value='/js/board.js'/>"></script>
+<script src="<c:url value='/js/boardform.js'/>"></script>
+<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
   <style>
@@ -40,10 +42,11 @@
 	<div class="row">
 		<div class="col-sm-12">
 	      <h2>글쓰기</h2>
-	        <form action="writeAction" method = "POST" enctype="multipart/form-data">
+	        <form id="boardform" name="boardform" class="boardform" action="writeAction" method = "POST" enctype="multipart/form-data" onSubmit="return Checkform()">
 				<div class="form-group">
 				  <label for="usr">제목:</label>
-				  <input type="text" class="form-control" id="title" name = "title">
+				  <input type="text" class="form-control" id="title" name ="title">
+				  
 				</div>
 			    <div class="form-group">
 			      <input type="file" class="form-control-file border" name="file">
