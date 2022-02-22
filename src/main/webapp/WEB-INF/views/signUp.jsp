@@ -23,7 +23,7 @@
 					</div>
 					<hr width="640px" size="3px" color="gray" style="margin: 0 auto"><br>
 					
-				<form id="form" name="memberForm" method="post" onsubmit="return signUpForm_check();" action="#">
+				<form id="form" name="memberForm" method="post" onsubmit="return signUpForm_check();" action="/signUp">
 					
 					
 					<table class="memberTable">

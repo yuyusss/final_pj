@@ -36,10 +36,6 @@ public class IndexController {
     @Autowired
     MediaService service;
 
-
-
-
-
     @Autowired
     private WeatherService weatherService;
 
