@@ -2,7 +2,7 @@ package com.project.board.service;
 
 
 import org.json.JSONObject;
-import org.json.simple.parser.JSONParser;
+
 import org.springframework.stereotype.Service;
 
 import java.io.InputStreamReader;
