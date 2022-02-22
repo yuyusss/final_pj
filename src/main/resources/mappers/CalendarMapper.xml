@@ -4,17 +4,29 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="com.project.board.dao.ICalendarDAO">
-    <resultMap id="calenResult" type="com.project.board.model.CalendarVO">
+
+
+    <resultMap id="calendarResult" type="com.project.board.model.CalendarVO">
+
         <result property="calNo" column="calNo" />
-        <result property="numTitle" column="numTitle" />
-        <result property="numURL" column="numURL" />
+        <result property="calTitle" column="calTitle" />
+        <result property="calDetail" column="calDetail" />
+        <result property="calStart" column="calStart" />
+        <result property="calEnd" column="calEnd" />
+        <result property="calURL" column="calURL" />
     </resultMap>
 
-    <!-- 전체 넘버 조회 -->
-    <select id="listAllMedia" resultMap="mediaResult">
+
+    <!-- 전체 넘버 조회
+    <select id="listAllMedia" resultMap="calenResult">
         SELECT * FROM number ORDER BY numNo DESC
+    </select>  -->
+
+    <!-- 전체 일정 출력 -->
+    <select id="listAllSchedule" resultMap="calendarResult">
+        SELECT JSON_OBJECT('title', #{calTitle}, 'content', #{calDetail}, 'start', #{calStart}, 'end', #{calEnd}, 'URL', #{calURL})
     </select>
+
     
 </mapper>
-  
   

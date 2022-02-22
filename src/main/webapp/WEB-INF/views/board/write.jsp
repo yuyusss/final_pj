@@ -7,7 +7,6 @@
 <title>과제</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link href="<c:url value='/css/board.css'/>" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -22,41 +21,57 @@
     height: 200px;
     background: #aaa;
   }
+  
   </style>
 </head>
+<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
+<nav id="boardmenu">
+		<span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;
+			</span>
+		<div class="menu-btn">
+			<div class="line line--1"></div>
+			<div class="line line--2"></div>
+			<div class="line line--3"></div>
+		</div>
+		<div class="nav-links">
+			<div id="mySidenav" class="sidenav">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<ul id="menuGroup">
+					<li class="menu link"><a href="/board">공연 요청</a></li>
+					<li class="menu link"><a href="#">장르별 추천</a>
+						<ul class="hide">
+							<li class="subMenu"><a href="<c:url value='/board3'/>">배우 별</a></li>
+							<li class="subMenu"><a href="<c:url value='/board4'/>">뮤지컬 별</a></li>
+						</ul></li>
+					<li class="menu link"><a href="/boardinformation">정보 게시판</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 <body>
 
-<div class="jumbotron text-center" style="margin-bottom:0">
-  <h1>top</h1>
-</div>
-
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; 메뉴</span>
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="/board">공연 요청</a>
-  <a href="/write">Services</a>
-
-</div>
-
-<div class="container" style="margin-top:30px">
+<div class="writecontainer">
 	<div class="row">
-		<div class="col-sm-12">
+		<div class="board">
 	      <h2>글쓰기</h2>
-	        <form id="boardform" name="boardform" class="boardform" action="writeAction" method = "POST" enctype="multipart/form-data" onSubmit="return Checkform()">
+	      <hr><hr><br>
+	        <form id="boardform" name="boardform" class="boardform" action="writeAction2" method = "POST" enctype="multipart/form-data" onSubmit="return Checkform()">
 				<div class="form-group">
 				  <label for="usr">제목:</label>
-				  <input type="text" class="form-control" id="title" name ="title">
-				  
+				  <input type="text" class="writeinput form-control" id="title" name ="title">
 				</div>
-			    <div class="form-group">
-			      <input type="file" class="form-control-file border" name="file">
-			    </div>
+			    <br>
 			    <div class="form-group">
 				  <label for="comment">내용:</label>
-				  <textarea class="form-control" rows="5" id="contents" name = "contents"></textarea>
+				  <input class="writeinputbody form-control" rows="5" id="contents" name = "contents"></input>
 				</div>
-			    <button type="submit" class="btn btn-primary">글쓰기</button>
-			  </form>
+				<br>
+				<div class="form-group"style="margin-left: -216px;">
+			      <input type="file" class="form-control-file border" name="file">
+			    </div>
+				<br>
+			    <button class="writeBtn" type="submit">글쓰기</button>
+			 </form>
 		</div>
 	</div>
 </div>

@@ -5,8 +5,15 @@
 
 #wrap{
     background: #FCF6F5;
-    text-align: center;
+    /* text-align: center; */
     position: relative;
     width: 1080px;
     margin: 0 auto;
+}
+
+#chatBtn{
+    position: fixed;
+    z-index: 999;
+    right: 170px;
+    bottom: 20px;
 }
