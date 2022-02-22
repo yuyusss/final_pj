@@ -26,6 +26,7 @@
         <div class="headerMenu">
             <ul>
 
+
                 <%--로그인 처리 전에 보여줄 부분--%>
                 <c:if test="${empty sessionScope.sid}">
                     <li><a href="<c:url value='/signup' />">회원가입</a> </li>
