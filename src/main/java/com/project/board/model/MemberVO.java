@@ -8,6 +8,7 @@ public class MemberVO {
 	private String memPhone;
 	private String memAddress;
 	private String memAddressDetail;
+	private String genre;
 	
 	public String getMemId() {
 		return memId;
@@ -28,8 +29,7 @@ public class MemberVO {
 		this.memName = memName;
 	}
 	public String getMemEmail() {
-		return memEmail;
-	
+		return memEmail;	
 	}
 	public void setMemEmail(String memEmail) {
 		this.memEmail = memEmail;
@@ -37,7 +37,7 @@ public class MemberVO {
 	public String getMemPhone() {
 		return memPhone;
 	}
-	public void getMemPhone(String memPhone) {
+	public void setMemPhone(String memPhone) {
 		this.memPhone = memPhone;
 	}
 	public String getMemAddress() {
@@ -52,11 +52,17 @@ public class MemberVO {
 	public void setMemAddressDetail(String memAddressDetail) {
 		this.memAddressDetail = memAddressDetail;
 	}
+	public String getgenre() {
+		return genre;
+	}
+	public void setgenre(String genre) {
+		this.genre = genre;
+	}
 	
 	@Override
 	public String toString() {
 		return "MemberVO [memId=" + memId + ", memPw=" + memPw + ", memName=" + memName + ", memEmail=" + memEmail
-				+ ", memPhone=" + memPhone + ", memAddress=" + memAddress + ", memAddressDetail=" + memAddressDetail + "]";
+				+ ", memPhone=" + memPhone + ", memAddress=" + memAddress + ", memAddressDetail=" + memAddressDetail + ", genre=" + genre + "]";
 	}
 	
 	
