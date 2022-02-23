@@ -55,7 +55,7 @@
 		<div class="board">
 	      <h2>글쓰기</h2>
 	      <hr><hr><br>
-	        <form id="boardform" name="boardform" class="boardform" action="writeAction2" method = "POST" enctype="multipart/form-data" onSubmit="return Checkform()">
+	        <form id="boardform" name="boardform" class="boardform" action="writeAction" method = "POST" enctype="multipart/form-data" onSubmit="return Checkform()">
 				<div class="form-group">
 				  <label for="usr">제목:</label>
 				  <input type="text" class="writeinput form-control" id="title" name ="title">

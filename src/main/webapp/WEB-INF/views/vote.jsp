@@ -15,7 +15,7 @@
     <!-- TOP -->
     <jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true'/>
 
-    <div class="voteMain">
+    <div class="voteMain ">
         <input type="radio" id="tab1" name="show" checked/>
         <input type="radio" id="tab2" name="show" />
 
@@ -27,19 +27,22 @@
         <div class="voteContent">
             <div class="content-vote">
                 <div class="voteResult">
-                    <table>
+
                         <c:forEach items="${actorList}" var="act" varStatus="status" begin="0" end="2">
-                            <tr>
-                                <td>${status.count}</td>
-                                <td>${act.actorName}</td>
-<%--                                <td><img src="<c:url value='${act.actorProfile}' /> "></td>--%>
-                                <td>${act.actorVote}</td>
-                            </tr>
+                      	<div class="card card-2">
+                      	<div class="profileBoxTop"><img class="profile" src="<c:url value='${act.actorProfile}' /> "></div><br>
+                      	<div class="profileInfo">
+                      	${status.count}위<br>
+                      	${act.actorName}<br>
+                      	${act.actorVote}표
+                      	</div>
+                      	</div>
+
                         </c:forEach>
-                    </table>
+
                 </div>
                 <div class="voteItem">
-                    <table border="1" class="tableItem">
+                    <table class="tableItem">
                         <tr>
                             <th>순위</th>
                             <th>프로필 사진</th>
@@ -55,7 +58,8 @@
                                 <td>${act.actorName}</td>
                                 <td>${act.actorName}의 출연작품이름과 배역 이름</td>
                                 <td>${act.actorVote}</td>
-                                <td><a href="/">투표</a> </td>
+                                
+                                <td><button type="button" class="voteBtn" onclick="location.href='/';">투표</button></td>
                             </tr>
                         </c:forEach>
 
@@ -64,20 +68,21 @@
             </div>
             <div class="content-vote">
                 <div class="voteResult">
-                    <table>
+
                         <c:forEach items="${actorList}" var="act" varStatus="status" begin="0" end="2">
-                            <tr>
-                                <td>${status.count}</td>
-                                <td>${act.actorName}</td>
-                                    <%--                                <td><img src="<c:url value='${act.actorProfile}' /> "></td>--%>
-                                <td>${act.actorVote}</td>
-                                <td><a href="/">투표</a> </td>
-                            </tr>
+                      	<div class="card card-2">
+                      	<div class="profileBoxTop"><img class="profile" src="<c:url value='${act.actorProfile}' /> "></div><br>
+                      	${status.count}
+                      	${act.actorName}
+                      	${act.actorVote}
+                      	
+                      	</div>
+
                         </c:forEach>
-                    </table>
+
                 </div>
                 <div class="voteItem">
-                    <table border="1" class="tableItem">
+                    <table class="tableItem">
                         <tr>
                             <th>순위</th>
                             <th>뮤지컬 포스터</th>
@@ -93,7 +98,7 @@
                                 <td>${act.actorName}</td>
                                 <td>${act.actorName}의 출연작품이름과 배역 이름</td>
                                 <td>${act.actorVote}</td>
-                                <td><a href="/">투표</a> </td>
+                                <td><button type="button" class="voteBtn" onclick="location.href='/';">투표</button></td>
                             </tr>
                         </c:forEach>
 
@@ -102,6 +107,8 @@
             </div>
         </div>
     </div>
+    </div>
+
 
 
 
