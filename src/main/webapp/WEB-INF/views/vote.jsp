@@ -72,10 +72,11 @@
                         <c:forEach items="${actorList}" var="act" varStatus="status" begin="0" end="2">
                       	<div class="card card-2">
                       	<div class="profileBoxTop"><img class="profile" src="<c:url value='${act.actorProfile}' /> "></div><br>
-                      	${status.count}
-                      	${act.actorName}
-                      	${act.actorVote}
-                      	
+                      	<div class="profileInfo">
+                      	${status.count}위<br>
+                      	${act.actorName}<br>
+                      	${act.actorVote}표
+                      	</div>
                       	</div>
 
                         </c:forEach>
