@@ -40,10 +40,12 @@ public class IndexController {
     private WeatherService weatherService;
 
 
-    @RequestMapping(value="/", method=RequestMethod.GET)
-    public String index(Model model) {
-        ArrayList<MediaVO> mediaList = service.listAllMedia();
-        model.addAttribute("mediaList", mediaList);
+	 @RequestMapping(value="/", method=RequestMethod.GET) public String
+	 index(Model model) { ArrayList<MediaVO> mediaList = service.listAllMedia();
+	 model.addAttribute("mediaList", mediaList);
+	  
+	 return "index2"; }
+
 
 //        ArrayList<CalendarVO> calenList = calendarService.calenList();;
 //        model.addAttribute("calenList", calenList);
@@ -68,5 +70,3 @@ public class IndexController {
         return "vote";
     }*/
 
-
-}

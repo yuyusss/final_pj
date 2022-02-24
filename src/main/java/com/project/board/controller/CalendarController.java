@@ -15,4 +15,8 @@ import java.util.ArrayList;
 @Controller
 public class CalendarController {
 
+    @Autowired
+    private CalendarService service;
+
+
 }
