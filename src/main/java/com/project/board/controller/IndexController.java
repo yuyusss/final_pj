@@ -36,10 +36,6 @@ public class IndexController {
     @Autowired
     MediaService service;
 
-
-
-
-
     @Autowired
     private WeatherService weatherService;
 
@@ -71,8 +67,6 @@ public class IndexController {
 
         return "vote";
     }*/
-
-
 
 
 }

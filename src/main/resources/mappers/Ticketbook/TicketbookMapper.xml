@@ -12,7 +12,7 @@
 	</resultMap>
 	
 	<!--  전체 홀 조회  -->
-	<select id="listAllTicketbook" resultMap="Ticketbook" resultType="com.project.board.model.TicketbookVO">
-			SELECT * FROM tk
-	</select>
+	<!--<select id="listAllTicketbook" resultMap="Ticketbook" resultType="com.project.board.model.TicketbookVO">
+			  SELECT * FROM tk 
+	</select>-->
 </mapper>
