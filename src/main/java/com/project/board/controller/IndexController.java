@@ -43,8 +43,10 @@ public class IndexController {
 
 	 @RequestMapping(value="/", method=RequestMethod.GET) 
 	 public String index(Model model) { 
+
 		 ArrayList<MediaVO> mediaList = service.listAllMedia();
 	 
+
 	 model.addAttribute("mediaList", mediaList);
 	  
 	 return "index2"; 
