@@ -28,7 +28,7 @@
 
                 <%--로그인 처리 전에 보여줄 부분--%>
                 <c:if test="${empty sessionScope.sid}">
-                    <li><a href="<c:url value='/signup' />">회원가입</a> </li>
+                    <li><a href="<c:url value='/signupForm' />">회원가입</a> </li>
                     <li><a href="<c:url value='/loginForm' />">로그인</a> </li>
                 </c:if>
                 <%--로그인 처리 후에 보여줄 부분--%>

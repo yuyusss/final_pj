@@ -1,13 +1,32 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="<c:url value='/js/chatbot.js'/>"></script>	
+<link rel="stylesheet" type="text/css" href="<c:url value='/css/chatbot.css'/>">
 </head>
-
-<a href="https://www.ncloud.com/"><img id="chatBtn" src="<c:url value="/images/chatBtn.png" />" width="80" height="70"></a>
-
+		<!-- 챗봇 섹션 display none -->
+		<a id="openPop"><img id="chatBtn" src="<c:url value="/images/chatBtn.png" />" width="80" height="70"></a>
+		<div id= "modal"> 
+		</div>
+		<div id="popUp">
+			<div id="chatHeader">
+				<button id="btnClose"> &lt; </button>
+			</div>
+		
+		<!-- 채팅 내용 출력 -->
+			
+			<!-- 응답 메시지 출력  -->
+			<div id="chatBox"></div>
+			<!-- 질문 메시지 입력 폼 -->
+			<form id="chatForm">
+				<input type="text" id="message" name="message" size="30" placeholder="질문을 입력하세요">	
+				<input type="submit" id="submit" value="전송하기">		
+			</form>
+		</div>
+		
 <!-- footerBox -->
 <footer class="footerBox">
     <div class="footerMenuWrap">
