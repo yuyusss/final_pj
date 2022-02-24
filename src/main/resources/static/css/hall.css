@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+body {
+	width : 1080px;
+	margin-left : auto;
+	margin-right : auto;
+	
+}
+#공연장 { 
+	margin-top : 50px;
+	margin-bottom : 50px;
+	color : #FCF6F5;
+}
+.wrap {
+	margin-bottom : 50px;
+}
+#지역 { 
+	text-align : left;
+	margin-left : 110px;
+	color : #FCF6F5;
+	font-size : 25px;
+	font-weight: bold;
+	
+}
+.hall {
+	text-align : center;
+	padding-top : 30px;
+	padding-top : 10px;
+	padding-bottom : 30px;
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.2) 100%), url('/images/무대1.jpg');
+}
+
+.list {
+	width : 80%;
+	margin-left : auto;
+	margin-right : auto;
+	margin-bottom : 50px;
+	color : black;
+	background-color : white;
+}
+.list tr th {
+	width : 20%;
+}
+.list tr th img {
+    width: 100%;
+    height: 50px;
+}

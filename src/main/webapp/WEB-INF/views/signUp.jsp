@@ -23,7 +23,7 @@
 					</div>
 					<hr width="640px" size="3px" color="gray" style="margin: 0 auto"><br>
 					
-				<form id="form" name="memberForm" method="post" onsubmit="return signUpForm_check();" action="#">
+				<form id="form" name="memberForm" method="post" onsubmit="return signUpForm_check();" action="/signUp">
 					
 					
 					<table class="memberTable">
@@ -37,7 +37,7 @@
 							</th>
 							<td>
 								<input type="text" name="memId" id="memberID" maxlength="20" placeholder="아이디는 6자 이상 입력해주세요.">
-								<a class="IDdouble_check" onclick="doubleCheck()">중복확인</a>
+								<button type="button" class="IDdouble_check" onclick="doubleCheck()">중복확인</button>
 							</td>
 							</tr>
 							
@@ -86,7 +86,6 @@
 							</th>
 							<td>
 								<input type="text" name="memEmail" id="memberEmail" maxlength="25" placeholder="이메일을 입력해주세요.">
-								<a class="Emaildouble_check">중복확인</a>
 							</td>
 							</tr>
 							
@@ -133,23 +132,22 @@
 								좋아하는 장르
 							</th>
 							<td>
-								<%--장르 뭐 있는지 물어봐야함 --%>
-								<div id="checkboxBox">
-								<input type="checkbox" name="genre" value="">
-									<label for="original">오리지널/내한공연</label>
-								<input type="checkbox" name="genre" value="">
-									<label for="license">라이센스</label><br>
-								<input type="checkbox" name="genre" value="">
-									<label for="creation">창작뮤지컬</label>
-								<input type="checkbox" name="genre" value="">
-									<label for="family">아동/가족</label>
+								<div id="checkboxBox">									
+									<input type="checkbox" name="genre" id="original" value="1">
+										<label for="original">오리지널/내한공연</label>
+									<input type="checkbox" name="genre" id="license" value="2">
+										<label for="license">라이센스</label><br>									
+									<input type="checkbox" name="genre" id="creation" value="3">
+										<label for="creation">창작뮤지컬</label>
+									<input type="checkbox" name="genre" id="family" value="4">
+										<label for="family">아동/가족</label>
 								</div>
 							</td>
-							</tr>					
+							</tr>
 						</tbody>
 					</table>
 					
-										<br><br>
+					<br><br>
 					<div class="submitBox">
 					<input type="submit" id="submitBox" value="JOIN" />
 					</div>
