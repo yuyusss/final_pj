@@ -1,4 +1,5 @@
 package com.project.board.controller;
+
 import java.util.ArrayList;
 
 
@@ -40,18 +41,19 @@ public class IndexController {
     private WeatherService weatherService;
 
 
-	 @RequestMapping(value="/", method=RequestMethod.GET) public String
-	 index(Model model) { ArrayList<MediaVO> mediaList = service.listAllMedia();
+	 @RequestMapping(value="/", method=RequestMethod.GET) 
+	 public String index(Model model) { 
+		 ArrayList<MediaVO> mediaList = service.listAllMedia();
+	 
 	 model.addAttribute("mediaList", mediaList);
 	  
-	 return "index2"; }
+	 return "index2"; 
+	 }
 
 
 //        ArrayList<CalendarVO> calenList = calendarService.calenList();;
 //        model.addAttribute("calenList", calenList);
 
-        return "index2";
-    }
 
     @RequestMapping("/vote")
     public String vote(Model model){
@@ -60,6 +62,7 @@ public class IndexController {
 
         return "vote";
     }
+}
 
  /*   @RequestMapping("/voteView")
     @ResponseBody
