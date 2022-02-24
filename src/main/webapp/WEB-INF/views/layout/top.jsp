@@ -55,11 +55,9 @@
                     <ul class="sub">
 
                         <li><a href="<c:url value='/detailView/1' />">뮤지컬</a></li>
-                        <li><a href="<c:url value='/vote' />">투표</a></li>
-                        <li><a href="<c:url value='/rank' />">랭킹</a></li>
+                        <li><a href="<c:url value='/vote' />">투표 / 랭킹</a></li>
                         <li><a href="<c:url value='/board' />">커뮤니티</a></li>
                         <li><a href="<c:url value='/hall' />">공연장</a></li>
-
                         <li><a href="/">문의사항</a></li>
                     </ul>
                 </li>
@@ -72,13 +70,14 @@
                         <li><a href="/detailView/4">아동/가족</a></li>
                     </ul>
                 </li>
-                <li><a href="/vote">투표</a></li>
-                <li><a href="/rank">랭킹</a></li>
-                <li><a href="/board">커뮤니티</a>
+
+                <li><a href="/vote">투표 / 랭킹</a></li>
+                <li><a href="/board3">커뮤니티</a>
                     <ul class="sub">
-                        <li><a href="/borad">배우별</a> </li>
-                        <li><a href="/borad">뮤지컬별</a> </li>
-                        <li><a href="/borad">정보게시판</a> </li>
+                    	<li><a href="/board">공연 요청</a> </li>
+                        <li><a href="/board3">배우별 게시판</a> </li>
+                        <li><a href="/board4">뮤지컬별 게시판</a> </li>
+                        <li><a href="/boardinformation">정보게시판</a> </li>
                     </ul>
                 </li>
                 <li><a href="<c:url value='/hall' />">공연장</a></li>

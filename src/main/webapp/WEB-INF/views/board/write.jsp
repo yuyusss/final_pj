@@ -56,7 +56,8 @@
 	      <h2>글쓰기</h2>
 	      <hr><hr><br>
 	        <form id="boardform" name="boardform" class="boardform" action="writeAction" method = "POST" enctype="multipart/form-data" onSubmit="return Checkform()">
-				<div class="form-group">
+				<input type="hidden" id="memId" name="memId" value="${sessionScope.sid}" />
+ 				<div class="form-group">
 				  <label for="usr">제목:</label>
 				  <input type="text" class="writeinput form-control" id="title" name ="title">
 				</div>
