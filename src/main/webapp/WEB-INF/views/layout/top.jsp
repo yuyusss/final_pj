@@ -30,12 +30,13 @@
                 <c:if test="${empty sessionScope.sid}">
                     <li><a href="<c:url value='/signup' />">회원가입</a> </li>
                     <li><a href="<c:url value='/loginForm' />">로그인</a> </li>
+                    <li><a href="<c:url value='/ticketbook' />">티켓북테스트</a> </li>
                 </c:if>
                 <%--로그인 처리 후에 보여줄 부분--%>
                 <c:if test="${not empty sessionScope.sid}">
-                    <li>${sessionScope.sid} 님&nbsp;</li>
+                    <li>${sid.memId} 님&nbsp;</li>
                     <li><a href="<c:url value='/logout' />">로그아웃</a> </li>
-                    <li><a href="<c:url value='/ticketbook' />">마이페이지</a> </li>
+                    <li><a href="<c:url value='/ticketbook/${sid.memId}'/>">마이페이지</a> </li>
                 </c:if>
             </ul>
         </div>
@@ -82,7 +83,7 @@
                     </ul>
                 </li>
                 <li><a href="<c:url value='/hall' />">공연장</a></li>
-                <li><a href="/">문의사항</a></li>
+                <li><a href="/adminPage">문의사항</a></li>
             </ul>
         </div>
     </div>

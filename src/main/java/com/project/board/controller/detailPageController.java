@@ -21,9 +21,18 @@ public class detailPageController {
 	@Autowired
 	private MusicalService service;
 	
-	@RequestMapping("/favorRecommand") 
-    public String favorRecommand() { 
-    	return "/layout/recommand"; 
+	/*
+	 * @RequestMapping("/favorRecommand") public String favorRecommand() { return
+	 * "/layout/recommand"; }
+	 */
+	
+	@RequestMapping("/adminPage") 
+    public String adminPage() { 
+    	return "/DetailView/adminPage"; 
+    }
+	@RequestMapping("/insertMusc") 
+    public String insertMusc() { 
+    	return "/DetailView/insertMusical"; 
     }
 	
 	// 뮤지컬 목록 페이지로 이동

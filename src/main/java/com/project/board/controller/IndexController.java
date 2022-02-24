@@ -45,7 +45,7 @@ public class IndexController {
 	 index(Model model) { ArrayList<MediaVO> mediaList = service.listAllMedia();
 	 model.addAttribute("mediaList", mediaList);
 	  
-	 return "index2"; }
+	
 
 
 //        ArrayList<CalendarVO> calenList = calendarService.calenList();;
