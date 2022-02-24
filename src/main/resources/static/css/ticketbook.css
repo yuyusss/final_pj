@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+.all{
+	background-image: url(/images/티켓1.jpg);
+	background-size: 450px;
+	justify-content: center;
+	width: 40%;
+	height: 200px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	
+}
+.list {
+	padding-top: 18px;
+	margin-left: 30px;
+	
+	
+}
+.list td {
+	
+	text-align:left;
+}
+#빈칸 {
+	width : 48px;
+	vertical-align: bottom;
+	font-size:small;
+	
+}
+#티켓추가 {
+	vertical-align: bottom;
+	font-size:small;
+	height: 24px;
+}
+#내용 {
+	color: white;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+#공연제목 {
+	color : white;
+	padding-left: 5px;
+}
