@@ -10,6 +10,7 @@ import com.project.board.dao.IBoardDAO;
 import com.project.board.model.BoardVO;
 import com.project.board.model.ReplyVO;
 
+
 @Service
 public class BoardService implements IBoardService{
 	
@@ -36,10 +37,12 @@ public class BoardService implements IBoardService{
         return dao.addReply(r);
     }
 
+
     @Override
     public List<ReplyVO> getReply(int boardIdx) {
         return dao.getReply(boardIdx);
     }
+
     @Override
     public int updatereviewcnt(int idx) {
 		return dao.updatereviewcnt(idx);
@@ -73,4 +76,12 @@ public class BoardService implements IBoardService{
 		return dao.detailViewBoard(idx);
 	}
     
+	/*
+	 * @Override public int getBoardListCnt() throws Exception {
+	 * 
+	 * return dao.getBoardListCnt();
+	 * 
+	 * }
+	 */
+
 }

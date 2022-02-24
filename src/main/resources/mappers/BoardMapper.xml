@@ -9,9 +9,21 @@
         idx, title, image, contents,hits,writedate
         FROM
         tb_board
-        ORDER BY idx asc
+        ORDER BY idx asc 
+        <!-- LIMIT 0, 10 -->
+      
+
 
     </select>
+    
+    <select id="getBoardListCnt" resultType="int">
+
+		SELECT
+			count(*) as listCnt
+		FROM
+			tb_board
+	</select>
+
     
     <insert id="addBoard">
         INSERT INTO 

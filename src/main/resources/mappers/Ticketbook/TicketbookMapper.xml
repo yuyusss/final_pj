@@ -28,9 +28,11 @@
 		SELECT * FROM tk WHERE memID=#{memID}
 	</select>
 	
+	
 	<insert id="insertticket" parameterType="com.project.board.model.TicketbookVO">
 		INSERT INTO tk (memID, subject, date, time, theater, seat, casting, price, review) VALUES(#{memID}, #{subject}
 		, #{date}, #{time}, #{theater}, #{seat}, #{casting}, #{price}, #{review})
 	</insert>
+
 
 </mapper>

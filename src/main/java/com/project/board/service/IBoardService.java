@@ -17,4 +17,7 @@ public interface IBoardService {
 	 void updateBoard(BoardVO b);
 	 BoardVO detailViewBoard(int Idx);
 	 void deleteReply(String replyVo);
+	 
+	 //public int getBoardListCnt() throws Exception;
+
 }

@@ -5,65 +5,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link href="<c:url value='/css/ticketbook.css'/>" rel="stylesheet" type="text/css">
-    <title>티켓북</title>
+	<meta charset="UTF-8">
+	<link href="<c:url value='/css/ticketBook.css'/>" rel="stylesheet" type="text/css">
+	<title>My page</title>
 </head>
-
-<body>
-<div id="wrap">
-    <!-- 탑 -->
-    <jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true'/>
-
-    <!-- 티켓북 -->
-
-    <div><h1>${ticketbook.memID }님의 티켓북</h1></div>
-
-
-    <a href="<c:url value='ticketbook/ticketInsertForm'/>">티켓 추가</a>
-
-
-    <%--티켓 한 개의 이미지 보이는 div -> forEach로 반복 --%>
-    <div class="ticketAll">
-        <c:forEach items="${pjhTicketList}" var="ticketbook">
-            <div class="all">
-
-                <table border="1" class="list">
-
-                    <tr>
-                        <td rowspan="3" align="center" id="빈칸">
-                            <div>
-
-                            </div>
-                        </td>
-
-                        <td id="공연제목">
-                            <h2>공연제목 : <strong>${ticketbook.subject } </strong></h2><br>
-
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td id="내용">
-                            <div>장소 : ${ticketbook.theater } 가격 : ${ticketbook.price} <br></div>
-                            <div>좌석 : ${ticketbook.seat } <br></div>
-                            <div>캐스팅 : ${ticketbook.casting }<br></div>
-
-                            후기
-                        </td>
-                    </tr>
-
-                </table>
-
-            </div>
-
-        </c:forEach>
-
-    </div>
-
-    <!-- 바텀 -->
-    <jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true'/>
-
-</div>
-</body>
+	
+	<body>
+	<div id = "wrap">
+		<!-- 탑 -->
+		 <jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true'/>
+		
+		<!-- 티켓북 -->
+		<div class="ticketBookMain">
+			<div class="MyPage">
+				<div class="MyPageContent">
+					<div class="userInfo">
+						<div>프로필 사진(생기면 넣을 것)</div>
+						<div>user 아이디: ${sessionScope.sid}</div>
+						<div><button>회원정보 수정</button></div>
+					</div>
+					<div class="user_ticket_Info">
+						<div>티켓북 N장</div>
+						<div>티켓 N장</div>
+						<div>찜 N개</div>
+					</div>
+				</div>
+				<div class="ticketBook">
+					<c:forEach begin="0" end="2">
+						<div class="ticketBookContent" >
+							<img src="<c:url value="/images/ticketBook.png" />">
+							<h3><a href="<c:url value="/ticketDetailView"/>">티켓북 이름</a></h3>
+						</div>
+					</c:forEach>
+					<%--상세 티켓 들어올 자리
+                    <c:forEach begin="0" end="4">
+                        <div class="ticket">
+                            <img src="<c:url value='/images/ticket.png' /> ">
+                        </div>
+                    </c:forEach>--%>
+				</div>
+			</div>
+			<div class="RecogMusical">
+				공연 추천 (지원님 완성하신 부분 들어올 자리)
+			</div>
+		</div>
+		
+		<!-- 바텀 -->
+		<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true'/>
+		
+		</div>
+	</body>
 </html>

@@ -14,17 +14,9 @@ import java.util.ArrayList;
 
 @Controller
 public class CalendarController {
+
     @Autowired
-    CalendarService service;
+    private CalendarService service;
 
-    @GetMapping(params = "method=list")
-    public String list(){
-        return "index2";
-    }
 
-    @GetMapping(params = "method=data")
-    public String data(Model model){
-        model.addAttribute("list", service.calenList());
-        return "index2";
-    }
 }

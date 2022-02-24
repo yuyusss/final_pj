@@ -15,9 +15,9 @@ public class TicketbookController {
     @Autowired
     TicketbookService service;
 
-    @RequestMapping("/ticketbook") //
+    @RequestMapping("/ticketDetailView") //
     public String ticketbook(Model model) {
-        ArrayList<TicketbookVO> pjhTicketList = service.listTicketByID("pjh");
+        ArrayList<TicketbookVO> pjhTicketList = service.listTicketByID("sid");
 
         model.addAttribute("pjhTicketList", pjhTicketList); // 2
 
@@ -25,7 +25,7 @@ public class TicketbookController {
         ArrayList<TicketbookVO> ticketList = service.listAllTicketbook(); //
         model.addAttribute("ticketList", ticketList);
 
-        return "ticketbook/ticketbook";
+        return "ticketbook/ticketDetailView";
     }
 
     @RequestMapping("/ticketbook/ticketInsertForm")
@@ -34,7 +34,14 @@ public class TicketbookController {
 
         return "ticketbook/ticketbook";
     }
+    
+    @RequestMapping ("/ticketbook")
+    public String ticketbookmain() {
+    	return "ticketbook/ticketbook";
+    }
+ 
 
+    
     @RequestMapping("/ticketbook/insertticket") //추가 페이지
     public String insertticket(TicketbookVO ticketbookVo) {
         service.insertticket(ticketbookVo);
