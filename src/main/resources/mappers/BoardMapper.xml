@@ -6,12 +6,12 @@
  <mapper namespace="com.project.board.dao.IBoardDAO">
     <select id="getBoard" resultType="com.project.board.model.BoardVO">
         SELECT
-        idx, title, image, contents,hits,writedate
+        idx, title, image, contents,hits,writedate,memId
         FROM
         tb_board
         ORDER BY idx asc 
         <!-- LIMIT 0, 10 -->
-      
+     
 
 
     </select>
@@ -29,12 +29,14 @@
         INSERT INTO 
         tb_board
         (
+        memId,
         title,
         image,
         contents
         )
         VALUES
         (
+        #{memId},
         #{title},
         #{image},
         #{contents}

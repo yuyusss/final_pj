@@ -20,6 +20,7 @@
 			
 	</resultMap>
 	
+
 	<select id="listAllTicketbook" resultMap="TicketbookResult" resultType="com.project.board.model.TicketbookVO">
 			SELECT * FROM tk
 	</select>	 
@@ -33,6 +34,5 @@
 		INSERT INTO tk (memID, subject, date, time, theater, seat, casting, price, review) VALUES(#{memID}, #{subject}
 		, #{date}, #{time}, #{theater}, #{seat}, #{casting}, #{price}, #{review})
 	</insert>
-
 
 </mapper>

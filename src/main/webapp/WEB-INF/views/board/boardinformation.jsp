@@ -181,7 +181,7 @@ function fn_prev(page, range, rangeSize) {
 					success : function(result) {
 						var html = "";
 						result.forEach(function(item) {
-							html += "<tr> <td>"+item.idx+"</td><td></td><td><a style='text-decoration:none;' href = 'view2?idx=" + item.idx
+							html += "<tr> <td>"+item.idx+"</td><td>"+item.memId+"</td><td><a style='text-decoration:none;' href = 'view2?idx=" + item.idx
 									+ "'>" + item.title + "</a></td><td>"+item.contents+"</td><td>"+item.hits+"</td><td>"+item.writedate+"</td><td><a href='/board/deleteboard2/"+item.idx+"' style='text-decoration:none;'>&#10060;</a></td>"
 						})
 						$("#listArea").append(html)
