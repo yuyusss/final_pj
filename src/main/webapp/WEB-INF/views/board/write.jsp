@@ -76,5 +76,6 @@
 		</div>
 	</div>
 </div>
+<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
 </body>
 </html>
