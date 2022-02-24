@@ -77,7 +77,9 @@
 				</table>
 			</form>
 	</div>
+	<div class="container" style="margin-top:30px">
 		<div class="row">
+		<div class="col-sm-12">
 			<div class="board">
 				<h2>공연 요청</h2>
 				<hr><hr>
@@ -97,37 +99,13 @@
 		</div>
 		<button type="button" class="writeBtn" id="writeBtn">글쓰기</button>
 	</div>
-	<!-- pagination{s} -->
 
-	<%-- <div id="paginationBox">
 
-		<ul class="pagination">
-			<c:if test="${pagination.prev}">
-				<li class="page-item"><a class="page-link" href="#" onClick="fn_prev('${pagination.page}', '${pagination.range}', '${pagination.rangeSize}')">Previous</a></li>
-			</c:if>
 
-				
-			<c:forEach begin="${pagination.startPage}" end="${pagination.endPage}" var="idx">
-				<li class="page-item <c:out value="${pagination.page == idx ? 'active' : ''}"/> "><a class="page-link" href="#" onClick="fn_pagination('${idx}', '${pagination.range}', '${pagination.rangeSize}')"> ${idx} </a></li>
-			</c:forEach>
-
-				
-
-			<c:if test="${pagination.next}">
-
-				<li class="page-item"><a class="page-link" href="#" onClick="fn_next('${pagination.range}', 
-
- '${pagination.range}', '${pagination.rangeSize}')" >Next</a></li>
-
-			</c:if>
-
-		</ul>
-
-	</div> --%>
-
-	<!-- pagination{e} -->
-
-	<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
+	
+</div>
+</div>
+<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
 </body>
 <script type="text/javascript">
 //이전 버튼 이벤트
@@ -181,7 +159,7 @@ function fn_prev(page, range, rangeSize) {
 					success : function(result) {
 						var html = "";
 						result.forEach(function(item) {
-							html += "<tr> <td>"+item.idx+"</td><td></td><td><a style='text-decoration:none;' href = 'view?idx=" + item.idx
+							html += "<tr> <td>"+item.idx+"</td><td>"+item.memId+"</td><td><a style='text-decoration:none;' href = 'view?idx=" + item.idx
 									+ "'>" + item.title + "</a></td><td>"+item.contents+"</td><td>"+item.hits+"</td><td>"+item.writedate+"</td><td><a href='/board/deleteboard/"+item.idx+"' style='text-decoration:none;'>&#10060;</a></td>"
 						})
 						$("#listArea").append(html)
@@ -193,21 +171,29 @@ function fn_prev(page, range, rangeSize) {
 				})
 			});
 	
-	$(document).on('click', '#btnSearch', function(e){
-
-		e.preventDefault();
-
-		var url = "${pageContext.request.contextPath}/board/getBoardList";
-
-		url = url + "?searchType=" + $('#searchType').val();
-
-		url = url + "&keyword=" + $('#keyword').val();
-
-		location.href = url;
-
-		console.log(url);
-
-	});	
+	function getSearchList(){
+		$.ajax({
+			type: 'GET',
+			url : "/getSearchList",
+			data : $("form[name=search-form]").serialize(),
+			success : function(result){
+				//테이블 초기화
+				$('#boardtable > tbody').empty();
+				if(result.length>=1){
+					result.forEach(function(item){
+						str='<tr>'
+						str += "<td>"+item.idx+"</td>";
+						str+="<td>"+item.writer+"</td>";
+						str+="<td><a href = '/board/detail?idx=" + item.idx + "'>" + item.title + "</a></td>";
+						str+="<td>"+item.date+"</td>";
+						str+="<td>"+item.hit+"</td>";
+						str+="</tr>"
+						$('#boardtable').append(str);
+	        		})				 
+				}
+			}
+		})
+	}
 	
 </script>
 </html>

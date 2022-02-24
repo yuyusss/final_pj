@@ -19,5 +19,8 @@ public interface IBoardDAO {
     BoardVO detailViewBoard(int idx);
     //public int getBoardListCnt();
     
+    
+
+  
 }
 	

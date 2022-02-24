@@ -19,5 +19,5 @@ public interface IBoardService {
 	 void deleteReply(String replyVo);
 	 
 	 //public int getBoardListCnt() throws Exception;
-
+	
 }

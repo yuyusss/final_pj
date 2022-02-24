@@ -29,7 +29,7 @@
 							<li class="subMenu"><a href="<c:url value='/board3'/>">배우 별</a></li>
 							<li class="subMenu"><a href="<c:url value='/board4'/>">뮤지컬 별</a></li>
 						</ul></li>
-					<li class="menu link"><a href="#">정보 게시판</a></li>
+					<li class="menu link"><a href="/boardinformation">정보 게시판</a></li>
 				</ul>
 			</div>
 		</div>
