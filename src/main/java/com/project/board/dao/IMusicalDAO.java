@@ -11,5 +11,7 @@ public interface IMusicalDAO {
 	public ArrayList<ActorCastVO> getActorCast(String muscNo);
 
 	public ArrayList<MusicalVO> getMusicalListByGenre(String genreNo);
+
+	public int insertMusical(MusicalVO musicalVO);
 	
 }

@@ -80,7 +80,27 @@ public class detailPageController {
 		
 		return result;
 	}
-
+	
+	@RequestMapping("/doInsertMusc")
+	public String doInsertMusc(MusicalVO MusicalVO, HttpSession session) {
+		System.out.println(MusicalVO);
+		
+		String result = "/insertMusc";
+		
+		int insertFlag = service.insertMusical(MusicalVO);
+		
+		System.out.println(insertFlag);
+		
+		if( insertFlag == 1 )  {
+			
+			result = "redirect:/adminPage";
+		}
+		
+		
+		return result;
+	}
+	
+	
 	
 	/*
 	 * 

@@ -5,6 +5,7 @@ import java.util.List;
 import com.project.board.model.BoardVO2;
 import com.project.board.model.ReplyVO2;
 
+
 public interface IBoardService2 {
 	 boolean addBoard2(BoardVO2 b);
 	 List<BoardVO2> getBoard2();

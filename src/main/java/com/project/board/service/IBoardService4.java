@@ -2,8 +2,11 @@ package com.project.board.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.project.board.model.BoardVO4;
 import com.project.board.model.ReplyVO4;
+
 
 public interface IBoardService4 {
 	 boolean addBoard4(BoardVO4 b);
