@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
+    <script src="<c:url value="/js/vote.js"/> ">ß</script>
     <link href="<c:url value='/css/vote.css'/>" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -58,8 +59,17 @@
                                 <td>${act.actorName}</td>
                                 <td>${act.actorName}의 출연작품이름과 배역 이름</td>
                                 <td>${act.actorVote}</td>
-                                
-                                <td><button type="button" class="voteBtn" onclick="location.href='/';">투표</button></td>
+
+                                <td><button type="button" class="voteBtn"><a href="<c:url value="/voteActor/${act.actorNo}" />">투표</a></button></td>
+
+                                <%--<c:choose>
+                                    <c:when test="{not empty sessionScope.sid}">
+                                        <td><button type="button" class="voteBtn"><a href="<c:url value='/voteActor/{actorNo}' /> ">투표</a></button></td>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <td><button type="button" class="voteBtn"><a>투표</a></button></td>
+                                    </c:otherwise>
+                                </c:choose>--%>
                             </tr>
                         </c:forEach>
 
@@ -69,13 +79,13 @@
             <div class="content-vote">
                 <div class="voteResult">
 
-                        <c:forEach items="${actorList}" var="act" varStatus="status" begin="0" end="2">
+                        <c:forEach items="${musicalList}" var="musc" varStatus="status" begin="0" end="2">
                       	<div class="card card-2">
-                      	<div class="profileBoxTop"><img class="profile" src="<c:url value='${act.actorProfile}' /> "></div><br>
+                      	<div class="profileBoxTop"><img class="profile" src="<c:url value='${musc.muscImg}' /> "></div><br>
                       	<div class="profileInfo">
                       	${status.count}위<br>
-                      	${act.actorName}<br>
-                      	${act.actorVote}표
+                      	${musc.muscName}<br>
+                      	${musc.musicalVote}표
                       	</div>
                       	</div>
 
@@ -87,19 +97,19 @@
                         <tr>
                             <th>순위</th>
                             <th>뮤지컬 포스터</th>
-                            <th>감독 이름</th>
-                            <th>출연진 이름</th>
+                            <th>뮤지컬 제목</th>
+                            <th>공연 기간</th>
                             <th>득표수</th>
                             <th></th>
                         </tr>
-                        <c:forEach items="${actorList}" var="act" varStatus="status">
+                        <c:forEach items="${musicalList}" var="musc" varStatus="status">
                             <tr>
                                 <td>${status.count}</td>
-                                <td style="width: 110px"><div class="profileBox"><img class="profile" src="<c:url value='${act.actorProfile}' /> "></div></td>
-                                <td>${act.actorName}</td>
-                                <td>${act.actorName}의 출연작품이름과 배역 이름</td>
-                                <td>${act.actorVote}</td>
-                                <td><button type="button" class="voteBtn" onclick="location.href='/';">투표</button></td>
+                                <td style="width: 110px"><div class="profileBox"><img class="profile" src="<c:url value='${musc.muscImg}' /> "></div></td>
+                                <td>${musc.muscName}</td>
+                                <td>${musc.muscStartDate} ~ ${musc.muscEndDate}</td>
+                                <td>${musc.musicalVote}</td>
+                                <td><button type="button" class="voteBtn" onclick="location.href='<c:url value="/voteMusical/${musc.muscNo}" />';">투표</button></td>
                             </tr>
                         </c:forEach>
 

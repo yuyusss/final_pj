@@ -1,5 +1,6 @@
 package com.project.board.dao;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import com.project.board.model.ActorCastVO;
@@ -11,5 +12,9 @@ public interface IMusicalDAO {
 	public ArrayList<ActorCastVO> getActorCast(String muscNo);
 
 	public ArrayList<MusicalVO> getMusicalListByGenre(String genreNo);
+
+	ArrayList<MusicalVO> getAllMusical();
+
+	public int voteUp(String muscNo);
 	
 }

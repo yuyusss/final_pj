@@ -32,5 +32,15 @@ public class MusicalService implements IMusicalService{
 	public ArrayList<MusicalVO> getMusicalListByGenre(String genreNo) {
 		return dao.getMusicalListByGenre(genreNo);
 	}
-    
+
+    @Override
+    public ArrayList<MusicalVO> getAllMusical() {
+        return dao.getAllMusical();
+    }
+
+    @Override
+    public int voteUp(String muscNo) {
+        return dao.voteUp(muscNo);
+    }
+
 }

@@ -31,5 +31,15 @@ public class MediaService implements IMediaService{
         return dao.listAllActor();
     }
 
+    @Override
+    public VoteVO detailActor(String actorNo) {
+        return dao.detailActor(actorNo);
+    }
+
+    @Override
+    public int voteUp(String actorNo) {
+        return dao.voteUp(actorNo);
+    }
+
 
 }

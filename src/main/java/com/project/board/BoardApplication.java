@@ -1,11 +1,8 @@
 package com.project.board;
 
 
-import com.project.board.controller.CalendarController;
 import com.project.board.dao.IMediaDAO;
 import com.project.board.dao.IMusicalDAO;
-import com.project.board.model.MediaVO;
-import com.project.board.service.CalendarService;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -26,8 +23,6 @@ import com.project.board.dao.IBoardDAO;
 import com.project.board.dao.IBoardDAO2;
 import com.project.board.dao.IBoardDAO3;
 import com.project.board.dao.IBoardDAO4;
-import com.project.board.dao.IMediaDAO;
-
 
 
 @ComponentScan(basePackageClasses = BoardController.class)
@@ -37,7 +32,6 @@ import com.project.board.dao.IMediaDAO;
 @ComponentScan(basePackageClasses = IndexController.class)
 
 @ComponentScan(basePackageClasses = detailPageController.class)
-@ComponentScan(basePackageClasses = CalendarController.class)
 
 @ComponentScan(basePackageClasses = RankController.class)
 

@@ -1,11 +1,12 @@
 package com.project.board.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.project.board.model.CalendarVO;
 
 
 public interface ICalendarService {
-    ArrayList<CalendarVO> calenList(); // 전체 일정 조회
+    public List<CalendarVO> calenList();
 
 }
