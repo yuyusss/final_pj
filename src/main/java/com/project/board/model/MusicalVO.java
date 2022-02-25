@@ -59,6 +59,32 @@ public class MusicalVO {
 		this.genreName = genreName;
 	}
 
+	
+	
+	
+	public MusicalVO(String muscNo, String muscName, String muscHashtag, String muscPlace, String muscPlaceLink,
+			String muscStartDate, String muscEndDate, String muscQuote, int muscReqTime, String muscSynop,
+			String muscGenre, String muscImg, String muscInfo_1, String muscInfo_2, String muscInfo_3,
+			String muscYoutube) {
+		super();
+		this.muscNo = muscNo;
+		this.muscName = muscName;
+		this.muscHashtag = muscHashtag;
+		this.muscPlace = muscPlace;
+		this.muscPlaceLink = muscPlaceLink;
+		this.muscStartDate = muscStartDate;
+		this.muscEndDate = muscEndDate;
+		this.muscQuote = muscQuote;
+		this.muscReqTime = muscReqTime;
+		this.muscSynop = muscSynop;
+		this.muscGenre = muscGenre;
+		this.muscImg = muscImg;
+		this.muscInfo_1 = muscInfo_1;
+		this.muscInfo_2 = muscInfo_2;
+		this.muscInfo_3 = muscInfo_3;
+		this.muscYoutube = muscYoutube;
+	}
+
 	public String getMuscNo() {
 		return muscNo;
 	}

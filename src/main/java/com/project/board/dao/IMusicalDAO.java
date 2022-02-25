@@ -16,5 +16,8 @@ public interface IMusicalDAO {
 	ArrayList<MusicalVO> getAllMusical();
 
 	public int voteUp(String muscNo);
+
+	public int insertMusical(MusicalVO musicalVO);
+
 	
 }

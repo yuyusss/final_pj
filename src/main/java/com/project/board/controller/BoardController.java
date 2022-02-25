@@ -2,10 +2,13 @@ package com.project.board.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,8 +29,6 @@ public class BoardController {
 	 	@Autowired
 	    private BoardService s;
 		private File none;
-	    
-		
 		
 	    @RequestMapping(value="/board", method=RequestMethod.GET)
 	    public String board() {
@@ -55,24 +56,45 @@ public class BoardController {
 		 * model.addAttribute("pagination", pagination); return s.getBoard(); }
 		 */
 	    
-	    @RequestMapping(value="/write", method=RequestMethod.GET)
-	    public String write() {
-	        return "board/write";
+	    @RequestMapping("/write")
+	    public String write(HttpSession session, HttpServletResponse write, BoardVO b) throws Exception {
+	    	String memId = (String) session.getAttribute("sid");
+			
+	    	b.setMemId(memId);
+			
+			System.out.println("memId 출력: " + b.getMemId());
+
+			// 로그인 되어있는지 확인하는 부분. 안되어있으면 경고 메시지 출력 -> loginform 이동
+			if (memId == null) {
+				write.setContentType("text/html; charset=UTF-8");
+				PrintWriter out_write = write.getWriter();
+				out_write.println("<script>alert('회원만 사용 가능한 기능입니다.');</script>");
+				out_write.flush();
+
+				return "login";
+
+			} else {
+				// 로그인이 되어있는 경우
+				return "board/write";
+			}
+
+	    	
+	       
 	    }
 		
 	    @RequestMapping(value="/writeAction", method=RequestMethod.POST)
 	    public String writeAction(
 	            HttpServletRequest req,@RequestParam("file") MultipartFile file,Model model,
 	            @RequestParam("title")String title, 
-	            @RequestParam("contents")String contents, String hits,Date writedate) throws IllegalStateException, IOException {
+	            @RequestParam("contents")String contents, String hits,Date writedate,String memId) throws IllegalStateException, IOException {
 	        
 	    	//1. 파일 저장 경로 설정 : 실제 서비스 되는 위치(프로젝트 외부에 저장)
 			String uploadPath="C:/springWorkspace/upload/";
 			
 			//2. 원본 파일 이름 알아오기
 			String originalFileName=file.getOriginalFilename();
-			
-			
+			System.out.println(memId);
+			System.out.println(title);
 			
 			 if (!file.getOriginalFilename().isEmpty()) {
 		            file.transferTo(new File(uploadPath + file.getOriginalFilename()));
@@ -80,7 +102,10 @@ public class BoardController {
 			//model로 저장
 			model.addAttribute("originalFileName",originalFileName);
 			
-	        s.addBoard(new BoardVO(0, title, contents, file.getOriginalFilename(), hits,writedate));
+			BoardVO b = new BoardVO(0, title, contents, file.getOriginalFilename(), hits,writedate,memId); 
+			System.out.println(b);
+			s.addBoard(b);
+	        
 	        return "board/board";
 	    }
 	    
@@ -183,7 +208,7 @@ public class BoardController {
 			s.updateBoard(board);
 			return "redirect:/board";
 		}
-	    
+
 	    
 
 	    

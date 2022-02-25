@@ -5,7 +5,7 @@
 <html>
 <head>
     <title>MUTRODUCE</title>
-    <script src="<c:url value='/js/weather_location.js' />"</script>
+    <script src="<c:url value='/js/weather_location.js' />"></script>
     <script src="<c:url value="/js/calendar.js" />"></script>
     <script src="<c:url value="/js/location_map.js" />"></script>
     <link href="<c:url value='/css/location_map.css'/>" rel="stylesheet" type="text/css">

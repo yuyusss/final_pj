@@ -28,14 +28,15 @@
 
                 <%--로그인 처리 전에 보여줄 부분--%>
                 <c:if test="${empty sessionScope.sid}">
-                    <li><a href="<c:url value='/signup' />">회원가입</a> </li>
+                    <li><a href="<c:url value='/signupForm' />">회원가입</a> </li>
                     <li><a href="<c:url value='/loginForm' />">로그인</a> </li>
+                    <li><a href="<c:url value='/ticketbook' />">티켓북테스트</a> </li>
                 </c:if>
                 <%--로그인 처리 후에 보여줄 부분--%>
                 <c:if test="${not empty sessionScope.sid}">
-                    <li>${sessionScope.sid} 님&nbsp;</li>
+                    <li>${sid.memId} 님&nbsp;</li>
                     <li><a href="<c:url value='/logout' />">로그아웃</a> </li>
-                    <li><a href="<c:url value='/ticketbook' />">마이페이지</a> </li>
+                    <li><a href="<c:url value='/ticketbook/${sid.memId}'/>">마이페이지</a> </li>
                 </c:if>
             </ul>
         </div>
@@ -55,11 +56,9 @@
                     <ul class="sub">
 
                         <li><a href="<c:url value='/detailView/1' />">뮤지컬</a></li>
-                        <li><a href="<c:url value='/vote' />">투표</a></li>
-                        <li><a href="<c:url value='/rank' />">랭킹</a></li>
+                        <li><a href="<c:url value='/vote' />">투표 / 랭킹</a></li>
                         <li><a href="<c:url value='/board' />">커뮤니티</a></li>
                         <li><a href="<c:url value='/hall' />">공연장</a></li>
-
                         <li><a href="/">문의사항</a></li>
                     </ul>
                 </li>
@@ -72,17 +71,18 @@
                         <li><a href="/detailView/4">아동/가족</a></li>
                     </ul>
                 </li>
-                <li><a href="/vote">투표</a></li>
-                <li><a href="/rank">랭킹</a></li>
-                <li><a href="/board">커뮤니티</a>
+
+                <li><a href="/vote">투표 / 랭킹</a></li>
+                <li><a href="/board3">커뮤니티</a>
                     <ul class="sub">
-                        <li><a href="/borad">배우별</a> </li>
-                        <li><a href="/borad">뮤지컬별</a> </li>
-                        <li><a href="/borad">정보게시판</a> </li>
+                    	<li><a href="/board">공연 요청</a> </li>
+                        <li><a href="/board3">배우별 게시판</a> </li>
+                        <li><a href="/board4">뮤지컬별 게시판</a> </li>
+                        <li><a href="/boardinformation">정보게시판</a> </li>
                     </ul>
                 </li>
                 <li><a href="<c:url value='/hall' />">공연장</a></li>
-                <li><a href="/">문의사항</a></li>
+                <li><a href="/adminPage">문의사항</a></li>
             </ul>
         </div>
     </div>

@@ -1,5 +1,9 @@
 package com.project.board.controller;
 
+
+import java.util.ArrayList;
+
+
 import java.util.ArrayList;
 
 
@@ -33,6 +37,21 @@ public class IndexController {
     @Autowired
     MusicalService musicalService;
 
+	 @RequestMapping(value="/", method=RequestMethod.GET) 
+	 public String index(Model model) { 
+
+		 ArrayList<MediaVO> mediaList = service.listAllMedia();
+	 
+
+	 model.addAttribute("mediaList", mediaList);
+	  
+
+	
+
+	 return "index2"; 
+	 }
+
+
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(Model model) {
@@ -42,8 +61,6 @@ public class IndexController {
         ArrayList<MusicalVO> musicalList = musicalService.getAllMusical();
         model.addAttribute("musicalList", musicalList);
 
-        return "index2";
-    }
 
 
     @RequestMapping("/vote")
@@ -57,6 +74,7 @@ public class IndexController {
         System.out.println(actorList);
         return "vote";
     }
+}
 
     @RequestMapping("/voteActor/{actorNo}")
     public String voteActor(@PathVariable String actorNo, Model model)throws Exception{
@@ -79,7 +97,6 @@ public class IndexController {
 
         return "redirect:../vote";
     }
-
 
     @RequestMapping("/calenList")
     @ResponseBody

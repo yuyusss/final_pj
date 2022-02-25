@@ -1,111 +1,31 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<style type="text/css">
-#banner_online {
-    height: 270px;
-    width: 350px;
-    border: 1px solid black;
-    box-shadow: 3px 3px 7px 1px grey;
-    background-color: white;
-    z-index: 9999;
-    margin-left: 36%;
-    margin-top: 6%;
-    display: none;
-    position: fixed;
-}
-#banner_online h2 {
-    text-align: center;
-    font-size: 17px;
-    margin-bottom: 10px;
-}
-
-#banner_online p .second {
-    margin-left: 6px;
-}
-
-.pop_content {
-    font-size: 13px;
-    margin-left: 20px;
-}
-
-#banner_online_how {
-    height: 78px;
-    width: 444px;
-    margin-left: 28px;
-    border: 1px solid #82bf77;
-    margin-top: 22px;
-}
-
-#banner_online_how h3 {
-    font-size: 12px;
-    margin-left: 6px;
-    margin-top: 16px;
-}
-
-#close_button {
-    float: right;
-    margin-top: 0px;
-}
-
-.p_bottom {
-    margin-left: 30px;
-}
-
-#modal {
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:rgba(0, 0, 0, 0.5);
-  top: 0;
-  left: 0;
-  z-index: 99;
-  display: none;
-}
-
-</style>
-</head>
-<body>
-<button type="button" id="openPop">·¹ÀÌ¾îÆË¾÷</button>
-<button type="button" id="openModalPop">¸ð´Þ ·¹ÀÌ¾îÆË¾÷</button>
-<div id= "modal"> 
-</div>
-    <div id = "banner_online">
-   		<div id="close_button" style ="cursor: pointer;"> 
-   		X
-        </div>
-        <h2>Mutroduce Chatbot</h2>
-        <div class="pop_content">
-            ¾È³çÇÏ¼¼¿ä, ¹«¾ùÀ» µµ¿Íµå¸±±î¿ä?
-        </div>
-    </div>
-
-
-
-<script type="text/javascript">
-$(document).ready(function() {
-    $("#openPop").click(function() {
-        $("#banner_online").show();
-    });
-
-    $("#openModalPop").click(function() {
-        $("#banner_online").fadeIn();
-        $("#modal").fadeIn();
-    });
-
-    $("#close_button").click(function(){
-        $("#banner_online").fadeOut();
-        $("#modal").fadeOut();
-    });
-});
-</script>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>ì±—ë´‡</title>
+		<script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
+		<script src="<c:url value='/js/chatbot.js'/>"></script>		
+		<link rel="stylesheet" type="text/css" href="<c:url value='/css/chatbot.css'/>">
+	</head>
+	<body>			
+		<div id="wrap">
+			<!-- Header -->
+			<div id="chatHeader">
+				<button id="btnClose"> &lt; </button>
+			</div>
+		
+		<!-- ì±„íŒ… ë‚´ìš© ì¶œë ¥ -->
+			
+			<!-- ì‘ë‹µ ë©”ì‹œì§€ ì¶œë ¥  -->
+			<div id="chatBox"></div>
+			<!-- ì§ˆë¬¸ ë©”ì‹œì§€ ìž…ë ¥ í¼ -->
+			<form id="chatForm">
+				<input type="text" id="message" name="message" size="30" placeholder="ì§ˆë¬¸ì„ ìž…ë ¥í•˜ì„¸ìš”">	
+				<input type="submit" id="submit" value="ì „ì†¡í•˜ê¸°">		
+			</form>
+		</div>
+	</body>
 </html>
