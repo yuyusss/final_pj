@@ -26,7 +26,7 @@
             <div class="bannerInfo">
                 <%--<div id="bannerName"><h2>관객 추천 공연</h2></div>--%>
                 <div id="bannerViewItem">
-                    <c:forEach items="${musicalList}" var="music">
+                    <c:forEach items="${musicalList}" var="music" begin="0" end="4">
                         <div class="bannerContent">
                             <div class="bannerPoster">
                                 <a href="<c:url value="/testDetail/${music.muscNo}" />"><img src="${music.muscImg}"/></a>
