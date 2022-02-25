@@ -3,6 +3,7 @@
 <!DOCTYPE mapper
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
  
 <mapper namespace="com.project.board.dao.ITicketbookDAO">
 
@@ -20,6 +21,7 @@
 			
 	</resultMap>
 	
+
 	<select id="listAllTicketbook" resultMap="TicketbookResult" resultType="com.project.board.model.TicketbookVO">
 			SELECT * FROM tk
 	</select>	 
@@ -48,4 +50,4 @@
 		, seat = #{seat}, casting = #{casting}, price = #{price}, review = #{review}
  	</delete>
 
-</mapper>
+ </mapper> 
