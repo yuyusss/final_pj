@@ -2,9 +2,15 @@ package com.project.board.service;
 
 import java.util.List;
 
+
+import org.springframework.stereotype.Service;
+
+
 import com.project.board.model.BoardVO;
 
 import com.project.board.model.ReplyVO;
+
+
 
 
 public interface IBoardService3 {

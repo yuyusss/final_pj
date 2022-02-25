@@ -42,7 +42,7 @@
 }
 
 
-.IDdouble_check{
+.IDdouble_check, .muscNoCheck{
 	padding:10px;
 	border: 1px solid black;
     background-color: #fff;
@@ -56,7 +56,7 @@
     margin: 3px;
 }
 
-.IDdouble_check:hover{
+.IDdouble_check:hover, .muscNoCheck:hover{
 	padding:10px;
 	border: 1px solid #ff3333;
     background-color: #fff;

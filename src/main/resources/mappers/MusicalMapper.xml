@@ -18,6 +18,14 @@
         
     </select>
     
+    <insert id="insertMusical"  parameterType="com.project.board.model.MusicalVO">
+  		INSERT INTO musical
+  		VALUES (#{muscNo}, #{muscName}, #{muscHashtag}, #{muscPlace},
+				#{muscPlaceLink},#{muscStartDate}, #{muscEndDate}, #{muscQuote},
+                #{muscReqTime}, #{muscSynop}, #{muscGenre}, #{muscImg},
+                #{muscInfo_1}, #{muscInfo_2}, #{muscInfo_3}, #{muscYoutube})
+  	</insert> 
+    
 </mapper>
   
   

@@ -21,7 +21,7 @@
 				<div class="MyPageContent">
 					<div class="userInfo">
 						<div>프로필 사진(생기면 넣을 것)</div>
-						<div>user 아이디: ${sessionScope.sid}</div>
+						<div>user 아이디: ${sid.memId}</div>
 						<div><button>회원정보 수정</button></div>
 					</div>
 					<div class="user_ticket_Info">
@@ -45,8 +45,11 @@
                     </c:forEach>--%>
 				</div>
 			</div>
-			<div class="RecogMusical">
-				공연 추천 (지원님 완성하신 부분 들어올 자리)
+			<div class="RecogMusical" style="text-align: left;">
+				<!-- 공연 추천 (지원님 완성하신 부분 들어올 자리)<br> -->
+				<div id="reframe" style="width: 100%">
+				<a href=""></a><iframe src="<c:url value='/favorRecommand/${sid.memId}'/>" style="position: absolute; width: 30%; height: 70%; border: hidden;"></iframe>
+				</div>
 			</div>
 		</div>
 		

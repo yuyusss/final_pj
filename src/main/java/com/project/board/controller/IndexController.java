@@ -49,8 +49,12 @@ public class IndexController {
 
 	 model.addAttribute("mediaList", mediaList);
 	  
+
+	
+
 	 return "index2"; 
 	 }
+
 
 
 //        ArrayList<CalendarVO> calenList = calendarService.calenList();;
