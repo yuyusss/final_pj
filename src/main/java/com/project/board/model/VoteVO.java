@@ -4,7 +4,7 @@ public class VoteVO {
     private String actorNo;
     private String actorName;
     private String actorProfile;
-    private Integer actorVote;
+    private int actorVote;
 
     public String getActorNo() {
         return actorNo;
@@ -36,5 +36,15 @@ public class VoteVO {
 
     public void setActorVote(Integer actorVote) {
         this.actorVote = actorVote;
+    }
+
+    @Override
+    public String toString() {
+        return "VoteVO{" +
+                "actorNo=" + actorNo +
+                ", actorName='" + actorName + '\'' +
+                ", actorProfile='" + actorProfile + '\'' +
+                ", actorVote=" + actorVote +
+                '}';
     }
 }

@@ -7,6 +7,7 @@
     <title>MUTRODUCE</title>
     <script src="<c:url value='/js/weather_location.js' />"></script>
     <script src="<c:url value="/js/calendar.js" />"></script>
+    <script src="<c:url value="/js/location_map.js" />"></script>
     <link href="<c:url value='/css/location_map.css'/>" rel="stylesheet" type="text/css">
 
 </head>
@@ -23,16 +24,16 @@
         <!-- section -->
         <div class="bannerMenu">
             <div class="bannerInfo">
-                <div id="bannerName"><h2>관객 추천 공연</h2></div>
+                <%--<div id="bannerName"><h2>관객 추천 공연</h2></div>--%>
                 <div id="bannerViewItem">
-                    <c:forEach begin="0" end="4">
+                    <c:forEach items="${musicalList}" var="music">
                         <div class="bannerContent">
                             <div class="bannerPoster">
-                                <img src="https://image.yes24.com/themusical/fileStorage/ThemusicalAdmin/Play/Image/20180731125240467854511c5f46d8a5eaae24a239ae6e.jpg"/>
+                                <a href="<c:url value="/testDetail/${music.muscNo}" />"><img src="${music.muscImg}"/></a>
                             </div>
-                            <div class="bannerPosterTitle">
-                                지킬앤하이드
-                            </div>
+                           <%-- <div class="bannerPosterTitle">
+                                ${music.muscName}
+                            </div>--%>
                         </div>
                     </c:forEach>
                 </div>
@@ -159,7 +160,7 @@
                         <img src="https://www.caci.or.kr/cmmn/file/imageSrc.do?atchFileId=4631921811a4414ba470ab04692deab5&fileSn=1&thumb=Y"/>
                     </div>
                     <div class="bannerPosterTitle">
-                        레베카
+                        레베카®
                     </div>
                 </div>
             </c:forEach>

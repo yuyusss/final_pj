@@ -18,7 +18,16 @@ public class MusicalVO {
 	private String muscInfo_2;
 	private String muscInfo_3;
 	private String muscYoutube;
-	
+	private int musicalVote;
+
+	public int getMusicalVote() {
+		return musicalVote;
+	}
+
+	public void setMusicalVote(int musicalVote) {
+		this.musicalVote = musicalVote;
+	}
+
 	private String genreNo;
 	private String genreName;
 	
