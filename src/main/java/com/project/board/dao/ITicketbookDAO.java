@@ -8,6 +8,7 @@ import com.project.board.model.MusicalByGenreVO;
 import com.project.board.model.TicketbookVO;
 
 public interface ITicketbookDAO {
+
 	public ArrayList<TicketbookVO> listAllTicketbook();   		// ** 전체 공연장 조회 인터페이스 코드 작성 
 
 	public ArrayList<MusicalByGenreVO> getMusicalByGenre(String memId);
@@ -17,5 +18,10 @@ public interface ITicketbookDAO {
 	 * Map<String, String> getMusicalByGenre();
 	 */
 	
+
+
+	ArrayList<TicketbookVO> listTicketByID(String memID);
+	void insertticket(TicketbookVO ticketbookVo);
+
 	
 }

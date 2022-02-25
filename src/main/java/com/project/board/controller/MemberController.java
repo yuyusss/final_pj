@@ -44,8 +44,9 @@ public class MemberController {
 //			session.setAttribute("sid", resultMember.getMemId());
 			session.setAttribute("sid", resultMember);
 			 result = "ok";
+			 
 		}
-
+		System.out.println(resultMember.getMemId());
 		return result;
 	}
 	
@@ -61,7 +62,7 @@ public class MemberController {
 	}
 	
 	//회원가입 폼으로 이동
-	@RequestMapping("/signup")
+	@RequestMapping("/signupForm")
 	public String joinForm() {
 		
 		return "/signUp";

@@ -1,6 +1,7 @@
 package com.project.board.controller;
 
 import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,46 +15,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.project.board.model.MusicalByGenreVO;
 import com.project.board.model.MusicalVO;
+
+
+
+
+import com.project.board.model.TicketbookVO;
+
 import com.project.board.service.TicketbookService;
 
 @Controller
 public class TicketbookController {
+
 		@Autowired
 		private TicketbookService service;
 	
-		/*
-	    @RequestMapping("/ticketbook/{memId}/{genre}")
-		public String ticketbook(@PathVariable String memId, @PathVariable String genre, HttpSession session) {
-	    	System.out.println(memId);
-	    	System.out.println(genre);
-	    	String result = "error";
-	    	
-//	    	ArrayList<String> genreList = new ArrayList<String>();
-//	    	
-//	    	String [] genreList = genre.split(",");
-//	    	
-//	    	System.out.println(genreList[0] + genreList[1]);
-	    	
-	    	  
-	    	
-//	    	List<HashMap<String, Object>> list= (List<HashMap<String, Object>>) service.getList(pMap);
-//	    	Map<String, String> musicalData = new HashMap<String, String>();
-	    	List<HashMap> musicalData = (List<HashMa>) service.getMusicalByGenre(genre);
-	    	
-	    	System.out.println(musicalData);
-	    	
-	    	
-	    	if(musicalData != null) {
-	    		session.setAttribute("musicalData", musicalData);
-	    		
-	    		result = "ticketbook/ticketbook";
-	    	}
-	    	
-
-			return result;
-	    }
-	    
-	    */
+		
 		
 		@RequestMapping("/favorRecommand/{memId}") 
 	    public String favorRecommand(@PathVariable String memId, HttpSession session) {
@@ -102,4 +78,38 @@ public class TicketbookController {
 				return "ticketbook/ticketbook";
 		    }
 	    
+
+   
+
+    @RequestMapping("/ticketDetailView") //
+    public String ticketbook(Model model) {
+        ArrayList<TicketbookVO> pjhTicketList = service.listTicketByID("sid");
+
+        model.addAttribute("pjhTicketList", pjhTicketList); // 2
+
+
+        ArrayList<TicketbookVO> ticketList = service.listAllTicketbook(); //
+        model.addAttribute("ticketList", ticketList);
+
+        return "ticketbook/ticketDetailView";
+    }
+
+    @RequestMapping("/ticketbook/ticketInsertForm")
+    public String insertform() {
+
+
+        return "ticketbook/ticketbook";
+    }
+    
+    
+ 
+
+    
+    @RequestMapping("/ticketbook/insertticket") //추가 페이지
+    public String insertticket(TicketbookVO ticketbookVo) {
+        service.insertticket(ticketbookVo);
+        return "ticketbook/ticketInsertForm";
+    }
+
+
 }

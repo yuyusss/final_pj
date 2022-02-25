@@ -123,8 +123,8 @@ function drawReply(replys) {
 			})
 			var subHtml = '';
 			subHtml = '<div class="row"><div class="col-sm-12 subReply">';
-			subHtml += '<form class="form-inline" action="writeReply2" method="post" onSubmit="return CheckRereplyform(' + tempIndex1 + ')"><label for="pwd" class="mr-sm-2">↳댓글 내용 :  <font size="5">' + reply.contents + '</font>  (대댓글 수:' + rc + ')'  +'<a href="/board/deletereply/'+ IDX + '/'+reply.idx+ '" style="text-decoration:none;"> &#10060;</a></label>'
-			subHtml += '<input type="hidden" name="idx" value = "' + IDX + '"><input type="hidden" name="replyIdx" value = "' + reply.idx + '"><input type="text"class="replyinput form-control mb-2 mr-sm-2"  id="contents' + tempIndex1 + '" placeholder="댓글" name="contents"><button class="replybtn" type="submit" >등록</button></form>';
+			subHtml += '<form class="form-inline" action="writeReply2" method="post" onSubmit="return CheckRereplyform(' + tempIndex1 + ')"><label for="pwd" class="mr-sm-2">↳댓글 내용 :  <font size="5">' + reply.contents + '</font>  (대댓글 수:' + rc + ')'  +'<a href="/board/deletereply2/'+ IDX + '/'+reply.idx+ '" style="text-decoration:none;"> &#10060;</a></label>'
+			subHtml += '<input type="hidden" name="idx" value = "' + IDX + '"><input type="hidden" name="replyIdx" value = "' + reply.idx + '"><input type="text"class="replyinput form-control mb-2 mr-sm-2"  id="contents' + tempIndex1 + '" placeholder="댓글" name="contents"><button class="replybtn"  type="submit" >등록</button></form>';
 			subHtml += '<div class="row"><div class="col-sm-12 sub' + reply.idx + '"></div></div></div></div>';
 			$(".sub" + reply.replyIdx).append(subHtml);
 		}

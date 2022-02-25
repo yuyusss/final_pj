@@ -8,7 +8,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.project.board.dao.ITicketbookDAO;
+
 import com.project.board.model.MusicalByGenreVO;
+
+import com.project.board.model.HallVO;
+
 import com.project.board.model.TicketbookVO;
 
 @Service
@@ -22,6 +26,17 @@ public class TicketbookService implements ITicketbookService {
 	@Override
 	public ArrayList<TicketbookVO> listAllTicketbook() {		// ** 전체 상품 조회 코드 작성 
 		return dao.listAllTicketbook();
+	}
+	@Override
+	public ArrayList<TicketbookVO> listTicketByID(String memID) {
+		// TODO Auto-generated method stub
+		return dao.listTicketByID(memID);
+	}
+
+	@Override
+	public void insertticket(TicketbookVO ticketbookVo) {
+		// TODO Auto-generated method stub
+		dao.insertticket(ticketbookVo);
 	}
 
 	@Override

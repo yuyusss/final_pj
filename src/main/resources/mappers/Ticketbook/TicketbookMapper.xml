@@ -6,14 +6,24 @@
  
 <mapper namespace="com.project.board.dao.ITicketbookDAO">
 
-	<resultMap id="listAllTicketbook" type="com.project.board.model.TicketbookVO">
+	<resultMap id="TicketbookResult" type="com.project.board.model.TicketbookVO">
 			<result property="no" column="no"/>
+			<result property="memID" column="memID"/>
+			<result property="subject" column="subject"/>
+			<result property="date" column="date"/>
+			<result property="time" column="time"/>
+			<result property="theater" column="theater"/>
+			<result property="seat" column="seat"/>
+			<result property="casting" column="casting"/>
+			<result property="price" column="price"/>
+			<result property="review" column="review"/>
 			
 	</resultMap>
 	
-	<!--  전체 홀 조회  -->
-	<!--<select id="listAllTicketbook" resultMap="Ticketbook" resultType="com.project.board.model.TicketbookVO">
+
+	<select id="listAllTicketbook" resultMap="TicketbookResult" resultType="com.project.board.model.TicketbookVO">
 			SELECT * FROM tk
+
 	</select>-->
 	<!-- 
 	<select id="getMusicalByGenre" resultType="map" parameterType="string">
@@ -25,4 +35,18 @@
     </select>
 	
 	
+
+	</select>	 
+	
+	<select id="listTicketByID" resultMap="TicketbookResult" resultType="com.project.board.model.TicketbookVO">
+		SELECT * FROM tk WHERE memID=#{memID}
+	</select>
+	
+	
+	<insert id="insertticket" parameterType="com.project.board.model.TicketbookVO">
+		INSERT INTO tk (memID, subject, date, time, theater, seat, casting, price, review) VALUES(#{memID}, #{subject}
+		, #{date}, #{time}, #{theater}, #{seat}, #{casting}, #{price}, #{review})
+	</insert>
+
+
 </mapper>

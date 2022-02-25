@@ -2,10 +2,13 @@ package com.project.board.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,8 +21,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.project.board.model.BoardVO;
-import com.project.board.model.BoardVO3;
-import com.project.board.model.ReplyVO3;
+
+import com.project.board.model.ReplyVO;
+
 import com.project.board.service.BoardService3;
 
 @Controller
@@ -36,7 +40,7 @@ public class BoardController3 {
 		
 	    @RequestMapping(value="/boardList3", method=RequestMethod.GET)
 	    @ResponseBody
-	    public List<BoardVO3> boardList3(){
+	    public List<BoardVO> boardList3(){
 	    	return s.getBoard3();
 	    }
 	    
@@ -55,15 +59,34 @@ public class BoardController3 {
 		 */
 	    
 	    @RequestMapping(value="/write3", method=RequestMethod.GET)
-	    public String write3() {
-	        return "board/write3";
+	    public String write3(HttpSession session, HttpServletResponse write, BoardVO b) throws Exception {
+	    	String memId = (String) session.getAttribute("sid");
+			
+	    	b.setMemId(memId);
+			
+			System.out.println("memId 출력: " + b.getMemId());
+
+			// 로그인 되어있는지 확인하는 부분. 안되어있으면 경고 메시지 출력 -> loginform 이동
+			if (memId == null) {
+				write.setContentType("text/html; charset=UTF-8");
+				PrintWriter out_write = write.getWriter();
+				out_write.println("<script>alert('회원만 사용 가능한 기능입니다.');</script>");
+				out_write.flush();
+
+				return "login";
+
+			} else {
+				// 로그인이 되어있는 경우
+				return "board/write3";
+			}
+	    	
 	    }
 		
 	    @RequestMapping(value="/writeAction3", method=RequestMethod.POST)
 	    public String writeAction3(
 	            HttpServletRequest req,@RequestParam("file") MultipartFile file,Model model,
 	            @RequestParam("title")String title, 
-	            @RequestParam("contents")String contents, String hits,Date writedate) throws IllegalStateException, IOException {
+	            @RequestParam("contents")String contents, String hits,Date writedate,String memId) throws IllegalStateException, IOException {
 	        
 	    	//1. 파일 저장 경로 설정 : 실제 서비스 되는 위치(프로젝트 외부에 저장)
 			String uploadPath="C:/springWorkspace/upload/";
@@ -79,7 +102,7 @@ public class BoardController3 {
 			//model로 저장
 			model.addAttribute("originalFileName",originalFileName);
 			
-	        s.addBoard3(new BoardVO3(0, title, contents, file.getOriginalFilename(), hits,writedate));
+	        s.addBoard3(new BoardVO(0, title, contents, file.getOriginalFilename(), hits,writedate,memId));
 	        return "board/board3";
 	    }
 	    
@@ -105,10 +128,10 @@ public class BoardController3 {
 		
 	    @RequestMapping(value="/boardView3", method=RequestMethod.GET)
 	    @ResponseBody
-	    public BoardVO3 boardList3(@RequestParam("idx")int idx) throws Exception{
+	    public BoardVO boardList3(@RequestParam("idx")int idx) throws Exception{
 	        System.out.println("boardView, idx = " + idx);
 	    	s.updatereviewcnt3(idx);
-	    	BoardVO3 vo = s.getBoardOne3(idx);
+	    	BoardVO vo = s.getBoardOne3(idx);
 	    	System.out.println(vo.getImage());
 	    	return s.getBoardOne3(idx);
 	    }
@@ -117,7 +140,7 @@ public class BoardController3 {
 	    
 	    @RequestMapping(value="/replyList3", method=RequestMethod.GET)
 	    @ResponseBody
-	    public List<ReplyVO3> replyList3(@RequestParam("idx")int boardIdx){
+	    public List<ReplyVO> replyList3(@RequestParam("idx")int boardIdx){
 	        return s.getReply3(boardIdx);
 	    }
 	    
@@ -126,7 +149,7 @@ public class BoardController3 {
 	            @RequestParam("idx")int idx,
 	            @RequestParam("replyIdx")int replyIdx,
 	            @RequestParam("contents")String contents) {
-	        s.addReply3(new ReplyVO3(0, idx,replyIdx, contents));
+	        s.addReply3(new ReplyVO(0, idx,replyIdx, contents));
 	        return "redirect:view3?idx=" + idx;
 	    }
 	   
@@ -152,13 +175,13 @@ public class BoardController3 {
 	    
 	    @RequestMapping("/board/update3/{idx}")
 		public String updateBoardForm3(@PathVariable int idx, Model model) {
-			BoardVO3 board = s.detailViewBoard3(idx);
+			BoardVO board = s.detailViewBoard3(idx);
 			model.addAttribute("board", board);
 			return "board/update3";
 		}
 	    
 	    @RequestMapping("/board/updateBoard3")
-		public String detailViewBoard3(BoardVO3 board,@RequestParam("file") MultipartFile file,Model model) throws IllegalStateException, IOException {
+		public String detailViewBoard3(BoardVO board,@RequestParam("file") MultipartFile file,Model model) throws IllegalStateException, IOException {
 	    	
 	    	//1. 파일 저장 경로 설정 : 실제 서비스 되는 위치(프로젝트 외부에 저장)
 			String uploadPath="C:/springWorkspace/upload/";

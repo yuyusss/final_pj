@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    
+
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<link href="<c:url value='/css/ticketBook.css'/>" rel="stylesheet" type="text/css">
-		<title>Mypage</title>
-	</head>
+<head>
+	<meta charset="UTF-8">
+	<link href="<c:url value='/css/ticketBook.css'/>" rel="stylesheet" type="text/css">
+	<title>My page</title>
+</head>
 	
 	<body>
 	<div id = "wrap">
@@ -32,9 +32,9 @@
 				</div>
 				<div class="ticketBook">
 					<c:forEach begin="0" end="2">
-						<div class="ticketBookContent">
+						<div class="ticketBookContent" >
 							<img src="<c:url value="/images/ticketBook.png" />">
-							<h3>티켓북 이름</h3>
+							<h3><a href="<c:url value="/ticketDetailView"/>">티켓북 이름</a></h3>
 						</div>
 					</c:forEach>
 					<%--상세 티켓 들어올 자리
