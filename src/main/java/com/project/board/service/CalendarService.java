@@ -1,6 +1,7 @@
 package com.project.board.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -15,9 +16,9 @@ public class CalendarService implements ICalendarService{
     @Qualifier("ICalendarDAO")
     ICalendarDAO dao;
 
+
     @Override
-    public ArrayList<CalendarVO> calenList() {
+    public List<CalendarVO> calenList() {
         return dao.calenList();
     }
-
 }

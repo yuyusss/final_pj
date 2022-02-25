@@ -27,6 +27,16 @@
         SELECT * FROM actor ORDER BY actorVote DESC
     </select>
 
+    <select id="detailActor"  parameterType="string" resultType="com.project.board.model.VoteVO">
+        SELECT * FROM actor WHERE actorNo = #{actorNo}
+    </select>
+
+    <update id="voteUp">
+        UPDATE actor SET actorVote = actorVote + 1
+        WHERE actorNo = #{actorNo}
+    </update>
+
+
 </mapper>
   
   

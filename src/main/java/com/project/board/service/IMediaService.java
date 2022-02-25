@@ -15,4 +15,8 @@ public interface IMediaService {
 
     /* 뮤지컬 배우 투표 */
     ArrayList<VoteVO> listAllActor();
+
+    VoteVO detailActor(String actorNo);
+
+    public int voteUp(String actorNo);
 }

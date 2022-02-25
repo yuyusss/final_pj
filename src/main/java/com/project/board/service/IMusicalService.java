@@ -13,5 +13,7 @@ public interface IMusicalService {
 	public MusicalVO getMusical(String muscNo);
 	public ArrayList<ActorCastVO> getActorCast(String muscNo);
 	public ArrayList<MusicalVO> getMusicalListByGenre(String genreNo);
+	ArrayList<MusicalVO> getAllMusical();
+	public int voteUp(String muscNo);
 	
 }

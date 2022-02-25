@@ -12,4 +12,10 @@ public interface IMediaDAO {
     /* 뮤지컬 배우 리스트 */
     ArrayList<VoteVO> listAllActor();
 
+    VoteVO detailActor(String actorNo);
+
+    public int voteUp(String actorNo);
+
+
+
 }
