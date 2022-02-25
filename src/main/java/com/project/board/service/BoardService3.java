@@ -7,8 +7,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.project.board.dao.IBoardDAO3;
-import com.project.board.model.BoardVO3;
-import com.project.board.model.ReplyVO3;
+import com.project.board.model.BoardVO;
+import com.project.board.model.ReplyVO;
+
 
 @Service
 public class BoardService3 implements IBoardService3{
@@ -19,23 +20,23 @@ public class BoardService3 implements IBoardService3{
 	
     
     @Override
-    public List<BoardVO3> getBoard3(){
+    public List<BoardVO> getBoard3(){
         return dao.getBoard3();
     }
     @Override
-    public boolean addBoard3(BoardVO3 b) {
+    public boolean addBoard3(BoardVO b) {
         return dao.addBoard3(b);
     }
     @Override
-    public BoardVO3 getBoardOne3(int idx) {
+    public BoardVO getBoardOne3(int idx) {
         return dao.getBoardOne3(idx);
     }
     @Override
-    public boolean addReply3(ReplyVO3 r) {
+    public boolean addReply3(ReplyVO r) {
         return dao.addReply3(r);
     }
     @Override
-    public List<ReplyVO3> getReply3(int boardIdx) {
+    public List<ReplyVO> getReply3(int boardIdx) {
         return dao.getReply3(boardIdx);
     }
     @Override
@@ -61,13 +62,13 @@ public class BoardService3 implements IBoardService3{
 	}
     
     @Override
-	public void updateBoard3(BoardVO3 b) {
+	public void updateBoard3(BoardVO b) {
 		dao.updateBoard3(b);
 		
 	}
 	
     @Override
-	public BoardVO3 detailViewBoard3(int idx) {
+	public BoardVO detailViewBoard3(int idx) {
 		return dao.detailViewBoard3(idx);
 	}
     

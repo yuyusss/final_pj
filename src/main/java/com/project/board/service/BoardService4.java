@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.project.board.dao.IBoardDAO4;
-import com.project.board.model.BoardVO4;
-import com.project.board.model.ReplyVO4;
+import com.project.board.model.BoardVO;
+import com.project.board.model.ReplyVO;
 
 @Service
 public class BoardService4 implements IBoardService4{
@@ -19,23 +19,23 @@ public class BoardService4 implements IBoardService4{
 	
     
     @Override
-    public List<BoardVO4> getBoard4(){
+    public List<BoardVO> getBoard4(){
         return dao.getBoard4();
     }
     @Override
-    public boolean addBoard4(BoardVO4 b) {
+    public boolean addBoard4(BoardVO b) {
         return dao.addBoard4(b);
     }
     @Override
-    public BoardVO4 getBoardOne4(int idx) {
+    public BoardVO getBoardOne4(int idx) {
         return dao.getBoardOne4(idx);
     }
     @Override
-    public boolean addReply4(ReplyVO4 r) {
+    public boolean addReply4(ReplyVO r) {
         return dao.addReply4(r);
     }
     @Override
-    public List<ReplyVO4> getReply4(int boardIdx) {
+    public List<ReplyVO> getReply4(int boardIdx) {
         return dao.getReply4(boardIdx);
     }
     @Override
@@ -61,13 +61,13 @@ public class BoardService4 implements IBoardService4{
 	}
     
     @Override
-	public void updateBoard4(BoardVO4 b) {
+	public void updateBoard4(BoardVO b) {
 		dao.updateBoard4(b);
 		
 	}
 	
     @Override
-	public BoardVO4 detailViewBoard4(int idx) {
+	public BoardVO detailViewBoard4(int idx) {
 		return dao.detailViewBoard4(idx);
 	}
     

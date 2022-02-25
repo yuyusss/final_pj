@@ -8,12 +8,38 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class BoardVO {
     private int idx;
-    private String title;
+    private String memId;
+	private String title;
     private String contents;
     private String image;
     private String hits;
+    private String type;
+    private String keyword;
     
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    public String getMemId() {
+		return memId;
+	}
+
+	public void setMemId(String memId) {
+		this.memId = memId;
+	}
+    public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
     private Date writedate;
     
@@ -62,7 +88,7 @@ public class BoardVO {
         this.image = image;
     }
     
-    public BoardVO(int idx, String title, String contents, String image, String hits, Date writedate) {
+    public BoardVO(int idx, String title, String contents, String image, String hits, Date writedate, String memId) {
         super();
         this.idx = idx;
         this.title = title;
@@ -70,12 +96,14 @@ public class BoardVO {
         this.image = image;
         this.hits= hits;
         this.writedate= writedate;
+        this.memId= memId;
     }
 
 	@Override
 	public String toString() {
-		return "BoardVO [idx=" + idx + ", title=" + title + ", contents=" + contents + ", image=" + image + ", hits="
-				+ hits + ", writedate=" + writedate + "]";
+		return "BoardVO [idx=" + idx + ", memId=" + memId + ", title=" + title + ", contents=" + contents + ", image="
+				+ image + ", hits=" + hits + ", type=" + type + ", keyword=" + keyword + ", writedate=" + writedate
+				+ "]";
 	}
     
     
