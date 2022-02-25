@@ -24,8 +24,12 @@
 			SELECT * FROM tk
 	</select>	 
 	
-	<select id="listTicketByID" resultMap="TicketbookResult" resultType="com.project.board.model.TicketbookVO">
+	<select id="listTicketByID" resultMap="TicketbookResult" parameterType="String" >
 		SELECT * FROM tk WHERE memID=#{memID}
+	</select>
+	
+	<select id="listTicketByNO" resultType="com.project.board.model.TicketbookVO" parameterType="String" >
+		SELECT * FROM tk WHERE no=#{no}
 	</select>
 	
 	
@@ -33,6 +37,15 @@
 		INSERT INTO tk (memID, subject, date, time, theater, seat, casting, price, review) VALUES(#{memID}, #{subject}
 		, #{date}, #{time}, #{theater}, #{seat}, #{casting}, #{price}, #{review})
 	</insert>
-
+	
+	<update id="updateticket" parameterType="com.project.board.model.TicketbookVO">
+		UPDATE tk SET memID = #{memID}, subject = #{subject}, date = #{date}, time = #{time}, theater = #{theater}
+		, seat = #{seat}, casting = #{casting}, price = #{price}, review = #{review} WHERE no=#{no}
+	</update>
+	
+	<delete id="deleteticket" parameterType="com.project.board.model.TicketbookVO">
+ 		DELETE FROM theater WHERE no = #{no} or memID = #{memID}, subject = #{subject}, date = #{date}, time = #{time}, theater = #{theater}
+		, seat = #{seat}, casting = #{casting}, price = #{price}, review = #{review}
+ 	</delete>
 
 </mapper>

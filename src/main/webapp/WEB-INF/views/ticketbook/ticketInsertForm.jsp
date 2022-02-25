@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link href="<c:url value='/css/hall2.css'/>" rel="stylesheet" type="text/css">
+		<link href="<c:url value='/css/ticketcontrol.css'/>" rel="stylesheet" type="text/css">
 		<title>티켓 등록</title>
 		
 		<!-- include libraries(jQuery, bootstrap) -->   <!--  ********* -->
@@ -24,22 +24,39 @@
 		<div id = "wrap">
 		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true'/>
 	
-		<form method = "post" action="/ticketbook/insertticket">
+		<form method = "post" action="/ticketbook/insertticket" class="form">
 		
 		
 		<!-- sessionScope._____ 로그인 처리한 팀원에게 세션에 멤버 아이디 저장해주세요. 어떤 이름으로 저장했는지 알려주세요.-->
-	 		아이디 : <input type="text" id="memID" name="memID" value="pjh" ><br>
-			공연 제목 : <input type="text" id="subject" name="subject" ><br>
-			공연 날짜 : <input type="text" id="date" name="date" ><br>
-			공연 시간 : <input type="text" id="time" name="time" ><br>
-			장소 : <input type="text" id="thater" name="theater" ><br>
-			좌석 : <input type="text" id="seat" name="seat" ><br>
-			캐스팅 : <input type="text" id="casting" name="casting" ><br>
-			가격 : <input type="text" id="price" name="price" ><br>
-			
-			<!--  ********* -->
-			  <textarea id="review" name="review">   </textarea>
-
+		<table border= "0" class = "table">
+			<tr>
+		 		<td>아이디 : </td> <td><input type="text" id="memID" name="memID" value="${sessionScope.sid}" readonly><br></td>
+		 	</tr>
+		 	<tr>
+				<td>공연 제목 : </td><td><input type="text" id="subject" name="subject" ><br></td>
+			</tr>
+			<tr>	
+				<td>공연 날짜 : </td><td><input type="text" id="date" name="date" ><br></td>
+			</tr>
+			<tr>
+				<td>공연 시간 : </td><td><input type="text" id="time" name="time" ><br></td>
+			</tr>
+			<tr>
+				<td>장소 : </td><td><input type="text" id="thater" name="theater" ><br></td>
+			</tr>
+			<tr>
+				<td>좌석 : </td><td><input type="text" id="seat" name="seat" ><br></td>
+			</tr>	
+			<tr>
+				<td>캐스팅 : </td><td><input type="text" id="casting" name="casting" ><br></td>
+			</tr>
+			<tr>	
+				<td>가격 : </td><td><input type="text" id="price" name="price" ><br></td>
+			</tr>	
+			<tr>
+				<td>후기 : </td><td><textarea id="review" name="review">   </textarea></td>
+			</tr>
+		</table>
 			<div id = "button"><input type="submit" value="등록"><input type="reset" value="취소"></div>
 		</form>
 		
