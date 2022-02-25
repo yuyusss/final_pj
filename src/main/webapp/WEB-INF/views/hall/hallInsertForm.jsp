@@ -31,7 +31,7 @@
 			공연장고객센터번호<input type="text" id="cus" name="cus" ><br>
 			
 			<!--  ********* -->
-			  <textarea id="details" name="details">  <!--  ${____.디테일}********* -->  </textarea>
+			  <textarea id="details" name="details">   </textarea>
 
 			<div id = "button"><input type="submit" value="등록"><input type="reset" value="취소"></div>
 		</form>
