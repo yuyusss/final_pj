@@ -41,7 +41,8 @@ public class MemberController {
 		
 		
 		if(resultMember != null) {
-			session.setAttribute("sid", resultMember.getMemId());
+			session.setAttribute("sid1", resultMember.getMemId());
+			session.setAttribute("sid", resultMember);
 			 result = "ok";
 			 
 		}

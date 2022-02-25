@@ -141,28 +141,44 @@
 		
 		<div class="bigwrap" style="width: 300px;height: 510px;">
 			<div class="favor_recomnd_text">
-			<h3>선호 장르 추천 공연</h3>
+			<h3>${mByg[0].memId}님의 선호 장르 추천 공연 </h3>
 			<!-- 슬라이드쇼 컨테이너 -->
 			<div class="slideshow-container">
 			
 			  <!-- 숫자와 캡션이 있는 이미지 -->
-			  <div class="mySlides fade" style="display: block;">
+			  <c:forEach var="recom" items="${mByg}">
+			  	<c:choose>
+			  		<c:when test="${recom == mByg[0]}">
+			  			<div class="mySlides fade" style="display: block;">
+			  		</c:when>
+			  		<c:otherwise>
+			  			<div class="mySlides fade">
+			  		</c:otherwise>
+			  	</c:choose>
+			    <div class="numbertext"></div>
+			    <a href="<c:url value='/testDetail/${recom.muscNo}'/>" target='_blank'><img src="<c:url value='${recom.muscImg}'/>" style="width:100%;height: 400px;"></a>
+			    <div class="text"></div>
+			  </div>
+			  </c:forEach>
+			  
+			  
+			 <%--  <div class="mySlides fade" style="display: block;">
 			    <div class="numbertext">1 / 3</div>
-			    <img src="<c:url value='/images/jekyll.jpg'/>" style="width:100%;height: 400px;">
+			    <a href="<c:url value='/testDetail/${mByg[0].muscNo}'/>" target='_blank'><img src="<c:url value='${mByg[0].muscImg}'/>" style="width:100%;height: 400px;"></a>
 			    <div class="text"></div>
 			  </div>
 			
 			  <div class="mySlides fade">
-			    <div class="numbertext">2 / 3</div>
-			    <img src="<c:url value='/images/lionking.jpg'/>" style="width:100%;height: 400px;">
+			    <div class="numbertext" style="display: block;">2 / 3</div>
+			    <a href="<c:url value='/testDetail/${mByg[0].muscNo}'/>" target='_blank'><img src="<c:url value='${mByg[0].muscImg}'/>" style="width:100%;height: 400px;"></a>
 			    <div class="text"></div>
 			  </div>
 			
 			  <div class="mySlides fade">
-			    <div class="numbertext">3 / 3</div>
-			    <img src="<c:url value='/images/excalibur.jpg'/>" style="width:100%;height: 400px;">
+			    <div class="numbertext" style="display: block;">3 / 3</div>
+			    <a href="<c:url value='/testDetail/${mByg[0].muscNo}'/>" target='_blank'><img src="<c:url value='${mByg[0].muscImg}'/>" style="width:100%;height: 400px;"></a>
 			    <div class="text"></div>
-			  </div>
+			  </div> --%>
 			
 			  <!-- 다음, 이전 이미지 버튼 -->
 			  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>

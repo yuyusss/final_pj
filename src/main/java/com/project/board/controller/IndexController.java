@@ -3,73 +3,97 @@ package com.project.board.controller;
 import java.util.ArrayList;
 
 
-
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-
-import com.project.board.model.CalendarVO;
-import com.project.board.model.MediaVO;
-import com.project.board.model.VoteVO;
+import com.project.board.model.*;
 import com.project.board.service.CalendarService;
 import com.project.board.service.MediaService;
+import com.project.board.service.MusicalService;
 import com.project.board.service.WeatherService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.project.board.model.MediaVO;
-import com.project.board.service.CalendarService;
-import com.project.board.service.MediaService;
+import org.springframework.web.bind.annotation.*;
 
 @Service
 @Controller
 public class IndexController {
-  
+
     @Autowired
     MediaService service;
 
     @Autowired
+    CalendarService calendarService;
+
+    @Autowired
     private WeatherService weatherService;
 
-
-	 @RequestMapping(value="/", method=RequestMethod.GET) 
-	 public String index(Model model) { 
-		 ArrayList<MediaVO> mediaList = service.listAllMedia();
-	 
-	 model.addAttribute("mediaList", mediaList);
-	  
-	 return "index2"; 
-	 }
+    @Autowired
+    MusicalService musicalService;
 
 
-//        ArrayList<CalendarVO> calenList = calendarService.calenList();;
-//        model.addAttribute("calenList", calenList);
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String index(Model model) {
+        ArrayList<MediaVO> mediaList = service.listAllMedia();
+        model.addAttribute("mediaList", mediaList);
+
+        ArrayList<MusicalVO> musicalList = musicalService.getAllMusical();
+        model.addAttribute("musicalList", musicalList);
+
+        return "index2";
+    }
 
 
     @RequestMapping("/vote")
-    public String vote(Model model){
+    public String vote(Model model) {
         ArrayList<VoteVO> actorList = service.listAllActor();
         model.addAttribute("actorList", actorList);
 
+        ArrayList<MusicalVO> musicalList = musicalService.getAllMusical();
+        model.addAttribute("musicalList", musicalList);
+
+        System.out.println(actorList);
         return "vote";
     }
-}
 
- /*   @RequestMapping("/voteView")
+    @RequestMapping("/voteActor/{actorNo}")
+    public String voteActor(@PathVariable String actorNo, Model model)throws Exception{
+        VoteVO vo = service.detailActor(actorNo);
+        model.addAttribute("vo", vo);
+        System.out.println(vo);
+        System.out.println(vo.getActorName());
+        service.voteUp(actorNo);
+
+        return "redirect:../vote";
+    }
+
+    @RequestMapping("/voteMusical/{muscNo}")
+    public String voteMusical(@PathVariable String muscNo, Model model)throws Exception{
+        MusicalVO vo = musicalService.getMusical(muscNo);
+        model.addAttribute("vo", vo);
+        System.out.println(vo);
+        System.out.println(vo.getGenreName());
+        musicalService.voteUp(muscNo);
+
+        return "redirect:../vote";
+    }
+
+
+    @RequestMapping("/calenList")
     @ResponseBody
-    public VoteVO voteList(@RequestParam("actorNo")int actorNo) throws Exception{
-        System.out.println("actorNo, vote = " + actorNo);
-        service.updateVoteCnt(actorNo);
+    public List<CalendarVO> calenList() {
+        System.out.println("cal");
 
-        return "vote";
+        return calendarService.calenList();
+    }
+
+    /*@RequestMapping("calenView")
+    public ModelAndView calenView (HttpServletRequest request, ModelMap modelMap, @ModelAttribute CalendarVO vo)throws Exception{
+         HashMap resultMap = new HashMap();
+         ModelAndView mv = new ModelAndView();
+         CalendarVO result = calendarService.calenView(vo);
     }*/
 
+}

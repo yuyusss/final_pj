@@ -58,7 +58,7 @@ public class BoardController {
 	    
 	    @RequestMapping("/write")
 	    public String write(HttpSession session, HttpServletResponse write, BoardVO b) throws Exception {
-	    	String memId = (String) session.getAttribute("sid");
+	    	String memId = (String) session.getAttribute("sid1");
 			
 	    	b.setMemId(memId);
 			
