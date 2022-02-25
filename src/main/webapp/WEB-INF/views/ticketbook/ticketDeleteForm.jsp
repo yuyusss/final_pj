@@ -46,7 +46,7 @@
 				<td>가격 : </td><td><input type="text" id="price" name="price" value="${ticketbook.price}"><br></td>
 			</tr>	
 			<tr>
-				<td>후기 : </td><td><textarea id="review" name="review"> ${ticketbook.review}  </textarea></td>
+				<td>후기 : </td><td><textarea id="review" name="review"> ${ticketbook.review}  </textarea></td> 
 			</tr>
 		</table>
 			<div id = "button"><input type="submit" value="삭제"><input type="reset" value="취소"></div>
