@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.project.board.dao.IBoardDAO2;
-import com.project.board.model.BoardVO2;
-import com.project.board.model.ReplyVO2;
+import com.project.board.model.BoardVO;
+import com.project.board.model.ReplyVO;
 
 @Service
 public class BoardService2 implements IBoardService2{
@@ -19,23 +19,23 @@ public class BoardService2 implements IBoardService2{
 	
     
     @Override
-    public List<BoardVO2> getBoard2(){
+    public List<BoardVO> getBoard2(){
         return dao.getBoard2();
     }
     @Override
-    public boolean addBoard2(BoardVO2 b) {
+    public boolean addBoard2(BoardVO b) {
         return dao.addBoard2(b);
     }
     @Override
-    public BoardVO2 getBoardOne2(int idx) {
+    public BoardVO getBoardOne2(int idx) {
         return dao.getBoardOne2(idx);
     }
     @Override
-    public boolean addReply2(ReplyVO2 r) {
+    public boolean addReply2(ReplyVO r) {
         return dao.addReply2(r);
     }
     @Override
-    public List<ReplyVO2> getReply2(int boardIdx) {
+    public List<ReplyVO> getReply2(int boardIdx) {
         return dao.getReply2(boardIdx);
     }
     @Override
@@ -61,13 +61,13 @@ public class BoardService2 implements IBoardService2{
 	}
     
     @Override
-	public void updateBoard2(BoardVO2 b) {
+	public void updateBoard2(BoardVO b) {
 		dao.updateBoard2(b);
 		
 	}
 	
     @Override
-	public BoardVO2 detailViewBoard2(int idx) {
+	public BoardVO detailViewBoard2(int idx) {
 		return dao.detailViewBoard2(idx);
 	}
     

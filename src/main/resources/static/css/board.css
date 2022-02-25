@@ -164,6 +164,9 @@
 	height: 980px;
 	
 }
+.boardform{
+	text-align:center;
+}
 
 
 #writeBtn{
@@ -177,18 +180,8 @@ thead{
 	border:3px solid black;
 }
 
-.searchtable > tr:hover{
-	background-color:white;
-}
 
-.form-control{
-	height:27px;
-}
 
-tbody>tr:hover { 
-	
-	background-color:#5fb7d1;
-}
 
 .pull-right{
 	border:none;

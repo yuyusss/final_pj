@@ -1,5 +1,4 @@
 package com.project.board.controller;
-
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,17 +19,17 @@ public class HallController {
 	@RequestMapping("/hall")
 	public String hall(Model model) {
 
-		ArrayList<HallVO> seoulHallList = service.listHallByArea("seoul");
+		ArrayList<HallVO> seoulHallList = service.listHallByArea("seoul"); // 1
 		ArrayList<HallVO> ggHallList = service.listHallByArea("gg");
 		ArrayList<HallVO> etcHallList = service.listHallByArea("etc");
 		
-		model.addAttribute("seoulHallList", seoulHallList);
+		model.addAttribute("seoulHallList", seoulHallList); // 2
 		model.addAttribute("ggHallList", ggHallList);
 		model.addAttribute("etcHallList", etcHallList);
 		
-		ArrayList<HallVO> hallList = service.listAllHall();
-		model.addAttribute("hallList", hallList);
-		return "hall/hall";
+		ArrayList<HallVO> hallList = service.listAllHall(); //
+		model.addAttribute("hallList", hallList); //
+		return "hall/hall"; //
 	}
 	@RequestMapping("/hall/detailView/{no}")
 	public String detailViewhall(@PathVariable("no") String no, Model model ) {

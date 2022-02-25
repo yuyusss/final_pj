@@ -5,6 +5,7 @@ import java.util.List;
 import com.project.board.model.BoardVO;
 import com.project.board.model.ReplyVO;
 
+
 public interface IBoardService {
 	 boolean addBoard(BoardVO b);
 	 List<BoardVO> getBoard();
@@ -19,5 +20,5 @@ public interface IBoardService {
 	 void deleteReply(String replyVo);
 	 
 	 //public int getBoardListCnt() throws Exception;
-
+	
 }

@@ -22,8 +22,8 @@
     </select>  -->
 
     <!-- 전체 일정 출력 -->
-    <select id="listAllSchedule" resultMap="calendarResult">
-        SELECT JSON_OBJECT('title', #{calTitle}, 'content', #{calDetail}, 'start', #{calStart}, 'end', #{calEnd}, 'URL', #{calURL})
+    <select id="calenList" resultMap="calendarResult">
+        SELECT JSON_OBJECT('title', #{calTitle}, 'content', #{calDetail}, 'start', #{calStart}, 'end', #{calEnd}, 'URL', #{calURL}) AS 'JSON Data' FROM calendar
     </select>
 
     
