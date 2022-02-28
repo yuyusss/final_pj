@@ -24,6 +24,11 @@ public class TicketbookService implements ITicketbookService {
 	
 
 	@Override
+	public ArrayList<TicketbookVO> listAllTicketbook(String memID) {// ** 전체 상품 조회 코드 작성 
+		return dao.listAllTicketbook();
+	
+	}
+		// TODO Auto-generated method stub
 	public ArrayList<TicketbookVO> listAllTicketbook() {		// ** 전체 상품 조회 코드 작성 
 		return dao.listAllTicketbook();
 	}
@@ -37,6 +42,21 @@ public class TicketbookService implements ITicketbookService {
 	public void insertticket(TicketbookVO ticketbookVo) {
 		// TODO Auto-generated method stub
 		dao.insertticket(ticketbookVo);
+	}
+	@Override
+	public void updateticket(TicketbookVO ticketbookVo) {
+		// TODO Auto-generated method stub
+		dao.updateticket(ticketbookVo);
+	}
+	@Override
+	public TicketbookVO listTicketByNO(String no) {
+		// TODO Auto-generated method stub
+		return dao.listTicketByNO(no);
+	}
+	@Override
+	public void deleteticket(TicketbookVO ticketbookVo) {
+		// TODO Auto-generated method stub
+		dao.deleteticket(ticketbookVo);
 	}
 
 	@Override
