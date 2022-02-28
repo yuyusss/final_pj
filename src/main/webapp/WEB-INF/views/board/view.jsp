@@ -75,7 +75,7 @@
 	</div>
 	<div><button class="listbtn" type="button" onclick="location.href='/board'">글 목록</button></div>
 </div>
-<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
+<jsp:include page="/WEB-INF/views/layout/bottom1.jsp" flush='true' />
 </body>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
