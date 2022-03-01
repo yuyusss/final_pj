@@ -81,14 +81,14 @@ public class IndexController {
     }
 
 
-    @RequestMapping("/calenList")
+    /*@RequestMapping("/calenList")
     @ResponseBody
     public CalendarVO calenList() throws Exception{
         CalendarVO calendarVO = new CalendarVO();
         calendarVO.setCalTitle("캘린더 테스트");
 
         return calendarVO;
-    }
+    }*/
 
     /*@RequestMapping("calenView")
     public ModelAndView calenView (HttpServletRequest request, ModelMap modelMap, @ModelAttribute CalendarVO vo)throws Exception{
@@ -96,5 +96,8 @@ public class IndexController {
          ModelAndView mv = new ModelAndView();
          CalendarVO result = calendarService.calenView(vo);
     }*/
+
+    // 캘린더 db에서 불러올 코드 필요
+    // json parsing 사용. responsebody 사용해서 페이지 로드 시 바로 불러오게 할 것
 
 }
