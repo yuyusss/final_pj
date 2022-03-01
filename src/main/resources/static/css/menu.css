@@ -2,14 +2,13 @@
 
 #headerMenuBox{
     text-align: right;
-    background: #FCF6F5;
-    padding: 8px;
+    height: 50px;
 }
 
 #headerMenuBox a{
     color: black;
     font-weight: bold;
-    margin: 3px;
+    margin-right: 10px;
 }
 
 #logoBox{
@@ -23,6 +22,8 @@
 #headerMenuBox li{
     position: relative;
     display: inline-block;
+    line-height: 50px;
+    font-size: 18px;
 }
 
 ul {
@@ -35,10 +36,10 @@ a{
 }
 
 #topMenuBox {
-    font-weight: bold;
+    /*font-weight: bold;*/
     padding-right: 10px;
     text-align: center;
-    background-color: #FFFFFF;
+    background-color: #111b37;
 }
 
 .topMenu, .headerMenu {
@@ -58,7 +59,7 @@ a{
 #topMenuItem li a{
     display: block;
     transition: all 0.3s;
-    color: black;
+    color: #eae1ca;
     width: 130px;
     height: 50px;
     text-align: center;
@@ -67,7 +68,7 @@ a{
 
 #topMenuItem li a:hover{
     background-color: #cccccc;
-    color: black;
+    color: #eae1ca;
 }
 
 .sub {

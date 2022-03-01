@@ -1,18 +1,19 @@
 @charset "utf-8";
 
 .bannerMenu{
-    background: #F0EDCC;
     color: #234E70;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .bannerMenu h2{
-    color: #234E70;
+    color: black;
     padding-top: 5px;
 }
 
 .bannerPoster img{
-    width: 123px;
-    height: 150px;
+    width: 150px;
+    height: 200px;
 }
 
 .bannerPosterTitle{
@@ -46,7 +47,7 @@
     text-align: left;
     padding-left: 15px;
     margin-top: 3px;
-    color: #FBF8BE;
+    /*color: #FBF8BE;*/
 }
 
 .RecogNumberItem{
@@ -83,7 +84,7 @@
     height: 400px;
     position: relative;
     display: inline-block;
-    background-color: #234E70;
+    /*background-color: #234E70;*/
     border-radius: 10px;
     padding-right: 7px;
 }
@@ -97,13 +98,14 @@
     margin-right: 5px;
     padding-left: 5px;
     padding-bottom: 10px;
-    background-color: #FFFFFF;
+    /*background-color: #FFFFFF;*/
     border-radius: 10px;
 }
 
 #calendar {
     height: 100%;
     width: 400px;
+    /*background-color: #FFFFFF;*/
 }
 
 .lastSection{
@@ -117,7 +119,7 @@
 .showMap{
     width: 330px;
     display: inline-block;
-    background-color: #deeefc;
+    /*background-color: #deeefc;*/
     border-radius: 10px;
 }
 
@@ -128,7 +130,7 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
-    background-color: #faece2;
+    /*background-color: #faece2;*/
     border-radius: 10px;
 }
 

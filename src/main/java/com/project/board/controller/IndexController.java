@@ -83,10 +83,11 @@ public class IndexController {
 
     @RequestMapping("/calenList")
     @ResponseBody
-    public List<CalendarVO> calenList() {
-        System.out.println("cal");
+    public CalendarVO calenList() throws Exception{
+        CalendarVO calendarVO = new CalendarVO();
+        calendarVO.setCalTitle("캘린더 테스트");
 
-        return calendarService.calenList();
+        return calendarVO;
     }
 
     /*@RequestMapping("calenView")
