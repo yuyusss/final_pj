@@ -65,7 +65,7 @@
     <div class="sectionBackground">
         <div class="bannerTitle" style="margin-top: 120px; margin-bottom: 80px;">
             <div class="bannerTitle_1" style="color: white">
-                <span>Today's</span>
+                <span>TODAY'S</span>
             </div>
             <div class="bannerTitle_2" style="color: white">
                 <span>RECOMMENDED NUMBER</span>
