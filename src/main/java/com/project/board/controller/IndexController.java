@@ -45,6 +45,11 @@ public class IndexController {
         return "index2";
     }
 
+    @RequestMapping("/test")
+    public String test(){
+        return "index";
+    }
+
 
     @RequestMapping("/vote")
     public String vote(Model model) {

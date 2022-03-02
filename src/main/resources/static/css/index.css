@@ -1,9 +1,30 @@
 @charset "utf-8";
 
+.bannerTitle{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.bannerTitle_1{
+    letter-spacing: 0.05em;
+    font-size: 20px;
+    font-family: futra-lt-w05-book, fangsong;
+    padding: 5px;
+}
+
+.bannerTitle_2{
+    font-size: 47px;
+    font-family: Georgia, Palatino, serif;
+    font-weight: bold;
+    padding: 5px;
+}
+
 .bannerMenu{
     color: #234E70;
     padding-top: 10px;
     padding-bottom: 10px;
+    position: relative;
+    z-index: 2;
 }
 
 .bannerMenu h2{
@@ -29,17 +50,31 @@
     padding: 18px;
 }
 
+.mainBanner{
+    position: relative;
+}
+
 #bannerName{
     text-align: right;
     padding-right: 100px;
     height: 20px;
 }
 
+.sectionBackground{
+    background-color: #021726;
+    position: absolute;
+    z-index: 1;
+    width: 1200px;
+    top: 920px;
+    padding-top: 50px;
+    padding-bottom: 130px;
+}
+
 .secondSection{
     position: relative;
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 600px;
     height: 400px;
 }
 
@@ -57,13 +92,14 @@
 
 .RecogMain{
     position: relative;
-    display: inline-block;
-    width: 450px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
 }
 
 .RecogMainMenu{
     position: relative;
-    height: 350px;
 }
 
 .RecogSub{
@@ -134,6 +170,9 @@
     border-radius: 10px;
 }
 
+.localPoster img{
+    width: 123px;
+}
 .localHotChoice .bannerContent{
     padding-right: 20px;
     padding-left: 30px;

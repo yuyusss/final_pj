@@ -1,15 +1,14 @@
 *{
     margin: 0;
     padding: 0;
-    /*background-color: #eae1ca;*/
+    /*background-color: #FFFFFF;*/
 }
 
 #wrap{
     text-align: center;
     position: relative;
-    width: 1080px;
+    width: 1200px;
     margin: 0 auto;
-    background-color: #FFFFFF;
 }
 
 #chatBtn{
