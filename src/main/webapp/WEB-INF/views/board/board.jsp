@@ -29,6 +29,8 @@
 </head>
 <jsp:include page="/WEB-INF/views/layout/top1.jsp" flush='true' />
 
+
+
 <body link="blue" vlink="blue" alink="blue">
 	<div class="boardcontainer">
 	

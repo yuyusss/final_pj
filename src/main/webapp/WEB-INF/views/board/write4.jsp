@@ -8,6 +8,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="<c:url value='/css/board.css'/>" rel="stylesheet" type="text/css">
+<link href="<c:url value='/css/board1.css'/>" rel="stylesheet" type="text/css">
 <link href="<c:url value='/css/board2.css'/>" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -54,8 +55,8 @@
 <div class="writecontainer">
 	<div class="row">
 		<div class="board">
-	      <h2>글쓰기</h2>
-	      <hr><hr><br>
+	      <h2 class="titlefont">글쓰기</h2>
+	      <br>
 	        <form id="boardform" name="boardform" class="boardform" action="writeAction4" method = "POST" enctype="multipart/form-data" onSubmit="return Checkform()">
 				<input type="hidden" id="memId" name="memId" value="${sessionScope.sid1}" />
  				<div class="form-group form__div">
