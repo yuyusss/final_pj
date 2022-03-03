@@ -47,7 +47,7 @@
                         <c:forEach items="${musicalList}" var="music" begin="0" end="5">
                             <div class="bannerContent">
                                 <div class="bannerPoster">
-                                    <a href="<c:url value="/testDetail/${music.muscNo}" />"><img
+                                    <a href="<c:url value="/muscDetailView/${music.muscNo}" />"><img
                                             src="${music.muscImg}"/></a>
                                 </div>
                                     <%-- <div class="bannerPosterTitle">

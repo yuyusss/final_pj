@@ -29,7 +29,7 @@
                 <%--로그인 처리 전에 보여줄 부분--%>
 
                     <li><a href="<c:url value='/about' />">About</a> </li>
-                    <li><a href="<c:url value='/detailView/1' />">Musical</a> </li>
+                    <li><a href="<c:url value='/musicalAllgenre' />">Musical</a> </li>
                     <li><a href="<c:url value='/vote' />">Ranking</a> </li>
                     <li><a href="<c:url value='/board' />">Community</a> </li>
                     <li><a href="<c:url value='/hall' />">Theather</a> </li>
