@@ -57,7 +57,7 @@ public class IndexController {
         System.out.println(actorList);
         return "vote";
     }
-}
+
 
     @RequestMapping("/voteActor/{actorNo}")
     public String voteActor(@PathVariable String actorNo, Model model)throws Exception{
