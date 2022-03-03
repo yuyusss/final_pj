@@ -33,15 +33,15 @@
 			url:"chatbotCall",
 			type:"post",
 			data:{message: $('#message').val()},		
-			success:function(result){				
+			success:function(results){
 				/* chatBox에 받은 메시지 추가 */
 				$('#chatBox').append('<div class="msgBox receive"><span id="in"><span id="bot_profile">M</span><span id="bot_name">Mutroduce 챗봇</span><p><span id="result">' + 
-														   result +'</span></span></div><br><br>'); 								   
+														   results +'</span></span></div><br><br>');
 				// 스크롤해서 올리기										   
 				$("#chatBox").scrollTop($("#chatBox").prop("scrollHeight"));			
 			},
 			error:function(){
-				alert("오류가 발생했습니다.")
+				alert("오류가 발생했습니다.") 
 			}
 		});
 	}
