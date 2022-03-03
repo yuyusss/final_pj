@@ -19,27 +19,74 @@
     <!-- TOP -->
     <jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true'/>
 
-    <!-- 배너 -->
-    <section>
-        <!-- section -->
-        <div class="bannerMenu">
-            <div class="bannerInfo">
-                <%--<div id="bannerName"><h2>관객 추천 공연</h2></div>--%>
-                <div id="bannerViewItem">
-                    <c:forEach items="${musicalList}" var="music" begin="0" end="4">
-                        <div class="bannerContent">
-                            <div class="bannerPoster">
-                                <a href="<c:url value="/testDetail/${music.muscNo}" />"><img src="${music.muscImg}"/></a>
-                            </div>
-                           <%-- <div class="bannerPosterTitle">
-                                ${music.muscName}
-                            </div>--%>
-                        </div>
-                    </c:forEach>
+    <!-- header -->
+    <div id="logoBox">
+
+        <a href="/"><img src="<c:url value='/images/banner.jpeg' />" id="logoImage"></a>
+
+    </div>
+
+    <div class="mainBanner">
+        <!-- 배너 -->
+        <section>
+
+            <div class="bannerTitle">
+                <div class="bannerTitle_1">
+                    <span>MUTRODUCE. Audiences</span>
+                </div>
+                <div class="bannerTitle_2">
+                    <span>BEST PERFORMANCE</span>
                 </div>
             </div>
+
+            <!-- section -->
+            <div class="bannerMenu">
+                <div class="bannerInfo">
+                    <%--<div id="bannerName"><h2>관객 추천 공연</h2></div>--%>
+                    <div id="bannerViewItem">
+                        <c:forEach items="${musicalList}" var="music" begin="0" end="5">
+                            <div class="bannerContent">
+                                <div class="bannerPoster">
+                                    <a href="<c:url value="/testDetail/${music.muscNo}" />"><img
+                                            src="${music.muscImg}"/></a>
+                                </div>
+                                    <%-- <div class="bannerPosterTitle">
+                                         ${music.muscName}
+                                     </div>--%>
+                            </div>
+                        </c:forEach>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <div class="sectionBackground">
+        <div class="bannerTitle" style="margin-top: 120px; margin-bottom: 80px;">
+            <div class="bannerTitle_1" style="color: white">
+                <span>Today's</span>
+            </div>
+            <div class="bannerTitle_2" style="color: white">
+                <span>RECOMMENDED NUMBER</span>
+            </div>
         </div>
-    </section>
+        <%-- 날씨 맞춤 넘버 추천 --%>
+        <div class="RecogMain">
+            <c:forEach items="${mediaList}" var="media" begin="0" end="3">
+                <div class="RecogMainMenu">
+                    <iframe width="260" src="${media.numURL}"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+
+                    </iframe>
+                </div>
+            </c:forEach>
+        </div>
+
+    </div>
+
 
     <div class="secondSection">
         <div class="RecoNumber">
@@ -156,7 +203,7 @@
         <div class="localHotChoice">
             <c:forEach begin="0" end="7">
                 <div class="bannerContent">
-                    <div class="bannerPoster">
+                    <div class="localPoster">
                         <img src="https://www.caci.or.kr/cmmn/file/imageSrc.do?atchFileId=4631921811a4414ba470ab04692deab5&fileSn=1&thumb=Y"/>
                     </div>
                     <div class="bannerPosterTitle">

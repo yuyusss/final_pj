@@ -15,8 +15,8 @@ public class APIRestController {
 		
 		@RequestMapping("/chatbotCall")
 		public String  chatbotCall(@RequestParam("message") String message ) {
-			String result = chatService.main(message);
+			String results = chatService.main(message);
 			//System.out.println("2:" + result);
-			return result;
+			return results;
 		}
 }

@@ -158,7 +158,7 @@ public class ChatbotService {
     
     // 서버로부터 받은 결과 JSON 데이터 추출해서 반환
     public String jsonToString(String jsonResultStr) {
-    	String result = "";
+    	String results = "";
     	
     	JSONObject jsonObj = new JSONObject(jsonResultStr);
 		JSONArray bubblesArray = (JSONArray) jsonObj.get("bubbles");		
@@ -166,9 +166,9 @@ public class ChatbotService {
 		JSONObject obj0 = (JSONObject) bubblesArray.get(0);
 		
 		JSONObject dataObj = (JSONObject) obj0.get("data");
-    	result = (String) dataObj.get("description");
+    	results = (String) dataObj.get("description");
     	
-    	return result;
+    	return results;
     }
 }
 

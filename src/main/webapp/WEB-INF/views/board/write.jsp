@@ -8,6 +8,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="<c:url value='/css/board.css'/>" rel="stylesheet" type="text/css">
+<link href="<c:url value='/css/board2.css'/>" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -57,17 +58,19 @@
 	      <hr><hr><br>
 	        <form id="boardform" name="boardform" class="boardform" action="writeAction" method = "POST" enctype="multipart/form-data" onSubmit="return Checkform()">
 				<input type="hidden" id="memId" name="memId" value="${sessionScope.sid1}" />
- 				<div class="form-group">
-				  <label for="usr">제목:</label>
-				  <input type="text" class="writeinput form-control" id="title" name ="title">
+ 				<div class="form-group form__div">
+				  
+				  <input type="text" class="form__input writeinput form-control" id="title" name ="title">
+				  <label for="" class="form__label">제목</label>
 				</div>
 			    <br>
-			    <div class="form-group">
-				  <label for="comment">내용:</label>
-				  <input class="writeinputbody form-control" rows="5" id="contents" name = "contents"></input>
+			    <div class="form-group form__div">
+
+				  <input class="form__input writeinputbody form-control" rows="5" id="contents" name = "contents" style="height: 500px;"></input>
+					<label for="" class="form__label">내용</label>
 				</div>
 				<br>
-				<div class="form-group"style="margin-left: -216px;">
+				<div class="form-group"style="margin-right: 839px; margin-top: 418px;">
 			      <input type="file" class="form-control-file border" name="file">
 			    </div>
 				<br>
