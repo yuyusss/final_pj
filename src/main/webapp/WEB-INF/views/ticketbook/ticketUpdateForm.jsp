@@ -30,7 +30,7 @@
 		 		<td>번호 : </td> <td><input type="text" id="no" name="no" value="${ticketbook.no}"><br></td>
 		 	</tr>
 			<tr>
-		 		<td>아이디 : </td> <td><input type="text" id="memID" name="memID" value="${sessionScope.sid}" readonly><br></td>
+		 		<td>아이디 : </td> <td><input type="text" id="memID" name="memID" value="${sessionScope.sid1}" readonly><br></td>
 		 	</tr>
 		 	<tr>
 				<td>공연 제목 : </td><td><input type="text" id="subject" name="subject" value="${ticketbook.subject}" ><br></td>

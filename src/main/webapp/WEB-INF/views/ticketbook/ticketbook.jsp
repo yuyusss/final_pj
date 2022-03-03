@@ -34,7 +34,7 @@
 					<c:forEach begin="0" end="2">
 						<div class="ticketBookContent" >
 							<img src="<c:url value="/images/ticketBook.png" />">
-							<h3><a href="<c:url value="/ticketDetailView"/>">티켓북 이름</a></h3>
+							<h3><a href="<c:url value="/ticketDetailView/${ticketbook.no }"/>">티켓북 이름</a></h3>
 						</div>
 					</c:forEach>
 					<%--상세 티켓 들어올 자리

@@ -9,6 +9,7 @@
 		<link href="<c:url value='/css/ticketcontrol.css'/>" rel="stylesheet" type="text/css">
 		<title>티켓 등록</title>
 		
+		
 		<!-- include libraries(jQuery, bootstrap) -->   <!--  ********* -->
 		<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -28,9 +29,9 @@
 		
 		
 		<!-- sessionScope._____ 로그인 처리한 팀원에게 세션에 멤버 아이디 저장해주세요. 어떤 이름으로 저장했는지 알려주세요.-->
-		<table border= "0" class = "table">
+		<table border= "0" class = "table" style="text-align:left">
 			<tr>
-		 		<td>아이디 : </td> <td><input type="text" id="memID" name="memID" value="${sessionScope.sid}" readonly><br></td>
+		 		<td>아이디 : </td> <td><input type="text" id="memID" name="memID" value="${sessionScope.sid1}" readonly><br></td>
 		 	</tr>
 		 	<tr>
 				<td>공연 제목 : </td><td><input type="text" id="subject" name="subject" ><br></td>

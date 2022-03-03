@@ -7,7 +7,7 @@
     width: 56%;
     height: 272px;
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
 	
 }
 .list {
@@ -29,7 +29,7 @@
 #빈칸 {
 	width: 66px;
     vertical-align: bottom;
-    text-align : right;
+   
     font-size: small;
 	
 }
@@ -68,14 +68,30 @@
 	background-color : white;
 }
 .editbtn {
-	border: 2px solid white;
-	border-radius : 8px;
-	color : white;
-	background-color : #c572d2;
+	 border: 2px solid white;
+    border-radius: 8px;
+    color: white;
+    background-color: #c572d2;
+    position: relative;
+    top: 53px;
+    left: 341px;
 }
 .ticketAll {
 	margin-left:50px;
 }
 h1 {
 	margin-left : 50px;
+	margin-bottom : 50px;
 	}
+	
+.deletebtn {
+    position: absolute;
+    right: -21px;
+    bottom: -52px;
+    border: 2px solid white;
+    border-radius: 8px;
+    color: white;
+    background-color: #c572d2;
+    font-size: small;
+}
+	

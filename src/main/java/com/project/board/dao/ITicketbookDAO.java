@@ -25,6 +25,9 @@ public interface ITicketbookDAO {
 
 	void updateticket(TicketbookVO ticketbookVo);
 	TicketbookVO listTicketByNO(String no);
-	void deleteticket(TicketbookVO ticketbookVo);
+	
+	void deleteticket(String no);
+
+	public TicketbookVO detailViewticket(String no);
 	
 }
