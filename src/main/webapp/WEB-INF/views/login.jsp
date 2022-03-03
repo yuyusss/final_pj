@@ -9,6 +9,7 @@
 </head>
 
 <body>
+<div id="wrap">
 	<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 	<script src="<c:url value='/js/login.js'/>"></script>
 	<div id="main">
@@ -30,6 +31,7 @@
 			</div>
 		</div>
 	</div>
+</div>
 	<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
 </body>
 

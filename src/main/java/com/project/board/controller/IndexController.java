@@ -3,7 +3,9 @@ package com.project.board.controller;
 import java.util.ArrayList;
 
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.project.board.model.*;
 import com.project.board.service.CalendarService;
@@ -11,6 +13,10 @@ import com.project.board.service.MediaService;
 import com.project.board.service.MusicalService;
 import com.project.board.service.WeatherService;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
@@ -33,6 +39,7 @@ public class IndexController {
     @Autowired
     MusicalService musicalService;
 
+    private static final Logger log = LoggerFactory.getLogger(IndexController.class);
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(Model model) {
@@ -86,23 +93,36 @@ public class IndexController {
     }
 
 
-    /*@RequestMapping("/calenList")
-    @ResponseBody
-    public CalendarVO calenList() throws Exception{
-        CalendarVO calendarVO = new CalendarVO();
-        calendarVO.setCalTitle("캘린더 테스트");
-
-        return calendarVO;
-    }*/
-
-    /*@RequestMapping("calenView")
-    public ModelAndView calenView (HttpServletRequest request, ModelMap modelMap, @ModelAttribute CalendarVO vo)throws Exception{
-         HashMap resultMap = new HashMap();
-         ModelAndView mv = new ModelAndView();
-         CalendarVO result = calendarService.calenView(vo);
-    }*/
-
     // 캘린더 db에서 불러올 코드 필요
     // json parsing 사용. responsebody 사용해서 페이지 로드 시 바로 불러오게 할 것
+    @RequestMapping(value = "/ticketPlan", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Map<String, Object>> ticketPlan() throws Exception{
+        List<Map<String, Object>> list = calendarService.calenList();
+
+        JSONObject jsonObj = new JSONObject(); // 중괄호
+        JSONArray jsonArr = new JSONArray(); // 대괄호
+        HashMap<String, Object> hash = new HashMap<String, Object>(); // 중괄호로 감싸서 대괄호 이름 정의
+
+
+        for(int i=0; i < list.size(); i++) {
+            hash.put("title", list.get(i).get("calTitle"));
+            hash.put("content", list.get(i).get("calDetail"));
+            hash.put("start", list.get(i).get("calStart"));
+            hash.put("url", list.get(i).get("calURL"));
+
+            jsonObj = new JSONObject(hash);
+            jsonArr.add(jsonObj);
+        }
+
+        log.info("jsonArrCheck: {}", jsonArr);
+
+        return jsonArr;
+    }
+
+    @RequestMapping("/about")
+    public String about(){
+        return "about";
+    }
 
 }
