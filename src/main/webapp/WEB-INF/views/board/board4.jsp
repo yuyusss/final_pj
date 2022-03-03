@@ -35,13 +35,13 @@
 	
 		<div class="row">
 			<div class="board">
-				<h2>뮤지컬별 게시판</h2>
+				<h2 class="titlefont">뮤지컬별 게시판</h2>
 				<hr><hr>
 				<br>
 				<table id="example" class="display" style="width: 100%">
 					<thead>
 						<tr>
-							<th>게시글 번호</th><th>작성자</th><th>제목</th><th>내 용</th><th>조회 수</th><th>작성일</th>
+							<th>게시글 번호</th><th>작성자</th><th>제목</th><th>내 용</th><th>조회 수</th><th>작성일</th><th>삭제</th>
 						</tr>
 					</thead>
 					<tbody id="listArea">

@@ -35,7 +35,7 @@
 	
 		<div class="row">
 			<div class="board">
-				<h2>배우별 게시판</h2>
+				<h2 class="titlefont">배우별 게시판</h2>
 				<hr><hr>
 				<br>
 				<table id="example" class="display" style="width: 100%">
@@ -64,7 +64,7 @@
 					location.href = "write3";
 				})
 				$.ajax({
-					url : "boardList",
+					url : "boardList3",
 					success : function(result) {
 						var html = "";
 						result.forEach(function(item) {
@@ -79,6 +79,6 @@
 					location.href = "write3";
 				})
 			});
-	
+
 </script>
 </html>

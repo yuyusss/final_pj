@@ -34,8 +34,8 @@
 	
 		<div class="row">
 			<div class="board">
-				<h2>공연 요청 게시판</h2>
-				<hr><hr>
+				<h2 class="titlefont">공연 요청 게시판</h2>
+				
 				<br>
 				<table id="example" class="display" style="width: 100%">
 					<thead>
