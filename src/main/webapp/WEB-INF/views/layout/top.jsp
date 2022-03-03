@@ -15,7 +15,8 @@
     <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
     <script src="<c:url value='/js/calendar.js'/>"></script>
     <script src="<c:url value='/js/menu.js' />"></script>
-
+    <script src="<c:url value='/js/boardmenu.js'/>"></script>
+	
 </head>
 <body>
 
