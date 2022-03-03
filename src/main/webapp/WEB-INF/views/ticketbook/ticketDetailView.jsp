@@ -18,14 +18,12 @@
     <!-- 티켓북 -->
 
     <div><h1>${sessionScope.sid} 님의 티켓북</h1></div>
-
-
-    <a href="<c:url value='ticketbook/ticketInsertForm'/>">티켓 추가</a>
+	<button type="button" onclick="location.href='ticketbook/insertticket'" class = "addbtn">티켓추가</button>
 
 
     <%--티켓 한 개의 이미지 보이는 div -> forEach로 반복 --%>
     <div class="ticketAll">
-        <c:forEach items="${pjhTicketList}" var="ticketbook">
+        <c:forEach items="${ticketList}" var="ticketbook">
             <div class="all">
 
                 <table border="0" class="list">
@@ -33,7 +31,7 @@
                     <tr>
                         <td rowspan="3" align="center" id="빈칸">
                             <div>
-
+							 	<button type="button" onclick="location.href='ticketbook/updateticketform/${ticketbook.no}'" class="editbtn">티켓수정</button>
                             </div>
                         </td>
 

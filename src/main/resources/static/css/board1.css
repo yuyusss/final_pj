@@ -1,4 +1,14 @@
 @charset "UTF-8";
+.titlefont {
+  border-radius: 15px 15px 15px 0;
+  border: 3px solid #5fb7d1;
+  padding: 0.5em 0.6em; 
+  color: #5fb7d1;
+}
+
+
+
+
 .searchcontainer{
 	width:360px;
 	margin-left:730px;

@@ -23,5 +23,8 @@ public interface ITicketbookDAO {
 	ArrayList<TicketbookVO> listTicketByID(String memID);
 	void insertticket(TicketbookVO ticketbookVo);
 
+	void updateticket(TicketbookVO ticketbookVo);
+	TicketbookVO listTicketByNO(String no);
+	void deleteticket(TicketbookVO ticketbookVo);
 	
 }
