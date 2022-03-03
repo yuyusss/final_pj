@@ -94,7 +94,7 @@ $(function(){
             expandRows: true,
             headerToolbar: {
                 left: "prev title next",
-                right: 'dayGridMonth, listWeek'
+                right: 'today, dayGridMonth, listWeek'
             },
             initialView: 'dayGridMonth',
             timeZone: 'UTC',

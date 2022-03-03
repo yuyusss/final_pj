@@ -120,4 +120,9 @@ public class IndexController {
         return jsonArr;
     }
 
+    @RequestMapping("/about")
+    public String about(){
+        return "about";
+    }
+
 }
