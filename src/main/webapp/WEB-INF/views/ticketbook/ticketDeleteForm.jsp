@@ -16,13 +16,13 @@
 		<div id = "wrap">
 		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true'/>
 	
-		<form method = "post" action="/ticketbook/updateticket" class="form">
+		<form method = "post" action="/ticketbook/deleteticket" class="form">
 		<table border= "0" class = "table">
 			<tr>
 		 		<td>번호 : </td> <td><input type="text" id="no" name="no" value="${ticketbook.no}"><br></td>
 		 	</tr>
 			<tr>
-		 		<td>아이디 : </td> <td><input type="text" id="memID" name="memID" value="${sessionScope.sid}" readonly><br></td>
+		 		<td>아이디 : </td> <td><input type="text" id="memID" name="memID" value="${sessionScope.sid1}" readonly><br></td>
 		 	</tr>
 		 	<tr>
 				<td>공연 제목 : </td><td><input type="text" id="subject" name="subject" value="${ticketbook.subject}" ><br></td>
