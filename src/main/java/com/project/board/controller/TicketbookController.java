@@ -72,6 +72,8 @@ public class TicketbookController {
     }
 
 
+    
+    
     @RequestMapping("/ticketbook")
     public String ticketbook() {
 
@@ -79,10 +81,10 @@ public class TicketbookController {
     }
 
 
-    @RequestMapping("/ticketDetailView") //
-    public String ticketbook(Model model, HttpSession session) {
+    @RequestMapping("/ticketDetailView") // 전체 리스트
+    public String ticketDetailView(Model model, HttpSession session) {
     	
-    	String memId = (String)session.getAttribute("sid");
+    	String memId = (String)session.getAttribute("sid1");
     	
         ArrayList<TicketbookVO> ticketList = service.listTicketByID(memId);
         model.addAttribute("ticketList", ticketList); // 2
@@ -90,6 +92,20 @@ public class TicketbookController {
 
         return "ticketbook/ticketDetailView";
     }
+    
+    @RequestMapping("/ticketbook/ticketDetailView/{no}")
+	public String detailViewticket(@PathVariable("no") String no, Model model ) {
+		
+    	TicketbookVO ticketbook = service.detailViewticket(no);
+		model.addAttribute("ticketbook", ticketbook);
+	
+		
+		return "ticketbook/ticketDetailView";
+	}
+   
+    
+    
+    
 
     @RequestMapping("/ticketbook/ticketInsertForm")
     public String insertform() {
@@ -120,15 +136,8 @@ public class TicketbookController {
     
     @RequestMapping("/ticketbook/deleteticketform/{no}") // 삭제할 페이지 번호
 	public String deleteform( @PathVariable("no") String no, Model model) {
-    	TicketbookVO ticketbook = service.listTicketByNO(no);
-		model.addAttribute("ticketbook", ticketbook);
-		
-		return "ticketbook/ticketDeleteForm";
-	}
-	@RequestMapping("/ticketbook/deleteticket") // 삭제페이지
-	public String deleteticket(TicketbookVO ticketbookVo ) {
-		service.deleteticket(ticketbookVo );
+    	service.deleteticket(no );
 		return "redirect:../ticketDetailView"; //DB저장 컨트롤러
 	}
-
+	
 }
