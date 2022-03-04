@@ -55,6 +55,7 @@
 					<div class="adminInsertBtn">
 						<button type="button" class="muscNoCheck" onclick="location.href ='/insertMusc'">등록</button>
 					</div>
+
 					<table>
 						<tr>
 							<th>번호</th>
