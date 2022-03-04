@@ -44,7 +44,7 @@
     margin-bottom:10px;
 }
 
-.loginButton, .SingupButton {
+.loginButton, .SingupButton, .GenreButton {
 	display: block;
     overflow: hidden;
     width: 400px;
@@ -58,7 +58,7 @@
     margin-top: 5px;
 }
 
-.loginButton:hover, .SingupButton:hover {
+.loginButton:hover, .SingupButton:hover, .GenreButton:hover {
 	display: block;
     overflow: hidden;
     width: 400px;
@@ -78,5 +78,9 @@
 }
 
 .SignupButton .text_type {
+    color: black;
+}
+
+.GenreButton .text_type {
     color: black;
 }

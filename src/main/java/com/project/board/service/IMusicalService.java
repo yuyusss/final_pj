@@ -15,5 +15,6 @@ public interface IMusicalService {
 	public ArrayList<MusicalVO> getMusicalListByGenre(String genreNo);
 	ArrayList<MusicalVO> getAllMusical();
 	public int voteUp(String muscNo);
+	public ArrayList<MusicalVO> getMusicalAllList();
 	
 }
