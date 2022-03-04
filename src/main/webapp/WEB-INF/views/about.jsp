@@ -44,7 +44,7 @@
         </p>
     </div>
 </div>
-
+ 
 <!-- BOTTOM -->
 <jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true'/>
 </body>
