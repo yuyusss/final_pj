@@ -1,56 +1,33 @@
 package com.project.board.controller;
 
-import java.io.IOException;
-import java.text.ParseException;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
 
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
-import com.github.scribejava.core.model.OAuth2AccessToken;
 import com.project.board.model.MemberVO;
 import com.project.board.service.MemberService;
-import com.project.board.service.NaverLoginBO;
-
 
 @Controller
 public class MemberController {
-	/* NaverLoginBO */
-    private NaverLoginBO naverLoginBO;
-    private String apiResult = null;
-    
-    @Autowired
-    private void setNaverLoginBO(NaverLoginBO naverLoginBO) {
-        this.naverLoginBO = naverLoginBO;
-    }
-    
-    
 	// DI 설정
 	@Autowired //MemberService와 연결 import랑 다름
 	MemberService service;	
 	
-
-	@RequestMapping("/loginForm") public String loginForm() {	
-	 return "/login"; 
-	 }
+	//로그인 폼으로 이동
+	@RequestMapping("/loginForm")
+	public String loginForm() {
+		
+		return "/login";
+	}
 	
-	@RequestMapping("/callback") public String callback() {	
-		 return "/callback"; 
-		 }
-	
-
 	//로그인
 	@ResponseBody // 바디객체에 호출
 	@RequestMapping("/login")
@@ -66,9 +43,9 @@ public class MemberController {
 		if(resultMember != null) {
 			session.setAttribute("sid1", resultMember.getMemId());
 			session.setAttribute("sid", resultMember);
-			result = "ok";			 
+			 result = "ok";
+			 
 		}
-		
 		System.out.println(resultMember.getMemId());
 		return result;
 	}

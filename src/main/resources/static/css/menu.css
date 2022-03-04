@@ -2,27 +2,49 @@
 
 #headerMenuBox{
     text-align: right;
-    background: rgb(255, 255, 255);
-    padding: 8px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.header_logo{
+    line-height: 80px;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.header_logo img{
+    width: 250px;
 }
 
 #headerMenuBox a{
     color: black;
-    font-weight: bold;
-    margin: 3px;
+    /*font-weight: bold;*/
+    margin-right: 15px;
 }
+
+.headerMenu{
+    line-height: 100px;
+}
+
 
 #logoBox{
     text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 #logoImage{
-    width: 1080px;
+    width: 1200px;
 }
 
 #headerMenuBox li{
     position: relative;
     display: inline-block;
+    line-height: 80px;
+    font-size: 18px;
 }
 
 ul {
@@ -30,44 +52,8 @@ ul {
     list-style: none;
 }
 
-a{
+a {
     text-decoration: none;
-}
-
-#topMenuBox {
-    font-weight: bold;
-    padding-right: 10px;
-    text-align: center;
-    background-color: #FFFFFF;
-}
-
-.topMenu, .headerMenu {
-    display: inline-block;
-}
-
-#topMenuItem li {
-    position: relative;
-    display: inline-block;
-    padding-left: 20px;
-    padding-right: 20px;
-    width: 100px;
-    height: 50px;
-
-}
-
-#topMenuItem li a{
-    display: block;
-    transition: all 0.3s;
-    color: black;
-    width: 130px;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-}
-
-#topMenuItem li a:hover{
-    background-color: #cccccc;
-    color: black;
 }
 
 .sub {
@@ -80,10 +66,13 @@ a{
     width: 180px;
 }
 
-
 .footerBox{
     text-align: center;
-    background-color: #DDC6B6;
+    background-color: #021726;
+    color: #FFFFFF;
+    letter-spacing: 0.05em;
+    font-family: futra-lt-w05-book, fangsong;
+    padding: 5px;
 }
 
 .footerInner {

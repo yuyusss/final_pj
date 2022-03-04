@@ -39,7 +39,6 @@ input::-webkit-input-placeholder {
 	padding-bottom: 35px;
 	border-bottom: 4px solid #95a6b4;
 	background-color: skyblue;
-	border-radius: 10px 10px 0px 0px;
 }
 
 #btnClose {
@@ -95,7 +94,6 @@ input::-webkit-input-placeholder {
 	height: 100%;
     width: 419px;
 	overflow-y:scroll;
-	overflow-x:hidden;
 	padding:10px 15px;
 	background:#9bbbd4;
 } 	 
@@ -103,31 +101,22 @@ input::-webkit-input-placeholder {
 #message {
 	width: 368px;
 	height: 35px;
-	border-radius: 0px 0px 0px 10px;
-	border : 0px;
 }
 
 #submit {
 	float: right;
-    height: 35px;
-    width: 81px;
-    border: none;
-    border-left: 1px solid black;
-    background: #fff;
-    border-radius: 0px 0px 10px 0px;
-    margin-right: 1px;
+	height: 35px;
+	width: 82px;
+	border : 1px solid black;
+	border-left: none;
+	background: #fff;
 }
-	
-
 
 #submit:hover{
 	color : red;
-	background : rgb(255, 238, 255);
+	background : white;
 	border: 1px solid red;
-	border: none;
-    border-left: 1px solid black;
 	transition : 0.5s;	 
-	
 }
 
 .msgBox  span {

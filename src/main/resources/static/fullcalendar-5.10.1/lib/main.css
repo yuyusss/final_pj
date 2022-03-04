@@ -190,9 +190,9 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(44, 62, 80, 0.25);
   }
-.fc .fc-button:disabled {
+/*.fc .fc-button:disabled {
     opacity: 0.65;
-  }
+  }*/
 .fc {
 
   /* "primary" coloring */
@@ -878,8 +878,8 @@ A HORIZONTAL event
   position: relative; /* for z-indexes assigned later */
   white-space: nowrap;
   border-radius: 3px; /* dot event needs this to when selected */
-  font-size: .70em;
-  font-size: var(--fc-small-font-size, .70em);
+  font-size: .85em;
+  font-size: var(--fc-small-font-size, .85em);
 }
 /* --- the rectangle ("block") style of event --- */
 .fc-daygrid-block-event .fc-event-time {

@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+.TPASection_jbz6b9ka ._2kxMN {
+    border-bottom-color: rgba(14, 52, 90, 0.2);
+}
+
+.TPASection_jbz6b9ka ._1wCyJ {
+    font: normal normal normal 16px/1.4em futura-lt-w01-book,futura-lt-w05-book,sans-serif;
+    color: rgb(14, 52, 90);
+    background: rgba(0, 0, 0, 0);
+}
+.TPASection_jbz6b9ka ._1wCyJ {
+    font: normal normal normal 16px/1.4em futura-lt-w01-book,futura-lt-w05-book,sans-serif;
+    color: rgb(14, 52, 90);
+    background: rgba(0, 0, 0, 0);
+}
+
+._2wsuM, ._2wsuM * {
+    box-sizing: border-box;
+}
+
+._2kxMN {
+    display: flex;
+    align-items: baseline;
+    padding-bottom: 20px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+._1wCyJ {
+    flex-shrink: 0;
+    height: 100%;
+    padding: 20px 20px 24px;
+    webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+}
+._2wsuM, ._2wsuM * {
+    box-sizing: border-box;
+}
+._1wCyJ {
+    flex-shrink: 0;
+    height: 100%;
+    padding: 20px 20px 24px;
+    webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+}
+a, abbr, acronym, address, applet, b, big, blockquote, body, button, caption, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, footer, form, h1, h2, h3, h4, h5, h6, header, html, i, iframe, img, ins, kbd, label, legend, li, nav, object, ol, p, pre, q, s, samp, section, small, span, strike, strong, sub, sup, table, tbody, td, tfoot, th, thead, title, tr, tt, u, ul, var {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+.TPASection_jbz6b9ka ._2wsuM {
+    --gallery_sortingFiltersTextColor: #414141;
+    --gallery_sortingFiltersTextFont: normal normal normal 16px/1.4em futura-lt-w01-book,futura-lt-w05-book,sans-serif;
+    --gallery_background: rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0);
+    direction: ltr;
+}
+
+[data-mesh-id$=-gridContainer]>*, [data-mesh-id$=-rotated-wrapper]>*, [data-mesh-id$=inlineContent]>:not([data-mesh-id$=-gridContainer]) {
+    pointer-events: auto;
+}
+
+#PAGES_CONTAINER {
+    left: 0;
+    margin-left: 0;
+    width: 100%;
+    min-width: 980px;
+    --pinned-layer-in-container: 52;
+    --above-all-in-container: 49;
+}
+

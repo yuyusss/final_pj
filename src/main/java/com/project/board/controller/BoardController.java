@@ -35,7 +35,7 @@ public class BoardController {
 	    	
 	        return "board/board";
 	    }
-		
+	    
 	    @RequestMapping(value="/boardList", method=RequestMethod.GET)
 	    @ResponseBody
 	    public List<BoardVO> boardList(){

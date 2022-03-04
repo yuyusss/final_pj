@@ -4,7 +4,7 @@
   background: #fff;
   border-radius: 30px;
   display: inline-block;
-  height: 320px;
+  height: 335px;
   margin: 1rem;
   position: relative;
   width: 300px;
@@ -32,7 +32,7 @@ text-align:left;
 #tab1:checked ~ .tab label:nth-child(1),
 #tab2:checked ~ .tab label:nth-child(2){
     box-shadow: none;
-	 background-color: #dbd5fd;
+	 background-color: #1a252f;
 	 color:white;
 }
 
@@ -71,11 +71,11 @@ text-align:left;
     letter-spacing: 2px;
     user-select: none;
     -webkit-user-select: none;
-    background-color: #f6f2ff;
+    background-color: #d8d8d9;
 }
 
 .tab label:hover{
-    background-color: #dbd5fd;
+    background-color: #1a252f;
     color: white;
     -webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
@@ -93,7 +93,7 @@ text-align:left;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    width: 1000px;
+    width: 1100px;
     border-collapse: collapse;
     
 }
@@ -135,7 +135,7 @@ text-align:left;
 }
 
 .voteBtn {
-    background-color: #dbd5fd; 
+    background-color: #1a252f; 
     border: none;
     color: white;
     padding: 9px 20px;
@@ -151,12 +151,15 @@ text-align:left;
 .voteBtn {
     background-color: white; 
     color: black; 
-    border: 2px solid #dbd5fd;
+    border: 2px solid #1a252f;
 }
 
 
 .voteBtn:hover {
-    background-color: #dbd5fd;
+    background-color: #1a252f;
     color: white;
 }
-
+.voteBtn>a:hover {
+    
+    color: white;
+}

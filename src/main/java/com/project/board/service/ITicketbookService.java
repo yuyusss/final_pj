@@ -14,6 +14,8 @@ import com.project.board.model.TicketbookVO;
 
 @Service
 public interface ITicketbookService {
+	ArrayList<TicketbookVO> listAllTicketbook(String memID);
+
 	
 
 	public ArrayList<TicketbookVO> listAllTicketbook();
@@ -23,12 +25,14 @@ public interface ITicketbookService {
 	/*
 	 * Map<String, String> getMusicalByGenre(String memId);
 	 */
-	
-
 
 	ArrayList<TicketbookVO> listTicketByID(String memID);
 	void insertticket(TicketbookVO ticketbookVo);
 
+	void updateticket(TicketbookVO ticketbookVo);
+	TicketbookVO listTicketByNO(String no);
+	void deleteticket(String no);
+	public TicketbookVO detailViewticket(String no);
 	}
 
 
