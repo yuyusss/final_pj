@@ -1,7 +1,7 @@
 @charset "EUC-KR";
 
 #main{
-	border-bottom:1px solid rgb(0, 128, 192)
+	border-bottom:1px solid #f7f7f7
 }
 
 #content{
@@ -9,12 +9,6 @@
     padding-bottom: 60px;
 }
 
-#loginForm{
-	margin : 0 auto;
-	width: 400px;
-	height: 330px;
-	
-}
 .logintitle {
     font-weight: 800;
     font-size: 20px;
@@ -31,14 +25,14 @@
 }
 
 .loginSection{
-    width: 400px;
+    width: 360px;
     margin: 0 auto;
     padding-top: 90px;
     letter-spacing: -.6px;
 }
 
 .loginSection input[type=number], .loginSection input[type=text], .loginSection input[type=password] {
-    width: 90%;
+    width: 100%;
     height: 54px;
     padding: 0 19px;
     border: 1px solid #ccc;
@@ -48,17 +42,6 @@
     line-height: 20px;
     outline: none;
     margin-bottom:10px;
-}
-
-#naver{
-	width: 30px;
-	height: 30px;
-}
-
-#naver_button{
-	border: 0px;
-	width: 30px;
-	height: 30px;
 }
 
 .loginButton, .SingupButton {
@@ -96,13 +79,4 @@
 
 .SignupButton .text_type {
     color: black;
-}
-
-#naver_id_login{
-	width:100%;
-}
-
-#naver_button{
-	width:250px;
-	height:60px;
 }

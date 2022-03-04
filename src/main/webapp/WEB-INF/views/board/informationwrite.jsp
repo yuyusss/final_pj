@@ -59,14 +59,10 @@
 	      <br>
 	        <form id="boardform" name="boardform" class="boardform" action="writeAction2" method = "POST" enctype="multipart/form-data" onSubmit="return Checkform()">
 				<input type="hidden" id="memId" name="memId" value="${sessionScope.sid1}" />
-				<div class="form-group">
-				  <label for="usr">제목:</label>
-				  <input type="text" class="writeinput form-control" id="title" name ="title">
  				<div class="form-group form__div">
 				  
 				  <input type="text" class="form__input writeinput form-control" id="title" name ="title">
 				  <label for="" class="form__label">제목</label>
-
 				</div>
 			    <br>
 			    <div class="form-group form__div">
@@ -80,7 +76,6 @@
 			    </div>
 				<br>
 			    <button class="writeBtn" type="submit">글쓰기</button>
-			    </div>
 			 </form>
 		</div>
 	</div>

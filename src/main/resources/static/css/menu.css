@@ -2,8 +2,6 @@
 
 #headerMenuBox{
     text-align: right;
-    background: rgb(255, 255, 255);
-    padding: 8px;
     height: 80px;
     display: flex;
     justify-content: space-between;
@@ -23,6 +21,7 @@
 
 #headerMenuBox a{
     color: black;
+    /*font-weight: bold;*/
     margin-right: 15px;
 }
 

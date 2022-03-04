@@ -74,7 +74,6 @@ public class IndexController {
         return "vote";
     }
 
-
     @RequestMapping("/voteActor/{actorNo}")
     public String voteActor(@PathVariable String actorNo, Model model,HttpSession session, HttpServletResponse write, BoardVO b)throws Exception{   	
     	VoteVO vo = service.detailActor(actorNo);

@@ -7,9 +7,6 @@
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 <link href="<c:url value='/css/signUp.css'/>" rel="stylesheet">
-<link href="<c:url value='/css/bootstrap.min.css'/>" rel="stylesheet">
-<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="<c:url value='/js/signUp.js'/>"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
@@ -24,7 +21,7 @@
 					<div id="necessaryTxt_box">						
 						<span class="necessary">*</span> 필수입력사항
 					</div>
-					<hr width="670px" size="3px" color="gray" style="margin: 0 auto"><br>
+					<hr width="640px" size="3px" color="gray" style="margin: 0 auto"><br>
 					
 				<form id="form" name="memberForm" method="post" onsubmit="return signUpForm_check();" action="/signUp">
 					
@@ -135,26 +132,24 @@
 								좋아하는 장르
 							</th>
 							<td>
-								<div id="checkboxBox">		
-									<div class="form-check form-switch">
-									  <input class="form-check-input" type="checkbox" role="switch" name="genre" id="original" value="1">
-									 	 <label class="form-check-label" for="original">오리지널/내한공연</label><br>
-									  <input class="form-check-input" type="checkbox" role="switch" name="genre" id="license" value="2">
-										  <label class="form-check-label" for="flexSwitchCheckChecked">라이센스</label><br>
-									  <input class="form-check-input" type="checkbox" role="switch" name="genre" id="creation" value="3">
-										  <label class="form-check-label" for="flexSwitchCheckChecked">창작뮤지컬</label><br>
-									  <input class="form-check-input" type="checkbox" role="switch" name="genre" id="family" value="4">
-									 	 <label class="form-check-label" for="flexSwitchCheckChecked">아동/가족</label>
-									</div>												
+								<div id="checkboxBox">									
+									<input type="checkbox" name="genre" id="original" value="1">
+										<label for="original">오리지널/내한공연</label>
+									<input type="checkbox" name="genre" id="license" value="2">
+										<label for="license">라이센스</label><br>									
+									<input type="checkbox" name="genre" id="creation" value="3">
+										<label for="creation">창작뮤지컬</label>
+									<input type="checkbox" name="genre" id="family" value="4">
+										<label for="family">아동/가족</label>
 								</div>
 							</td>
 							</tr>
 						</tbody>
 					</table>
-					<br>
-					<div class="submitBox">
-					<input type="submit" id="submitBox" value=" 회원가입" />
+					
 					<br><br>
+					<div class="submitBox">
+					<input type="submit" id="submitBox" value="JOIN" />
 					</div>
 				</form>
 
