@@ -22,7 +22,7 @@
         <div class="bannerTitle_2">
             <span>Story</span>
         </div>
-    </div>
+    </div>  
 
     <div class="background"></div>
 
