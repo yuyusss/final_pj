@@ -1,13 +1,14 @@
 *{
     margin: 0;
     padding: 0;
+    /*background-color: #FFFFFF;*/
 }
 
 #wrap{
-    background: white;
+
     text-align: center;
     position: relative;
-    width: 1080px;
+    width: 1200px;
     margin: 0 auto;
 }
 

@@ -1,9 +1,13 @@
 package com.project.board.controller;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.project.board.model.*;
 import com.project.board.service.CalendarService;
@@ -45,6 +49,11 @@ public class IndexController {
         return "index2";
     }
 
+    @RequestMapping("/test")
+    public String test(){
+        return "index";
+    }
+
 
     @RequestMapping("/vote")
     public String vote(Model model) {
@@ -59,14 +68,31 @@ public class IndexController {
     }
 
     @RequestMapping("/voteActor/{actorNo}")
-    public String voteActor(@PathVariable String actorNo, Model model)throws Exception{
-        VoteVO vo = service.detailActor(actorNo);
+    public String voteActor(@PathVariable String actorNo, Model model,HttpSession session, HttpServletResponse write, BoardVO b)throws Exception{   	
+    	VoteVO vo = service.detailActor(actorNo);
         model.addAttribute("vo", vo);
-        System.out.println(vo);
-        System.out.println(vo.getActorName());
+        
         service.voteUp(actorNo);
+        
+        String memId = (String) session.getAttribute("sid1");
+		
+    	b.setMemId(memId);
+		
+		System.out.println("memId 출력: " + b.getMemId());
 
-        return "redirect:../vote";
+		// 로그인 되어있는지 확인하는 부분. 안되어있으면 경고 메시지 출력 -> loginform 이동
+		if (memId == null) {
+			write.setContentType("text/html; charset=UTF-8");
+			PrintWriter out_write = write.getWriter();
+			out_write.println("<script>alert('회원만 사용 가능한 기능입니다.'); location.href='/loginForm';</script>");
+			out_write.flush();
+
+			return "login";
+
+		} else {
+			// 로그인이 되어있는 경우
+			return "redirect:../vote";
+		}
     }
 
     @RequestMapping("/voteMusical/{muscNo}")
@@ -81,13 +107,14 @@ public class IndexController {
     }
 
 
-    @RequestMapping("/calenList")
+    /*@RequestMapping("/calenList")
     @ResponseBody
-    public List<CalendarVO> calenList() {
-        System.out.println("cal");
+    public CalendarVO calenList() throws Exception{
+        CalendarVO calendarVO = new CalendarVO();
+        calendarVO.setCalTitle("캘린더 테스트");
 
-        return calendarService.calenList();
-    }
+        return calendarVO;
+    }*/
 
     /*@RequestMapping("calenView")
     public ModelAndView calenView (HttpServletRequest request, ModelMap modelMap, @ModelAttribute CalendarVO vo)throws Exception{
@@ -95,5 +122,8 @@ public class IndexController {
          ModelAndView mv = new ModelAndView();
          CalendarVO result = calendarService.calenView(vo);
     }*/
+
+    // 캘린더 db에서 불러올 코드 필요
+    // json parsing 사용. responsebody 사용해서 페이지 로드 시 바로 불러오게 할 것
 
 }

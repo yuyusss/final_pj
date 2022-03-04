@@ -36,7 +36,7 @@
 		<div class="row">
 			<div class="board">
 				<h2 class="titlefont">배우별 게시판</h2>
-				<hr><hr>
+				
 				<br>
 				<table id="example" class="display" style="width: 100%">
 					<thead>
