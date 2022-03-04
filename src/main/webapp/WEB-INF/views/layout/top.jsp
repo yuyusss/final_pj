@@ -30,8 +30,9 @@
                 <%--로그인 처리 전에 보여줄 부분--%>
 
                     <li><a href="<c:url value='/about' />">About</a> </li>
+
                     <li>
-                        <a href="<c:url value='/detailView/1' />">Musical</a>
+                        <a href="<c:url value='/musicalAllgenre' />">Musical</a>
                         <%--<ul>
                             <li><a href="<c:url value="detailView/1" />">오리지널/내한공연</a> </li>
                             <li><a href="<c:url value="detailView/1" />">라이센스</a> </li>
@@ -39,6 +40,7 @@
                             <li><a href="<c:url value="detailView/1" />">가족/어린이</a> </li>
                         </ul>--%>
                     </li>
+
                     <li><a href="<c:url value='/vote' />">Ranking</a> </li>
                     <li><a href="<c:url value='/board' />">Community</a> </li>
                     <li><a href="<c:url value='/hall' />">Theather</a> </li>

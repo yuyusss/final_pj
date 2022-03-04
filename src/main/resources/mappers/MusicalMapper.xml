@@ -19,6 +19,10 @@
     <select id="getAllMusical" resultType="com.project.board.model.MusicalVO" parameterType="string">
         select * from musical order by musicalVote desc
     </select>
+    
+    <select id="getMusicalAllList" resultType="com.project.board.model.MusicalVO" parameterType="string">
+        select * from musical
+    </select>
 
     <update id="voteUp" parameterType="com.project.board.model.MusicalVO">
         UPDATE musical SET musicalVote = musicalVote + 1
