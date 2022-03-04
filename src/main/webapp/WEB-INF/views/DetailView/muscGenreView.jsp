@@ -81,7 +81,7 @@
 			<div class="content_list_main">
 				<ul style="text-align:center">
 					<c:forEach var="musc" items="${musicalData}">
-						<li style="background-color: rgb(233, 233, 240);width:280px;overflow:hidden; text-overflow:ellipsis; white-space:nowrap;display: inline-block;margin-top: 50px;margin-right: 25px;margin-left: 25px;padding: 30px;">
+						<li style="background-color: rgb(233, 233, 240);border-radius: 15px;width:280px;overflow:hidden; text-overflow:ellipsis; white-space:nowrap;display: inline-block;margin-top: 50px;margin-right: 25px;margin-left: 25px;padding: 30px;">
 						<a href="/muscDetailView/${musc.muscNo}"><img src="<c:url value='${musc.muscImg}'/>" alt="뮤지컬 포스터" style="width: 280px;"></a><br>
 						<a href="/muscDetailView/${musc.muscNo}"><b>${musc.muscName}</b></a><br>
 						<p style="color: rgb(145, 152, 204);">${musc.muscStartDate} ~ ${musc.muscEndDate}</p>
