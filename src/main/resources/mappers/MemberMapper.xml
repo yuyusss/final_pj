@@ -30,5 +30,9 @@
 		<insert id="signUp" parameterType="com.project.board.model.MemberVO">
 			  INSERT INTO member (memId, memPw, memName, memEmail, memPhone, memAddress, memAddressDetail, genre) VALUES(#{memId}, #{memPw}, #{memName}, #{memEmail}, #{memPhone}, #{memAddress}, #{memAddressDetail}, #{genre}) 
 		</insert>
-	
+		
+		<select id="getAllMember" resultType="com.project.board.model.MemberVO" parameterType="string">
+        select * from member order by memId desc
+    	</select>
+		
 </mapper>
