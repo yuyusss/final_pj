@@ -51,6 +51,7 @@
                 <c:if test="${not empty sessionScope.sid}">
                     <li><a href="<c:url value='/logout' />">로그아웃</a> </li>
                     <li><a href="<c:url value='/ticketbook/${sid.memId}'/>">마이페이지</a> </li>
+                    <li><a href="<c:url value='/adminPage'/>">관리자 페이지</a> </li>
                 </c:if>
             </ul>
         </div>

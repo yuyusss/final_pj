@@ -5,8 +5,13 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import com.project.board.model.HallVO;
+import com.project.board.model.VoteVO;
+import com.project.board.service.HallService;
+import com.project.board.service.MediaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +25,12 @@ import com.project.board.service.MusicalService;
 public class detailPageController {
 	@Autowired
 	private MusicalService service;
+
+	@Autowired
+	HallService hallService;
+
+	@Autowired
+	MediaService mediaService;
 	
 	/*
 	 * @RequestMapping("/favorRecommand") public String favorRecommand() { return
@@ -27,8 +38,18 @@ public class detailPageController {
 	 */
 	
 	@RequestMapping("/adminPage") 
-    public String adminPage() { 
-    	return "/DetailView/adminPage"; 
+    public String adminPage(Model model) {
+
+		ArrayList<MusicalVO> musicalList = service.getAllMusical();
+		model.addAttribute("musicalList", musicalList);
+
+		ArrayList<HallVO> seoulHallList = hallService.listHallByArea("seoul");
+		model.addAttribute("seoulHallList", seoulHallList);
+
+		ArrayList<VoteVO> actorList = mediaService.listAllActor();
+		model.addAttribute("actorList", actorList);
+
+		return "/DetailView/adminPage";
     }
 	@RequestMapping("/insertMusc") 
     public String insertMusc() { 
