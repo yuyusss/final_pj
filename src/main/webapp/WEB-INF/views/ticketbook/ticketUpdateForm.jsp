@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link href="<c:url value='/css/hall2.css'/>" rel="stylesheet" type="text/css">
+		<link href="<c:url value='/css/ticketcontrol.css'/>" rel="stylesheet" type="text/css">
 		<title>Update</title>
 		
 		<!-- include libraries(jQuery, bootstrap) -->   <!--  ********* -->
@@ -21,24 +21,51 @@
 	</head>
 	
 	<body>
-		<form method = "post" action="/hall/updatehall">
-			공연장번호<input type="text" id="no" name="no" value = "${hall.no}"><br>
-			공연장이름<input type="text" id="name" name="name" value = "${hall.name}" ><br>
-			공연장지역<input type="text" id="area" name="area" value = "${hall.area}"><br>
-			공연장위치<input type="text" id="location" name="location" value = "${hall.location}" ><br>
-			공연장좌석<input type="text" id="seat" name="seat" value = "${hall.seat}"><br>
-			공연장편의시설<input type="text" id="con" name="con" value = "${hall.con}"><br>
-			공연장고객센터번호<input type="text" id="cus" name="cus" value = "${hall.cus}"><br>
-			
-			<textarea id="details" name="details">${hall.details}</textarea>
-			
-			<div id = "button"><input type="submit" value="수정"><input type="reset" value="취소"></div>
+	<div id = "wrap">
+		<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true'/>
+	
+		<form method = "post" action="/ticketbook/updateticket" class="form">
+		<table border= "0" class = "table">
+			<tr>
+		 		<td>번호 : </td> <td><input type="text" id="no" name="no" value="${ticketbook.no}"><br></td>
+		 	</tr>
+			<tr>
+		 		<td>아이디 : </td> <td><input type="text" id="memID" name="memID" value="${sessionScope.sid1}" readonly><br></td>
+		 	</tr>
+		 	<tr>
+				<td>공연 제목 : </td><td><input type="text" id="subject" name="subject" value="${ticketbook.subject}" ><br></td>
+			</tr>
+			<tr>	
+				<td>공연 날짜 : </td><td><input type="text" id="date" name="date" value="${ticketbook.date}"><br></td>
+			</tr>
+			<tr>
+				<td>공연 시간 : </td><td><input type="text" id="time" name="time" value="${ticketbook.time}"><br></td>
+			</tr>
+			<tr>
+				<td>장소 : </td><td><input type="text" id="thater" name="theater" value="${ticketbook.theater}"><br></td>
+			</tr>
+			<tr>
+				<td>좌석 : </td><td><input type="text" id="seat" name="seat" value="${ticketbook.seat}"><br></td>
+			</tr>	
+			<tr>
+				<td>캐스팅 : </td><td><input type="text" id="casting" name="casting" value="${ticketbook.casting}"><br></td>
+			</tr>
+			<tr>	
+				<td>가격 : </td><td><input type="text" id="price" name="price" value="${ticketbook.price}"><br></td>
+			</tr>	
+			<tr>
+				<td>후기 : </td><td><textarea id="review" name="review"> ${ticketbook.review}  </textarea></td>
+			</tr>
+		</table>
+			<div id = "button"><input type="submit" value="수정완료"><input type="reset" value="취소"></div>
 		</form>
 		<!-- 바텀 -->
+		<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true'/>
+	</div>
 		
 		 <script>
 		    $(document).ready(function() {
-		        $('#details').summernote();
+		        $('#review').summernote();
 		    });
 		  </script>
 	</body>

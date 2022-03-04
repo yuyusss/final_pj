@@ -91,12 +91,7 @@ public class MusicalByGenreVO {
 		this.muscImg = muscImg;
 	}
 
-	@Override
-	public String toString() {
-		return "MusicalByGenreVO [memId=" + memId + ", memPw=" + memPw + ", memName=" + memName + ", genre=" + genre
-				+ ", muscNo=" + muscNo + ", muscName=" + muscName + ", muscGenre=" + muscGenre + ", muscImg=" + muscImg
-				+ "]";
-	}
+	
 	
 	
 }

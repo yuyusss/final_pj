@@ -20,6 +20,7 @@
 				
 			
 			<div id = "지역">서울</div>
+           	<div class = "list-border">
            	<table border="1" class = "list">
 			 
 				   <c:forEach items="${seoulHallList}" varStatus="status" var="hall">
@@ -33,8 +34,10 @@
                       </c:forEach>
 			
 			</table>
+			</div>
 			
 			<div id = "지역">경기</div>
+			<div class = "list-border">
            	<table border="1" class = "list">
 			 
 				   <c:forEach items="${ggHallList}" varStatus="status" var="hall">
@@ -48,8 +51,10 @@
                       </c:forEach>
 			
 			</table>
+			</div>	
 			
 			<div id = "지역">그 외 지역들</div>
+			<div class = "list-border">
            	<table border="1" class = "list">
 			 
 				   <c:forEach items="${etcHallList}" varStatus="status" var="hall">
@@ -63,6 +68,7 @@
                       </c:forEach>
 			
 			</table>			
+			</div>
 			</div>
 	
 
