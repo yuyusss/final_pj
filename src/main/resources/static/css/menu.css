@@ -5,7 +5,7 @@
     height: 80px;
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 .header_logo{
@@ -64,7 +64,6 @@ a {
     top: 50px;
     width: 180px;
 }
-
 
 .footerBox{
     text-align: center;

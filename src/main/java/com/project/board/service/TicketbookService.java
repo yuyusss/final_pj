@@ -54,14 +54,18 @@ public class TicketbookService implements ITicketbookService {
 		return dao.listTicketByNO(no);
 	}
 	@Override
-	public void deleteticket(TicketbookVO ticketbookVo) {
+	public void deleteticket(String no) {
 		// TODO Auto-generated method stub
-		dao.deleteticket(ticketbookVo);
+		dao.deleteticket(no);
 	}
 
 	@Override
 	public ArrayList<MusicalByGenreVO> getMusicalByGenre(String memId) {
 		return dao.getMusicalByGenre(memId);
+	}
+	public TicketbookVO detailViewticket(String no) {
+		// TODO Auto-generated method stub
+		return dao.detailViewticket(no);
 	}
 
 	

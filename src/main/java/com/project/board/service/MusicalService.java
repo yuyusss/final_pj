@@ -48,6 +48,10 @@ public class MusicalService implements IMusicalService{
 	public int insertMusical(MusicalVO musicalVO) {
 		return dao.insertMusical(musicalVO);
 	}
+
+	public ArrayList<MusicalVO> getMusicalAllList() {
+		return dao.getMusicalAllList();
+	}
     
 
 }
