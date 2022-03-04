@@ -19,58 +19,97 @@
     <!-- TOP -->
     <jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true'/>
 
-    <!-- 배너 -->
-    <section>
-        <!-- section -->
-        <div class="bannerMenu">
-            <div class="bannerInfo">
-                <%--<div id="bannerName"><h2>관객 추천 공연</h2></div>--%>
-                <div id="bannerViewItem">
-                    <c:forEach items="${musicalList}" var="music" begin="0" end="4">
-                        <div class="bannerContent">
-                            <div class="bannerPoster">
-                                <a href="<c:url value="/testDetail/${music.muscNo}" />"><img src="${music.muscImg}"/></a>
-                            </div>
-                           <%-- <div class="bannerPosterTitle">
-                                ${music.muscName}
-                            </div>--%>
-                        </div>
-                    </c:forEach>
+    <!-- header -->
+    <div id="logoBox">
+
+        <a href="/"><img src="<c:url value='/images/banner.jpeg' />" id="logoImage"></a>
+
+    </div>
+
+    <div class="mainBanner">
+        <!-- 배너 -->
+        <section>
+
+            <div class="bannerTitle">
+                <div class="bannerTitle_1">
+                    <span>MUTRODUCE. Audiences</span>
                 </div>
+                <div class="bannerTitle_2">
+                    <span>BEST PERFORMANCE</span>
+                </div>
+            </div>
+
+            <!-- section -->
+            <div class="bannerMenu">
+                <div class="bannerInfo">
+                    <%--<div id="bannerName"><h2>관객 추천 공연</h2></div>--%>
+                    <div id="bannerViewItem">
+                        <c:forEach items="${musicalList}" var="music" begin="0" end="5">
+                            <div class="bannerContent">
+                                <div class="bannerPoster">
+                                    <a href="<c:url value="/testDetail/${music.muscNo}" />"><img
+                                            src="${music.muscImg}"/></a>
+                                </div>
+                                    <%-- <div class="bannerPosterTitle">
+                                         ${music.muscName}
+                                     </div>--%>
+                            </div>
+                        </c:forEach>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <div class="sectionBackground">
+        <div class="bannerTitle" style="margin-top: 120px; margin-bottom: 80px;">
+            <div class="bannerTitle_1" style="color: white">
+                <span>TODAY'S</span>
+            </div>
+            <div class="bannerTitle_2" style="color: white">
+                <span>RECOMMENDED NUMBER</span>
             </div>
         </div>
-    </section>
+        <%-- 날씨 맞춤 넘버 추천 --%>
+        <div class="RecogMain">
+            <c:forEach items="${mediaList}" var="media" begin="0" end="3">
+                <div class="RecogMainMenu">
+                    <iframe width="260" src="${media.numURL}"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+
+                    </iframe>
+                </div>
+            </c:forEach>
+        </div>
+
+        <div class="linkAbout">
+            <div class="bannerTitle_1" style="color: white">
+                <span>There's No More Musical<br>A Unique Musical Introduce Platform</span>
+            </div>
+            <span>MUTRODUCE</span>
+        </div>
+
+        <div class="buttons">
+            <div class="buttonContent">
+                <a href="<c:url value="/about" />" class="btn effect04" data-sm-link-text="CLICK" target="_blank"><span>Read Our Story</span></a>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="linkedSection"></div>
 
     <div class="secondSection">
-        <div class="RecoNumber">
-            <div class="RecoName">
-                <h2>Today's Music</h2>
+        <div class="bannerTitle">
+            <div class="bannerTitle_1">
+                <span>Coming Up</span>
             </div>
-            <div class="RecogNumberItem">
-
-                <div class="RecogMain">
-                    <c:forEach items="${mediaList}" var="media" begin="0" end="0">
-                        <div class="RecogMainMenu">
-                            <iframe width="440" height="350" src="${media.numURL}"
-                                    title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen>
-
-                            </iframe>
-                        </div>
-                    </c:forEach>
-                </div>
-
-                <div class="RecogSub">
-                    <c:forEach items="${mediaList}" var="media" begin="1" end="3">
-                        <div class="RecogSubMenu">
-                            <iframe width="200px" height="110px" src="${media.numURL}"
-                                    title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                        </div>
-                    </c:forEach>
-                </div>
+            <div class="bannerTitle_2">
+                <span>TICKET OPEN</span>
             </div>
         </div>
         <div class="calendar">
@@ -78,7 +117,8 @@
         </div>
         <%-- <script src="js/calendar.js"></script>--%>
     </div>
-    <div class="lastSection">
+
+<%--    <div class="lastSection">
         <div class="showMap">
             <div class="RecoName">
                 <h3 style="color: black">전국 공연 현황</h3>
@@ -129,7 +169,7 @@
                               d=" M 560 528 l 7 2 5 -4 3 -4 3 -4 1 -1 0 0 3 -4 3 2 2 6 -1 8 -2 3 -1 0 0 0 -1 4 0 4 0 0 -1 0 0 -1 0 1 0 0 -2 2 -2 3 0 2 1 0 0 0 1 4 0 4 -1 -1 -1 1 0 0 1 4 -1 3 0 0 0 0 0 0 0 1 -1 3 0 3 0 0 0 1 -1 -1 -1 4 -1 8 -2 7 -1 6 -2 4 -2 4 -7 -3 -1 0 -7 -2 -4 2 -3 2 -6 1 -4 -7 -3 -3 -4 -3 -5 0 -9 1 -4 1 -4 2 -2 4 0 1 -1 1 0 2 2 3 -3 0 -4 3 -1 -1 -1 0 -3 4 -7 0 -5 -4 -3 0 -3 1 -4 3 -4 5 -5 1 -6 3 -8 0 -7 -2 -8 -1 -7 2 -6 -3 -3 -3 -3 -3 -1 -7 0 -5 1 -6 5 -3 6 0 3 5 3 -1 4 -2 4 -2 0 -8 2 -7 3 -6 1 -2 0 -4 2 1 4 -4 -1 -7 -2 -9 0 -4 -3 -7 -3 -1 -9 0 -5 1 -3 3 -7 4 -2 2 -1 -1 -2 -2 0 7 -3 7 -2 4 -1 0 -3 -3 -2 -7 -5 1 -3 3 -3 4 -2 5 0 5 6 0 8 4 0 5 -8 1 -3 2 -3 5 1 5 5 4 0 5 -6 0 -5 2 1 3 4 4 0 8 -5 -3 -3 -3 -7 -1 -8 1 -3 2 -2 0 -3 -2 -5 -3 2 -3 0 0 1 0 2 -4 -1 -7 -2 -4 -3 -3 -5 -4 -2 -4 -1 -4 -1 0 -1 0 -5 -2 -8 0 -7 -2 -5 -3 -1 0 -3 1 -1 -4 -4 -3 -4 -5 4 -7 -3 -7 -2 -4 0 0 0 -1 -2 -4 4 -2 4 -3 5 -2 3 -6 1 -3 0 -2 0 -1 3 -4 1 -6 0 -8 7 0 4 1 -1 -2 -2 -6 -2 -5 -6 -1 -3 3 -2 0 -1 -1 -1 0 -2 -2 -4 -3 -2 -3 -2 3 -6 0 -1 -6 3 -5 3 -4 0 -3 -1 0 1 -2 -3 -3 1 -3 2 -3 -2 -2 0 -2 1 -4 0 -1 0 0 0 -1 0 0 0 0 0 0 0 -1 0 -2 3 -3 0 -5 -4 -3 -2 -5 -7 -3 -1 -5 6 -2 1 -1 0 0 0 -4 4 -4 0 1 2 4 4 5 2 1 -1 -1 1 -2 1 -4 -1 -5 -4 -3 -4 -1 0 -1 0 0 1 -1 3 -1 6 -2 3 -6 2 1 3 2 4 -2 1 0 3 3 5 0 -1 -2 -3 -4 1 -8 1 -5 3 -1 3 3 1 -2 4 -4 3 -2 1 1 5 2 6 0 2 -6 3 -4 0 0 4 2 4 4 4 3 7 3 7 -1 5 -1 2 -6 -2 -8 3 -7 2 -5 4 -4 4 -2 4 -4 4 -3 3 -5 5 -3 0 -1 3 1 2 -2 4 -1 5 3 4 1 6 1 1 -7 3 -4 2 0 4 2 6 5 7 -1 4 -6 4 -1 3 2 4 0 5 0 1 1 1 -1 3 2 3 0 3 -5 7 1 3 2 5 4 6 3 5 0 -1 0 0 -1 0 -3 0 -3 3 -4 3 -4 5 -2 5 -4 1 -1 1 1 1 -1 1 1 0 0 0 0 0 0 1 0 0 -1 1 2 1 4 2 5 6 7 -1 3 0 1 0 1 -1 2 1 3 0 4 0 1 0 1 -1 1 1 1 0 0 0 1 1 5 0 6 1 5 -1 -1 0 4 4 7 2 3 -1 0 1 1 1 4 3 7 0 9 0 6 -2 5 -1 -2 -1 1 -3 5 -2 6 0 7 4 8 1 5 0 2 0 0 1 2 -1 2 0 1 0 0 0 0 0 0 -1 3 0 7 -2 8 -3 6 -2 3 -1 6 -1 7 0 7 1 8 -1 4 0 -1 1 4 2 3 1 5 1 5 6 3 0 0 0 3 -4 4 -4 3 -1 0 -2 4 6 2"/>
                         <path id="CD48" class="OUTLINE"
                               d=" M 307 751 l 4 2 0 5 -1 4 0 0 -1 0 -1 4 1 4 1 0 -1 1 3 3 3 4 3 0 -1 -1 0 0 4 -2 7 -1 4 1 0 0 1 1 0 5 0 7 -1 4 -1 4 1 2 0 0 0 0 0 0 1 0 -1 1 0 0 0 0 -1 1 -2 -1 -1 1 -2 -3 -4 1 -6 -3 -2 -8 -6 2 -2 6 -6 -1 -2 -6 1 -4 -1 1 -1 -4 -2 -3 -2 -4 0 -7 2 -3 0 -1 0 0 0 -2 0 0 0 -1 0 -1 3 -1 2 -5 z M 441 731 l 3 1 1 2 -2 3 0 1 0 0 0 1 -1 0 0 4 3 3 1 5 0 4 0 0 -1 2 -2 3 -1 3 2 0 -1 1 2 -1 3 -2 3 -1 -1 1 -2 5 -1 4 -2 -1 -1 1 -1 1 3 2 0 7 -2 -3 -1 0 0 0 0 0 -1 1 -3 -1 -2 3 -3 4 -1 3 4 4 3 0 -1 1 -1 1 0 -1 -1 0 -1 0 -1 0 -4 2 -6 1 -1 -3 0 0 -1 0 -1 0 2 -5 -1 -3 -2 1 -2 0 -1 -3 5 -3 0 -6 0 -4 0 1 -1 -2 -2 1 0 1 0 0 -3 2 -4 2 -1 3 0 0 -1 0 -2 -4 -3 -3 -1 -4 0 -4 1 -1 0 0 3 -3 4 -4 1 0 0 0 0 0 3 3 4 1 0 -1 4 1 4 0 -1 -2 1 -1 -1 0 0 0 0 0 -3 -4 2 -5 5 -1 3 -5 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 -1 -1 1 0 1 1 0 -4 z M 429 693 l -4 1 -3 2 -2 4 1 3 0 0 0 1 2 3 0 3 0 0 0 1 -1 -1 -1 0 -1 1 4 2 3 6 2 2 -2 1 3 2 -2 1 0 0 0 0 -3 1 -4 1 1 -2 1 -1 -4 -1 3 -3 -4 -1 -3 -4 -3 1 -1 2 0 0 -1 0 0 0 -1 0 -1 -1 -2 -1 -1 2 0 0 -1 0 -3 -1 0 5 -3 2 -3 2 -7 4 0 4 2 -3 5 -2 4 -2 0 -1 0 -1 1 -1 1 1 1 0 0 0 1 -1 2 1 0 0 -1 4 1 4 0 0 0 0 1 -1 0 1 0 0 0 1 2 1 -4 3 -2 2 -1 0 0 0 -1 0 0 0 0 0 0 0 0 0 -4 -1 -1 2 4 2 -2 3 -1 5 -1 7 1 6 1 -2 0 0 1 0 1 -1 0 0 0 0 -1 -1 1 0 0 0 0 -2 -1 -1 4 2 1 5 -1 -2 -1 4 -2 4 -4 2 -6 0 0 -4 5 -1 -5 -3 -1 -3 -1 2 0 -1 -1 2 -2 -1 -1 -1 -2 1 -2 -1 -1 1 -1 -1 -1 0 1 0 -1 -3 4 -1 4 -1 0 -1 -3 -5 -1 -4 -1 1 0 -1 -1 0 0 0 -1 2 -2 3 0 3 0 0 0 0 0 0 0 0 0 0 -4 2 -2 -1 0 0 0 -1 -1 -1 1 -1 0 -1 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 -4 0 -6 0 -2 7 -6 1 -4 2 0 1 -3 -4 -3 -2 3 -1 -2 0 -2 0 0 -1 -1 0 1 0 -1 1 0 0 -4 -1 -5 -4 -1 -3 0 1 2 -2 1 -2 -1 -2 0 -4 1 -2 0 0 0 0 -2 -2 0 -5 1 -4 2 -3 -3 2 -2 5 -1 4 0 0 0 0 0 0 0 0 -2 0 0 0 1 -3 -2 0 1 0 -3 1 2 2 2 4 0 3 -1 0 0 1 -1 1 1 0 0 0 0 -1 -1 0 -1 -1 -2 2 -3 -2 0 0 -1 0 0 0 0 1 0 0 -3 1 -1 -2 0 0 0 -2 -4 -3 1 3 -1 2 1 0 0 0 -1 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 -2 1 -4 5 -5 0 -2 -2 0 0 0 0 -1 1 -5 2 -4 1 0 0 -1 -1 -2 -5 3 -6 0 -3 -1 -2 -3 -5 -4 -3 -3 -4 -4 -4 0 -4 -4 -6 -5 -3 -4 -6 0 -8 -1 -4 -2 -3 -3 -8 4 -4 2 -3 -1 -4 0 0 0 0 0 -1 2 -3 3 -5 3 -3 1 -5 -4 -3 0 -5 -2 -8 -6 -6 2 -8 1 -3 2 -4 1 -8 2 -7 3 -3 0 -5 2 -8 5 -3 3 -4 3 -6 5 -2 6 -2 3 -2 4 -3 3 -5 3 -2 4 5 4 3 1 4 3 -1 1 0 5 3 7 2 8 0 5 2 1 0 1 0 1 4 2 4 5 4 3 3 2 4 1 7 -2 4 -1 0 0 0 -2 3 5 3 3 2 2 0 3 -2 8 -1 7 1 3 3 5 3 7 -1 7 -3 5 0 2 -3 3 -7 0 5 1 7 3 3 3 3 6 3 7 -2 8 1 7 2 8 0 6 -3 5 -1 4 -5 4 -3 3 -1 3 0 5 4 7 0 0 8 -5 5 4 4 3 2 2 0 0 0 1 0 3 -1 1 3 5 3 4 3 2 3 4 5 6 2 4 1 1 7 -2 3 0 0 0 3 -3 2 -7 0 -3 6 -1 5 -4 1 -6 3 -1 3 -3 -1 -2 0 -1 4 -4 6 -7 1 -6 2 -5 1 -1 6 0 5 -9 0 -4 1 2 2 5 4 1 3 -2 2 -3 2 -4 1 2 -2 0 -1 -4 -1 -2 6 -3 -2 -1 -3 -3 1 -2 -1 -2 0 -1 1 0 -3 -2 -6 -2 3 -1 1 0 -1 -1 -1 0 -1 -1 1 -3 -3 -3 2 1 0 -1 0 1 1 -1 0 -2 -5 -2 -6 4 -6 z "/>
-                        <%-- <path id="CD50" class="OUTLINE" d =" M 115 1034 l 5 2 3 2 5 3 6 2 3 5 -1 4 0 0 1 0 0 0 1 1 2 1 -2 1 3 0 -1 7 -2 1 -3 7 -4 4 -3 5 -3 5 -5 4 -5 0 -3 1 0 0 0 0 0 0 -1 1 -2 1 0 1 -3 1 -8 2 -4 0 0 0 -2 0 -3 2 -6 3 -7 0 -8 1 -7 1 -7 -1 -8 0 -7 0 -6 1 -3 5 -6 -1 -3 -4 -4 -3 -5 -2 -2 -4 -2 -8 2 -7 3 -4 1 0 1 0 3 -3 4 -3 3 -5 3 -4 4 -2 6 -4 4 -2 5 -1 6 -1 7 -3 4 -2 4 -1 5 -1 -1 1 4 -1 7 -1 6 -2 3 -3 1 1 0 0 1 0 0 1 0 0 1 0 2 -1 2 0 1 0 0 0 1 0 6 -1 z " />--%>
+                        &lt;%&ndash; <path id="CD50" class="OUTLINE" d =" M 115 1034 l 5 2 3 2 5 3 6 2 3 5 -1 4 0 0 1 0 0 0 1 1 2 1 -2 1 3 0 -1 7 -2 1 -3 7 -4 4 -3 5 -3 5 -5 4 -5 0 -3 1 0 0 0 0 0 0 -1 1 -2 1 0 1 -3 1 -8 2 -4 0 0 0 -2 0 -3 2 -6 3 -7 0 -8 1 -7 1 -7 -1 -8 0 -7 0 -6 1 -3 5 -6 -1 -3 -4 -4 -3 -5 -2 -2 -4 -2 -8 2 -7 3 -4 1 0 1 0 3 -3 4 -3 3 -5 3 -4 4 -2 6 -4 4 -2 5 -1 6 -1 7 -3 4 -2 4 -1 5 -1 -1 1 4 -1 7 -1 6 -2 3 -3 1 1 0 0 1 0 0 1 0 0 1 0 2 -1 2 0 1 0 0 0 1 0 6 -1 z " />&ndash;%&gt;
                     </g>
                     <g filter="url(#dropshadow)">
                         <text id="LCD11" class="TEXT" x="156" y="214">서울특별시</text>
@@ -148,7 +188,7 @@
                         <text id="LCD46" class="TEXT" x="138" y="764">전라남도</text>
                         <text id="LCD47" class="TEXT" x="447" y="460">경상북도</text>
                         <text id="LCD48" class="TEXT" x="367" y="672">경상남도</text>
-                        <%-- <text id="LCD50" class="TEXT" x="76" y="1070">제주특별자치도</text>--%>
+                        &lt;%&ndash; <text id="LCD50" class="TEXT" x="76" y="1070">제주특별자치도</text>&ndash;%&gt;
                     </g>
                 </svg>
             </div>
@@ -156,7 +196,7 @@
         <div class="localHotChoice">
             <c:forEach begin="0" end="7">
                 <div class="bannerContent">
-                    <div class="bannerPoster">
+                    <div class="localPoster">
                         <img src="https://www.caci.or.kr/cmmn/file/imageSrc.do?atchFileId=4631921811a4414ba470ab04692deab5&fileSn=1&thumb=Y"/>
                     </div>
                     <div class="bannerPosterTitle">
@@ -165,7 +205,7 @@
                 </div>
             </c:forEach>
         </div>
-    </div>
+    </div>--%>
 </div>
 
 <!-- BOTTOM -->

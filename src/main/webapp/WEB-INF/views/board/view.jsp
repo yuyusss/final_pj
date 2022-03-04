@@ -8,6 +8,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="<c:url value='/css/board.css'/>" rel="stylesheet" type="text/css">
+<link href="<c:url value='/css/board1.css'/>" rel="stylesheet" type="text/css">
+<link href="<c:url value='/css/board2.css'/>" rel="stylesheet" type="text/css">
 <script src="<c:url value='/js/replycheck.js'/>"></script>
 </head>
 <jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
@@ -36,11 +38,11 @@
 	</nav>
 
 <body>
-<div class="viewcontainer" style="text-align:left;">
+<div class="viewcontainer" style="text-align:left;"> 
 	<div class="row">
 		<div class="col-sm-12" style="text-align:right;">
-	     <h2 style="text-align:left;" id = "title" ></h2>
-	     <hr><hr>
+	     <h2 class="titlefont" style="text-align:left;" id = "title" ></h2>
+	     <h2 style="text-align:left;" id="memID"></h2>
 	     <button type="button" class="btn" onclick="location.href='javascript:deleteCheck();' ">게시글 삭제</button>
 	     <button type="button" class="btn" onclick="location.href='javascript:update();' ">게시글 수정</button> <br>
 
@@ -75,7 +77,7 @@
 	</div>
 	<div><button class="listbtn" type="button" onclick="location.href='/board'">글 목록</button></div>
 </div>
-<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true' />
+<jsp:include page="/WEB-INF/views/layout/bottom1.jsp" flush='true' />
 </body>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -96,7 +98,7 @@
 
 <script>
 function drawReply(replys) {
-	$("#cnt").text("등록된 댓글 - " + replys.length)
+	$("#cnt").text("등록된 댓글 - " + replys.length) 
 	var html = '';
 	html += '<h4>댓글 작성</h4><form class="form-inline replyform" id="replyform" name="replyform" action="writeReply" method="post" onSubmit="return Checkreplyform()" ><input type="hidden" name="idx" value = "' + IDX + '"><input type="hidden" name="replyIdx" value = "0"><input type="text" class="contents replymaininput form-control mb-2 mr-sm-2" id="contents" placeholder="댓글" name="contents"><button class="replybtn" type="submit" >등록</button></form>';
 	html += '<hr>'
@@ -153,7 +155,7 @@ function drawReply(replys) {
 		idx=result.idx;
 	  $("#image").append('<img src="/images/'+result.image+'"  style="width: 400px;" onerror="this.style.display=\'none\';" />');
 	  $("#title").text(result.title);
-	  $("#memID").text(result.memID)
+	  $("#memID").text(result.memId)
 	  $("#contents").text(result.contents);
    }});
 

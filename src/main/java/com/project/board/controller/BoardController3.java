@@ -60,7 +60,7 @@ public class BoardController3 {
 	    
 	    @RequestMapping(value="/write3", method=RequestMethod.GET)
 	    public String write3(HttpSession session, HttpServletResponse write, BoardVO b) throws Exception {
-	    	String memId = (String) session.getAttribute("sid");
+	    	String memId = (String) session.getAttribute("sid1");
 			
 	    	b.setMemId(memId);
 			

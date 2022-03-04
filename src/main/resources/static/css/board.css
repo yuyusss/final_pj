@@ -29,7 +29,7 @@
 }
 
 .replybtn {
-    background-color: #5fb7d1; 
+    background-color: #1a252f; 
     border: none;
     color: white;
     padding: 1px 4px;
@@ -46,11 +46,13 @@
 .replybtn {
     background-color: white; 
     color: black; 
-    border: 2px solid #5fb7d1;
+    border: 2px solid #1a252f;
 }
 
+
+
 .listbtn {
-	background-color: #5fb7d1; 
+	background-color: #1a252f; 
     border: none;
     color: white;
     padding: 9px 20px;
@@ -69,12 +71,12 @@
 .listbtn {
     background-color: white; 
     color: black; 
-    border: 2px solid #5fb7d1;
+    border: 2px solid #1a252f;
 }
 
 
 .btn {
-    background-color: #5fb7d1; 
+    background-color: #1a252f; 
     border: none;
     color: white;
     padding: 4px 9px;
@@ -90,21 +92,21 @@
 .btn {
     background-color: white; 
     color: black; 
-    border: 2px solid #5fb7d1;
+    border: 2px solid #1a252f;
 }
 
 .btn:hover {
-    background-color: #5fb7d1;
+    background-color: #1a252f;
     color: white;
 }
 
 .replybtn:hover {
-    background-color: #5fb7d1;
+    background-color: #1a252f;
     color: white;
 }
 
 .listbtn:hover {
-    background-color: #5fb7d1;
+    background-color: #1a252f;
     color: white;
 }
 
@@ -113,7 +115,7 @@
 }
 
 .writeBtn {
-    background-color: #5fb7d1; 
+    background-color: #1a252f; 
     border: none;
     color: white;
     padding: 9px 20px;
@@ -129,19 +131,19 @@
 .writeBtn {
     background-color: white; 
     color: black; 
-    border: 2px solid #5fb7d1;
+    border: 2px solid #1a252f;
 }
 
 
 .writeBtn:hover {
-    background-color: #5fb7d1;
+    background-color: #1a252f;
     color: white;
 }
 
 
 
 .boardcontainer{
-	width: 1080px;
+	
 	margin-top:60px;
 	margin-left:-5px;
 	margin-bottom: 150px
@@ -151,14 +153,14 @@
 	width: 1090px;
 }
 .viewcontainer{
-	width: 1080px;
+	
 	margin-top:60px;
 	margin-left:18px;
 	margin-bottom:120px
 }
 
 .writecontainer{
-	width: 1080px;
+	
 	margin-top:60px;
 	margin-left:-5px;
 	height: 980px;
@@ -176,6 +178,11 @@
 a{
 	text-decoration:none;
 }
+
+a:visited{
+	color:blue;
+}
+
 thead{
 	border:3px solid black;
 }
@@ -191,9 +198,7 @@ thead{
 	color:red;
 }
 
-.row{
-	width:1050px
-}
+
 
 .sidenav {
     height: 100%;

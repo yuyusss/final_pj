@@ -46,8 +46,7 @@ public class detailPageController {
 		
 		
 		System.out.println(vo);
-		
-		
+
 		
 		if(vo != null) {
 			session.setAttribute("musicalData", vo);
