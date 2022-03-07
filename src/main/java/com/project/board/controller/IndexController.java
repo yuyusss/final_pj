@@ -13,10 +13,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import com.project.board.model.*;
 import com.project.board.service.CalendarService;
 import com.project.board.service.MediaService;
 import com.project.board.service.MusicalService;
@@ -40,11 +36,10 @@ import com.project.board.model.MediaVO;
 import com.project.board.model.MemberVO;
 import com.project.board.model.MusicalVO;
 import com.project.board.model.VoteVO;
-import com.project.board.service.CalendarService;
-import com.project.board.service.MediaService;
+
 import com.project.board.service.MemberService;
-import com.project.board.service.MusicalService;
-import com.project.board.service.WeatherService;
+
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Service
 @Controller

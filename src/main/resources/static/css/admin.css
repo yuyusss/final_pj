@@ -80,6 +80,7 @@ details[open] > summary ~ * {
 
 .tpt table{
     width: 100%;
+    text-align: left;
 }
 
 .adminInsertBtn{
