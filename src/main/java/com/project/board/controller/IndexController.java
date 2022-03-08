@@ -6,6 +6,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
+import com.project.board.service.CalendarService;
+import com.project.board.service.MediaService;
+import com.project.board.service.MusicalService;
+import com.project.board.service.WeatherService;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -27,11 +32,10 @@ import com.project.board.model.MediaVO;
 import com.project.board.model.MemberVO;
 import com.project.board.model.MusicalVO;
 import com.project.board.model.VoteVO;
-import com.project.board.service.CalendarService;
-import com.project.board.service.MediaService;
+
 import com.project.board.service.MemberService;
-import com.project.board.service.MusicalService;
-import com.project.board.service.WeatherService;
+
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Service
 @Controller
@@ -132,6 +136,7 @@ public class IndexController {
 
     // 캘린더 db에서 불러올 코드 필요
     // json parsing 사용. responsebody 사용해서 페이지 로드 시 바로 불러오게 할 것
+    // 일정 저정하는 부븐 어떻게 처리할건지 정하기
     @RequestMapping(value = "/ticketPlan", method = RequestMethod.GET)
     @ResponseBody
     public List<Map<String, Object>> ticketPlan() throws Exception{

@@ -32,6 +32,7 @@
 						<tr>
 							<th>번호</th>
 							<th>뮤지컬 제목</th>
+							<th>공연장소</th>
 							<th>공연기간</th>
 							<th>수정</th>
 							<th>삭제</th>
@@ -41,6 +42,7 @@
 							<tr>
 								<td>${musc.muscNo}</td>
 								<td>${musc.muscName}</td>
+								<td>${musc.muscPlace}</td>
 								<td>${musc.muscStartDate} ~ ${musc.muscEndDate}</td>
 								<td><button type="button" class="muscNoCheck" onclick="location.href ='/insertMusc'">수정</button></td>
 								<td><button type="button" class="muscNoCheck" onclick="location.href ='/insertMusc'">삭제</button></td>
