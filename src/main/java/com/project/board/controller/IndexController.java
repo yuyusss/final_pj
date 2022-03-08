@@ -140,6 +140,7 @@ public class IndexController {
 
     // 캘린더 db에서 불러올 코드 필요
     // json parsing 사용. responsebody 사용해서 페이지 로드 시 바로 불러오게 할 것
+    // 일정 저정하는 부븐 어떻게 처리할건지 정하기
     @RequestMapping(value = "/ticketPlan", method = RequestMethod.GET)
     @ResponseBody
     public List<Map<String, Object>> ticketPlan() throws Exception{
