@@ -59,9 +59,27 @@
                                 <td>${act.actorName}</td>
                                 <td>${act.actorName}의 출연작품이름과 배역 이름</td>
                                 <td>${act.actorVote}</td>
-
-                                <td><button type="button" class="voteBtn"><a href="<c:url value="/voteActor/${act.actorNo}" />">투표</a></button></td>
-
+			  					
+			  					
+			  			<c:forEach items="${memberList}" var="mem" varStatus="status">
+				  				<c:choose> 
+				  					<c:when test="${mem.voteA eq 0 }"> <!-- Result값이 있다면 실행할 로직 -->
+				  				 		<td>투표완료</td>
+				  				 	</c:when> 
+				  					<c:otherwise>  
+				  					<td><a href="<c:url value="/voteActor/${act.actorNo}" />">투표</a></td> 
+				  					</c:otherwise> 
+				  				</c:choose> 
+						</c:forEach>
+						
+								<%-- <c:choose> 
+				  				<c:when test="${sessionScope.sid.voteA eq 0 }"> <!-- Result값이 있다면 실행할 로직 -->
+				  				 <td>투표완료</td>
+				  				 </c:when> 
+				  				<c:otherwise>  <td><a href="<c:url value="/voteActor/${act.actorNo}" />">투표</a></td> </c:otherwise> 
+				  				
+				  				</c:choose>  --%>
+				  				
                                 <%--<c:choose>
                                     <c:when test="{not empty sessionScope.sid}">
                                         <td><button type="button" class="voteBtn"><a href="<c:url value='/voteActor/{actorNo}' /> ">투표</a></button></td>
@@ -110,6 +128,7 @@
                                 <td>${musc.muscStartDate} ~ ${musc.muscEndDate}</td>
                                 <td>${musc.musicalVote}</td>
                                 <td><button type="button" class="voteBtn" onclick="location.href='<c:url value="/voteMusical/${musc.muscNo}" />';">투표</button></td>
+                            
                             </tr>
                         </c:forEach>
 

@@ -19,5 +19,7 @@ public interface IMusicalDAO {
 
 	public int insertMusical(MusicalVO musicalVO);
 
+	public ArrayList<MusicalVO> getMusicalAllList();
+
 	
 }

@@ -17,12 +17,12 @@
 <div>
     <div class="bannerTitle" style="margin-top: 60px; margin-bottom: 100px;">
         <div class="bannerTitle_1">
-            <span>Our</span>
+            <span>Our</span> 
         </div>
         <div class="bannerTitle_2">
             <span>Story</span>
         </div>
-    </div>
+    </div>  
 
     <div class="background"></div>
 
@@ -44,7 +44,7 @@
         </p>
     </div>
 </div>
-
+ 
 <!-- BOTTOM -->
 <jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true'/>
 </body>
