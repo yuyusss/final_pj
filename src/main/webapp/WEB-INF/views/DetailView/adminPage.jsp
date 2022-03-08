@@ -42,8 +42,8 @@
 								<td>${musc.muscNo}</td>
 								<td>${musc.muscName}</td>
 								<td>${musc.muscStartDate} ~ ${musc.muscEndDate}</td>
-								<td><button type="button" class="muscNoCheck" onclick="location.href ='/insertMusc'">수정</button></td>
-								<td><button type="button" class="muscNoCheck" onclick="location.href ='/insertMusc'">삭제</button></td>
+								<td><button type="button" class="muscNoCheck" onclick="location.href ='/goUpdateMusc/${musc.muscNo}'">수정</button></td>
+								<td><button type="button" class="muscNoCheck" onclick="location.href ='/doDeleteMusc/${musc.muscNo}'">삭제</button></td>
 							</tr>
 						</c:forEach>
 					</table>
