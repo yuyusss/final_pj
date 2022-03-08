@@ -41,7 +41,7 @@
                         </ul>--%>
                     </li>
 
-                    <li><a href="<c:url value='/vote' />">anking</a> </li>
+                    <li><a href="<c:url value='/vote' />">Ranking</a> </li>
                     <li><a href="<c:url value='/board' />">Community</a> </li>
                     <li><a href="<c:url value='/hall' />">Theather</a> </li>
                 <c:if test="${empty sessionScope.sid}">
