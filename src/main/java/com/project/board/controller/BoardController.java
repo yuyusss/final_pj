@@ -178,11 +178,28 @@ public class BoardController {
 	    
 	    
 	    @RequestMapping("/board/update/{idx}")
-		public String updateBoardForm(@PathVariable int idx, Model model) {
+		public String updateBoardForm(@PathVariable int idx, Model model,HttpSession session, HttpServletResponse write) throws IOException {
 			BoardVO board = s.detailViewBoard(idx);
 			model.addAttribute("board", board);
-			return "board/update";
-		}
+			
+			
+			String memId = (String) session.getAttribute("sid1");
+			if (memId == null ) {
+				write.setContentType("text/html; charset=UTF-8");
+				PrintWriter out_write = write.getWriter();
+				out_write.println("<script>alert('권한이 없습니다.'); location.href='/loginForm';</script>");
+				out_write.flush();
+
+				return "board/board";
+
+			} else {
+				// 로그인이 되어있는 경우
+				return "board/update";
+			}
+	    
+	    
+	    
+	    }
 	    
 	    @RequestMapping("/board/updateBoard")
 		public String detailViewBoard(BoardVO board,@RequestParam("file") MultipartFile file,Model model) throws IllegalStateException, IOException {
