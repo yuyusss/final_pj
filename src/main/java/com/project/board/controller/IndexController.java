@@ -152,7 +152,6 @@ public class IndexController {
             jsonArr.add(jsonObj);
         }
 
-        log.info("jsonArrCheck: {}", jsonArr);
 
         return jsonArr;
     }
