@@ -51,6 +51,8 @@ public class detailPageController {
 
 		return "/DetailView/adminPage";
     }
+	
+	// 뮤지컬 등록페이지로 이동
 	@RequestMapping("/insertMusc") 
     public String insertMusc() { 
     	return "/DetailView/insertMusical"; 
@@ -116,11 +118,18 @@ public class detailPageController {
 		return result;
 	}
 	
+	// 뮤지컬 등록 페이지에서 INSERT 버튼을 수행했을 시.
 	@RequestMapping("/doInsertMusc")
 	public String doInsertMusc(MusicalVO MusicalVO, HttpSession session) {
+		String result = "redirect:/insertMusc";
+		
+		if (MusicalVO == null) {
+			return result;
+		}
+		 
 		System.out.println(MusicalVO);
 		
-		String result = "/insertMusc";
+		
 		
 		int insertFlag = service.insertMusical(MusicalVO);
 		
@@ -134,6 +143,44 @@ public class detailPageController {
 		
 		return result;
 	}
+	
+	
+	// Admin 페이지에서 삭제버튼을 수행 했을 시
+	@RequestMapping("/doDeleteMusc/{muscNo}")
+	public String doDeleteMusc(@PathVariable String muscNo) {
+		String result = "redirect:/adminPage";
+
+		System.out.println(muscNo);
+		
+		int deleteFlag = service.deleteMusical(muscNo);
+		
+		System.out.println(deleteFlag);
+		
+		if( deleteFlag != 1 )  {
+			System.out.println("삭제실패");
+		}
+		
+		
+		return result;
+	}
+	
+	// 업데이트 페이지로 이동
+	@RequestMapping("/goUpdateMusc/{muscNo}") 
+    public String goUpdateMusc(@PathVariable String muscNo, HttpSession session) { 
+		String result = "redirect:/adminPage";
+		
+		MusicalVO vo = service.getMusical(muscNo);
+		
+		if(vo != null) {
+			session.setAttribute("muscData", vo);
+			result = "/DetailView/updateMusical";
+			System.out.println(result);
+		}
+		
+		
+    	return result; 
+    }
+	
 	
 	
 	

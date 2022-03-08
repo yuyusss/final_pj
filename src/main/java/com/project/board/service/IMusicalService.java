@@ -16,5 +16,6 @@ public interface IMusicalService {
 	ArrayList<MusicalVO> getAllMusical();
 	public int voteUp(String muscNo);
 	public ArrayList<MusicalVO> getMusicalAllList();
+	public int deleteMusical(String muscNo);
 	
 }
