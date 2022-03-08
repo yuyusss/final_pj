@@ -73,7 +73,7 @@ public class BoardController3 {
 				out_write.println("<script>alert('회원만 사용 가능한 기능입니다.');</script>");
 				out_write.flush();
 
-				return "login";
+				return "/login";
 
 			} else {
 				// 로그인이 되어있는 경우
@@ -103,7 +103,7 @@ public class BoardController3 {
 			model.addAttribute("originalFileName",originalFileName);
 			
 	        s.addBoard3(new BoardVO(0, title, contents, file.getOriginalFilename(), hits,writedate,memId));
-	        return "board/board3";
+	        return "redirect:./board3";
 	    }
 	    
 		/*

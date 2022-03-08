@@ -27,9 +27,7 @@
 
 
 </head>
-<jsp:include page="/WEB-INF/views/layout/top1.jsp" flush='true' />
-
-
+<jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
 
 <body link="blue" vlink="blue" alink="blue">
 	<div class="boardcontainer">
@@ -68,8 +66,8 @@
 					url : "boardList",
 					success : function(result) {
 						var html = "";
-						result.forEach(function(item) {
-							html += "<tr> <td>"+item.idx+"</td><td>"+item.memId+"</td><td><a style='text-decoration:none;' href = 'view?idx=" + item.idx
+						result.forEach(function(item, index) {
+							html += "<tr> <td>"+item.id+"</td><td>"+item.memId+"</td><td><a style='text-decoration:none;' href = 'view?idx=" + item.idx
 									+ "'>" + item.title + "</a></td><td>"+item.contents+"</td><td>"+item.hits+"</td><td>"+item.writedate+"</td>"
 						})
 						$("#listArea").append(html)
