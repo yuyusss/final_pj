@@ -34,8 +34,13 @@
   		VALUES (#{muscNo}, #{muscName}, #{muscHashtag}, #{muscPlace},
 				#{muscPlaceLink},#{muscStartDate}, #{muscEndDate}, #{muscQuote},
                 #{muscReqTime}, #{muscSynop}, #{muscGenre}, #{muscImg},
-                #{muscInfo_1}, #{muscInfo_2}, #{muscInfo_3}, #{muscYoutube})
+                #{muscInfo_1}, #{muscInfo_2}, #{muscInfo_3}, #{muscYoutube},0,#{location})
   	</insert> 
+
+	<delete id="deleteMusical" parameterType="string">
+		DELETE FROM musical WHERE  muscNo = #{muscNo};
+	</delete>
+
 
 </mapper>
   

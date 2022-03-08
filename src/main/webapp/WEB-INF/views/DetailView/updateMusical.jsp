@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>관리자 전용 - 뮤지컬 정보 삽입 페이지</title>
+		<title>관리자 전용 - 뮤지컬 정보 수정 페이지</title>
 		<link href="<c:url value='/css/signUp.css'/>" rel="stylesheet">
 	</head>
 	<body>
@@ -16,21 +16,21 @@
 		<!-- 삽입란 -->
 		<div id="main" class="insertFrame">
 			<div id="content">
-				<form id="form" name="muscInsertForm" method="post"  action="<c:url value='/doInsertMusc'/>">
+				<form id="form" name="muscInsertForm" method="post"  action="<c:url value='/doUpdateMusc/${muscData.muscNo}'/>">
 				<h3 style="margin: 30px;text-align: center;">[뮤지컬] 등록할 정보 목록</h3><hr><br>
 				<!-- <b>뮤지컬번호, 뮤지컬 이름,해시태그, 뮤지컬 장소이름,장소링크, 뮤지컬 시작일, 종료일, 명대사, 상영시간, 시놉시스, 장르번호, 포스터 파일주소, 공지사항 사진1.2.3, 유튜브 링크</b> -->
 				<table class="insertmuscTable" style="margin: 0 auto;">
 					<tr>
 						<th>뮤지컬 번호</th>
 						<td>
-							<input type="text" name="muscNo" id="" maxlength="5" placeholder="지정할 뮤지컬번호를 입력하세요.">
+							<input type="text" name="muscNo" id="" maxlength="5" value="${muscData.muscNo}"> 
 							<button type="button" class="muscNoCheck" onclick="overlapCheck()">중복확인</button>
 						</td>
 					</tr>
 					<tr>
 						<th>뮤지컬 이름</th>
 						<td>
-							<input type="text" name="muscName" id="" maxlength="100" placeholder="등록한 뮤지컬 이름을 모두 입력하세요.">
+							<input type="text" name="muscName" id="" maxlength="100"  value="${muscData.muscName}">
 						</td>
 					</tr>
 					<tr>
@@ -138,7 +138,7 @@
 				
 				<br><br>
 				<div class="submitBox">
-				<input type="submit" id="submitBox" value="INSERT" />
+				<input type="submit" id="submitBox" value="UPDATE" />
 				</div>
 				</form>
 			</div>
