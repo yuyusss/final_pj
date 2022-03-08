@@ -45,11 +45,15 @@
 	     <h2 style="text-align:left;" id="memID"></h2>
 	     <button type="button" class="btn" onclick="location.href='javascript:deleteCheck();' ">게시글 삭제</button>
 	     
-	     <c:if test="${sessionScope.sid1 eq memId}">
-              <button type="button" class="btn" onclick="location.href='javascript:update();' ">게시글 수정</button> 
-         </c:if>
-	     <br>
-
+		
+		<c:forEach items="${memberList}" var="mem" varStatus="status">	
+			<c:if test="${sessionScope.sid1 == mem.memId}">
+           	   <button type="button" class="btn" onclick="location.href='javascript:update();' ">게시글 수정</button> 
+        	 </c:if>
+		</c:forEach>
+		
+			
+			
 		</div>
 	</div> 
 	<div class="row">
