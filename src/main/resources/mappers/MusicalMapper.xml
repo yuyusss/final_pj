@@ -16,6 +16,7 @@
     <select id="getActorCast" resultType="com.project.board.model.ActorCastVO" parameterType="string">
         SELECT a.actorName, a.actorProfile, c.roleName FROM actor a, muscCast c WHERE a.actorNo = c. actorNo AND c.muscNo= #{muscNo}
     </select>
+
     <select id="getAllMusical" resultType="com.project.board.model.MusicalVO" parameterType="string">
         select * from musical order by musicalVote desc
     </select>

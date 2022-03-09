@@ -16,7 +16,7 @@
 		<!-- 삽입란 -->
 		<div id="main" class="insertFrame">
 			<div id="content">
-				<form id="form" name="muscInsertForm" method="post"  action="<c:url value='/doInsertMusc'/>">
+				<form id="form" name="muscInsertForm" method="post"  action="<c:url value='/adminMusical'/>">
 				<h3 style="margin: 30px;text-align: center;">[뮤지컬] 등록할 정보 목록</h3><hr><br>
 				<!-- <b>뮤지컬번호, 뮤지컬 이름,해시태그, 뮤지컬 장소이름,장소링크, 뮤지컬 시작일, 종료일, 명대사, 상영시간, 시놉시스, 장르번호, 포스터 파일주소, 공지사항 사진1.2.3, 유튜브 링크</b> -->
 				<table class="insertmuscTable" style="margin: 0 auto;">

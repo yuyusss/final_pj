@@ -106,7 +106,7 @@ public class BoardController {
 			System.out.println(b);
 			s.addBoard(b);
 	        
-	        return "board/board";
+	        return "redirect:./board";
 	    }
 	    
 		/*

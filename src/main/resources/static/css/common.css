@@ -5,16 +5,12 @@
 }
 
 #wrap{
-
-
-    background: #FCF6F5;
-
     background-color: #FFFFFF;
     text-align: center;
-
     position: relative;
     width: 1200px;
     margin: 0 auto;
+    font-family: GowunDodum-Regular, serif;
 }
 
 #chatBtn{
@@ -37,4 +33,13 @@
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:visited{
+    text-decoration: none;
 }

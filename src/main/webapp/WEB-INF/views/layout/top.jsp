@@ -41,7 +41,7 @@
                             <li><a href="<c:url value="/board" />">공연 요청</a></li>
                         </ul>
                     </li>
-                    <li><a href="<c:url value='/hall' />">Theather</a> </li>
+                    <li><a href="<c:url value='/hall' />">Theater</a> </li>
                 <c:if test="${empty sessionScope.sid}">
                     <li><a href="<c:url value='/loginForm' />">Sign In</a> </li>
                 </c:if>

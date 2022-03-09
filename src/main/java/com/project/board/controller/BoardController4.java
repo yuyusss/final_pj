@@ -101,7 +101,7 @@ public class BoardController4 {
 			model.addAttribute("originalFileName",originalFileName);
 			
 	        s.addBoard4(new BoardVO(0, title, contents, file.getOriginalFilename(), hits,writedate,memId));
-	        return "board/board4";
+	        return "redirect:./board4";
 	    }
 	    
 		/*
