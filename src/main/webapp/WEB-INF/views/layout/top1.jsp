@@ -32,7 +32,7 @@
                     <li><a href="<c:url value='/detailView/1' />">Musical</a> </li>
                     <li><a href="<c:url value='/vote' />">Ranking</a> </li>
                     <li><a href="<c:url value='/board' />">Community</a> </li>
-                    <li><a href="<c:url value='/hall' />">Theather</a> </li>
+                    <li><a href="<c:url value='/hall' />">Theater</a> </li>
                 <c:if test="${empty sessionScope.sid}">
                     <li><a href="<c:url value='/loginForm' />">Sign In</a> </li>
                 </c:if>

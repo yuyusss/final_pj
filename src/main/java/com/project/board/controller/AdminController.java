@@ -40,6 +40,7 @@ public class AdminController {
         return "admin/adminPage";
     }
 
+    // member 관리자 페이지
     @RequestMapping("/adminMember")
     public String adminMember(Model model){
 
@@ -47,11 +48,21 @@ public class AdminController {
         return "admin/adminMember";
     }
 
+    // musical 관리자 페이지
     @RequestMapping("/adminMusical")
     public String adminMusical(Model model){
         ArrayList<MusicalVO> musicalList = musicalService.getAllMusical();
         model.addAttribute("musicalList", musicalList);
 
         return "admin/adminMusical";
+    }
+
+    // actor 관리자 페이지
+    @RequestMapping("/adminActor")
+    public String adminActor(Model model){
+        ArrayList<VoteVO> actorList = mediaService.listAllActor();
+        model.addAttribute("actorList", actorList);
+
+        return "admin/adminActor";
     }
 }

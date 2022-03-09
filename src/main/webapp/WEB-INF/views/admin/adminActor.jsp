@@ -18,32 +18,46 @@
 
     <div class="bannerTitle">
         <div class="bannerTitle_2">
-            <span>Admin Page - Member</span>
+            <span>Admin Page - Actor</span>
         </div>
     </div>
+
+    <%-- Musical --%>
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Member</h4>
-           <%-- <p class="card-description">
-                <a href="/adminMember">[ Update Member ]</a>
-            </p>--%>
+            <h4 class="card-title">Actor</h4>
+            <p class="card-description">
+                <a href="/insertActor">[ Add Actor ]</a>
+            </p>
             <div class="table-responsive">
                 <table class="table">
                     <thead>
                     <tr>
                         <th>번호</th>
-                        <th>회원 아이디</th>
-                        <th>회원 이름</th>
-                        <th>연락처</th>
+                        <th>배우 이름</th>
+                        <th>프로필 사진</th>
+                        <th>출연 작품</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${musicalList}" var="musc" begin="0" end="4">
+                    <c:forEach items="${actorList}" var="act" begin="0" end="4" varStatus="status">
                         <tr>
-                            <td>${musc.muscNo}</td>
-                            <td>${musc.muscName}</td>
-                            <td>${musc.muscPlace}</td>
-                            <td>${musc.muscStartDate} ~ ${musc.muscEndDate}</td>
+                            <td>${status.count}</td>
+                            <td>${act.actorName}</td>
+                            <td>${act.actorName}</td>
+                            <td>${act.actorName} ~ ${act.actorName}</td>
+                            <td>
+                                <button type="button" class="muscNoCheck"
+                                        onclick="location.href ='/goUpdateMusc/${musc.muscNo}'">수정
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="muscNoCheck"
+                                        onclick="location.href ='/doDeleteMusc/${musc.muscNo}'">삭제
+                                </button>
+                            </td>
                         </tr>
                     </c:forEach>
                     </tbody>
@@ -51,6 +65,7 @@
             </div>
         </div>
     </div>
+
     <!-- BOTTOM -->
     <jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true'/>
 

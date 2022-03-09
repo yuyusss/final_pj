@@ -88,7 +88,7 @@
         <div class="card-body">
             <h4 class="card-title">Actor</h4>
             <p class="card-description">
-                <a href="#">[ Update Actor ]</a>
+                <a href="/adminActor">[ Update Actor ]</a>
             </p>
             <div class="table-responsive">
                 <table class="table">

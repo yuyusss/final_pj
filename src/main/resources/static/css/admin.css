@@ -60,6 +60,7 @@
     vertical-align: top;
     border-color: #dee2e6;
     margin-bottom: 0;
+    font-family: GowunDodum-Regular, serif;
 }
 
 .table-responsive > .table > thead{
@@ -93,99 +94,4 @@
 .table-responsive > .table button{
     width: 60px;
     height: 40px;
-}
-
-
-
-.adminCRUD {
-    padding: 20px;
-    margin-bottom: 30px;
-}
-
-#adminBtn {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-}
-
-#adminBtn button {
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.adminSubTitle {
-    font-size: 30px;
-    font-family: "Roboto Thin", monospace;
-    padding: 20px;
-}
-
-details {
-    margin-bottom: 20px;
-}
-
-details > summary {
-    background: #000000;
-    color: #fff;
-    padding: 10px;
-    outline: 0;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.5s;
-    text-align: left;
-    box-shadow: 1px 1px 2px gray;
-    height: 30px;
-    line-height: 30px;
-}
-
-details > summary::-webkit-details-marker {
-    background: #444;
-    color: #fff;
-    background-size: contain;
-    transform: rotate3d(0, 0, 1, 90deg);
-    transition: transform 0.25s;
-}
-
-details[open] > summary::-webkit-details-marker {
-    transform: rotate3d(0, 0, 1, 180deg);
-}
-
-details[open] > summary {
-    background: #444;
-}
-
-details[open] > summary ~ * {
-    animation: reveal 0.5s;
-}
-
-.tpt {
-    margin: 5px 0 10px;
-    padding: 5px 10px;
-    line-height: 25px;
-    border-radius: 5px;
-    box-shadow: 1px 1px 2px gray;
-}
-
-@keyframes reveal {
-    from {
-        opacity: 0;
-        transform: translate3d(0, -30px, 0);
-    }
-    to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
-}
-
-.tpt table{
-    width: 100%;
-    text-align: left;
-}
-
-.adminInsertBtn{
-    text-align: left;
-    margin-bottom: 10px;
-}
-
-.adminInsertBtn button{
-    margin-right: 27px;
 }

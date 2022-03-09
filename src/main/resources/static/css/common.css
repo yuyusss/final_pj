@@ -10,13 +10,13 @@
     position: relative;
     width: 1200px;
     margin: 0 auto;
-    font-family: GowunDodum-Regular, serif;
+    /*font-family: GowunDodum-Regular, serif;*/
 }
 
 #chatBtn{
     position: fixed;
     z-index: 999;
-    right: 170px;
+    right: 120px;
     bottom: 20px;
 }
 

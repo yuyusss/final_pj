@@ -121,7 +121,7 @@ public class detailPageController {
 		
 		if( insertFlag == 1 )  {
 			
-			result = "redirect:/adminPage";
+			result = "redirect:/adminMusical";
 		}
 		
 		
