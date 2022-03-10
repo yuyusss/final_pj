@@ -18,6 +18,7 @@
 	<script src="<c:url value='/js/boardmenu.js'/>"></script>
 </head>
 <body>
+<%--수정 test--%>
 
 <!-- 전체 컨텐츠 -->
 <div id="wrap">
