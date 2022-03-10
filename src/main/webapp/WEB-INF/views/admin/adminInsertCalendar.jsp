@@ -34,7 +34,7 @@
 					<tr>
 						<th>일정 상세정보</th>
 						<td>
-							<input type="text" name="calDetail" id="calDetail" maxlength="30" placeholder="상세정보를 등록하세요">
+							<input type="text" name="calDetail" id="calDetail" maxlength="30" placeholder="상세정보를 입력하세요">
 						</td>
 					</tr>
 					<tr>
