@@ -27,7 +27,7 @@
         <div class="card-body">
             <h4 class="card-title">Actor</h4>
             <p class="card-description">
-                <a href="/insertActor">[ Add Actor ]</a>
+                <a href="/insertActor">[ 배우 등록 ]</a>
             </p>
             <div class="table-responsive">
                 <table class="table">
