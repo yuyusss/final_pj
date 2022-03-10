@@ -47,4 +47,8 @@
     <update id="updateMember" parameterType="com.project.board.model.MusicalVO">
         UPDATE member SET memId = #{memId}, memPw = #{memPw}, memEmail = #{memEmail}, memPhone = #{memPhone}, genre = #{genre}
     </update>
+    
+    <select id="getMember" resultType="com.project.board.model.MemberVO" parameterType="string">
+       	select * from member WHERE memId=#{memId}
+    </select>
 </mapper>
