@@ -1,92 +1,108 @@
-
-.adminCRUD {
-    padding: 20px;
-    margin-bottom: 30px;
-}
-
-#adminBtn {
+.card {
+    position: relative;
     display: flex;
-    justify-content: center;
-    padding: 20px;
-}
-
-#adminBtn button {
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.adminSubTitle {
-    font-size: 30px;
-    font-family: "Roboto Thin", monospace;
-    padding: 20px;
-}
-
-details {
+    flex-direction: column;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #e3e3e3;
+    border-radius: 20px;
+    margin-top: 10px;
     margin-bottom: 20px;
 }
 
-details > summary {
-    background: #000000;
-    color: #fff;
-    padding: 10px;
-    outline: 0;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.5s;
-    text-align: left;
-    box-shadow: 1px 1px 2px gray;
-    height: 30px;
-    line-height: 30px;
+
+.card-body{
+    padding: 1.5rem 1.5rem;
+    flex: 1 1 auto;
 }
 
-details > summary::-webkit-details-marker {
-    background: #444;
-    color: #fff;
-    background-size: contain;
-    transform: rotate3d(0, 0, 1, 90deg);
-    transition: transform 0.25s;
+.card-title{
+    color: #010101;
+    margin-bottom: 1.2rem;
+    text-transform: capitalize;
+    font-size: 1.125rem;
+    font-weight: 600;
 }
 
-details[open] > summary::-webkit-details-marker {
-    transform: rotate3d(0, 0, 1, 180deg);
+.card-description{
+    margin-bottom: 0.875rem;
+    font-weight: 400;
+    color: #76838f;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    text-decoration: none;
 }
 
-details[open] > summary {
-    background: #444;
+.card-description a:hover{
+    color: black;
+    font-weight: bold;
 }
 
-details[open] > summary ~ * {
-    animation: reveal 0.5s;
+.table-responsive{
+    overflow-x: auto;
 }
 
-.tpt {
-    margin: 5px 0 10px;
-    padding: 5px 10px;
-    line-height: 25px;
-    border-radius: 5px;
-    box-shadow: 1px 1px 2px gray;
-}
-
-@keyframes reveal {
-    from {
-        opacity: 0;
-        transform: translate3d(0, -30px, 0);
-    }
-    to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
-}
-
-.tpt table{
+.table-responsive > .table{
+    caption-side: bottom;
+    border-collapse: collapse;
+    --bs-table-bg: transparent;
+    --bs-table-accent-bg: transparent;
+    --bs-table-striped-color: #212529;
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+    --bs-table-active-color: #212529;
+    --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+    --bs-table-hover-color: #212529;
+    --bs-table-hover-bg: #eaeaf1;
     width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    vertical-align: top;
+    border-color: #dee2e6;
+    margin-bottom: 0;
+    font-family: GowunDodum-Regular, serif;
 }
 
-.adminInsertBtn{
-    text-align: left;
-    margin-bottom: 10px;
+.table-responsive > .table > thead{
+    vertical-align: bottom;
 }
 
-.adminInsertBtn button{
-    margin-right: 27px;
+.table-responsive > .table > thead, tbody, tfoot, tr, td, th{
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+}
+
+.table-responsive > .table thead th{
+    border-top: 0;
+    border-bottom-width: 1px;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.table-responsive > .table th, .table-responsive > .table td{
+    vertical-align: middle;
+    line-height: 1;
+    white-space: nowrap;
+    padding: 1.125rem 1.375rem;
+}
+
+.table-responsive > .table > tbody{
+    vertical-align: inherit;
+}
+
+.table-responsive > .table button{
+    width: 60px;
+    height: 40px;
+}
+
+.table-responsive > .table  input{
+    height: 30px;
+    /* border: none; */
+    border: 0.5px solid #0101;
+    width: 100%;
+    text-align: center;
+    font-family: GowunDodum-Regular, serif;
+    font-size: 0.875rem;
+    overflow: auto;
 }

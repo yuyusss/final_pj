@@ -21,5 +21,7 @@ public interface IMusicalDAO {
 
 	public ArrayList<MusicalVO> getMusicalAllList();
 
+	public int deleteMusical(String muscNo);
+
 	
 }
