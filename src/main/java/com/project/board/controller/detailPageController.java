@@ -2,7 +2,6 @@ package com.project.board.controller;
 
 import java.util.ArrayList;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import com.project.board.model.HallVO;
@@ -13,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.project.board.model.ActorCastVO;
@@ -36,21 +34,7 @@ public class detailPageController {
 	 * @RequestMapping("/favorRecommand") public String favorRecommand() { return
 	 * "/layout/recommand"; }
 	 */
-	
-	@RequestMapping("/adminPage") 
-    public String adminPage(Model model) {
 
-		ArrayList<MusicalVO> musicalList = service.getAllMusical();
-		model.addAttribute("musicalList", musicalList);
-
-		ArrayList<HallVO> seoulHallList = hallService.listHallByArea("seoul");
-		model.addAttribute("seoulHallList", seoulHallList);
-
-		ArrayList<VoteVO> actorList = mediaService.listAllActor();
-		model.addAttribute("actorList", actorList);
-
-		return "/DetailView/adminPage";
-    }
 	
 	// 뮤지컬 등록페이지로 이동
 	@RequestMapping("/insertMusc") 
@@ -137,7 +121,7 @@ public class detailPageController {
 		
 		if( insertFlag == 1 )  {
 			
-			result = "redirect:/adminPage";
+			result = "redirect:/adminMusical";
 		}
 		
 		

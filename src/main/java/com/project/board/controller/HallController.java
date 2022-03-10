@@ -47,10 +47,12 @@ public class HallController {
 		
 		return "hall/hallInsertForm";
 	}
+
+	// 데이터 추가하면 홀 메인페이지로 가게 해둠 -> 관리자 페이지의 홈으로 가게
 	@RequestMapping("/hall/inserthall") //추가 페이지
 	public String inserthall(HallVO hallVo ) {
 		service.inserthall(hallVo );
-		return "hall/hallInsertForm";
+		return "redirect:./hall";
 	}
 	
 	@RequestMapping("/hall/updateform/{no}") // 수정할페이지 번호

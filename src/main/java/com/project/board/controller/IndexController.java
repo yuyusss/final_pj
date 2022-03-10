@@ -144,8 +144,9 @@ public class IndexController {
     // 일정 저정하는 부븐 어떻게 처리할건지 정하기
     @RequestMapping(value = "/ticketPlan", method = RequestMethod.GET)
     @ResponseBody
-    public List<Map<String, Object>> ticketPlan() throws Exception{
+    public List<Map<String, Object>> ticketPlan(Model model) throws Exception{
         List<Map<String, Object>> list = calendarService.calenList();
+        model.addAttribute("calenList", list);
 
         JSONObject jsonObj = new JSONObject(); // 중괄호
         JSONArray jsonArr = new JSONArray(); // 대괄호
