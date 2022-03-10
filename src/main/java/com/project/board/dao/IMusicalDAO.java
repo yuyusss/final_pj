@@ -23,5 +23,9 @@ public interface IMusicalDAO {
 
 	public int deleteMusical(String muscNo);
 
+	public int muscNoCheck(String muscNo);
+
+	public int updateMusical(MusicalVO musicalVO);
+
 	
 }

@@ -55,14 +55,14 @@
 				<summary>배우</summary>
 				<div class="tpt">
 					<div class="adminInsertBtn">
-						<button type="button" class="muscNoCheck" onclick="location.href ='/insertMusc'">등록</button>
+						<button type="button" class="muscNoCheck" onclick="location.href ='/goInsertActor'">등록</button>
 					</div>
 
 					<table>
 						<tr>
 							<th>번호</th>
 							<th>배우 이름</th>
-							<th>수정</th>
+							<!-- <th>수정</th> -->
 							<th>삭제</th>
 							<th></th>
 						</tr>
@@ -70,8 +70,8 @@
 							<tr>
 								<td>${status.count}</td>
 								<td>${act.actorName}</td>
-								<td><button type="button" class="muscNoCheck" onclick="location.href ='/insertMusc'">수정</button></td>
-								<td><button type="button" class="muscNoCheck" onclick="location.href ='/insertMusc'">삭제</button></td>
+								<!-- <td><button type="button" class="muscNoCheck" onclick="location.href ='/insertMusc'">수정</button></td> -->
+								<td><button type="button" class="muscNoCheck" onclick="location.href ='/doDeleteActor/${act.actorNo}'">삭제</button></td>
 							</tr>
 						</c:forEach>
 					</table>
