@@ -21,10 +21,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.project.board.model.BoardVO;
-
+import com.project.board.model.MemberVO;
 import com.project.board.model.ReplyVO;
 
 import com.project.board.service.BoardService3;
+import com.project.board.service.MemberService;
 
 @Controller
 public class BoardController3 {
@@ -32,6 +33,9 @@ public class BoardController3 {
 	    private BoardService3 s;
 		private File none;
 	    
+		@Autowired
+	    MemberService memberService;
+		
 	    @RequestMapping(value="/board3", method=RequestMethod.GET)
 	    public String board() {
 	    	
@@ -122,7 +126,14 @@ public class BoardController3 {
 		 */
 
 	    @RequestMapping(value="/view3", method=RequestMethod.GET)
-	    public String view3() {
+	    public String view3(Model model,HttpSession session) {
+	    	
+	    	String sid=(String)session.getAttribute("sid1");
+	        System.out.println(sid);
+	        MemberVO memberList = memberService.getMember(sid);
+			model.addAttribute("memberList", memberList);
+	        
+	    	
 	        return "board/view3";
 	    }
 		
