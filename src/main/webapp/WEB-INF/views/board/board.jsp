@@ -67,13 +67,14 @@
 				$.ajax({
 					url : "boardList",
 					success : function(result) {
+						console.log("boardList");
 						var html = "";
 						result.forEach(function(item) {
 							html += "<tr> <td>"+item.idx+"</td><td>"+item.memId+"</td><td><a style='text-decoration:none;' href = 'view?idx=" + item.idx
 									+ "'>" + item.title + "</a></td><td>"+item.contents+"</td><td>"+item.hits+"</td><td>"+item.writedate+"</td>"
 						})
 						$("#listArea").append(html)
-						$('#example').DataTable();
+						$('#example').DataTable();	
 					}
 				});
 				$("#deleteBtn").click(function() {

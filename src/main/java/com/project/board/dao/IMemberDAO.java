@@ -12,4 +12,5 @@ public interface IMemberDAO {
 	String memIdCheck(String memId);
 	void signUp(MemberVO vo);
 	ArrayList<MemberVO> getAllMember();
+	MemberVO getMember(String sid);
 }
