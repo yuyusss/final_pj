@@ -8,6 +8,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="<c:url value='/css/board.css'/>" rel="stylesheet" type="text/css">
+<link href="<c:url value='/css/board1.css'/>" rel="stylesheet" type="text/css">
+<link href="<c:url value='/css/board2.css'/>" rel="stylesheet" type="text/css">
 <script src="<c:url value='/js/replycheck.js'/>"></script>
 </head>
 <jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true' />
