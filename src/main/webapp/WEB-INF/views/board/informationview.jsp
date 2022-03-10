@@ -159,7 +159,7 @@ function drawReply(replys) {
 			$('#buttenArea').css("display", "none");
 		}
 		
-	  $("#image").append('<img src="/images/'+result.image+'"  style="width: 400px;" onerror="this.style.display=\'none\';" />');
+		$("#image").append('<img src="<c:url value="/images1/'+result.image+'"/>"  style="width: 400px;" onerror="this.style.display=\'none\';" />');
 	  $("#title").text(result.title);
 	  $("#memID").text(result.memID)
 	  $("#contents").text(result.contents);

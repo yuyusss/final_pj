@@ -48,7 +48,7 @@
                 <c:if test="${status.index % 5 == 0 }"><tr></c:if>
                 <th>
                     <a href="<c:url value='/hall/detailView/${hall.no}'/>">
-                        <img src="./images/${hall.name }.jpg">
+                        <img src="./images/${hall.name }.JPG">
                     </a>
                 </th>
                 <c:if test="${status.index % 5 == 4 }"></tr></c:if>
@@ -65,7 +65,7 @@
                 <c:if test="${status.index % 5 == 0 }"><tr></c:if>
                 <th>
                     <a href="<c:url value='/hall/detailView/${hall.no}'/>">
-                        <img src="./images/${hall.name }.jpg">
+                        <img src="./images/${hall.name }.JPG">
                     </a>
                 </th>
                 <c:if test="${status.index % 5 == 4 }"></tr></c:if>
