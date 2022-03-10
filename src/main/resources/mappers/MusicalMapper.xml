@@ -18,7 +18,7 @@
     </select>
 
     <select id="getAllMusical" resultType="com.project.board.model.MusicalVO" parameterType="string">
-        select * from musical order by musicalVote desc
+        select * from musical 
     </select>
     
     <select id="getMusicalAllList" resultType="com.project.board.model.MusicalVO" parameterType="string">
