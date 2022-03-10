@@ -116,7 +116,7 @@
         <div class="card-body">
             <h4 class="card-title">Calendar</h4>
             <p class="card-description">
-                <a href="#">[ Update Ticketing Plan ]</a>
+                <a href="/adminCalendar">[ Update Ticketing Plan ]</a>
             </p>
             <div class="table-responsive">
                 <table class="table">
@@ -129,12 +129,12 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${calenList}" var="cal" begin="0" end="2">
+                    <c:forEach items="${planList}" var="plan" begin="0" end="2">
                         <tr>
-                            <td>${cal.calNo}</td>
-                            <td>${cal.calTitle}</td>
-                            <td>${cal.calContent}</td>
-                            <td>${cal.calStart}</td>
+                            <td>${plan.calNo}</td>
+                            <td>${plan.calTitle}</td>
+                            <td>${plan.calDetail}</td>
+                            <td>${plan.calStart}</td>
                         </tr>
                     </c:forEach>
                     </tbody>
