@@ -11,7 +11,7 @@ import com.project.board.service.ChatbotService;
 
 
 @Controller
-public class APIController { 
+public class APIController {
 	
 	@Autowired
 	private ChatbotService chatService;
