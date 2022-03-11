@@ -57,7 +57,10 @@
 				<td>후기 : </td><td><textarea id="review" name="review"> ${ticketbook.review}  </textarea></td>
 			</tr>
 		</table>
-			<div id = "button"><input type="submit" value="수정완료"><input type="reset" value="취소"></div>
+			<div id = "button"><input type="submit" value="수정완료">
+			<button type="button" onclick="location.href='/ticketDetailView'" class = "reset">취소</button>
+			<button type="button" onclick="location.href='/clovaOCRForm'" class = "addbtn2">티켓사진으로 추가</button>
+			</div>
 		</form>
 		<!-- 바텀 -->
 		<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true'/>

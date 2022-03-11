@@ -34,31 +34,34 @@
 		 		<td>아이디 : </td> <td><input type="text" id="memID" name="memID" value="${sessionScope.sid1}" readonly><br></td>
 		 	</tr>
 		 	<tr>
-				<td>공연 제목 : </td><td><input type="text" id="subject" name="subject" ><br></td>
+				<td>공연 제목 : </td><td><input type="text" id="subject" name="subject" value="${ticketVO.subject}"><br></td>
 			</tr>
 			<tr>	
-				<td>공연 날짜 : </td><td><input type="text" id="date" name="date" ><br></td>
+				<td>공연 날짜 : </td><td><input type="text" id="date" name="date" value="${ticketVO.date}"><br></td>
 			</tr>
 			<tr>
-				<td>공연 시간 : </td><td><input type="text" id="time" name="time" ><br></td>
+				<td>공연 시간 : </td><td><input type="text" id="time" name="time" value="${ticketVO.time}" ><br></td>
 			</tr>
 			<tr>
-				<td>장소 : </td><td><input type="text" id="thater" name="theater" ><br></td>
+				<td>장소 : </td><td><input type="text" id="thater" name="theater"	 value="${ticketVO.theater}" ><br></td>
 			</tr>
 			<tr>
-				<td>좌석 : </td><td><input type="text" id="seat" name="seat" ><br></td>
+				<td>좌석 : </td><td><input type="text" id="seat" name="seat" value="${ticketVO.seat}"><br></td>
 			</tr>	
 			<tr>
-				<td>캐스팅 : </td><td><input type="text" id="casting" name="casting" ><br></td>
+				<td>캐스팅 : </td><td><input type="text" id="casting" name="casting" placeholder="※직접 입력해주세요."><br></td>
 			</tr>
 			<tr>	
-				<td>가격 : </td><td><input type="text" id="price" name="price" ><br></td>
+				<td>가격 : </td><td><input type="text" id="price" name="price" value="${ticketVO.price}" ><br></td>
 			</tr>	
 			<tr>
-				<td>후기 : </td><td><textarea id="review" name="review">   </textarea></td>
+				<td>후기 : </td><td><textarea id="review" name="review" >   </textarea></td>
 			</tr>
 		</table>
-			<div id = "button"><input type="submit" value="등록"><input type="reset" value="취소"></div>
+			<div id = "button"><input type="submit" value="등록">
+			<button type="button" onclick="location.href='/ticketDetailView'" class = "reset">취소</button>
+			<button type="button" onclick="location.href='/clovaOCRForm'" class = "addbtn2">티켓사진으로 추가</button>
+			</div>
 		</form>
 		
 			<!-- 바텀 -->

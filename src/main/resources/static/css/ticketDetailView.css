@@ -67,6 +67,14 @@
 	color : #c572d2;
 	background-color : white;
 }
+.addbtn2 {
+	margin-top : 15px;
+	margin-left : 5px;
+	border-radius : 8px;
+	border :2px solid #c572d2;
+	color : #c572d2;
+	background-color : white;
+}
 .editbtn {
 	 border: 2px solid white;
     border-radius: 8px;

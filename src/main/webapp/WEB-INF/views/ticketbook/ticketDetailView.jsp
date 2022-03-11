@@ -28,7 +28,7 @@
 </script> 
 	</head>
 	
-	<body></body>
+	<body>
 	<div id="wrap">
     <!-- 탑 -->
     <jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true'/>
@@ -37,7 +37,8 @@
 
     <div><h1>${sessionScope.sid1} 님의 티켓북</h1></div>
 	<button type="button" onclick="location.href='/ticketbook/ticketInsertForm'" class = "addbtn">티켓추가</button>
-
+	
+	
 
     <%--티켓 한 개의 이미지 보이는 div -> forEach로 반복 --%>
     <div class="ticketAll">
@@ -71,7 +72,7 @@
                             		 <div>
 							 			<button type="button" onclick="location.href='/ticketbook/updateticketform/${ticketbook.no}'" class="editbtn">티켓수정</button>
                            			 </div>
-                           			 <a href="/clovaOCRForm">OCR</a><br><br>
+                           			 
                             	</div>
                             </div>
                         </td>
@@ -90,5 +91,5 @@
     <jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true'/>
 
 </div>
-
+</body>
 </html>

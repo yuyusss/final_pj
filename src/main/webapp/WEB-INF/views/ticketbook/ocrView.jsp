@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+ 	  pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -11,10 +11,13 @@
 		
 	</head>
 	<body>
+	<div id = "warp">
+	<!-- 탑 -->
+    <jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true'/>
 		<!--  파일 업로드 -->
-		<h3>OCR : 텍스트 추출</h3>
+		<h3>촬영한 티켓사진 업로드</h3>
 		<form id="ocrForm" enctype="multipart/form-data">
-			파일 : <input type="file" id="uploadFile" name="uploadFile"> 
+			사진 : <input type="file" id="uploadFile" name="uploadFile"> 
 			<input type="submit" value="결과 확인">		
 		</form>
 		<br><br>
@@ -28,7 +31,11 @@
 		<div id="image"></div>
 		
 		<br><br>
-		<a href="/">index 페이지로 이동</a>
+		<a href="/ticketDetailView">티켓리스트로 이동</a>
 		
+	<!-- 바텀 -->
+    <jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true'/>
+	</div>
 	</body>
+	
 </html>
