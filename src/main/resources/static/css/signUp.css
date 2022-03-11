@@ -86,7 +86,7 @@
     margin: 3px;
 }
 
-#form textarea, #form input[type=text], #form input[type=password] {
+#form textarea, #form input[type=text], #form input[type=password], #form input[type=number], #form input[type=date] {
     width: 320px;
     height: 44px;
     padding: 0 15px;
@@ -103,7 +103,7 @@
     margin-bottom: 10px;
 }
 
-#form input[type=text]:focus, #form input[type=password]:focus{
+#form input[type=text]:focus, #form input[type=password]:focus, #form input[type=number]:focus, #form input[type=date]:focus {
     border : 2px solid blue;
 }
 

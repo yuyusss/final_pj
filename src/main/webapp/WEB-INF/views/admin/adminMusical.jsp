@@ -42,7 +42,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${musicalList}" var="musc" begin="0" end="4">
+                    <c:forEach items="${musicalList}" var="musc">
                         <tr>
                             <td>${musc.muscNo}</td>
                             <td>${musc.muscName}</td>

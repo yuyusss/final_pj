@@ -39,10 +39,27 @@
   	</insert> 
 
 	<delete id="deleteMusical" parameterType="string">
-		DELETE FROM musical WHERE  muscNo = #{muscNo};
+		DELETE FROM musical WHERE  muscNo = #{muscNo}
 	</delete>
-
-
+	
+	<select id="muscNoCheck" parameterType="string" resultType="integer">
+		SELECT count(muscNo) FROM musical WHERE muscNo = #{muscNo}
+	</select>
+	
+	<update id="updateMusical" parameterType="com.project.board.model.MusicalVO">
+        UPDATE musical 
+        SET muscNo = #{muscNo}, muscName = #{muscName}, muscHashtag = #{muscHashtag},
+        			 muscPlace = #{muscPlace}, muscPlaceLink = #{muscPlaceLink},
+        			 muscStartDate = #{muscStartDate}, muscEndDate = #{muscEndDate}, muscReqTime = #{muscReqTime},
+        			 muscSynop = #{muscSynop}, muscGenre = #{muscGenre}, muscImg = #{muscImg}, 
+        			 muscInfo_1 = #{muscInfo_1}, muscInfo_2 = #{muscInfo_2}, muscInfo_3 = #{muscInfo_3}, 
+        			 muscYoutube = #{muscYoutube}, location = #{location} WHERE muscNo = #{muscNo}
+    </update>
+	
+	<!-- Actor -->
+	
+	
+	
 </mapper>
   
   
