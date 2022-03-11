@@ -2,7 +2,6 @@ package com.project.board.controller;
 
 import java.util.ArrayList;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import com.project.board.model.HallVO;
@@ -37,22 +36,7 @@ public class detailPageController {
 	 * @RequestMapping("/favorRecommand") public String favorRecommand() { return
 	 * "/layout/recommand"; }
 	 */
-	
-	@RequestMapping("/adminPage") 
-    public String adminPage(Model model) {
-
-		ArrayList<MusicalVO> musicalList = service.getAllMusical();
-		model.addAttribute("musicalList", musicalList);
-
-		ArrayList<HallVO> seoulHallList = hallService.listHallByArea("seoul");
-		model.addAttribute("seoulHallList", seoulHallList);
-
-		ArrayList<VoteVO> actorList = mediaService.listAllActor();
-		model.addAttribute("actorList", actorList);
-
-		return "/DetailView/adminPage";
-    }
-	
+		
 	// 뮤지컬 등록페이지로 이동
 	@RequestMapping("/insertMusc") 
     public String insertMusc() { 
@@ -144,10 +128,6 @@ public class detailPageController {
 	}
 	
 	
-	
-	
-	
-	
 	// 뮤지컬 등록 페이지에서 INSERT 버튼을 수행했을 시.
 	@RequestMapping("/doInsertMusc")
 	public String doInsertMusc(MusicalVO MusicalVO, HttpSession session) {
@@ -173,8 +153,6 @@ public class detailPageController {
 		
 		return result;
 	}
-	
-	
 	
 	
 	// Admin 페이지에서 삭제버튼을 수행 했을 시
