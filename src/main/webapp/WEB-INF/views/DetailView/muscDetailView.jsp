@@ -32,7 +32,11 @@
 									  "width=520, height=570, left=400, top=50, status=no, scrollbars=no, resizable=no");
 			}
 		</script>
-	    
+	    <style type="text/css">
+	    	.muscAll {
+			  color : rgb(88, 100, 144);
+			}
+	    </style>
 	    
 	    
 	</head>
@@ -44,13 +48,14 @@
 		<section class="product-details spad">
 	      <div class="container">
 	      	<!-- <div class="col-lg-6"> -->
-		       	<div class="product__details__text">
+	      	<div style="background-color: rgb(205, 210, 225);">
+		       	<div class="product__details__text muscAll" style="padding: 35px;">
 		               <h3>${musicalData.muscName} </h3>
-		               <span>#${musicalData.genreName} ${musicalData.muscHashtag} </span>
+		               <span style="font-weight: bold;">#${musicalData.genreName} ${musicalData.muscHashtag} </span>
 		         <div class="product__details__date">${musicalData.muscStartDate} ~ ${musicalData.muscEndDate} | <a href="${musicalData.muscPlaceLink}" target="_blank">${musicalData.muscPlace}</a></div>
-		         </div>
+		         </div></div>
 	         <!-- </div> -->
-	          <div class="row">
+	          <div class="row" style="padding-top: 20px; padding-bottom: 70px;">
 	              <div class="col-lg-6">
 	
 	                  <div class="product__details__pic">
@@ -162,7 +167,7 @@
 	      </div><!-- container -->
 	      </section>
 	    
-	    <br><br><br><br><br>  
+	    <br><br>  
 	    <!-- BOTTOM -->
 		<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true'/>
 	</div>

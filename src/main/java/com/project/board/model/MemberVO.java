@@ -9,6 +9,14 @@ public class MemberVO {
 	private String memAddress;
 	private String memAddressDetail;
 	private String genre;
+	private int voteA;
+	
+	public int getVoteA() {
+		return voteA;
+	}
+	public void setVoteA(int voteA) {
+		this.voteA = voteA;
+	}
 	
 	public String getMemId() {
 		return memId;
