@@ -6,14 +6,14 @@
 <head>
     <title>MUTRODUCE</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <link href="<c:url value='/fullcalendar-5.10.1/lib/main.css' />" rel="stylesheet" />
+
     <link href="<c:url value='/css/menu.css'/>" rel="stylesheet" type="text/css">
     <link href="<c:url value='/css/common.css'/>" rel="stylesheet" type="text/css">
     <link href="<c:url value='/css/index.css'/>" rel="stylesheet" type="text/css">
-    <link href="<c:url value='/css/calendar.css'/>" rel="stylesheet" type="text/css">
+
     <script src="<c:url value='/fullcalendar-5.10.1/lib/main.js' />"></script>
     <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
-    <script src="<c:url value='/js/calendar.js'/>"></script>
+
     <script src="<c:url value='/js/menu.js' />"></script>
     <script src="<c:url value='/js/boardmenu.js'/>"></script>
 	
