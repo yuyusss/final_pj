@@ -36,9 +36,9 @@ input::-webkit-input-placeholder {
 }
 
 #chatHeader{
-	padding-bottom: 35px;
-	border-bottom: 4px solid #95a6b4;
-	background-color: skyblue;
+	padding-bottom: 40px;
+	background-color: #eee;
+	width: 450px;
 }
 
 #btnClose {
@@ -58,9 +58,10 @@ input::-webkit-input-placeholder {
     position: relative;
     top: 25px;
     left: -82px;
-    font-size: 15px;
     line-height: 24px;
     max-width:234px;
+    font-family:Nanum Gothic;
+    font-size: 15px;
 }
 
 
@@ -68,8 +69,9 @@ input::-webkit-input-placeholder {
 	display: block;
 	height: 25px;
 	line-height: 18px;
-	background:#fef01b; 
+	background: #009ffd;
 	margin-top: 10px;
+	color: white;
 }
 
 #bot_profile {
@@ -78,12 +80,13 @@ input::-webkit-input-placeholder {
 	height: 30px;
 	text-align:center;
 	font-size: 22px;
-	background-color: purple;
+	color:white;
+	background-color: black;
 	margin-right: 10px;
 }
  
 #bot_name{
-	background-color: #9bbbd4;
+	background-color: #eee;
 	width: 74px;
     height: 20px;
     font-size: 10px;
@@ -92,23 +95,29 @@ input::-webkit-input-placeholder {
 
 #chatBox {
 	height: 100%;
-    width: 419px;
+    width: 420px;
+    overflow-x: hidden;
 	overflow-y:scroll;
 	padding:10px 15px;
-	background:#9bbbd4;
+	background:#eee;
+	text-align: left;
 } 	 
-
+  
 #message {
 	width: 368px;
 	height: 35px;
+	border-right: 1px solid black;
+	border-left : none;
+	border-top : none;
+	border-bottom : none;
+	float:left;
 }
 
 #submit {
 	float: right;
 	height: 35px;
 	width: 82px;
-	border : 1px solid black;
-	border-left: none;
+	border : 0px solid black;
 	background: #fff;
 }
 
@@ -116,6 +125,7 @@ input::-webkit-input-placeholder {
 	color : red;
 	background : white;
 	border: 1px solid red;
+	border-left:none;
 	transition : 0.5s;	 
 }
 
@@ -133,7 +143,7 @@ input::-webkit-input-placeholder {
 
 #in {
 	width: 420px;
-    background: #9bbbd4;
+    background: #eee;
     position: relative;
     margin-bottom: 0px;
     display: block;
