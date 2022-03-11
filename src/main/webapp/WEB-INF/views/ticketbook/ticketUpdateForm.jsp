@@ -63,7 +63,7 @@
 			</div>
 		</form>
 		<!-- 바텀 -->
-		<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true'/> 
+		<jsp:include page="/WEB-INF/views/layout/bottom.jsp" flush='true'/>
 	</div>
 		
 		 <script>
