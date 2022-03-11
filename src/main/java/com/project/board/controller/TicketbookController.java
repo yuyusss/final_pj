@@ -145,7 +145,7 @@ public class TicketbookController {
 		return "ticketbook/ocrView";
 	}
 	
-	@RequestMapping("/clovaOCR")
+	@RequestMapping("/clovaOCR") 
 	public String  faceRecogCel(@RequestParam("uploadFile") MultipartFile file, Model model) {		
 		String result = "";
 		
