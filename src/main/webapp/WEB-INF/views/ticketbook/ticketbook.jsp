@@ -14,27 +14,37 @@
 	<div id = "wrap">
 		<!-- 탑 -->
 		 <jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true'/>
-		
+
+		<div class="bannerTitle">
+			<div class="bannerTitle_2">
+				<span>My Page</span>
+			</div>
+		</div>
+
 		<!-- 티켓북 -->
 		<div class="ticketBookMain">
 			<div class="MyPage">
 				<div class="MyPageContent">
 					<div class="userInfo">
-						<div>프로필 사진(생기면 넣을 것)</div>
-						<div>user 아이디: ${sid.memId}</div>
-						<div><button>회원정보 수정</button></div>
-					</div>
-					<div class="user_ticket_Info">
-						<div>티켓북 N장</div>
-						<div>티켓 N장</div>
-						<div>찜 N개</div>
+						<table class="admin_table">
+							<tr>
+								<td>프로필 사진</td>
+								<td>${sid.memId}님</td>
+								<td><button>회원정보 수정</button></td>
+							</tr>
+							<tr>
+								<td>티켓북 N권</td>
+								<td>티켓 N개</td>
+								<td>총 공연시간 N시간</td>
+							</tr>
+						</table>
 					</div>
 				</div>
 				<div class="ticketBook">
-					<c:forEach begin="0" end="2">
+					<c:forEach begin="0" end="0">
 						<div class="ticketBookContent" >
 							<img src="<c:url value="/images/ticketBook.png" />">
-							<h3><a href="<c:url value="/ticketDetailView/${ticketbook.no }"/>">티켓북 이름</a></h3>
+							<h3><a href="<c:url value="/ticketDetailView/${ticketbook.no }"/>">티켓북${ticketbook.no}</a></h3>
 						</div>
 					</c:forEach>
 					<%--상세 티켓 들어올 자리

@@ -42,9 +42,9 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${musicalList}" var="musc" begin="0" end="4">
+                    <c:forEach items="${musicalList}" var="musc"  varStatus="status">
                         <tr>
-                            <td>${musc.muscNo}</td>
+                            <td>${status.count}</td>
                             <td>${musc.muscName}</td>
                             <td>${musc.muscPlace}</td>
                             <td>${musc.muscStartDate} ~ ${musc.muscEndDate}</td>

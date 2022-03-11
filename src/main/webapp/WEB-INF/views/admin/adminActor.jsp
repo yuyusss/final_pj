@@ -42,12 +42,12 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${actorList}" var="act" begin="0" end="4" varStatus="status">
+                    <c:forEach items="${actorList}" var="act" varStatus="status">
                         <tr>
                             <td>${status.count}</td>
                             <td>${act.actorName}</td>
                             <td>${act.actorName}</td>
-                            <td>${act.actorName} ~ ${act.actorName}</td>
+                            <td>${act.actorName}님의 출연작품}</td>
                             <td>
                                 <button type="button" class="muscNoCheck"
                                         onclick="location.href ='/goUpdateMusc/${musc.muscNo}'">수정

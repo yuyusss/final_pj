@@ -20,155 +20,54 @@
             <span>Admin Page</span>
         </div>
     </div>
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Member</h4>
-            <p class="card-description">
-                <a href="/adminMember">[ Update Member ]</a>
-            </p>
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>번호</th>
-                        <th>뮤지컬 제목</th>
-                        <th>공연 장소</th>
-                        <th>공연 기간</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <c:forEach items="${musicalList}" var="musc" begin="0" end="2">
-                        <tr>
-                            <td>${musc.muscNo}</td>
-                            <td>${musc.muscName}</td>
-                            <td>${musc.muscPlace}</td>
-                            <td>${musc.muscStartDate} ~ ${musc.muscEndDate}</td>
-                        </tr>
-                    </c:forEach>
-                    </tbody>
-                </table>
+    <div class="adminContent">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Member</h4>
+                <p class="card-description">
+                    <a href="/adminMember">[ Update Member ]</a>
+                </p>
             </div>
         </div>
-    </div>
 
-    <%-- Musical --%>
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Musical</h4>
-            <p class="card-description">
-                <a href="/adminMusical">[ Update Musical ]</a>
-            </p>
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>번호</th>
-                        <th>뮤지컬 제목</th>
-                        <th>공연 장소</th>
-                        <th>공연 기간</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <c:forEach items="${musicalList}" var="musc" begin="0" end="2">
-                        <tr>
-                            <td>${musc.muscNo}</td>
-                            <td>${musc.muscName}</td>
-                            <td>${musc.muscPlace}</td>
-                            <td>${musc.muscStartDate} ~ ${musc.muscEndDate}</td>
-                        </tr>
-                    </c:forEach>
-                    </tbody>
-                </table>
+        <%-- Musical --%>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Musical</h4>
+                <p class="card-description">
+                    <a href="/adminMusical">[ Update Musical ]</a>
+                </p>
             </div>
         </div>
-    </div>
 
-    <%-- Actor --%>
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Actor</h4>
-            <p class="card-description">
-                <a href="/adminActor">[ Update Actor ]</a>
-            </p>
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>번호</th>
-                        <th>배우 이름</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <c:forEach items="${actorList}" var="act" begin="0" end="2" varStatus="status">
-                        <tr>
-                            <td>${status.count}</td>
-                            <td>${act.actorName}</td>
-                        </tr>
-                    </c:forEach>
-                    </tbody>
-                </table>
+        <%-- Actor --%>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Actor</h4>
+                <p class="card-description">
+                    <a href="/adminActor">[ Update Actor ]</a>
+                </p>
             </div>
         </div>
-    </div>
 
-    <%-- Calendar --%>
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Calendar</h4>
-            <p class="card-description">
-                <a href="/adminCalendar">[ Update Ticketing Plan ]</a>
-            </p>
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>번호</th>
-                        <th>일정</th>
-                        <th>상세 내용</th>
-                        <th>티켓팅 날짜</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <c:forEach items="${planList}" var="plan" begin="0" end="2">
-                        <tr>
-                            <td>${plan.calNo}</td>
-                            <td>${plan.calTitle}</td>
-                            <td>${plan.calDetail}</td>
-                            <td>${plan.calStart}</td>
-                        </tr>
-                    </c:forEach>
-                    </tbody>
-                </table>
+        <%-- Calendar --%>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Calendar</h4>
+                <p class="card-description">
+                    <a href="/adminCalendar">[ Update Ticketing Plan ]</a>
+                </p>
             </div>
         </div>
-    </div>
 
-    <%-- Theater --%>
+        <%-- Theater --%>
 
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Theater</h4>
-            <p class="card-description">
-                <a href="#">[ Update Theater ]</a>
-            </p>
-            <div class="table-responsive">
-                <table class="table">
-                    <tr>
-                        <th>번호</th>
-                        <th>공연장 이름</th>
-                        <th>공연장 위치</th>
-                        <th>고객센터 번호</th>
-                        <th></th>
-                    </tr>
-                    <c:forEach items="${seoulHallList}" var="hall" begin="0" end="2">
-                        <tr>
-                            <td>${hall.no}</td>
-                            <td>${hall.name}</td>
-                            <td>${hall.location}</td>
-                            <td>${hall.cus}</td>
-                        </tr>
-                    </c:forEach>
-                </table>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Theater</h4>
+                <p class="card-description">
+                    <a href="#">[ Update Theater ]</a>
+                </p>
             </div>
         </div>
     </div>
