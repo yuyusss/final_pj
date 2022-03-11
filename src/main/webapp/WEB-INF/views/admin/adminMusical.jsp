@@ -43,6 +43,7 @@
                     </thead>
                     <tbody>
                     <c:forEach items="${musicalList}" var="musc"  varStatus="status">
+
                         <tr>
                             <td>${status.count}</td>
                             <td>${musc.muscName}</td>

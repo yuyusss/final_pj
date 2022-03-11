@@ -24,9 +24,9 @@
 		callAjax(); // 입력된 값 전송
 		
 		/* 입력란 비우기*/
-		$('#message').val('');
+		$('#message').val('');  
 	});	// submit 끝
-	
+	   
 	// $.ajax()를 별도의 함수로 분리
 	function callAjax(){
 		$.ajax({

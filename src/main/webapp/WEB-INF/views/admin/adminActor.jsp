@@ -27,7 +27,7 @@
         <div class="card-body">
             <h4 class="card-title">Actor</h4>
             <p class="card-description">
-                <a href="/insertActor">[ 배우 등록 ]</a>
+                <a href="/goInsertActor">[ 배우 등록 ]</a>
             </p>
             <div class="table-responsive">
                 <table class="table">
@@ -49,13 +49,14 @@
                             <td>${act.actorName}</td>
                             <td>${act.actorName}님의 출연작품}</td>
                             <td>
+
                                 <button type="button" class="muscNoCheck"
                                         onclick="location.href ='/goUpdateMusc/${musc.muscNo}'">수정
                                 </button>
-                            </td>
+                            </td> --%>
                             <td>
                                 <button type="button" class="muscNoCheck"
-                                        onclick="location.href ='/doDeleteMusc/${musc.muscNo}'">삭제
+                                        onclick="location.href ='/doDeleteActor/${act.actorNo}'">삭제
                                 </button>
                             </td>
                         </tr>

@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.project.board.model.ActorCastVO;
@@ -35,7 +37,6 @@ public class detailPageController {
 	 * "/layout/recommand"; }
 	 */
 
-	
 	// 뮤지컬 등록페이지로 이동
 	@RequestMapping("/insertMusc") 
     public String insertMusc() { 
@@ -102,6 +103,31 @@ public class detailPageController {
 		return result;
 	}
 	
+	/**뮤지컬 등록 중복 체크
+	 * @throws Exception */
+	@ResponseBody
+	@RequestMapping(value = "/duplicateCheck")
+	public String idCheck(@RequestParam String muscNo) throws Exception {
+		
+		if(muscNo == "") {
+			System.out.println("null");
+			throw new Exception();
+		}
+		
+		System.out.println(muscNo);
+		
+		String result = "no_use";
+
+		int muscNo_result = service.muscNoCheck(muscNo);
+		
+		if(muscNo_result == 1) {
+
+			result = "use";
+		}
+		return result;
+	}
+	
+	
 	// 뮤지컬 등록 페이지에서 INSERT 버튼을 수행했을 시.
 	@RequestMapping("/doInsertMusc")
 	public String doInsertMusc(MusicalVO MusicalVO, HttpSession session) {
@@ -165,6 +191,33 @@ public class detailPageController {
     	return result; 
     }
 	
+	// 뮤지컬 등록 페이지에서 UPDATE 버튼을 수행했을 시.
+		@RequestMapping("/doUpdateMusc/{muscNo}")
+		public String doUpdateMusc(MusicalVO MusicalVO, HttpSession session) {
+			String result = "redirect:/goUpdateMusc/{muscNo}";
+			
+			if (MusicalVO == null) {
+				
+				System.out.println("얍");
+				return result;
+				
+			}
+			 
+			System.out.println(MusicalVO);
+			
+			/* MusicalVO vo = service.getMusical(muscNo); */
+			int updateFlag = service.updateMusical(MusicalVO);
+			
+			System.out.println(updateFlag);
+			
+			if( updateFlag == 1 )  {
+				
+				result = "redirect:/adminPage";
+			}
+			
+			
+			return result;
+		}
 	
 	
 	
