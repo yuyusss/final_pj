@@ -47,8 +47,9 @@
                             <td>${status.count}</td>
                             <td>${act.actorName}</td>
                             <td>${act.actorName}</td>
-                            <td>${act.actorName} ~ ${act.actorName}</td>
-                            <%-- <td>
+                            <td>${act.actorName}님의 출연작품}</td>
+                            <td>
+
                                 <button type="button" class="muscNoCheck"
                                         onclick="location.href ='/goUpdateMusc/${musc.muscNo}'">수정
                                 </button>

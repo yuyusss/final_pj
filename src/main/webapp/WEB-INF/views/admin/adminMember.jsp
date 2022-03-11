@@ -38,12 +38,12 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${musicalList}" var="musc" begin="0" end="4">
+                    <c:forEach items="${memList}" var="mem" varStatus="status">
                         <tr>
-                            <td>${musc.muscNo}</td>
-                            <td>${musc.muscName}</td>
-                            <td>${musc.muscPlace}</td>
-                            <td>${musc.muscStartDate} ~ ${musc.muscEndDate}</td>
+                            <td>${status.count}</td>
+                            <td>${mem.memId}</td>
+                            <td>${mem.memName}</td>
+                            <td>${mem.memPhone}</td>
                         </tr>
                     </c:forEach>
                     </tbody>
