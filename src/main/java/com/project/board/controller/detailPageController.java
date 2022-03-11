@@ -36,7 +36,7 @@ public class detailPageController {
 	 * @RequestMapping("/favorRecommand") public String favorRecommand() { return
 	 * "/layout/recommand"; }
 	 */
-		
+
 	// 뮤지컬 등록페이지로 이동
 	@RequestMapping("/insertMusc") 
     public String insertMusc() { 
@@ -147,7 +147,7 @@ public class detailPageController {
 		
 		if( insertFlag == 1 )  {
 			
-			result = "redirect:/adminPage";
+			result = "redirect:/adminMusical";
 		}
 		
 		

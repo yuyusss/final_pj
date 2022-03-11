@@ -10,7 +10,14 @@ public class MemberVO {
 	private String memAddressDetail;
 	private String genre;
 	private int voteA;
+	private int voteB;
 	
+	public int getVoteB() {
+		return voteB;
+	}
+	public void setVoteB(int voteB) {
+		this.voteB = voteB;
+	}
 	public int getVoteA() {
 		return voteA;
 	}

@@ -80,14 +80,16 @@ public class IndexController {
 
 
     @RequestMapping("/vote")
-    public String vote(Model model) {
+    public String vote(Model model,HttpSession session) {
         ArrayList<VoteVO> actorList = service.listAllActor();
         model.addAttribute("actorList", actorList);
 
         ArrayList<MusicalVO> musicalList = musicalService.getAllMusical();
         model.addAttribute("musicalList", musicalList);
 		
-        ArrayList<MemberVO> memberList = memberService.getAllMember();
+        String sid=(String)session.getAttribute("sid1");
+        System.out.println(sid);
+        MemberVO memberList = memberService.getMember(sid);
 		model.addAttribute("memberList", memberList);
         
         
@@ -123,11 +125,14 @@ public class IndexController {
     }
 
     @RequestMapping("/voteMusical/{muscNo}")
-    public String voteMusical(@PathVariable String muscNo, Model model)throws Exception{
+    public String voteMusical(@PathVariable String muscNo,HttpSession session, Model model,BoardVO b)throws Exception{
         MusicalVO vo = musicalService.getMusical(muscNo);
         model.addAttribute("vo", vo);
-        System.out.println(vo);
-        System.out.println(vo.getGenreName());
+        
+        String memId = (String) session.getAttribute("sid1");
+        service.voteCountB(memId);
+    	b.setMemId(memId);
+    	
         musicalService.voteUp(muscNo);
 
         return "redirect:../vote";
@@ -139,8 +144,9 @@ public class IndexController {
     // 일정 저정하는 부븐 어떻게 처리할건지 정하기
     @RequestMapping(value = "/ticketPlan", method = RequestMethod.GET)
     @ResponseBody
-    public List<Map<String, Object>> ticketPlan() throws Exception{
+    public List<Map<String, Object>> ticketPlan(Model model) throws Exception{
         List<Map<String, Object>> list = calendarService.calenList();
+        model.addAttribute("calenList", list);
 
         JSONObject jsonObj = new JSONObject(); // 중괄호
         JSONArray jsonArr = new JSONArray(); // 대괄호
