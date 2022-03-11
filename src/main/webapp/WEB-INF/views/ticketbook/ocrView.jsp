@@ -11,7 +11,7 @@
 		
 	</head>
 	<body>
-	<div id = "warp">
+	<div id = "wrap">
 	<!-- 탑 -->
     <jsp:include page="/WEB-INF/views/layout/top.jsp" flush='true'/>
 		<!--  파일 업로드 -->
