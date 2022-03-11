@@ -1,13 +1,7 @@
 package com.project.board.controller;
 
-import com.project.board.model.CalendarVO;
-import com.project.board.model.HallVO;
-import com.project.board.model.MusicalVO;
-import com.project.board.model.VoteVO;
-import com.project.board.service.CalendarService;
-import com.project.board.service.HallService;
-import com.project.board.service.MediaService;
-import com.project.board.service.MusicalService;
+import com.project.board.model.*;
+import com.project.board.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,20 +25,11 @@ public class AdminController {
     @Autowired
     CalendarService calendarService;
 
+    @Autowired
+    MemberService memberService;
+
     @RequestMapping("/adminPage")
     public String adminPage(Model model) {
-
-        ArrayList<MusicalVO> musicalList = musicalService.getAllMusical();
-        model.addAttribute("musicalList", musicalList);
-
-        ArrayList<HallVO> seoulHallList = hallService.listHallByArea("seoul");
-        model.addAttribute("seoulHallList", seoulHallList);
-
-        ArrayList<VoteVO> actorList = mediaService.listAllActor();
-        model.addAttribute("actorList", actorList);
-
-        ArrayList<CalendarVO> planList = calendarService.getAllPlan();
-        model.addAttribute("planList", planList);
 
         return "admin/adminPage";
     }
@@ -52,7 +37,8 @@ public class AdminController {
     // member 관리자 페이지
     @RequestMapping("/adminMember")
     public String adminMember(Model model){
-
+        ArrayList<MemberVO> memList = memberService.getAllMember();
+        model.addAttribute("memList", memList);
 
         return "admin/adminMember";
     }
@@ -109,6 +95,13 @@ public class AdminController {
     @RequestMapping("insertSchedule")
     public String insertSchedule(CalendarVO calendarVO){
         calendarService.insertSchedule(calendarVO);
+
+        return "redirect:./adminCalendar";
+    }
+
+    // 일정 삭제
+    @RequestMapping("/deleteSchedule/{calNo}")
+    public String deleteSchedule(){
 
         return "redirect:./adminCalendar";
     }
