@@ -30,7 +30,7 @@
 	// $.ajax()를 별도의 함수로 분리
 	function callAjax(){
 		$.ajax({
-			url:"chatbotCall",
+			url:"/chatbotCall",
 			type:"post",
 			data:{message: $('#message').val()},		
 			success:function(results){
