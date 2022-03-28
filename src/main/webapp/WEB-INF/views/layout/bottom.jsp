@@ -6,6 +6,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="<c:url value='/js/chatbot.js'/>"></script>	
 <link rel="stylesheet" type="text/css" href="<c:url value='/css/chatbot.css'/>">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 </head>
 		<!-- 챗봇 섹션 display none -->
 		<a id="openPop"><img id="chatBtn" src="<c:url value="/images/chatBtn.png" />" width="75" height="75"></a>
@@ -13,7 +14,7 @@
 		</div>
 		<div id="popUp">
 			<div id="chatHeader">
-				<button id="btnClose"> &lt; </button>
+				<button id="btnClose" style = "font-family:Nanum Gothic; font-size: 23px;">&nbsp; ← BACK </button>
 			</div>
 		
 		<!-- 채팅 내용 출력 -->
