@@ -6,6 +6,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
+import com.project.board.service.CalendarService;
+import com.project.board.service.MediaService;
+import com.project.board.service.MusicalService;
+import com.project.board.service.WeatherService;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -27,11 +32,10 @@ import com.project.board.model.MediaVO;
 import com.project.board.model.MemberVO;
 import com.project.board.model.MusicalVO;
 import com.project.board.model.VoteVO;
-import com.project.board.service.CalendarService;
-import com.project.board.service.MediaService;
+
 import com.project.board.service.MemberService;
-import com.project.board.service.MusicalService;
-import com.project.board.service.WeatherService;
+
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Service
 @Controller
@@ -76,14 +80,16 @@ public class IndexController {
 
 
     @RequestMapping("/vote")
-    public String vote(Model model) {
+    public String vote(Model model,HttpSession session) {
         ArrayList<VoteVO> actorList = service.listAllActor();
         model.addAttribute("actorList", actorList);
 
         ArrayList<MusicalVO> musicalList = musicalService.getAllMusical();
         model.addAttribute("musicalList", musicalList);
 		
-        ArrayList<MemberVO> memberList = memberService.getAllMember();
+        String sid=(String)session.getAttribute("sid1");
+        System.out.println(sid);
+        MemberVO memberList = memberService.getMember(sid);
 		model.addAttribute("memberList", memberList);
         
         
@@ -119,11 +125,14 @@ public class IndexController {
     }
 
     @RequestMapping("/voteMusical/{muscNo}")
-    public String voteMusical(@PathVariable String muscNo, Model model)throws Exception{
+    public String voteMusical(@PathVariable String muscNo,HttpSession session, Model model,BoardVO b)throws Exception{
         MusicalVO vo = musicalService.getMusical(muscNo);
         model.addAttribute("vo", vo);
-        System.out.println(vo);
-        System.out.println(vo.getGenreName());
+        
+        String memId = (String) session.getAttribute("sid1");
+        service.voteCountB(memId);
+    	b.setMemId(memId);
+    	
         musicalService.voteUp(muscNo);
 
         return "redirect:../vote";
@@ -132,10 +141,12 @@ public class IndexController {
 
     // 캘린더 db에서 불러올 코드 필요
     // json parsing 사용. responsebody 사용해서 페이지 로드 시 바로 불러오게 할 것
+    // 일정 저정하는 부븐 어떻게 처리할건지 정하기
     @RequestMapping(value = "/ticketPlan", method = RequestMethod.GET)
     @ResponseBody
-    public List<Map<String, Object>> ticketPlan() throws Exception{
+    public List<Map<String, Object>> ticketPlan(Model model) throws Exception{
         List<Map<String, Object>> list = calendarService.calenList();
+        model.addAttribute("calenList", list);
 
         JSONObject jsonObj = new JSONObject(); // 중괄호
         JSONArray jsonArr = new JSONArray(); // 대괄호

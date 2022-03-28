@@ -6,9 +6,13 @@
 <head>
     <title>MUTRODUCE</title>
     <script src="<c:url value='/js/weather_location.js' />"></script>
-    <script src="<c:url value="/js/calendar.js" />"></script>
+    <script src="<c:url value="/js/calendar.js" />"></script> <%-- 캘린더가 없어야 날씨 정보를 가져옴 --%>
+    <script src="<c:url value='/fullcalendar-5.10.1/lib/main.js' />"></script>
+<%--    <script src="<c:url value='/js/calendar.js'/>"></script>--%>
     <script src="<c:url value="/js/location_map.js" />"></script>
+    <link href="<c:url value='/fullcalendar-5.10.1/lib/main.css' />" rel="stylesheet" />
     <link href="<c:url value='/css/location_map.css'/>" rel="stylesheet" type="text/css">
+<%--    <link href="<c:url value='/css/calendar.css'/>" rel="stylesheet" type="text/css">--%>
 
 </head>
 <body>

@@ -76,7 +76,8 @@
 			</tr>
 			
 		</table>
-			<div id = "button"><input type="submit" value="등록">
+			<div class ="ticketBtn">
+				<input type="submit" value="등록">
 			<button type="button" onclick="location.href='/ticketDetailView'" class = "reset">취소</button>
 			<button type="button" onclick="location.href='/clovaOCRForm'" class = "addbtn2">티켓사진으로 추가</button>
 			</div>

@@ -11,7 +11,7 @@
   </head>
   <body>
   <script type="text/javascript">
-  var naver_id_login = new naver_id_login("nmuFIAlAX7Na0l6ahIGv", "http://localhost:8080/callback");
+  var naver_id_login = new naver_id_login("nmuFIAlAX7Na0l6ahIGv", "http://49.50.162.123:8080/callback");
   // 접근 토큰 값 출력
   $('body').append('<h4>접속토큰:'+naver_id_login.oauthParams.access_token+'</h4>');
   // 네이버 사용자 프로필 조회

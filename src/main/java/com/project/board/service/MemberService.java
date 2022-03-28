@@ -19,6 +19,14 @@ public class MemberService implements IMemberService {
 	IMemberDAO dao;
 	
 	@Override
+	public MemberVO getMember(String sid) {
+			// TODO Auto-generated method stub
+		return dao.getMember(sid);
+	}
+	
+	
+	
+	@Override
 	public ArrayList<MemberVO> getAllMember() {
 			// TODO Auto-generated method stub
 		return dao.getAllMember();

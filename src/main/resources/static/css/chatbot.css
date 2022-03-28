@@ -4,6 +4,17 @@ input::-webkit-input-placeholder {
   text-align: center;
 }
 
+@keyframes fadeInUp {
+      0% {
+          opacity: 0;
+          transform: translate3d(0, 100%, 0);
+      }
+      to {
+          opacity: 1;
+          transform: translateZ(0);
+    }
+}
+ 
 #modal {
   position:fixed;
   width:100%;
@@ -24,7 +35,6 @@ input::-webkit-input-placeholder {
     display: none;
     z-index: 9999;
     position: fixed;
-    box-shadow: 3px 3px 7px 1px grey;
 } 
 
 #popUp_how {
@@ -36,9 +46,10 @@ input::-webkit-input-placeholder {
 }
 
 #chatHeader{
-	padding-bottom: 35px;
-	border-bottom: 4px solid #95a6b4;
-	background-color: skyblue;
+	padding-bottom: 40px;
+	background-color: #eee;
+	width: 450px;
+	border-radius: 10px 10px 0px 0px;
 }
 
 #btnClose {
@@ -58,9 +69,12 @@ input::-webkit-input-placeholder {
     position: relative;
     top: 25px;
     left: -82px;
-    font-size: 15px;
     line-height: 24px;
     max-width:234px;
+    font-family:Nanum Gothic;
+    font-size: 15px;
+    box-shadow: 1px 1px 1px 1px grey; 
+    animation: fadeInUp 1s;
 }
 
 
@@ -68,8 +82,10 @@ input::-webkit-input-placeholder {
 	display: block;
 	height: 25px;
 	line-height: 18px;
-	background:#fef01b; 
+	background: #009ffd;
 	margin-top: 10px;
+	color: white;
+	box-shadow: 1.5px 1.5px 1.5px 1.5px grey;
 }
 
 #bot_profile {
@@ -78,12 +94,13 @@ input::-webkit-input-placeholder {
 	height: 30px;
 	text-align:center;
 	font-size: 22px;
-	background-color: purple;
+	color:white;
+	background-color: black;
 	margin-right: 10px;
 }
  
 #bot_name{
-	background-color: #9bbbd4;
+	background-color: #eee;
 	width: 74px;
     height: 20px;
     font-size: 10px;
@@ -92,30 +109,43 @@ input::-webkit-input-placeholder {
 
 #chatBox {
 	height: 100%;
-    width: 419px;
+    width: 420px;
+    overflow-x: hidden;
 	overflow-y:scroll;
 	padding:10px 15px;
-	background:#9bbbd4;
+	background:#eee;
+	text-align: left;
 } 	 
-
+  
 #message {
-	width: 368px;
+	width: 358px;
 	height: 35px;
+	border-right: none;
+	border-left : none;
+	border-top : none;
+	border-bottom : none;
+	border-radius: 0px 0px 0px 10px;
+	float:left;
+	padding-left:10px;
+	
+}
+
+#message:focus {
+	outline:none;
 }
 
 #submit {
 	float: right;
 	height: 35px;
 	width: 82px;
-	border : 1px solid black;
-	border-left: none;
+	border : 0px solid black;
 	background: #fff;
+	border-radius: 0px 0px 10px 0px;
 }
 
 #submit:hover{
 	color : red;
 	background : white;
-	border: 1px solid red;
 	transition : 0.5s;	 
 }
 
@@ -133,7 +163,7 @@ input::-webkit-input-placeholder {
 
 #in {
 	width: 420px;
-    background: #9bbbd4;
+    background: #eee;
     position: relative;
     margin-bottom: 0px;
     display: block;

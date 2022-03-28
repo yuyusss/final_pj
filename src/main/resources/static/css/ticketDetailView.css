@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+.ticketDetail{
+    text-align: left;
+}
+
 .all{
 	background-image: url(/images/티켓1.jpg);
     background-size: 600px;
@@ -16,6 +20,7 @@
 	
 	
 }
+
 .list td {
 	
 	text-align:left;
@@ -76,7 +81,7 @@
 	background-color : white;
 }
 .editbtn {
-	 border: 2px solid white;
+    border: 2px solid white;
     border-radius: 8px;
     color: white;
     background-color: #c572d2;
@@ -102,4 +107,11 @@ h1 {
     background-color: #c572d2;
     font-size: small;
 }
-	
+
+.ticketBtn{
+    margin-top: 10px;
+}
+
+.ticketBtn {
+    margin-bottom: 30px;
+}

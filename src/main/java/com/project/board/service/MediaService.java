@@ -45,6 +45,11 @@ public class MediaService implements IMediaService{
     public int voteCount(String memId) {
         return dao.voteCount(memId);
     }
+    
+    @Override
+    public int voteCountB(String memId) {
+        return dao.voteCountB(memId);
+    }
 
 
 }

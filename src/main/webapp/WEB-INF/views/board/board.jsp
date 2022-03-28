@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>MUTRODUCE</title>
+<title>MUTRODUCE</title> 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -28,8 +28,6 @@
 
 </head>
 <jsp:include page="/WEB-INF/views/layout/top1.jsp" flush='true' />
-
-
 
 <body link="blue" vlink="blue" alink="blue">
 	<div class="boardcontainer">
@@ -67,13 +65,14 @@
 				$.ajax({
 					url : "boardList",
 					success : function(result) {
+						console.log("boardList");
 						var html = "";
-						result.forEach(function(item) {
+						result.forEach(function(item, index) {
 							html += "<tr> <td>"+item.idx+"</td><td>"+item.memId+"</td><td><a style='text-decoration:none;' href = 'view?idx=" + item.idx
 									+ "'>" + item.title + "</a></td><td>"+item.contents+"</td><td>"+item.hits+"</td><td>"+item.writedate+"</td>"
 						})
 						$("#listArea").append(html)
-						$('#example').DataTable();
+						$('#example').DataTable();	
 					}
 				});
 				$("#deleteBtn").click(function() {
