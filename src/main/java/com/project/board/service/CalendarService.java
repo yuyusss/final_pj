@@ -42,4 +42,9 @@ public class CalendarService implements ICalendarService{
     public void updateSchedule(CalendarVO calendarVO) {
         dao.updateSchedule(calendarVO);
     }
+
+    @Override
+    public void deleteSchedule(int calNo) {
+        dao.deleteSchedule(calNo);
+    }
 }

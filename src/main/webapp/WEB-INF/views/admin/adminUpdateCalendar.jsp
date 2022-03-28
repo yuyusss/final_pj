@@ -18,7 +18,7 @@
     <!-- 삽입란 -->
     <div id="main" class="insertFrame">
         <div id="content">
-            <form id="form" name="muscInsertForm" method="post"  action="<c:url value='/updateSchedule'/>">
+            <form id="form" name="muscInsertForm" method="post"  action="<c:url value='/updateSchedule'/>" style="margin-bottom: 50px">
                 <h3 style="margin: 30px;text-align: center;">[일정등록]</h3><hr><br>
                 <table class="insertmuscTable" style="margin: 0 auto;">
                     <tr>
@@ -42,7 +42,7 @@
                     <tr>
                         <th>티켓팅 날짜</th>
                         <td>
-                            <input type="text" name="calStart" id="calStart" value="${calen.calStart}">
+                            <input type="datetime-local" name="calStart" style="margin-left: 60px;" value="${calen.calStart}" id="calStart">
                         </td>
                     </tr>
                     <tr>

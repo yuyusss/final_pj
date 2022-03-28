@@ -43,19 +43,19 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${planList}" var="plan">
+                    <c:forEach items="${planList}" var="cal" varStatus="status">
                         <tr>
-                            <td>${plan.calNo}</td>
-                            <td>${plan.calTitle}</td>
-                            <td>${plan.calStart}</td>
+                            <td>${status.count}</td>
+                            <td>${cal.calTitle}</td>
+                            <td>${cal.calStart}</td>
                             <td>
                                 <button type="button" class="muscNoCheck"
-                                        onclick="location.href ='/updateScheduleForm/${plan.calNo}'">수정
+                                        onclick="location.href ='/updateScheduleForm/${cal.calNo}'">수정
                                 </button>
                             </td>
                             <td>
                                 <button type="button" class="muscNoCheck"
-                                        onclick="location.href ='/doDeleteMusc/${musc.muscNo}'">삭제
+                                        onclick="location.href ='/deleteSchedule/${cal.calNo}'">삭제
                                 </button>
                             </td>
                         </tr>

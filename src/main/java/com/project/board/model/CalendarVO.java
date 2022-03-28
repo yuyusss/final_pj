@@ -6,8 +6,8 @@ public class CalendarVO {
     private int calNo;
     private String calTitle;
     private String calDetail;
-    private Date calStart;
-    private Date calEnd;
+    private String calStart;
+    private String calEnd;
     private String calURL;
 
     public int getCalNo() {
@@ -34,19 +34,19 @@ public class CalendarVO {
         this.calDetail = calDetail;
     }
 
-    public Date getCalStart() {
+    public String getCalStart() {
         return calStart;
     }
 
-    public void setCalStart(Date calStart) {
+    public void setCalStart(String calStart) {
         this.calStart = calStart;
     }
 
-    public Date getCalEnd() {
+    public String getCalEnd() {
         return calEnd;
     }
 
-    public void setCalEnd(Date calEnd) {
+    public void setCalEnd(String calEnd) {
         this.calEnd = calEnd;
     }
 
@@ -56,5 +56,17 @@ public class CalendarVO {
 
     public void setCalURL(String calURL) {
         this.calURL = calURL;
+    }
+
+    @Override
+    public String toString() {
+        return "CalendarVO{" +
+                "calNo=" + calNo +
+                ", calTitle='" + calTitle + '\'' +
+                ", calDetail='" + calDetail + '\'' +
+                ", calStart=" + calStart +
+                ", calEnd=" + calEnd +
+                ", calURL='" + calURL + '\'' +
+                '}';
     }
 }

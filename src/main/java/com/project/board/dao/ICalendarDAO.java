@@ -23,5 +23,5 @@ public interface ICalendarDAO {
     void updateSchedule(CalendarVO calendarVO);
 
     // 일정 삭제
-
+    void deleteSchedule(int calNo);
 }
