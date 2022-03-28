@@ -4,6 +4,17 @@ input::-webkit-input-placeholder {
   text-align: center;
 }
 
+@keyframes fadeInUp {
+      0% {
+          opacity: 0;
+          transform: translate3d(0, 100%, 0);
+      }
+      to {
+          opacity: 1;
+          transform: translateZ(0);
+    }
+}
+ 
 #modal {
   position:fixed;
   width:100%;
@@ -24,7 +35,6 @@ input::-webkit-input-placeholder {
     display: none;
     z-index: 9999;
     position: fixed;
-    box-shadow: 3px 3px 7px 1px grey;
 } 
 
 #popUp_how {
@@ -39,6 +49,7 @@ input::-webkit-input-placeholder {
 	padding-bottom: 40px;
 	background-color: #eee;
 	width: 450px;
+	border-radius: 10px 10px 0px 0px;
 }
 
 #btnClose {
@@ -62,6 +73,8 @@ input::-webkit-input-placeholder {
     max-width:234px;
     font-family:Nanum Gothic;
     font-size: 15px;
+    box-shadow: 1px 1px 1px 1px grey; 
+    animation: fadeInUp 1s;
 }
 
 
@@ -72,6 +85,7 @@ input::-webkit-input-placeholder {
 	background: #009ffd;
 	margin-top: 10px;
 	color: white;
+	box-shadow: 1.5px 1.5px 1.5px 1.5px grey;
 }
 
 #bot_profile {
@@ -106,11 +120,18 @@ input::-webkit-input-placeholder {
 #message {
 	width: 368px;
 	height: 35px;
-	border-right: 1px solid black;
+	border-right: none;
 	border-left : none;
 	border-top : none;
 	border-bottom : none;
+	border-radius: 0px 0px 0px 10px;
 	float:left;
+	padding-left:10px;
+	
+}
+
+#message:focus {
+	outline:none;
 }
 
 #submit {
@@ -119,13 +140,12 @@ input::-webkit-input-placeholder {
 	width: 82px;
 	border : 0px solid black;
 	background: #fff;
+	border-radius: 0px 0px 10px 0px;
 }
 
 #submit:hover{
 	color : red;
 	background : white;
-	border: 1px solid red;
-	border-left:none;
 	transition : 0.5s;	 
 }
 
