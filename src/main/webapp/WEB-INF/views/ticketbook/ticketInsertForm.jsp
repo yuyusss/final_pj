@@ -8,11 +8,15 @@
 		<meta charset="UTF-8">
 		<link href="<c:url value='/css/ticketcontrol.css'/>" rel="stylesheet" type="text/css">
 		<title>티켓 등록</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"></script>
+	
+		
 		
 		
 		<!-- include libraries(jQuery, bootstrap) -->   <!--  ********* -->
 		<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		
 		<!-- include summernote css/js -->
@@ -53,10 +57,24 @@
 			</tr>
 			<tr>	
 				<td>가격 : </td><td><input type="text" id="price" name="price" value="${ticketVO.price}" ><br></td>
-			</tr>	
+			</tr>		
 			<tr>
 				<td>후기 : </td><td><textarea id="review" name="review" >   </textarea></td>
 			</tr>
+			<tr>	
+				<td>별점 : </td><td><div class="make_star">
+							
+							<div class="rating" data-rate="3">
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>	
+							</div>
+						</div>
+					<br>
+			</tr>
+			
 		</table>
 			<div id = "button"><input type="submit" value="등록">
 			<button type="button" onclick="location.href='/ticketDetailView'" class = "reset">취소</button>
@@ -71,6 +89,31 @@
 		    $(document).ready(function() {
 		        $('#review').summernote();
 		    });
+		    
+		    $(function() {
+		    	
+		    	var rating = $('.review .rating');
+		    	
+		    	rating.each (function() {
+		    		var targetScore = $(this).attr('data-rate');		
+		    		$(this).find('svg:nth-child(-n +' + targetScore + ')').css({color : '#F05522' });
+		    });
+		      
+		      var userScore=$('#makeStar');
+		      userScore.change(function() {
+		        var userScoreNum = $(this).val();
+		       
+		        $('.make_star svg').css({color : '#000'});
+		        $('.make_star svg:nth-child(-n+' + userScoreNum+')').css({color :'#F05522' });
+		      });
+		      
+		      $('.make_star svg').click(function() {
+		        var targetNum = $(this).index() +1;
+		        $('.make_star svg').css({color:'#000'});
+		        $('.make_star svg:nth-child(-n' + targetNum + ')').css({color:'#F05522'});
+		      });
+		    });
+
 		  </script>
 	</body>
 </html>
