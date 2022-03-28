@@ -18,7 +18,7 @@
     <!-- 공연장안내 -->
     <div class="bannerTitle" style="margin-top: 60px; margin-bottom: 100px;">
         <div class="bannerTitle_2">
-            <span>Theather</span>
+            <span>Theater</span>
         </div>
     </div>
 

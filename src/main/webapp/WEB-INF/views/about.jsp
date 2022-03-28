@@ -32,15 +32,11 @@
 
     <div class="aboutInfo">
         <p>
-            I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double
-            click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you
-            like on your page.
+            뮤지컬을 소개하다. "MUTRODUCE"는 뮤지컬이 처음인 사람들에게는 뮤지컬에 대한 정보를, 뮤지컬에 대해 많이 알고, 즐기는 팬들에게는 소통할 수 있는 커뮤니티 공간을 제공합니다.
         </p>
         <p>
-            This is a great space to write long text about your company and your services. You can use this space to go
-            into a little more detail about your company. Talk about your team and what services you provide. Tell your
-            visitors the story of how you came up with the idea for your business and what makes you different from your
-            competitors.
+            뮤지컬 소개는 물론, 티켓팅 일정을 알려주는 캘린더 기능, 날씨 정보에 맞춰 뮤지컬 넘버를 추천해주는 넘버 추천 기능, 팬들끼리 소통할 수 있는 게시판 기능, 좋아하는 배우와 뮤지컬에 투표할 수 있는 투표와 랭킹 기능은 물론
+            관람한 뮤지컬의 후기를 적고, 별점을 줄 수 있는 티켓북 페이지까지 뮤지컬 덕후를 위한 다양한 정보를 제공하고 있습니다.
         </p>
     </div>
 </div>

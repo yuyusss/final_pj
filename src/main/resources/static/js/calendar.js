@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
     calendar.render();
 });*/
 
-$(function(){
+window.onload = function (){
     var request = $.ajax({
         url: "/ticketPlan",
         method: "GET",
@@ -137,4 +137,4 @@ $(function(){
     request.fail(function(jqXHR, textStatus){
         alert("Request failed" + textStatus);
     });
-});
+};

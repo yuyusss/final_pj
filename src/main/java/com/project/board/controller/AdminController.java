@@ -101,8 +101,8 @@ public class AdminController {
 
     // 일정 삭제
     @RequestMapping("/deleteSchedule/{calNo}")
-    public String deleteSchedule(){
-
-        return "redirect:./adminCalendar";
+    public String deleteSchedule(@PathVariable int calNo){
+        calendarService.deleteSchedule(calNo);
+        return "redirect:../adminCalendar";
     }
 }

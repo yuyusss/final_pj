@@ -19,4 +19,6 @@ public interface ICalendarService {
     void insertSchedule(CalendarVO calendarVO);
 
     void updateSchedule(CalendarVO calendarVO);
+
+    void deleteSchedule(int calNo);
 }

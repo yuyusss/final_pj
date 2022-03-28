@@ -29,7 +29,7 @@
 
     <select id="getAllPlan" resultType="com.project.board.model.CalendarVO">
         SELECT *
-        FROM calendar
+        FROM calendar order by calStart desc
     </select>
 
     <select id="detailPlan" resultType="com.project.board.model.CalendarVO">
@@ -42,8 +42,12 @@
         UPDATE calendar SET calTitle  = #{calTitle}, calDetail = #{calDetail}, calStart = #{calStart}, calURL = #{calURL} WHERE calNo = #{calNo}
     </update>
 
-    <insert id="insertSchedul9e" parameterType="com.project.board.model.CalendarVO">
+    <insert id="insertSchedule" parameterType="com.project.board.model.CalendarVO">
         insert into calendar(calTitle, calDetail, calStart, calEnd, calURL) values(#{calTitle}, #{calDetail}, #{calStart}, #{calEnd}, #{calURL})
     </insert>
+
+    <delete id="deleteSchedule" parameterType="int">
+        delete from calendar where calNo = #{calNo}
+    </delete>
 </mapper>
   
